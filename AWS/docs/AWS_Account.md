@@ -69,7 +69,8 @@ Please follow the following steps to fix your budget:
 
 ## Watch it out
 
-
+<!-- blank line -->
 <figure class="video_container">
   <iframe src="https://www.youtube.com/embed/enMumwvLAug" frameborder="0" allowfullscreen="true"> </iframe>
-</figure
+</figure>
+<!-- blank line -->
