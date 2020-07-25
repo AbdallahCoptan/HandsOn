@@ -70,7 +70,7 @@ Please follow the following steps to fix your budget:
 ## Watch it here
 
 
-[![watch]()](https://www.youtube.com/embed/LZbj_Dp2-Zw)
+[![watch](https://i.imgur.com/vKb2F1B.png)](https://www.youtube.com/embed/LZbj_Dp2-Zw)
 
 
 <figure class="video_container">
