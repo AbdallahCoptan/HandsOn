@@ -66,11 +66,19 @@ Please follow the following steps to fix your budget:
 
 
 
+![](aws1.mp4)
+
+
+<video width="320" height="240" controls>
+  <source src="aws1.mp4" type="video/mp4">
+</video>
 
 ## Watch it here
 
 
 [![watch](https://img.youtube.com/vi/LZbj_Dp2-Zw/hqdefault.jpg)](https://www.youtube.com/embed/LZbj_Dp2-Zw)
+
+
 
 
 <!-- <figure class="video_container">
