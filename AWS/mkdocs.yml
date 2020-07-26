@@ -9,7 +9,7 @@ nav:
   - Home: index.md
   - AWS: 
     - Setting Up an AWS Account: AWS_Account.md
-    - Book an EC2 Instance: EC2.md
+    - Using EC2 Compute Instances: EC2.md
 #  - Google:
 #    - starting: AWS_Account (another copy).md
 #  - Azure:
