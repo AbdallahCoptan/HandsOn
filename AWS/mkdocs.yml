@@ -1,9 +1,15 @@
 site_name: Hydrosat Hands-On
+theme:
+      name: readthedocs
+      highlightjs: true
+      hljs_languages:
+          - yaml
+          - rust
 nav:
   - Home: index.md
   - AWS: 
     - Setting Up an AWS Account: AWS_Account.md
-#    - Book an EC2 Instance: AWS_Account (copy).md
+    - Book an EC2 Instance: EC2.md
 #  - Google:
 #    - starting: AWS_Account (another copy).md
 #  - Azure:
