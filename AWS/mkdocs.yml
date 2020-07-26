@@ -1,1 +1,11 @@
 site_name: Hydrosat Hands-On
+nav:
+  - Home: index.md
+  - AWS: 
+    - Setting Up an AWS Account: AWS_Account.md
+#    - Book an EC2 Instance: AWS_Account (copy).md
+#  - Google:
+#    - starting: AWS_Account (another copy).md
+#  - Azure:
+#    - statr: AWS_Account (3rd copy).md
+  
