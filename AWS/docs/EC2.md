@@ -465,6 +465,264 @@ If you receive an error while attempting to connect to your instance, see [Troub
 
 
 
+## Transferring files to Linux instances
+
+
+Transferring files to your Linux instances depends on the type of the operating system you use to [connect to the instance](#connecting-to-your-linux-ec2-instances). Therfore:
+
+- **If you connect through Linux** 
+	
+	Two ways to transfer files between your local computer and a Linux instance are to use:
+
+	1. [The secure copy protocol (SCP)](#transferring-files-to-linux-instances-from-linux-using-scp).
+	2. [FileZilla](#transferring-files-to-your-linux-instance-using-filezilla).
+
+- **If you connect through Windwos**
+
+	Many options are exist to transfer files between the instances and local machines, such as:
+
+	1. [The PuTTY Secure Copy client (PSCP)](#transferring-files-to-your-linux-instance-using-the-putty-secure-copy-client). 
+	2. [WinSCP](#transferring-files-to-your-linux-instance-using-winscp).
+	3. [FileZilla](#transferring-files-to-your-linux-instance-using-filezilla).
+
+---
+### Transferring files to Linux instances from Linux using SCP
+
+One way to transfer files between your local computer and a Linux instance is to use the secure copy protocol (SCP). This section describes how to transfer files with SCP. The procedure is similar to the procedure for connecting to an instance with SSH. 
+
+
+#### Prerequisites
+
+- Verify the general prerequisites for transferring files to your instance.
+
+The general prerequisites for transferring files to an instance are the same as the general prerequisites for connecting to an instance. For more information, see [General prerequisites for connecting to your instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connection-prereqs.html).
+
+- Install an SCP client
+
+Most Linux, Unix, and Apple computers include an SCP client by default. If yours doesn't, the OpenSSH project provides a free implementation of the full suite of SSH tools, including an SCP client. For more information, see [http://www.openssh.org](https://www.openssh.com/).
+
+
+#### Use SCP to transfer a file
+
+1. Transfer a file to your instance using the instance's public DNS name, or the IPv6 address if your instance has one. **For example**, if the name of your private key file is `my-key-pair`, the file to transfer is `SampleFile.txt`, the user name for your instance is `my-instance-user-name`, and the public DNS name of the instance is `my-instance-public-dns-name`, or `my-instance-IPv6-address` if your instance has an IPv6 address, use one of the following commands to copy the file to the `my-instance-user-name` home directory.
+
+	- (Public DNS) To transfer a file to your instance using your instance's public DNS name, enter the following command. 
+		
+			scp -i /path/my-key-pair.pem /path/SampleFile.txt my-instance-user-name@my-instance-public-dns-name:~
+
+	- (IPv6) Alternatively, if your instance has an IPv6 address, to transfer a file using the instance's IPv6 address, enter the following command. The IPv6 address must be enclosed in square brackets ([ ]), which must be escaped (\). 
+
+			scp -i /path/my-key-pair.pem /path/SampleFile.txt my-instance-user-name@\[my-instance-IPv6-address\]:~
+
+
+You see a response like the following:
+
+	The authenticity of host 'ec2-198-51-100-1.compute-1.amazonaws.com (10.254.142.33)'
+	can't be established.
+	RSA key fingerprint is 1f:51:ae:28:bf:89:e9:d8:1f:25:5d:37:2d:7d:b8:ca:9f:f5:f1:6f.
+	Are you sure you want to continue connecting (yes/no)?
+
+2. Enter `yes`
+
+You see a response like the following:
+
+	Warning: Permanently added 'ec2-198-51-100-1.compute-1.amazonaws.com' (RSA) 
+	to the list of known hosts.
+	Sending file modes: C0644 20 SampleFile.txt
+	Sink: C0644 20 SampleFile.txt
+	SampleFile.txt                                100%   20     0.0KB/s   00:00		
+
+
+If you receive a "bash: scp: command not found" error, you must first install **scp** on your Linux instance. For some operating systems, this is located in the `openssh-clients` package. For Amazon Linux variants, such as the Amazon ECS-optimized AMI, use the following command to install **scp**: 
+
+
+```
+[ec2-user ~]$ sudo yum install -y openssh-clients
+```
+
+3. To transfer files in the other direction (from your Amazon EC2 instance to your local computer), reverse the order of the host parameters. For example, to transfer the `SampleFile.txt` file from your EC2 instance back to the home directory on your local computer as `SampleFile2.txt`, use of the following commands on your local computer. 
+
+
+	- (Public DNS) To transfer a file to your instance using your instance's public DNS name, enter the following command. 
+
+			scp -i /path/my-key-pair.pem my-instance-user-name@my-instance-public-dns-name:~/SampleFile.txt ~/SampleFile2.txt
+
+	- (IPv6) Alternatively, if your instance has an IPv6 address, to transfer a file using the instance's IPv6 address, enter the following command. The IPv6 address must be enclosed in square brackets ([ ]), which must be escaped (\). 
+
+			scp -i /path/my-key-pair.pem my-instance-user-name@\[my-instance-IPv6-address\]:~/SampleFile.txt ~/SampleFile2.txt
+
+
+---
+
+
+### Transferring files to your Linux instance using the PuTTY Secure Copy client 
+
+The PuTTY Secure Copy client (PSCP) is a command line tool that you can use to transfer files between your Windows computer and your Linux instance. If you prefer a graphical user interface (GUI), you can use an open source GUI tool named WinSCP. For more information, see [Transferring files to your Linux instance using WinSCP](#transferring-files-to-your-linux-instance-using-winscp) or [FileZilla](#transferring-files-to-your-linux-instance-using-filezilla). 
+
+
+To use PSCP, you need the private key you generated in [Convert your private key using PuTTYgen](#convert-your-private-key-using-puttygen). You also need the public DNS name of your Linux instance, or the IPv6 address if your instance has one.
+
+The following example transfers the file `Sample_file.txt` from the C:\ drive on a Windows computer to the `my-instance-user-name` home directory on an Amazon Linux instance. To transfer a file, use one of the following commands. 
+
+- (Public DNS) To transfer a file using your instance's public DNS name, enter the following command. 
+
+		pscp -i C:\path\my-key-pair.ppk C:\path\Sample_file.txt my-instance-user-name@my-instance-public-dns-name:/home/my-instance-user-name/Sample_file.txt
+
+- (IPv6) Alternatively, if your instance has an IPv6 address, to transfer a file using your instance's IPv6 address, enter the following command. The IPv6 address must be enclosed in square brackets ([ ]). 
+
+		pscp -i C:\path\my-key-pair.ppk C:\path\Sample_file.txt my-instance-user-name@[my-instance-IPv6-address]:/home/my-instance-user-name/Sample_file.txt
+
+
+
+---
+
+### Transferring files to your Linux instance using WinSCP
+
+WinSCP is a GUI-based file manager for Windows that allows you to upload and transfer files to a remote computer using the SFTP, SCP, FTP, and FTPS protocols. WinSCP allows you to drag and drop files from your Windows computer to your Linux instance or synchronize entire directory structures between the two systems. 
+
+To use WinSCP, you need the private key that you generated in [Convert your private key using PuTTYgen](#convert-your-private-key-using-puttygen). You also need the public DNS name of your Linux instance.
+
+#### Prerequisites
+
+1. Download and install WinSCP from [http://winscp.net/eng/download.php](http://winscp.net/eng/download.php). For most users, the default installation options are OK.
+
+2. Start WinSCP.
+
+#### Configuration
+
+1. At the **WinSCP login** screen, for **Host name**, enter one of the following:
+
+    - (Public DNS or IPv4 address) To log in using your instance's public DNS name or public IPv4 address, enter the public DNS name or public IPv4 address for your instance.
+
+    - (IPv6) Alternatively, if your instance has an IPv6 address, to log in using your instance's IPv6 address, enter the IPv6 address for your instance.
+
+2. For User name, enter the default user name for your AMI. 
+
+   	- For **Amazon Linux 2** or the **Amazon Linux AMI**, the user name is `ec2-user`.
+
+   	- For a **CentOS AMI**, the user name is `centos`.
+
+   	- For a **Debian AMI**, the user name is `admin`.
+
+   	- For a **Fedora AMI**, the user name is `ec2-user` or `fedora`.
+
+   	- For a **RHEL AMI**, the user name is `ec2-user` or `root`.
+
+   	- For a **SUSE AMI**, the user name is `ec2-user` or `root`.
+
+   	- For an **Ubuntu AMI**, the user name is `ubuntu`.
+
+   	- Otherwise, if `ec2-user` and `root` don't work, check with the AMI provider.
+
+3. Specify the private key for your instance. For **Private key**, enter the path to your private key, or choose the "**...**" button to browse for the file. To open the advanced site settings, for newer versions of WinSCP, choose **Advanced**. To find the **Private key file** setting, under **SSH**, choose **Authentication**. 
+
+Here is a screenshot from WinSCP version 5.9.4:
+
+
+![](WinSCP-keypair.png)
+
+
+WinSCP requires a PuTTY private key file (.ppk). You can convert a .pem security key file to the .ppk format using PuTTYgen. For more information, see (Convert your private key using PuTTYgen)[#convert-your-private-key-using-puttygen]. 
+
+
+#### Connect and start transfering files
+
+1. Choose **Login**. To add the host fingerprint to the host cache, choose **Yes**. 
+
+![](WinSCP-connection.png)
+
+
+2. After the connection is established, in the connection window your Linux instance is on the right and your local machine is on the left. You can drag and drop files directly into the remote file system from your local machine. For more information on WinSCP, see the project documentation at [http://winscp.net/eng/docs/start](http://winscp.net/eng/docs/start).
+
+If you receive a "Cannot execute SCP to start transfer" error, you must first install **scp** on your Linux instance. For some operating systems, this is located in the `openssh-clients` package. For Amazon Linux variants, such as the Amazon ECS-optimized AMI, use the following command to install **scp**. 
+
+```
+[ec2-user ~]$ sudo yum install -y openssh-clients
+```
+
+#### Watch it here
+
+
+---
+
+### Transferring files to your Linux instance using FileZilla
+
+[FileZilla](https://filezilla-project.org/) is a free software, cross-platform FTP application, consisting of FileZilla Client and FileZilla Server. Client binaries are available for Windows, Linux, and macOS, server binaries are available for Windows only. Both server and client support FTP and FTPS (FTP over SSL/TLS), while the client can in addition connect to SFTP servers. 
+
+To use FileZilla, you need the private key that you generated in [Convert your private key using PuTTYgen](#convert-your-private-key-using-puttygen). You also need the public DNS name of your Linux instance.
+
+#### Prerequisites
+
+1. Download and install FileZilla from [https://filezilla-project.org/download.php](https://filezilla-project.org/download.php?platform=win64) for Windows or Linux (Choose your flavor). For most users, the default installation options are OK.
+
+2. Start FileZilla.
+
+#### Configuration
+
+1. Edit (Preferences) > Settings > Connection > SFTP, Click **Add key file**
+
+2. Browse to the location of your `.pem` file and select it. 
+
+3. A message box will appear asking your permission to convert the file into `.ppk` format. Click **Yes**, then give the file a name and store it somewhere.
+	- If you already convert the key by [PuTTYgen](#convert-your-private-key-using-puttygen), just browse the `.ppk` instead.
+
+4. If the new file is shown in the list of **Keyfiles**, then continue to the next step. If not, then click **Add keyfile...** and select the converted file.
+
+5. From **File** menu choose **Site Manager**, and choose ** Add a new site**
+
+6. At the **FileZilla Site Manager** screen, for **Host name**, enter one of the following:
+
+    - (Public DNS or IPv4 address) To log in using your instance's public DNS name or public IPv4 address, enter the public DNS name or public IPv4 address for your instance.
+
+    - (IPv6) Alternatively, if your instance has an IPv6 address, to log in using your instance's IPv6 address, enter the IPv6 address for your instance.
+
+7. For the **Protocol** choose **SFTP**
+
+8. For the **Login Type** choose **Normal** 
+
+9. For User name, enter the default user name for your AMI. 
+
+   	- For **Amazon Linux 2** or the **Amazon Linux AMI**, the user name is `ec2-user`.
+
+   	- For a **CentOS AMI**, the user name is `centos`.
+
+   	- For a **Debian AMI**, the user name is `admin`.
+
+   	- For a **Fedora AMI**, the user name is `ec2-user` or `fedora`.
+
+   	- For a **RHEL AMI**, the user name is `ec2-user` or `root`.
+
+   	- For a **SUSE AMI**, the user name is `ec2-user` or `root`.
+
+   	- For an **Ubuntu AMI**, the user name is `ubuntu`.
+
+   	- Otherwise, if `ec2-user` and `root` don't work, check with the AMI provider.
+
+
+Here is a screenshot from FileZilla version 3.49.1:
+
+
+![](FilZilla.png)
+
+
+
+#### Connect and start transfering files
+
+1. Choose **Connect**. To add the host fingerprint to the **Site Manager**. 
+
+
+2. After the connection is established, in the connection window your Linux instance is on the right and your local machine is on the left. You can drag and drop files directly into the remote file system from your local machine. For more information on FileZilla, see the project documentation at [https://wiki.filezilla-project.org/Documentation](https://wiki.filezilla-project.org/Documentation).
+
+![](FileZilla2.png)
+
+
+If you receive a "Cannot execute SCP to start transfer" error, you must first install **scp** on your Linux instance. For some operating systems, this is located in the `openssh-clients` package. For Amazon Linux variants, such as the Amazon ECS-optimized AMI, use the following command to install **scp**. 
+
+```
+[ec2-user ~]$ sudo yum install -y openssh-clients
+```
+
+#### Watch it here
 
 
 
@@ -476,3 +734,10 @@ To get started with a Windows instance, see [Getting started with Amazon EC2 Win
 ### Connecting to your Windows instance
 
 To connect to a Windows instance, see [Connecting to Your Windows Instance](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/connecting_to_windows_instance.html) in the Amazon EC2 User Guide for Windows Instances. 
+
+
+### Transfer files to Windows instances
+
+
+To transfer files to and from a Windows instance, see [Transfer files to Windows instances](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/connecting_to_windows_instance.html#AccessingInstancesWindowsFileTransfer) in the Amazon EC2 User Guide for Windows Instances.
+

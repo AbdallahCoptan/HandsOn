@@ -10,6 +10,7 @@ nav:
   - AWS: 
     - Setting Up an AWS Account: AWS_Account.md
     - Using EC2 Compute Instances: EC2.md
+    - Running Python on AWS EC2 Instance: RunPython.md
 #  - Google:
 #    - starting: AWS_Account (another copy).md
 #  - Azure:

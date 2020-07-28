@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Book an EC2 Instance - Hydrosat Hands-On</title>
+  <title>Using EC2 Compute Instances - Hydrosat Hands-On</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,7 +18,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Book an EC2 Instance";
+    var mkdocs_page_name = "Using EC2 Compute Instances";
     var mkdocs_page_input_path = "EC2.md";
     var mkdocs_page_url = null;
   </script>
@@ -57,7 +57,7 @@
                 <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../AWS_Account/">Setting Up an AWS Account</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Book an EC2 Instance</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Using EC2 Compute Instances</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#what-is-amazon-ec2">What is Amazon EC2?</a>
     </li>
@@ -68,8 +68,62 @@
     <li class="toctree-l3"><a class="reference internal" href="#sign-up-for-aws">Sign up for AWS</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#create-a-key-pair">Create a key pair</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#watch-it-here">Watch it here</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#create-a-security-group">Create a security group</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#prerequisites">Prerequisites</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#getting-started-with-amazon-ec2-linux-instances">Getting started with Amazon EC2 Linux instances</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#launch-an-instance">Launch an instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#connect-to-your-instance">Connect to your instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#clean-up-your-instance">Clean up your instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#terminate-your-instance">Terminate your instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#next-steps">Next Steps</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#watch-it-here_1">Watch it here</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#connecting-to-your-linux-ec2-instances">Connecting to your Linux EC2 Instances</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#connection-options">Connection options</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#connecting-to-your-linux-instance-using-ssh">Connecting to your Linux instance using SSH</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#prerequisites_1">Prerequisites</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#connect-to-your-linux-instance-using-an-ssh-client">Connect to your Linux instance using an SSH client</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#connecting-to-your-linux-instance-from-windows-using-putty-or-mobaxterm">Connecting to your Linux instance from Windows using PuTTY or MobaXterm</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#prerequisites_2">Prerequisites</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#convert-your-private-key-using-puttygen">Convert your private key using PuTTYgen</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#connecting-to-your-linux-instance">Connecting to your Linux instance</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#getting-started-with-amazon-ec2-windows-instances">Getting started with Amazon EC2 Windows Instances</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#connecting-to-your-windows-instance">Connecting to your Windows instance</a>
     </li>
         </ul>
     </li>
@@ -101,7 +155,7 @@
         
       
     
-    <li>Book an EC2 Instance</li>
+    <li>Using EC2 Compute Instances</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -165,8 +219,10 @@
 </li>
 <li>
 <p>The private key file is automatically downloaded by your browser. The base file name is the name you specified as the name of your key pair, and the file name extension is determined by the file format you chose. Save the private key file in a safe place.</p>
-<p>/!\ <strong>Important</strong></p>
-<p>This is the only chance for you to save the private key file.{: .note}</p>
+<pre><code>/!\ Important
+
+This is the only chance for you to save the private key file.
+</code></pre>
 </li>
 <li>
 <p>If you will use an SSH client on a macOS or Linux computer to connect to your Linux instance, use the following command to set the permissions of your private key file so that only you can read it.</p>
@@ -176,7 +232,332 @@
 </code></pre>
 
 <p>If you do not set these permissions, then you cannot connect to your instance using this key pair. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html#troubleshoot-unprotected-key">Error: Unprotected private key file</a>. </p>
+<h4 id="watch-it-here">Watch it here</h4>
+<figure class="video_container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JCh5amM_ibg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</figure>
+
 <h3 id="create-a-security-group">Create a security group</h3>
+<p>Security groups act as a firewall for associated instances, controlling both inbound and outbound traffic at the instance level. You must add rules to a security group that enable you to connect to your instance from your IP address using SSH. You can also add rules that allow inbound and outbound HTTP and HTTPS access from anywhere. </p>
+<p>Note that if you plan to launch instances in multiple Regions, you'll need to create a security group in each Region. For more information about Regions, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions, Availability Zones, and Local Zones</a>. </p>
+<h4 id="prerequisites">Prerequisites</h4>
+<p>You'll need the public IPv4 address of your local computer. The security group editor in the Amazon EC2 console can automatically detect the public IPv4 address for you. Alternatively, you can use the search phrase "what is my IP address" in an Internet browser, or use the following service: <a href="http://checkip.amazonaws.com/">Check IP</a>. </p>
+<p>If you are connecting through an Internet service provider (ISP) or from behind a firewall without a static IP address, you need to find out the range of IP addresses used by client computers. </p>
+<p>To create a security group with least privilege</p>
+<ol>
+<li>
+<p>Open the Amazon EC2 console at <a href="https://console.aws.amazon.com/ec2/">https://console.aws.amazon.com/ec2/</a>.</p>
+</li>
+<li>
+<p>From the navigation bar, select a Region for the security group. Security groups are specific to a Region, so you should select the same Region in which you created your key pair.</p>
+</li>
+<li>
+<p>In the navigation pane, choose <strong>Security Groups</strong>.</p>
+</li>
+<li>
+<p>Choose <strong>Create security group</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Basic details</strong> section, do the following:</p>
+<p>a. Enter a name for the new security group and a description. Use a name that is easy for you to remember, such as your user name, followed by <em>SG</em>, plus the Region name. For example, me_SG_uswest2.</p>
+<p>b. In the <strong>VPC</strong> list, select your default VPC for the Region.</p>
+</li>
+<li>
+<p>In the <strong>Inbound rules</strong> section, create the following rules (choose <strong>Add rule</strong> for each new rule):</p>
+<ul>
+<li>
+<p>Choose <strong>HTTP</strong> from the <strong>Type</strong> list, and make sure that <strong>Source</strong> is set to <strong>Anywhere (<code>0.0.0.0/0</code>)</strong>.</p>
+</li>
+<li>
+<p>Choose <strong>HTTPS</strong> from the <strong>Type</strong> list, and make sure that <strong>Source</strong> is set to <strong>Anywhere (<code>0.0.0.0/0</code>)</strong>.</p>
+</li>
+<li>
+<p>Choose <strong>SSH</strong> from the <strong>Type</strong> list. In the <strong>Source</strong> box, choose <strong>My IP</strong> to automatically populate the field with the public IPv4 address of your local computer. Alternatively, choose <strong>Custom</strong> and specify the public IPv4 address of your computer or network in CIDR notation. To specify an individual IP address in CIDR notation, add the routing suffix <code>/32</code>, for example, <code>203.0.113.25/32</code>. If your company allocates addresses from a range, specify the entire range, such as <code>203.0.113.0/24</code>.</p>
+<pre><code>/!\ Warning
+
+For security reasons, we don't recommend that you allow SSH access from all IPv4 addresses (0.0.0.0/0) 
+to your instance, except for testing purposes and only for a short time.
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Choose <strong>Create security group</strong>.</p>
+</li>
+</ol>
+<p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html">Amazon EC2 security groups for Linux instances</a>. </p>
+<h2 id="getting-started-with-amazon-ec2-linux-instances">Getting started with Amazon EC2 Linux instances</h2>
+<p>When you sign up for AWS, you can get started with Amazon EC2 using the <a href="https://aws.amazon.comfree/?all-free-tier.sort-by=item.additionalFields.SortRank&amp;all-free-tier.sort-order=asc">AWS Free Tier</a>. If you created your AWS account less than 12 months ago, and have not already exceeded the free tier benefits for Amazon EC2, it will not cost you anything to complete this tutorial, because we help you select options that are within the free tier benefits. Otherwise, you'll incur the standard Amazon EC2 usage fees from the time that you launch the instance until you terminate the instance (which is the final task of this tutorial), even if it remains idle. </p>
+<p>The instance is an Amazon EBS-backed instance (meaning that the root volume is an EBS (Elastic Block Store) volume). You can either specify the Availability Zone in which your instance runs, or let Amazon EC2 select an Availability Zone for you. When you launch your instance, you secure it by specifying a key pair and security group. When you connect to your instance, you must specify the private key of the key pair that you specified when launching your instance.</p>
+<p><img alt="EC2 Configuration Diagram" src="../overview_getting_started.png" /></p>
+<p>In ordere to implement the previous configuration, you should proceeed with the following:</p>
+<ol>
+<li><a href="#launch-an-instance">Launch an instance</a></li>
+<li><a href="#connect-to-your-instance">Connect to your instance</a></li>
+<li><a href="#clean-up-your-instance">Clean up your instance</a></li>
+<li><a href="#terminate-your-instance">Terminate your instance</a></li>
+<li><a href="#next-steps">Next Steps</a></li>
+</ol>
+<h3 id="launch-an-instance">Launch an instance</h3>
+<p>You can launch a Linux instance using the AWS Management Console as described in the following procedure. This tutorial is intended to help you launch your first instance quickly, so it doesn't cover all possible options. For more information about the advanced options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-instance.html">Launching an Instance</a>. </p>
+<p>To launch an instance</p>
+<ol>
+<li>
+<p>Open the Amazon EC2 console at <a href="https://console.aws.amazon.com/ec2/">https://console.aws.amazon.com/ec2/</a>.</p>
+</li>
+<li>
+<p>From the console dashboard, choose <strong>Launch Instance</strong>.</p>
+</li>
+<li>
+<p>The <strong>Choose an Amazon Machine Image (AMI)</strong> page displays a list of basic configurations, called Amazon Machine Images (AMIs), that serve as templates for your instance. Select an HVM version of Amazon Linux 2. Notice that these AMIs are marked "Free tier eligible."</p>
+</li>
+<li>
+<p>On the <strong>Choose an Instance Type</strong> page, you can select the hardware configuration of your instance. Select the <code>t2.micro</code> instance type, which is selected by default. The <code>t2.micro</code> instance type is eligible for the free tier. In Regions where <code>t2.micro</code> is unavailable, you can use a <code>t3.micro</code> instance under the free tier. For more information, see <a href="https://aws.amazon.comfree/?all-free-tier.sort-by=item.additionalFields.SortRank&amp;all-free-tier.sort-order=asc">AWS Free Tier</a>.</p>
+</li>
+<li>
+<p>Choose <strong>Review and Launch</strong> to let the wizard complete the other configuration settings for you.</p>
+</li>
+<li>
+<p>On the <strong>Review Instance Launch</strong> page, under <strong>Security Groups</strong>, you'll see that the wizard created and selected a security group for you. You can use this security group, or alternatively you can select the security group that you created when getting set up using the following steps:</p>
+<p>a. Choose <strong>Edit security groups</strong>.</p>
+<p>b. On the <strong>Configure Security Group</strong> page, ensure that <strong>Select an existing security group</strong> is selected.</p>
+<p>c. Select your security group from the list of existing security groups, and then choose <strong>Review and Launch</strong>.</p>
+</li>
+<li>
+<p>On the <strong>Review Instance Launch</strong> page, choose <strong>Launch</strong>.</p>
+</li>
+<li>
+<p>When prompted for a key pair, select <strong>Choose an existing key pair</strong>, then select the key pair that you created when getting set up.</p>
+<pre><code>/!\ Warning
+
+Don't select 'Proceed without a key pair'. 
+If you launch your instance without a key pair, then you 'cannot' connect to it.
+</code></pre>
+<p>When you are ready, select the acknowledgement check box, and then choose <strong>Launch Instances</strong>.</p>
+</li>
+<li>
+<p>A confirmation page lets you know that your instance is launching. Choose <strong>View Instances</strong> to close the confirmation page and return to the console.</p>
+</li>
+<li>
+<p>On the <strong>Instances</strong> screen, you can view the status of the launch. It takes a short time for an instance to launch. When you launch an instance, its initial state is <code>pending</code>. After the instance starts, its state changes to running and it receives a public DNS name. (If the <strong>Public DNS (IPv4)</strong> column is hidden, choose <strong>Show/Hide Columns</strong> (the gear-shaped icon) in the top right corner of the page and then select <strong>Public DNS (IPv4)</strong>.)</p>
+</li>
+<li>
+<p>It can take a few minutes for the instance to be ready so that you can connect to it. Check that your instance has passed its status checks; you can view this information in the <strong>Status Checks</strong> column.</p>
+</li>
+</ol>
+<hr />
+<h3 id="connect-to-your-instance">Connect to your instance</h3>
+<p>There are several ways to connect to your Linux instance. For more information, see <a href="#connecting-to-your-EC2-instance">Connect to your Linux instance</a>.</p>
+<p>/!\ <strong>Important</strong></p>
+<p>You can't connect to your instance unless you launched it with a key pair for which you have the <code>.pem</code> 
+file and you launched it with a security group that allows SSH access from your computer. 
+If you can't connect to your instance, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting connecting to your instance</a> for assistance. </p>
+<hr />
+<h3 id="clean-up-your-instance">Clean up your instance</h3>
+<p>After you've finished with the instance that you created for this tutorial, you should clean up by terminating the instance. If you want to do more with this instance before you clean up, see <a href="#next-steps">Next steps</a>. </p>
+<p>/!\ <strong>Important</strong> </p>
+<p><strong>Terminating an instance effectively deletes it; you can't reconnect to an instance after you've terminated it.</strong></p>
+<hr />
+<h3 id="terminate-your-instance">Terminate your instance</h3>
+<p>If you launched an instance that is not within the <a href="https://aws.amazon.com/free/">AWS Free Tier</a>, you'll stop incurring charges for that instance as soon as the instance status changes to <code>shutting down</code> or <code>terminated</code>. If you'd like to keep your instance for later, but not incur charges, you can <code>stop</code> the instance now and then <code>start</code> it again later. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stopping Instances</a>. </p>
+<p>To terminate your instance</p>
+<ol>
+<li>
+<p>In the navigation pane, choose <strong>Instances</strong>. In the list of instances, select the instance.</p>
+</li>
+<li>
+<p>Choose <strong>Actions, Instance State, Terminate</strong>.</p>
+</li>
+<li>
+<p>Choose <strong>Yes, Terminate</strong> when prompted for confirmation.</p>
+</li>
+</ol>
+<p>Amazon EC2 shuts down and terminates your instance. After your instance is terminated, it remains visible on the console for a short while, and then the entry is deleted.</p>
+<hr />
+<h3 id="next-steps">Next Steps</h3>
+<p>After you start your instance, you might want to try some of the following exercises:</p>
+<ul>
+<li>
+<p>Learn how to remotely manage your EC2 instance using Run Command. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/execute-remote-commands.html">AWS Systems Manager Run Command</a> in the AWS Systems Manager User Guide.</p>
+</li>
+<li>
+<p>Configure a CloudWatch alarm to notify you if your usage exceeds the Free Tier. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/tracking-free-tier-usage.html">Create a Billing Alarm</a> in the AWS Billing and Cost Management User Guide.</p>
+</li>
+</ul>
+<hr />
+<h3 id="watch-it-here_1">Watch it here</h3>
+<h2 id="connecting-to-your-linux-ec2-instances">Connecting to your Linux EC2 Instances</h2>
+<p>Connect to the Linux instances that you launched and transfer files between your local computer and your instance. </p>
+<p>The operating system of your local computer determines the options that you have to connect from your local computer to your Linux instance. </p>
+<h3 id="connection-options">Connection options</h3>
+<p>If your local computer operating system is <strong>Linux or macOS X</strong>, you can connect by using one pf the following:</p>
+<ul>
+<li>
+<p><a href="#connecting-to-your-linux-instance-using-an-ssh-client">SSH Client</a></p>
+</li>
+<li>
+<p><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect.html">EC2 Instance Connect</a></p>
+</li>
+<li><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager.html">AWS Systems Manager Session Manager</a></li>
+</ul>
+<p>If your local computer operating system is <strong>Windows</strong>, you can connect by using one pf the following:</p>
+<ul>
+<li><a href="#connecting-to-your-linux-instance-from-windows-using-putty-or-mobaxterm">PuTTY</a></li>
+<li><a href="#connecting-to-your-linux-instance-using-an-ssh-client">SSH Client</a></li>
+<li><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager.html">AWS Systems Manager Session Manager</a></li>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/WSL.html">Windows Subsystem for Linux</a></li>
+</ul>
+<h3 id="connecting-to-your-linux-instance-using-ssh">Connecting to your Linux instance using SSH</h3>
+<p>After you launch your instance, you can connect to it and use it the way that you'd use a computer sitting in front of you. </p>
+<h4 id="prerequisites_1">Prerequisites</h4>
+<p>Before you connect to your Linux instance, complete the following prerequisites.</p>
+<ol>
+<li>Verify that the instance is ready
+After you launch an instance, it can take a few minutes for the instance to be ready so that you can connect to it. Check that your instance has passed its status checks. You can view this information in the <strong>Status Checks</strong> column on the <strong>Instances</strong> page. </li>
+<li>Verify the general prerequisites for connecting to your instance
+Check the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connection-prereqs.html">General prerequisites for connecting to your instance</a>.</li>
+<li>
+<p>Install an SSH client on your local computer (either Linux or Windows) as needed
+Your local computer might have an SSH client installed by default. You can verify this by typing <code>ssh</code> at the command line. If your compute doesn't recognize the command, you can install an SSH client. </p>
+<ul>
+<li>Recent versions of Windows Server 2019 and Windows 10 - OpenSSH is included as an installable component. For information, see <a href="https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_overview">OpenSSH in Windows</a>.</li>
+<li>Earlier versions of Windows - Download and install OpenSSH. For more information, see <a href="https://github.com/PowerShell/Win32-OpenSSH/wiki">Win32-OpenSSH</a>.</li>
+<li>Linux and macOS X - Download and install OpenSSH. For more information, see <a href="http://www.openssh.com/">Linux-openssh</a>.</li>
+</ul>
+</li>
+</ol>
+<h4 id="connect-to-your-linux-instance-using-an-ssh-client">Connect to your Linux instance using an SSH client</h4>
+<p>Use the following procedure to connect to your Linux instance using an SSH client. If you receive an error while attempting to connect to your instance, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting connecting to your instance</a>.</p>
+<p>To connect to your instance using SSH</p>
+<ol>
+<li>
+<p>In a terminal window, use the ssh command to connect to the instance. You specify the path and file name of the private key (<code>.pem</code>), the user name for your instance, and the public DNS name or IPv6 address for your instance. For more information about how to find the private key, the user name for your instance, and the DNS name or IPv6 address for an instance, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connection-prereqs.html#connection-prereqs-private-key">Locate the private key</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connection-prereqs.html#connection-prereqs-get-info-about-instance">Get information about your instance</a>. To connect to your instance, use one of the following commands. </p>
+<p>a. (Public DNS) To connect using your instance's public DNS name, enter the following command. </p>
+<pre><code>ssh -i /path/my-key-pair.pem my-instance-user-name@my-instance-public-dns-name
+</code></pre>
+<p>b. (IPv6) Alternatively, if your instance has an IPv6 address, to connect using your instance's IPv6 address, enter the following command. </p>
+<pre><code>ssh -i /path/my-key-pair.pem my-instance-user-name@my-instance-IPv6-address
+</code></pre>
+<p>You see a response like the following:</p>
+<pre><code>The authenticity of host 'ec2-198-51-100-1.compute-1.amazonaws.com (198-51-100-1)' can't be established.
+ECDSA key fingerprint is l4UB/neBad9tvkgJf1QZWxheQmR59WgrgzEimCG6kZY.
+Are you sure you want to continue connecting (yes/no)?
+</code></pre>
+</li>
+<li>
+<p>Enter <strong>yes</strong>. </p>
+<p>You see a response like the following:</p>
+<pre><code>Warning: Permanently added 'ec2-198-51-100-1.compute-1.amazonaws.com' (ECDSA) to the list of known hosts.
+</code></pre>
+</li>
+</ol>
+<h3 id="connecting-to-your-linux-instance-from-windows-using-putty-or-mobaxterm">Connecting to your Linux instance from Windows using PuTTY or MobaXterm</h3>
+<p>After you launch your instance, you can connect to it and use it the way that you'd use a computer sitting in front of you. </p>
+<p>The following instructions explain how to connect to your instance using PuTTY, and MobaXterm, free SSH client for Windows. If you receive an error while attempting to connect to your instance, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connection-prereqs.html">General prerequisites for connecting to your instance</a>.</p>
+<h4 id="prerequisites_2">Prerequisites</h4>
+<p>Before you connect to your Linux instance using PuTTY, complete the following prerequisites. </p>
+<ol>
+<li>
+<p>Verify that the instance is ready
+After you launch an instance, it can take a few minutes for the instance to be ready so that you can connect to it. Check that your instance has passed its status checks. You can view this information in the <strong>Status Checks</strong> column on the <strong>Instances</strong> page. </p>
+</li>
+<li>
+<p>Verify the general prerequisites for connecting to your instance
+Check the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connection-prereqs.html">General prerequisites for connecting to your instance</a>.</p>
+</li>
+<li>
+<p>Install PuTTY on your local computer
+Download and install PuTTY from the <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY download page</a>. If you already have an older version of PuTTY installed, we recommend that you download the latest version. Be sure to install the entire suite.</p>
+</li>
+<li>
+<p>Or Install MobaXterm on your local computer
+Download and install MobaXterm from the <a href="https://mobaxterm.mobatek.net/download.html">MobaXterm download page</a>.</p>
+</li>
+<li>
+<p>Convert your private key using PuTTYgen
+<strong>In case you do not have a <code>.ppk</code></strong>, locate the private key (<code>.pem</code> file) for the key pair that you specified when you launched the instance. Convert the <code>.pem</code> file to a <code>.ppk</code> file for use with PuTTY. For more information, follow the steps in the next subsection.</p>
+</li>
+</ol>
+<h4 id="convert-your-private-key-using-puttygen">Convert your private key using PuTTYgen</h4>
+<p>PuTTY does not natively support the private key format for SSH keys. PuTTY provides a tool named PuTTYgen, which converts keys to the required format for PuTTY. You must convert your private key (<code>.pem</code> file) into this format (<code>.ppk</code> file) as follows in order to connect to your instance using PuTTY.</p>
+<p>To convert your private key</p>
+<ol>
+<li>
+<p>From the <strong>Start</strong> menu, choose <strong>All Programs, PuTTY, PuTTYgen</strong>.</p>
+</li>
+<li>
+<p>Under <strong>Type of key to generate</strong>, choose <strong>RSA</strong>. If you're using an older version of PuTTYgen, choose <strong>SSH-2 RSA</strong>.</p>
+<p><img alt="" src="../puttygen-key-type.png" /></p>
+</li>
+<li>
+<p>Choose <strong>Load</strong>. By default, PuTTYgen displays only files with the extension <code>.ppk</code>. To locate your <code>.pem</code> file, choose the option to display files of all types.
+Select all file types</p>
+<p><img alt="" src="../puttygen-load-key.png" /></p>
+</li>
+<li>
+<p>Select your <code>.pem</code> file for the key pair that you specified when you launched your instance and choose <strong>Open</strong>. PuTTYgen displays a notice that the <code>.pem</code> file was successfully imported. Choose <strong>OK</strong>.</p>
+</li>
+<li>
+<p>To save the key in the format that PuTTY can use, choose <strong>Save private key</strong>. PuTTYgen displays a warning about saving the key without a passphrase. Choose <strong>Yes</strong>.</p>
+<pre><code>/!\ Note
+A passphrase on a private key is an extra layer of protection. 
+Even if your private key is discovered, it can't be used without the passphrase. 
+The downside to using a passphrase is that it makes automation harder because human 
+intervention is needed to log on to an instance, or to copy files to an instance.
+</code></pre>
+</li>
+<li>
+<p>Specify the same name for the key that you used for the key pair (for example, <code>my-key-pair</code>) and choose <strong>Save</strong>. PuTTY automatically adds the <code>.ppk</code> file extension.</p>
+</li>
+</ol>
+<p>Your private key is now in the correct format for use with PuTTY. You can now connect to your instance using PuTTY's SSH client. </p>
+<h4 id="connecting-to-your-linux-instance">Connecting to your Linux instance</h4>
+<p>Use the following procedure to connect to your Linux instance using PuTTY. You need the .ppk file that you created for your private key. For more information, see <a href="#convert-your-private-key-using-puttygen">Convert your private key using PuTTYgen</a> in the preceding section. If you receive an error while attempting to connect to your instance, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting Connecting to Your Instance</a>. </p>
+<p>To connect to your instance using PuTTY</p>
+<ol>
+<li>
+<p>Start PuTTY (from the <strong>Start</strong> menu, choose <strong>All Programs, PuTTY, PuTTY</strong>).</p>
+</li>
+<li>
+<p>In the <strong>Category pane</strong>, choose <strong>Session</strong> and complete the following fields:</p>
+<p>a. In the <strong>Host Name</strong> box, do one of the following:</p>
+<ul>
+<li>
+<p>(Public DNS) To connect using your instance's public DNS name, enter 
+    <code>my-instance-user-name@my-instance-public-dns-name</code>.</p>
+</li>
+<li>
+<p>(IPv6) Alternatively, if your instance has an IPv6 address, to connect using your instance's IPv6 address, enter <code>my-instance-user-name@my-instance-IPv6-address</code>.</p>
+</li>
+</ul>
+<p>For information about how to get the user name for your instance, and the public DNS name or IPv6 address of your instance, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connection-prereqs.html#connection-prereqs-get-info-about-instance">Get information about your instance</a>.</p>
+<p>b. Ensure that the <strong>Port</strong> value is 22.</p>
+<p>c. Under <strong>Connection type</strong>, select <strong>SSH</strong>.</p>
+<p><img alt="" src="../putty-session-config.png" /></p>
+</li>
+<li>
+<p>(Optional) You can configure PuTTY to automatically send 'keepalive' data at regular intervals to keep the session active. This is useful to avoid disconnecting from your instance due to session inactivity. In the <strong>Category</strong> pane, choose <strong>Connection</strong>, and then enter the required interval in the <strong>Seconds between keepalives</strong> field. For example, if your session disconnects after 10 minutes of inactivity, enter 180 to configure PuTTY to send keepalive data every 3 minutes.</p>
+</li>
+<li>
+<p>In the <strong>Category</strong> pane, expand <strong>Connection</strong>, expand <strong>SSH</strong>, and then choose <strong>Auth</strong>. Complete the following:</p>
+<p>a. Choose <strong>Browse</strong>.</p>
+<p>b. Select the <code>.ppk</code> file that you generated for your key pair and choose <strong>Open</strong>.</p>
+<p>c. (Optional) If you plan to start this session again later, you can save the session information for future use. Under <strong>Category</strong>, choose <strong>Session</strong>, enter a name for the session in <strong>Saved Sessions</strong>, and then choose <strong>Save</strong>.</p>
+<p>d. Choose <strong>Open</strong>.</p>
+</li>
+<li>
+<p>If this is the first time you have connected to this instance, PuTTY displays a security alert dialog box that asks whether you trust the host to which you are connecting.</p>
+<p>a. Choose <strong>Yes</strong>. A window opens and you are connected to your instance.
+    /!\ Note
+    If you specified a passphrase when you converted your private key to PuTTY's format, 
+    you must provide that passphrase when you log in to the instance. </p>
+</li>
+</ol>
+<p>If you receive an error while attempting to connect to your instance, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting Connecting to Your Instance</a>. </p>
+<h2 id="getting-started-with-amazon-ec2-windows-instances">Getting started with Amazon EC2 Windows Instances</h2>
+<p>To get started with a Windows instance, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/EC2_GetStarted.html">Getting started with Amazon EC2 Windows instances</a>.</p>
+<h3 id="connecting-to-your-windows-instance">Connecting to your Windows instance</h3>
+<p>To connect to a Windows instance, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/connecting_to_windows_instance.html">Connecting to Your Windows Instance</a> in the Amazon EC2 User Guide for Windows Instances. </p>
               
             </div>
           </div>
