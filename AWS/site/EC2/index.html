@@ -121,13 +121,55 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#transferring-files-to-linux-instances">Transferring files to Linux instances</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#transferring-files-to-linux-instances-from-linux-using-scp">Transferring files to Linux instances from Linux using SCP</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#prerequisites_3">Prerequisites</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#use-scp-to-transfer-a-file">Use SCP to transfer a file</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#transferring-files-to-your-linux-instance-using-the-putty-secure-copy-client">Transferring files to your Linux instance using the PuTTY Secure Copy client</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#transferring-files-to-your-linux-instance-using-winscp">Transferring files to your Linux instance using WinSCP</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#prerequisites_4">Prerequisites</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#connect-and-start-transfering-files">Connect and start transfering files</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#watch-it-here_2">Watch it here</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#transferring-files-to-your-linux-instance-using-filezilla">Transferring files to your Linux instance using FileZilla</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#prerequisites_5">Prerequisites</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#configuration_1">Configuration</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#connect-and-start-transfering-files_1">Connect and start transfering files</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#watch-it-here_3">Watch it here</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#getting-started-with-amazon-ec2-windows-instances">Getting started with Amazon EC2 Windows Instances</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#connecting-to-your-windows-instance">Connecting to your Windows instance</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#transfer-files-to-windows-instances">Transfer files to Windows instances</a>
+    </li>
         </ul>
     </li>
     </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../RunPython/">Running Python on AWS EC2 Instance</a>
                     </li>
                 </ul>
       </div>
@@ -554,16 +596,297 @@ intervention is needed to log on to an instance, or to copy files to an instance
 </li>
 </ol>
 <p>If you receive an error while attempting to connect to your instance, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting Connecting to Your Instance</a>. </p>
+<h2 id="transferring-files-to-linux-instances">Transferring files to Linux instances</h2>
+<p>Transferring files to your Linux instances depends on the type of the operating system you use to <a href="#connecting-to-your-linux-ec2-instances">connect to the instance</a>. Therfore:</p>
+<ul>
+<li>
+<p><strong>If you connect through Linux</strong> </p>
+<p>Two ways to transfer files between your local computer and a Linux instance are to use:</p>
+<ol>
+<li><a href="#transferring-files-to-linux-instances-from-linux-using-scp">The secure copy protocol (SCP)</a>.</li>
+<li><a href="#transferring-files-to-your-linux-instance-using-filezilla">FileZilla</a>.</li>
+</ol>
+</li>
+<li>
+<p><strong>If you connect through Windwos</strong></p>
+<p>Many options are exist to transfer files between the instances and local machines, such as:</p>
+<ol>
+<li><a href="#transferring-files-to-your-linux-instance-using-the-putty-secure-copy-client">The PuTTY Secure Copy client (PSCP)</a>. </li>
+<li><a href="#transferring-files-to-your-linux-instance-using-winscp">WinSCP</a>.</li>
+<li><a href="#transferring-files-to-your-linux-instance-using-filezilla">FileZilla</a>.</li>
+</ol>
+</li>
+</ul>
+<hr />
+<h3 id="transferring-files-to-linux-instances-from-linux-using-scp">Transferring files to Linux instances from Linux using SCP</h3>
+<p>One way to transfer files between your local computer and a Linux instance is to use the secure copy protocol (SCP). This section describes how to transfer files with SCP. The procedure is similar to the procedure for connecting to an instance with SSH. </p>
+<h4 id="prerequisites_3">Prerequisites</h4>
+<ul>
+<li>Verify the general prerequisites for transferring files to your instance.</li>
+</ul>
+<p>The general prerequisites for transferring files to an instance are the same as the general prerequisites for connecting to an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connection-prereqs.html">General prerequisites for connecting to your instance</a>.</p>
+<ul>
+<li>Install an SCP client</li>
+</ul>
+<p>Most Linux, Unix, and Apple computers include an SCP client by default. If yours doesn't, the OpenSSH project provides a free implementation of the full suite of SSH tools, including an SCP client. For more information, see <a href="https://www.openssh.com/">http://www.openssh.org</a>.</p>
+<h4 id="use-scp-to-transfer-a-file">Use SCP to transfer a file</h4>
+<ol>
+<li>
+<p>Transfer a file to your instance using the instance's public DNS name, or the IPv6 address if your instance has one. <strong>For example</strong>, if the name of your private key file is <code>my-key-pair</code>, the file to transfer is <code>SampleFile.txt</code>, the user name for your instance is <code>my-instance-user-name</code>, and the public DNS name of the instance is <code>my-instance-public-dns-name</code>, or <code>my-instance-IPv6-address</code> if your instance has an IPv6 address, use one of the following commands to copy the file to the <code>my-instance-user-name</code> home directory.</p>
+<ul>
+<li>
+<p>(Public DNS) To transfer a file to your instance using your instance's public DNS name, enter the following command. </p>
+<pre><code>scp -i /path/my-key-pair.pem /path/SampleFile.txt my-instance-user-name@my-instance-public-dns-name:~
+</code></pre>
+</li>
+<li>
+<p>(IPv6) Alternatively, if your instance has an IPv6 address, to transfer a file using the instance's IPv6 address, enter the following command. The IPv6 address must be enclosed in square brackets ([ ]), which must be escaped (). </p>
+<pre><code>scp -i /path/my-key-pair.pem /path/SampleFile.txt my-instance-user-name@\[my-instance-IPv6-address\]:~
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<p>You see a response like the following:</p>
+<pre><code>The authenticity of host 'ec2-198-51-100-1.compute-1.amazonaws.com (10.254.142.33)'
+can't be established.
+RSA key fingerprint is 1f:51:ae:28:bf:89:e9:d8:1f:25:5d:37:2d:7d:b8:ca:9f:f5:f1:6f.
+Are you sure you want to continue connecting (yes/no)?
+</code></pre>
+<ol>
+<li>Enter <code>yes</code></li>
+</ol>
+<p>You see a response like the following:</p>
+<pre><code>Warning: Permanently added 'ec2-198-51-100-1.compute-1.amazonaws.com' (RSA) 
+to the list of known hosts.
+Sending file modes: C0644 20 SampleFile.txt
+Sink: C0644 20 SampleFile.txt
+SampleFile.txt                                100%   20     0.0KB/s   00:00
+</code></pre>
+<p>If you receive a "bash: scp: command not found" error, you must first install <strong>scp</strong> on your Linux instance. For some operating systems, this is located in the <code>openssh-clients</code> package. For Amazon Linux variants, such as the Amazon ECS-optimized AMI, use the following command to install <strong>scp</strong>: </p>
+<pre><code>[ec2-user ~]$ sudo yum install -y openssh-clients
+</code></pre>
+
+<ol>
+<li>
+<p>To transfer files in the other direction (from your Amazon EC2 instance to your local computer), reverse the order of the host parameters. For example, to transfer the <code>SampleFile.txt</code> file from your EC2 instance back to the home directory on your local computer as <code>SampleFile2.txt</code>, use of the following commands on your local computer. </p>
+<ul>
+<li>
+<p>(Public DNS) To transfer a file to your instance using your instance's public DNS name, enter the following command. </p>
+<pre><code>scp -i /path/my-key-pair.pem my-instance-user-name@my-instance-public-dns-name:~/SampleFile.txt ~/SampleFile2.txt
+</code></pre>
+</li>
+<li>
+<p>(IPv6) Alternatively, if your instance has an IPv6 address, to transfer a file using the instance's IPv6 address, enter the following command. The IPv6 address must be enclosed in square brackets ([ ]), which must be escaped (). </p>
+<pre><code>scp -i /path/my-key-pair.pem my-instance-user-name@\[my-instance-IPv6-address\]:~/SampleFile.txt ~/SampleFile2.txt
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="transferring-files-to-your-linux-instance-using-the-putty-secure-copy-client">Transferring files to your Linux instance using the PuTTY Secure Copy client</h3>
+<p>The PuTTY Secure Copy client (PSCP) is a command line tool that you can use to transfer files between your Windows computer and your Linux instance. If you prefer a graphical user interface (GUI), you can use an open source GUI tool named WinSCP. For more information, see <a href="#transferring-files-to-your-linux-instance-using-winscp">Transferring files to your Linux instance using WinSCP</a> or <a href="#transferring-files-to-your-linux-instance-using-filezilla">FileZilla</a>. </p>
+<p>To use PSCP, you need the private key you generated in <a href="#convert-your-private-key-using-puttygen">Convert your private key using PuTTYgen</a>. You also need the public DNS name of your Linux instance, or the IPv6 address if your instance has one.</p>
+<p>The following example transfers the file <code>Sample_file.txt</code> from the C:\ drive on a Windows computer to the <code>my-instance-user-name</code> home directory on an Amazon Linux instance. To transfer a file, use one of the following commands. </p>
+<ul>
+<li>
+<p>(Public DNS) To transfer a file using your instance's public DNS name, enter the following command. </p>
+<pre><code>pscp -i C:\path\my-key-pair.ppk C:\path\Sample_file.txt my-instance-user-name@my-instance-public-dns-name:/home/my-instance-user-name/Sample_file.txt
+</code></pre>
+</li>
+<li>
+<p>(IPv6) Alternatively, if your instance has an IPv6 address, to transfer a file using your instance's IPv6 address, enter the following command. The IPv6 address must be enclosed in square brackets ([ ]). </p>
+<pre><code>pscp -i C:\path\my-key-pair.ppk C:\path\Sample_file.txt my-instance-user-name@[my-instance-IPv6-address]:/home/my-instance-user-name/Sample_file.txt
+</code></pre>
+</li>
+</ul>
+<hr />
+<h3 id="transferring-files-to-your-linux-instance-using-winscp">Transferring files to your Linux instance using WinSCP</h3>
+<p>WinSCP is a GUI-based file manager for Windows that allows you to upload and transfer files to a remote computer using the SFTP, SCP, FTP, and FTPS protocols. WinSCP allows you to drag and drop files from your Windows computer to your Linux instance or synchronize entire directory structures between the two systems. </p>
+<p>To use WinSCP, you need the private key that you generated in <a href="#convert-your-private-key-using-puttygen">Convert your private key using PuTTYgen</a>. You also need the public DNS name of your Linux instance.</p>
+<h4 id="prerequisites_4">Prerequisites</h4>
+<ol>
+<li>
+<p>Download and install WinSCP from <a href="http://winscp.net/eng/download.php">http://winscp.net/eng/download.php</a>. For most users, the default installation options are OK.</p>
+</li>
+<li>
+<p>Start WinSCP.</p>
+</li>
+</ol>
+<h4 id="configuration">Configuration</h4>
+<ol>
+<li>
+<p>At the <strong>WinSCP login</strong> screen, for <strong>Host name</strong>, enter one of the following:</p>
+<ul>
+<li>
+<p>(Public DNS or IPv4 address) To log in using your instance's public DNS name or public IPv4 address, enter the public DNS name or public IPv4 address for your instance.</p>
+</li>
+<li>
+<p>(IPv6) Alternatively, if your instance has an IPv6 address, to log in using your instance's IPv6 address, enter the IPv6 address for your instance.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>For User name, enter the default user name for your AMI. </p>
+<ul>
+<li>
+<p>For <strong>Amazon Linux 2</strong> or the <strong>Amazon Linux AMI</strong>, the user name is <code>ec2-user</code>.</p>
+</li>
+<li>
+<p>For a <strong>CentOS AMI</strong>, the user name is <code>centos</code>.</p>
+</li>
+<li>
+<p>For a <strong>Debian AMI</strong>, the user name is <code>admin</code>.</p>
+</li>
+<li>
+<p>For a <strong>Fedora AMI</strong>, the user name is <code>ec2-user</code> or <code>fedora</code>.</p>
+</li>
+<li>
+<p>For a <strong>RHEL AMI</strong>, the user name is <code>ec2-user</code> or <code>root</code>.</p>
+</li>
+<li>
+<p>For a <strong>SUSE AMI</strong>, the user name is <code>ec2-user</code> or <code>root</code>.</p>
+</li>
+<li>
+<p>For an <strong>Ubuntu AMI</strong>, the user name is <code>ubuntu</code>.</p>
+</li>
+<li>
+<p>Otherwise, if <code>ec2-user</code> and <code>root</code> don't work, check with the AMI provider.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Specify the private key for your instance. For <strong>Private key</strong>, enter the path to your private key, or choose the "<strong>...</strong>" button to browse for the file. To open the advanced site settings, for newer versions of WinSCP, choose <strong>Advanced</strong>. To find the <strong>Private key file</strong> setting, under <strong>SSH</strong>, choose <strong>Authentication</strong>. </p>
+</li>
+</ol>
+<p>Here is a screenshot from WinSCP version 5.9.4:</p>
+<p><img alt="" src="../WinSCP-keypair.png" /></p>
+<p>WinSCP requires a PuTTY private key file (.ppk). You can convert a .pem security key file to the .ppk format using PuTTYgen. For more information, see (Convert your private key using PuTTYgen)[#convert-your-private-key-using-puttygen]. </p>
+<h4 id="connect-and-start-transfering-files">Connect and start transfering files</h4>
+<ol>
+<li>Choose <strong>Login</strong>. To add the host fingerprint to the host cache, choose <strong>Yes</strong>. </li>
+</ol>
+<p><img alt="" src="../WinSCP-connection.png" /></p>
+<ol>
+<li>After the connection is established, in the connection window your Linux instance is on the right and your local machine is on the left. You can drag and drop files directly into the remote file system from your local machine. For more information on WinSCP, see the project documentation at <a href="http://winscp.net/eng/docs/start">http://winscp.net/eng/docs/start</a>.</li>
+</ol>
+<p>If you receive a "Cannot execute SCP to start transfer" error, you must first install <strong>scp</strong> on your Linux instance. For some operating systems, this is located in the <code>openssh-clients</code> package. For Amazon Linux variants, such as the Amazon ECS-optimized AMI, use the following command to install <strong>scp</strong>. </p>
+<pre><code>[ec2-user ~]$ sudo yum install -y openssh-clients
+</code></pre>
+
+<h4 id="watch-it-here_2">Watch it here</h4>
+<hr />
+<h3 id="transferring-files-to-your-linux-instance-using-filezilla">Transferring files to your Linux instance using FileZilla</h3>
+<p><a href="https://filezilla-project.org/">FileZilla</a> is a free software, cross-platform FTP application, consisting of FileZilla Client and FileZilla Server. Client binaries are available for Windows, Linux, and macOS, server binaries are available for Windows only. Both server and client support FTP and FTPS (FTP over SSL/TLS), while the client can in addition connect to SFTP servers. </p>
+<p>To use FileZilla, you need the private key that you generated in <a href="#convert-your-private-key-using-puttygen">Convert your private key using PuTTYgen</a>. You also need the public DNS name of your Linux instance.</p>
+<h4 id="prerequisites_5">Prerequisites</h4>
+<ol>
+<li>
+<p>Download and install FileZilla from <a href="https://filezilla-project.org/download.php?platform=win64">https://filezilla-project.org/download.php</a> for Windows or Linux (Choose your flavor). For most users, the default installation options are OK.</p>
+</li>
+<li>
+<p>Start FileZilla.</p>
+</li>
+</ol>
+<h4 id="configuration_1">Configuration</h4>
+<ol>
+<li>
+<p>Edit (Preferences) &gt; Settings &gt; Connection &gt; SFTP, Click <strong>Add key file</strong></p>
+</li>
+<li>
+<p>Browse to the location of your <code>.pem</code> file and select it. </p>
+</li>
+<li>
+<p>A message box will appear asking your permission to convert the file into <code>.ppk</code> format. Click <strong>Yes</strong>, then give the file a name and store it somewhere.</p>
+<ul>
+<li>If you already convert the key by <a href="#convert-your-private-key-using-puttygen">PuTTYgen</a>, just browse the <code>.ppk</code> instead.</li>
+</ul>
+</li>
+<li>
+<p>If the new file is shown in the list of <strong>Keyfiles</strong>, then continue to the next step. If not, then click <strong>Add keyfile...</strong> and select the converted file.</p>
+</li>
+<li>
+<p>From <strong>File</strong> menu choose <strong>Site Manager</strong>, and choose <strong> Add a new site</strong></p>
+</li>
+<li>
+<p>At the <strong>FileZilla Site Manager</strong> screen, for <strong>Host name</strong>, enter one of the following:</p>
+<ul>
+<li>
+<p>(Public DNS or IPv4 address) To log in using your instance's public DNS name or public IPv4 address, enter the public DNS name or public IPv4 address for your instance.</p>
+</li>
+<li>
+<p>(IPv6) Alternatively, if your instance has an IPv6 address, to log in using your instance's IPv6 address, enter the IPv6 address for your instance.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>For the <strong>Protocol</strong> choose <strong>SFTP</strong></p>
+</li>
+<li>
+<p>For the <strong>Login Type</strong> choose <strong>Normal</strong> </p>
+</li>
+<li>
+<p>For User name, enter the default user name for your AMI. </p>
+<ul>
+<li>
+<p>For <strong>Amazon Linux 2</strong> or the <strong>Amazon Linux AMI</strong>, the user name is <code>ec2-user</code>.</p>
+</li>
+<li>
+<p>For a <strong>CentOS AMI</strong>, the user name is <code>centos</code>.</p>
+</li>
+<li>
+<p>For a <strong>Debian AMI</strong>, the user name is <code>admin</code>.</p>
+</li>
+<li>
+<p>For a <strong>Fedora AMI</strong>, the user name is <code>ec2-user</code> or <code>fedora</code>.</p>
+</li>
+<li>
+<p>For a <strong>RHEL AMI</strong>, the user name is <code>ec2-user</code> or <code>root</code>.</p>
+</li>
+<li>
+<p>For a <strong>SUSE AMI</strong>, the user name is <code>ec2-user</code> or <code>root</code>.</p>
+</li>
+<li>
+<p>For an <strong>Ubuntu AMI</strong>, the user name is <code>ubuntu</code>.</p>
+</li>
+<li>
+<p>Otherwise, if <code>ec2-user</code> and <code>root</code> don't work, check with the AMI provider.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>Here is a screenshot from FileZilla version 3.49.1:</p>
+<p><img alt="" src="../FilZilla.png" /></p>
+<h4 id="connect-and-start-transfering-files_1">Connect and start transfering files</h4>
+<ol>
+<li>
+<p>Choose <strong>Connect</strong>. To add the host fingerprint to the <strong>Site Manager</strong>. </p>
+</li>
+<li>
+<p>After the connection is established, in the connection window your Linux instance is on the right and your local machine is on the left. You can drag and drop files directly into the remote file system from your local machine. For more information on FileZilla, see the project documentation at <a href="https://wiki.filezilla-project.org/Documentation">https://wiki.filezilla-project.org/Documentation</a>.</p>
+</li>
+</ol>
+<p><img alt="" src="../FileZilla2.png" /></p>
+<p>If you receive a "Cannot execute SCP to start transfer" error, you must first install <strong>scp</strong> on your Linux instance. For some operating systems, this is located in the <code>openssh-clients</code> package. For Amazon Linux variants, such as the Amazon ECS-optimized AMI, use the following command to install <strong>scp</strong>. </p>
+<pre><code>[ec2-user ~]$ sudo yum install -y openssh-clients
+</code></pre>
+
+<h4 id="watch-it-here_3">Watch it here</h4>
 <h2 id="getting-started-with-amazon-ec2-windows-instances">Getting started with Amazon EC2 Windows Instances</h2>
 <p>To get started with a Windows instance, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/EC2_GetStarted.html">Getting started with Amazon EC2 Windows instances</a>.</p>
 <h3 id="connecting-to-your-windows-instance">Connecting to your Windows instance</h3>
 <p>To connect to a Windows instance, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/connecting_to_windows_instance.html">Connecting to Your Windows Instance</a> in the Amazon EC2 User Guide for Windows Instances. </p>
+<h3 id="transfer-files-to-windows-instances">Transfer files to Windows instances</h3>
+<p>To transfer files to and from a Windows instance, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/connecting_to_windows_instance.html#AccessingInstancesWindowsFileTransfer">Transfer files to Windows instances</a> in the Amazon EC2 User Guide for Windows Instances.</p>
               
             </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../RunPython/" class="btn btn-neutral float-right" title="Running Python on AWS EC2 Instance">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../AWS_Account/" class="btn btn-neutral" title="Setting Up an AWS Account"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -594,6 +917,8 @@ intervention is needed to log on to an instance, or to copy files to an instance
       
         <span><a href="../AWS_Account/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
+      
+        <span style="margin-left: 15px"><a href="../RunPython/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

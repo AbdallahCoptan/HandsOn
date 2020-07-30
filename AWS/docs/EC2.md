@@ -198,7 +198,7 @@ To launch an instance
 
 ### Connect to your instance
 
-There are several ways to connect to your Linux instance. For more information, see [Connect to your Linux instance](#connecting-to-your-EC2-instance).
+There are several ways to connect to your Linux instance. For more information, see [Connect to your Linux instance](#connecting-to-your-linux-ec2-instances).
 
 /!\ **Important**
 
@@ -271,7 +271,7 @@ The operating system of your local computer determines the options that you have
 
 If your local computer operating system is **Linux or macOS X**, you can connect by using one pf the following:
 
-- [SSH Client](#connecting-to-your-linux-instance-using-an-ssh-client)
+- [SSH Client](#connect-to-your-linux-instance-using-an-ssh-client)
 
 - [EC2 Instance Connect](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect.html)
 - [AWS Systems Manager Session Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager.html)
