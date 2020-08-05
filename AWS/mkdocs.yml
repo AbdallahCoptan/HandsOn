@@ -1,19 +1,34 @@
 site_name: Hydrosat Hands-On
+site_author: AbdallahCoptan
+site_url: https://abdallahcoptan.github.io/HandsOn/
 theme:
       name: readthedocs
       highlightjs: true
       hljs_languages:
           - yaml
           - rust
+          - Python
+          - bash
+      prev_next_buttons_location: both
+      collapse_navigation: False
+      titles_only: False
+      navigation_depth: 10
+      sticky_navigation: True
 nav:
   - Home: index.md
   - AWS: 
     - Setting Up an AWS Account: AWS_Account.md
     - Using EC2 Compute Instances: EC2.md
     - Running Python on AWS EC2 Instance: RunPython.md
-    - Add Storage for an EC2 Instance: storage.md
+    - Dealing with AWS Storage: storage.md
+    - Amazon EBS volumes: EBS.md
 #  - Google:
 #    - starting: AWS_Account (another copy).md
 #  - Azure:
 #    - statr: AWS_Account (3rd copy).md
   
+markdown_extensions:
+    - smarty
+    - toc:
+        permalink: True
+    - sane_lists
