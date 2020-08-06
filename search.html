@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  
+  <meta name="author" content="AbdallahCoptan">
   
   <link rel="shortcut icon" href="./img/favicon.ico">
   <title>Hydrosat Hands-On</title>
@@ -21,6 +21,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/rust.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/Python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
@@ -44,17 +46,235 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="./.">Home</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="./.#commands">Commands</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="./.#project-layout">Project layout</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">AWS</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="./AWS_Account/">Setting Up an AWS Account</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="./AWS_Account/#create-your-account">Create your account</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="./AWS_Account/#add-a-payment-method">Add a Payment Method</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="./AWS_Account/#verify-your-phone-number">Verify your phone number</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="./AWS_Account/#choose-an-aws-support-plan">Choose an AWS Support plan</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="./AWS_Account/#seting-up-your-budget">Seting up Your Budget</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="./AWS_Account/#watch-it-here">Watch it here</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="./AWS_Account/#more-resources">More Resources</a>
+    </li>
+    </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="./EC2/">Using EC2 Compute Instances</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="./EC2/#what-is-amazon-ec2">What is Amazon EC2?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="./EC2/#how-to-get-started-with-amazon-ec2">How to get started with Amazon EC2</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="./EC2/#setting-up-with-amazon-ec2">Setting up with Amazon EC2</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="./EC2/#sign-up-for-aws">Sign up for AWS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="./EC2/#create-a-key-pair">Create a key pair</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="./EC2/#watch-it-here">Watch it here</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="./EC2/#create-a-security-group">Create a security group</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="./EC2/#prerequisites">Prerequisites</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="./EC2/#getting-started-with-amazon-ec2-linux-instances">Getting started with Amazon EC2 Linux instances</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="./EC2/#launch-an-instance">Launch an instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="./EC2/#connect-to-your-instance">Connect to your instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="./EC2/#clean-up-your-instance">Clean up your instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="./EC2/#terminate-your-instance">Terminate your instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="./EC2/#next-steps">Next Steps</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="./EC2/#watch-it-here_1">Watch it here</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="./EC2/#connecting-to-your-linux-ec2-instances">Connecting to your Linux EC2 Instances</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="./EC2/#connection-options">Connection options</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="./EC2/#connecting-to-your-linux-instance-using-ssh">Connecting to your Linux instance using SSH</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="./EC2/#prerequisites_1">Prerequisites</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="./EC2/#connect-to-your-linux-instance-using-an-ssh-client">Connect to your Linux instance using an SSH client</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="./EC2/#connecting-to-your-linux-instance-from-windows-using-putty-or-mobaxterm">Connecting to your Linux instance from Windows using PuTTY or MobaXterm</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="./EC2/#prerequisites_2">Prerequisites</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="./EC2/#convert-your-private-key-using-puttygen">Convert your private key using PuTTYgen</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="./EC2/#connecting-to-your-linux-instance">Connecting to your Linux instance</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="./EC2/#transferring-files-to-linux-instances">Transferring files to Linux instances</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="./EC2/#transferring-files-to-linux-instances-from-linux-using-scp">Transferring files to Linux instances from Linux using SCP</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="./EC2/#prerequisites_3">Prerequisites</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="./EC2/#use-scp-to-transfer-a-file">Use SCP to transfer a file</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="./EC2/#transferring-files-to-your-linux-instance-using-the-putty-secure-copy-client">Transferring files to your Linux instance using the PuTTY Secure Copy client</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="./EC2/#transferring-files-to-your-linux-instance-using-winscp">Transferring files to your Linux instance using WinSCP</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="./EC2/#prerequisites_4">Prerequisites</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="./EC2/#configuration">Configuration</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="./EC2/#connect-and-start-transfering-files">Connect and start transfering files</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="./EC2/#watch-it-here_2">Watch it here</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="./EC2/#transferring-files-to-your-linux-instance-using-filezilla">Transferring files to your Linux instance using FileZilla</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="./EC2/#prerequisites_5">Prerequisites</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="./EC2/#configuration_1">Configuration</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="./EC2/#connect-and-start-transfering-files_1">Connect and start transfering files</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="./EC2/#watch-it-here_3">Watch it here</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="./EC2/#getting-started-with-amazon-ec2-windows-instances">Getting started with Amazon EC2 Windows Instances</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="./EC2/#connecting-to-your-windows-instance">Connecting to your Windows instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="./EC2/#transfer-files-to-windows-instances">Transfer files to Windows instances</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="./RunPython/">Running Python on AWS EC2 Instance</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="./RunPython/#logging-into-the-aws-console">Logging into the AWS Console</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="./RunPython/#launching-an-ec2-instance">Launching an EC2 Instance</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="./RunPython/#connecting-to-the-ec2-instance">Connecting to the EC2 Instance</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="./RunPython/#transfering-files-to-the-ec2-instance">Transfering files to the EC2 Instance</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="./RunPython/#running-python-scripts-on-the-ec2-instance">Running Python Scripts on the EC2 Instance</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="./RunPython/#prepare-your-virtual-environment-in-python3">Prepare your virtual environment in Python3</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="./RunPython/#installing-virtualenv-using-pip3">Installing Virtualenv using pip3</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="./RunPython/#create-a-new-virtualenv">Create a new Virtualenv</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="./RunPython/#delete-the-virtual-environment">Delete the virtual environment</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="./RunPython/#watch-it-all-here">Watch it all here</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="./RunPython/#run-python-on-linux-instance-connected-from-linux-machine">Run python on Linux instance, connected from Linux machine</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="./RunPython/#run-python-on-linux-instance-connected-from-windows-machine">Run python on Linux instance, connected from Windows machine</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="./storage/">Add Storage for an EC2 Instance</a>
+                    <li class="toctree-l1"><a class="reference internal" href="./storage/">Dealing with AWS Storage</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="./storage/#aws-storage-options">AWS Storage Options</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="./storage/#amazon-ebs">Amazon EBS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="./storage/#amazon-ec2-instance-store">Amazon EC2 instance store</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="./storage/#amazon-efs-file-system">Amazon EFS file system</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="./storage/#amazon-s3">Amazon S3</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="./storage/#adding-storage">Adding Storage</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="./storage/#storage-pricing">Storage Pricing</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="./EBS/">Amazon EBS volumes</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="./EBS/#what-to-know-befor-creating-an-ebs-volume">What to know befor creating an EBS volume</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="./EBS/#creating-an-amazon-ebs-volume">Creating an Amazon EBS volume</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="./EBS/#methods-of-creating-a-volume">Methods of creating a volume</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="./EBS/#creating-an-empty-volume">Creating an empty volume</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="./EBS/#to-create-a-empty-ebs-volume-using-the-console">To create a empty EBS volume using the console</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="./EBS/#to-create-an-empty-ebs-volume-using-the-command-line">To create an empty EBS volume using the command line</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="./EBS/#creating-a-volume-from-a-snapshot">Creating a volume from a snapshot</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="./EBS/#to-create-an-ebs-volume-from-a-snapshot-using-the-console">To create an EBS volume from a snapshot using the console</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="./EBS/#to-create-an-ebs-volume-from-a-snapshot-using-the-command-line">To create an EBS volume from a snapshot using the command line</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="./EBS/#attaching-an-amazon-ebs-volume-to-an-instance">Attaching an Amazon EBS volume to an instance</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="./EBS/#more-advanced-attachment">More advanced attachment</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="./EBS/#making-an-amazon-ebs-volume-available-for-use-on-linux">Making an Amazon EBS volume available for use on Linux</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
       </div>

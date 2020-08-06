@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="AbdallahCoptan">
+  <link rel="canonical" href="https://abdallahcoptan.github.io/HandsOn/EBS/">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Amazon EBS volumes - Hydrosat Hands-On</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Amazon EBS volumes";
+    var mkdocs_page_input_path = "EBS.md";
+    var mkdocs_page_url = "/HandsOn/EBS/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/rust.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/Python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Hydrosat Hands-On</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="..#commands">Commands</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="..#project-layout">Project layout</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">AWS</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../AWS_Account/">Setting Up an AWS Account</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../AWS_Account/#create-your-account">Create your account</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../AWS_Account/#add-a-payment-method">Add a Payment Method</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../AWS_Account/#verify-your-phone-number">Verify your phone number</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../AWS_Account/#choose-an-aws-support-plan">Choose an AWS Support plan</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../AWS_Account/#seting-up-your-budget">Seting up Your Budget</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../AWS_Account/#watch-it-here">Watch it here</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../AWS_Account/#more-resources">More Resources</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../EC2/">Using EC2 Compute Instances</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../EC2/#what-is-amazon-ec2">What is Amazon EC2?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EC2/#how-to-get-started-with-amazon-ec2">How to get started with Amazon EC2</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EC2/#setting-up-with-amazon-ec2">Setting up with Amazon EC2</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#sign-up-for-aws">Sign up for AWS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#create-a-key-pair">Create a key pair</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#watch-it-here">Watch it here</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#create-a-security-group">Create a security group</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#prerequisites">Prerequisites</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EC2/#getting-started-with-amazon-ec2-linux-instances">Getting started with Amazon EC2 Linux instances</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#launch-an-instance">Launch an instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#connect-to-your-instance">Connect to your instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#clean-up-your-instance">Clean up your instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#terminate-your-instance">Terminate your instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#next-steps">Next Steps</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#watch-it-here_1">Watch it here</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EC2/#connecting-to-your-linux-ec2-instances">Connecting to your Linux EC2 Instances</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#connection-options">Connection options</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#connecting-to-your-linux-instance-using-ssh">Connecting to your Linux instance using SSH</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#prerequisites_1">Prerequisites</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#connect-to-your-linux-instance-using-an-ssh-client">Connect to your Linux instance using an SSH client</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#connecting-to-your-linux-instance-from-windows-using-putty-or-mobaxterm">Connecting to your Linux instance from Windows using PuTTY or MobaXterm</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#prerequisites_2">Prerequisites</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#convert-your-private-key-using-puttygen">Convert your private key using PuTTYgen</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#connecting-to-your-linux-instance">Connecting to your Linux instance</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EC2/#transferring-files-to-linux-instances">Transferring files to Linux instances</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#transferring-files-to-linux-instances-from-linux-using-scp">Transferring files to Linux instances from Linux using SCP</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#prerequisites_3">Prerequisites</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#use-scp-to-transfer-a-file">Use SCP to transfer a file</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#transferring-files-to-your-linux-instance-using-the-putty-secure-copy-client">Transferring files to your Linux instance using the PuTTY Secure Copy client</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#transferring-files-to-your-linux-instance-using-winscp">Transferring files to your Linux instance using WinSCP</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#prerequisites_4">Prerequisites</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#configuration">Configuration</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#connect-and-start-transfering-files">Connect and start transfering files</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#watch-it-here_2">Watch it here</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#transferring-files-to-your-linux-instance-using-filezilla">Transferring files to your Linux instance using FileZilla</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#prerequisites_5">Prerequisites</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#configuration_1">Configuration</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#connect-and-start-transfering-files_1">Connect and start transfering files</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#watch-it-here_3">Watch it here</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EC2/#getting-started-with-amazon-ec2-windows-instances">Getting started with Amazon EC2 Windows Instances</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#connecting-to-your-windows-instance">Connecting to your Windows instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#transfer-files-to-windows-instances">Transfer files to Windows instances</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../RunPython/">Running Python on AWS EC2 Instance</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../RunPython/#logging-into-the-aws-console">Logging into the AWS Console</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RunPython/#launching-an-ec2-instance">Launching an EC2 Instance</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RunPython/#connecting-to-the-ec2-instance">Connecting to the EC2 Instance</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RunPython/#transfering-files-to-the-ec2-instance">Transfering files to the EC2 Instance</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RunPython/#running-python-scripts-on-the-ec2-instance">Running Python Scripts on the EC2 Instance</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../RunPython/#prepare-your-virtual-environment-in-python3">Prepare your virtual environment in Python3</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../RunPython/#installing-virtualenv-using-pip3">Installing Virtualenv using pip3</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../RunPython/#create-a-new-virtualenv">Create a new Virtualenv</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../RunPython/#delete-the-virtual-environment">Delete the virtual environment</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RunPython/#watch-it-all-here">Watch it all here</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../RunPython/#run-python-on-linux-instance-connected-from-linux-machine">Run python on Linux instance, connected from Linux machine</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../RunPython/#run-python-on-linux-instance-connected-from-windows-machine">Run python on Linux instance, connected from Windows machine</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../storage/">Dealing with AWS Storage</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../storage/#aws-storage-options">AWS Storage Options</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../storage/#amazon-ebs">Amazon EBS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../storage/#amazon-ec2-instance-store">Amazon EC2 instance store</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../storage/#amazon-efs-file-system">Amazon EFS file system</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../storage/#amazon-s3">Amazon S3</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../storage/#adding-storage">Adding Storage</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../storage/#storage-pricing">Storage Pricing</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Amazon EBS volumes</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#what-to-know-befor-creating-an-ebs-volume">What to know befor creating an EBS volume</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#creating-an-amazon-ebs-volume">Creating an Amazon EBS volume</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#methods-of-creating-a-volume">Methods of creating a volume</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#creating-an-empty-volume">Creating an empty volume</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#to-create-a-empty-ebs-volume-using-the-console">To create a empty EBS volume using the console</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#to-create-an-empty-ebs-volume-using-the-command-line">To create an empty EBS volume using the command line</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#creating-a-volume-from-a-snapshot">Creating a volume from a snapshot</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#to-create-an-ebs-volume-from-a-snapshot-using-the-console">To create an EBS volume from a snapshot using the console</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#to-create-an-ebs-volume-from-a-snapshot-using-the-command-line">To create an EBS volume from a snapshot using the command line</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#attaching-an-amazon-ebs-volume-to-an-instance">Attaching an Amazon EBS volume to an instance</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#more-advanced-attachment">More advanced attachment</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#making-an-amazon-ebs-volume-available-for-use-on-linux">Making an Amazon EBS volume available for use on Linux</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Hydrosat Hands-On</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>AWS &raquo;</li>
+        
+      
+    
+    <li>Amazon EBS volumes</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+    <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+        <a href="../storage/" class="btn btn-neutral" title="Dealing with AWS Storage"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="amazon-ebs-volumes">Amazon EBS volumes<a class="headerlink" href="#amazon-ebs-volumes" title="Permanent link">&para;</a></h1>
+<p>An Amazon EBS volume is a durable, block-level storage device that you can attach to your instances. After you attach a volume to an instance, you can use it as you would use a physical hard drive. EBS volumes are flexible. For current-generation volumes attached to current-generation instance types, you can dynamically increase size, modify the provisioned IOPS capacity, and change volume type on live production volumes.</p>
+<p>You can use EBS volumes as primary storage for data that requires frequent updates, such as the system drive for an instance or storage for a database application. You can also use them for throughput-intensive applications that perform continuous disk scans. EBS volumes persist independently from the running life of an EC2 instance.</p>
+<p>You can attach multiple EBS volumes to a single instance. The volume and instance must be in the same Availability Zone. Depending on the volume and instance types, you can use <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html">Multi-Attach</a> to mount a volume to multiple instances at the same time.</p>
+<p>Amazon EBS provides the following volume types: General Purpose SSD (<code>gp2</code>), Provisioned IOPS SSD (<code>io1</code>), Throughput Optimized HDD (<code>st1</code>), Cold HDD (<code>sc1</code>), and Magnetic (<code>standard</code>, a previous-generation type). They differ in performance characteristics and price, allowing you to tailor your storage performance and cost to the needs of your applications. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">Amazon EBS volume types</a>.</p>
+<p>Your account has a limit on the number of EBS volumes that you can use, and the total storage available to you. For more information about these limits, and how to request an increase in your limits, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 Service Quotas</a>.</p>
+<h2 id="what-to-know-befor-creating-an-ebs-volume">What to know befor creating an EBS volume<a class="headerlink" href="#what-to-know-befor-creating-an-ebs-volume" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes.html#EBSFeatures">Benefits of using EBS volumes</a></li>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">Amazon EBS volume types</a></li>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/volume_constraints.html">Constraints on the size and configuration of an EBS volume</a></li>
+</ol>
+<h2 id="creating-an-amazon-ebs-volume">Creating an Amazon EBS volume<a class="headerlink" href="#creating-an-amazon-ebs-volume" title="Permanent link">&para;</a></h2>
+<p>You can create an Amazon EBS volume and then attach to any EC2 instance in the same Availability Zone. If you create an encrypted EBS volume, you can only attach it to supported instance types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported instance types</a>. </p>
+<p>If you are creating a volume for a high-performance storage scenario, you should make sure to use a Provisioned IOPS SSD (io1) volume and attach it to an instance with enough bandwidth to support your application, such as an EBS-optimized instance or an instance with 10-Gigabit network connectivity. The same advice holds for Throughput Optimized HDD (st1) and Cold HDD (sc1) volumes. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon EBS–optimized instances</a>. </p>
+<p>Empty EBS volumes receive their maximum performance the moment that they are available and do not require initialization (formerly known as pre-warming). However, storage blocks on volumes that were created from snapshots must be initialized (pulled down from Amazon S3 and written to the volume) before you can access the block. This preliminary action takes time and can cause a significant increase in the latency of an I/O operation the first time each block is accessed. Volume performance is achieved after all blocks have been downloaded and written to the volume. For most applications, amortizing this cost over the lifetime of the volume is acceptable. To avoid this initial performance hit in a production environment, you can force immediate initialization of the entire volume or enable fast snapshot restore. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-initialize.html">Initializing Amazon EBS volumes</a>.</p>
+<h3 id="methods-of-creating-a-volume">Methods of creating a volume<a class="headerlink" href="#methods-of-creating-a-volume" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Create and attach EBS volumes when you launch instances by specifying a block device mapping. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-instance.html">Launching an instance using the Launch Instance Wizard</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mapping</a>.</p>
+</li>
+<li>
+<p>Create an empty EBS volume and attach it to a running instance. For more information, see <a href="#creating-an-empty-volume">Creating an empty volume</a> below.</p>
+</li>
+<li>
+<p>Create an EBS volume from a previously created snapshot and attach it to a running instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html#ebs-create-volume-from-snapshot">Creating a volume from a snapshot</a> below.</p>
+</li>
+</ul>
+<h3 id="creating-an-empty-volume">Creating an empty volume<a class="headerlink" href="#creating-an-empty-volume" title="Permanent link">&para;</a></h3>
+<p>Empty volumes receive their maximum performance the moment that they are available and <strong>do not require initialization</strong>. </p>
+<h4 id="to-create-a-empty-ebs-volume-using-the-console">To create a empty EBS volume using the console<a class="headerlink" href="#to-create-a-empty-ebs-volume-using-the-console" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>Open the Amazon EC2 console at <a href="https://console.aws.amazon.com/ec2/">https://console.aws.amazon.com/ec2/</a>.</p>
+</li>
+<li>
+<p>From the navigation bar, select the Region in which you would like to create your volume. This choice is important because some Amazon EC2 resources can be shared between Regions, while others can&rsquo;t. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resources.html">Resource locations</a>.</p>
+</li>
+<li>
+<p>In the navigation pane, choose <strong>ELASTIC BLOCK STORE, Volumes</strong>.</p>
+</li>
+<li>
+<p>Choose <strong>Create Volume</strong>.</p>
+</li>
+<li>
+<p>For <strong>Volume Type</strong>, choose a volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">Amazon EBS volume types</a>.</p>
+</li>
+<li>
+<p>For <strong>Size (GiB)</strong>, type the size of the volume. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/volume_constraints.html">Constraints on the size and configuration of an EBS volume</a>.</p>
+</li>
+<li>
+<p>With a Provisioned IOPS SSD volume, for <strong>IOPS</strong>, type the maximum number of input/output operations per second (IOPS) that the volume should support.</p>
+</li>
+<li>
+<p>For <strong>Availability Zone</strong>, choose the Availability Zone in which to create the volume. EBS volumes can only be attached to EC2 instances within the same Availability Zone.</p>
+</li>
+<li>
+<p>(Optional) If the instance type supports EBS encryption and you want to encrypt the volume, select <strong>Encrypt this volume</strong> and choose a <strong>CMK</strong>. If encryption by default is enabled in this Region, EBS encryption is enabled and the default CMK for EBS encryption is chosen. You can choose a different CMK from <strong>Master Key</strong> or paste the full ARN of any key that you can access. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a>.</p>
+</li>
+<li>
+<p>(Optional) Choose <strong>Create additional tags</strong> to add tags to the volume. For each tag, provide a tag key and a tag value. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a>.</p>
+</li>
+<li>
+<p>Choose <strong>Create Volume</strong>. The volume is ready for use when the volume status is <strong>Available</strong>.</p>
+</li>
+</ol>
+<p>To use your new volume, attach it to an instance, format it, and mount it. For more information, see <a href="#attaching-an-amazon-ebs-volume-to-an-instance">Attaching an Amazon EBS volume to an instance</a>.</p>
+<h4 id="to-create-an-empty-ebs-volume-using-the-command-line">To create an empty EBS volume using the command line<a class="headerlink" href="#to-create-an-empty-ebs-volume-using-the-command-line" title="Permanent link">&para;</a></h4>
+<p>You can use one of the following commands. For more information about these command line interfaces, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html#access-ec2">Accessing Amazon EC2</a>.</p>
+<ul>
+<li>
+<p><a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/create-volume.html">create-volume</a> (AWS CLI)</p>
+</li>
+<li>
+<p><a href="https://docs.aws.amazon.com/powershell/latest/reference/items/New-EC2Volume.html">New-EC2Volume</a> (AWS Tools for Windows PowerShell)</p>
+</li>
+</ul>
+<h3 id="creating-a-volume-from-a-snapshot">Creating a volume from a snapshot<a class="headerlink" href="#creating-a-volume-from-a-snapshot" title="Permanent link">&para;</a></h3>
+<p>Volumes created from snapshots load lazily in the background. This means that there is no need to wait for all of the data to transfer from Amazon S3 to your EBS volume before the instance can start accessing an attached volume and all its data. If your instance accesses data that hasn&rsquo;t yet been loaded, the volume immediately downloads the requested data from Amazon S3, and then continues loading the rest of the volume data in the background. Volume performance is achieved after all blocks are downloaded and written to the volume. To avoid the initial performance hit in a production environment, see  <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-initialize.html">Initializing Amazon EBS volumes</a>.</p>
+<p>New EBS volumes that are created from encrypted snapshots are automatically encrypted. You can also encrypt a volume on-the-fly while restoring it from an unencrypted snapshot. Encrypted volumes can only be attached to instance types that support EBS encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported instance types</a>.</p>
+<h4 id="to-create-an-ebs-volume-from-a-snapshot-using-the-console">To create an EBS volume from a snapshot using the console<a class="headerlink" href="#to-create-an-ebs-volume-from-a-snapshot-using-the-console" title="Permanent link">&para;</a></h4>
+<h4 id="to-create-an-ebs-volume-from-a-snapshot-using-the-command-line">To create an EBS volume from a snapshot using the command line<a class="headerlink" href="#to-create-an-ebs-volume-from-a-snapshot-using-the-command-line" title="Permanent link">&para;</a></h4>
+<p>You can use one of the following commands. For more information about these command line interfaces, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html#access-ec2">Accessing Amazon EC2</a>.</p>
+<ul>
+<li>
+<p><a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/create-volume.html">create-volume</a> (AWS CLI)</p>
+</li>
+<li>
+<p><a href="https://docs.aws.amazon.com/powershell/latest/reference/items/New-EC2Volume.html">New-EC2Volume</a> (AWS Tools for Windows PowerShell)</p>
+</li>
+</ul>
+<h2 id="attaching-an-amazon-ebs-volume-to-an-instance">Attaching an Amazon EBS volume to an instance<a class="headerlink" href="#attaching-an-amazon-ebs-volume-to-an-instance" title="Permanent link">&para;</a></h2>
+<h3 id="more-advanced-attachment">More advanced attachment<a class="headerlink" href="#more-advanced-attachment" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html">Attaching a volume to multiple instances with Amazon EBS Multi-Attach </a></li>
+</ul>
+<h2 id="making-an-amazon-ebs-volume-available-for-use-on-linux">Making an Amazon EBS volume available for use on Linux<a class="headerlink" href="#making-an-amazon-ebs-volume-available-for-use-on-linux" title="Permanent link">&para;</a></h2>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../storage/" class="btn btn-neutral" title="Dealing with AWS Storage"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../storage/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
