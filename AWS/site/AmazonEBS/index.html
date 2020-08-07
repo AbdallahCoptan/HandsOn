@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="AbdallahCoptan">
-  <link rel="canonical" href="https://abdallahcoptan.github.io/HandsOn/AWS_Account/">
+  <link rel="canonical" href="https://abdallahcoptan.github.io/HandsOn/AmazonEBS/">
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Setting Up an AWS Account - Hydrosat Hands-On</title>
+  <title>AmazonEBS - Hydrosat Hands-On</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Setting Up an AWS Account";
-    var mkdocs_page_input_path = "AWS_Account.md";
-    var mkdocs_page_url = "/HandsOn/AWS_Account/";
+    var mkdocs_page_name = "AmazonEBS";
+    var mkdocs_page_input_path = "AmazonEBS.md";
+    var mkdocs_page_url = "/HandsOn/AmazonEBS/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js" defer></script>
@@ -62,22 +62,22 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">AWS</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Setting Up an AWS Account</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#create-your-account">Create your account</a>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../AWS_Account/">Setting Up an AWS Account</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../AWS_Account/#create-your-account">Create your account</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#add-a-payment-method">Add a Payment Method</a>
+    <li class="toctree-l2"><a class="reference internal" href="../AWS_Account/#add-a-payment-method">Add a Payment Method</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#verify-your-phone-number">Verify your phone number</a>
+    <li class="toctree-l2"><a class="reference internal" href="../AWS_Account/#verify-your-phone-number">Verify your phone number</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#choose-an-aws-support-plan">Choose an AWS Support plan</a>
+    <li class="toctree-l2"><a class="reference internal" href="../AWS_Account/#choose-an-aws-support-plan">Choose an AWS Support plan</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#seting-up-your-budget">Seting up Your Budget</a>
+    <li class="toctree-l2"><a class="reference internal" href="../AWS_Account/#seting-up-your-budget">Seting up Your Budget</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#watch-it-here">Watch it here</a>
+    <li class="toctree-l2"><a class="reference internal" href="../AWS_Account/#watch-it-here">Watch it here</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#more-resources">More Resources</a>
+    <li class="toctree-l2"><a class="reference internal" href="../AWS_Account/#more-resources">More Resources</a>
     </li>
     </ul>
                     </li>
@@ -304,105 +304,23 @@
     <li><a href="..">Docs</a> &raquo;</li>
     
       
-        
-          <li>AWS &raquo;</li>
-        
-      
     
-    <li>Setting Up an AWS Account</li>
+    <li>AmazonEBS</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
   </ul>
-  
-    <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-        <a href="../EC2/" class="btn btn-neutral float-right" title="Using EC2 Compute Instances">Next <span class="icon icon-circle-arrow-right"></span></a>
-        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-    </div>
   
   <hr/>
 </div>
           <div role="main">
             <div class="section">
               
-                <h1 id="setting-up-an-aws-account">Setting Up an AWS Account<a class="headerlink" href="#setting-up-an-aws-account" title="Permanent link">&para;</a></h1>
-<h2 id="create-your-account">Create your account<a class="headerlink" href="#create-your-account" title="Permanent link">&para;</a></h2>
-<p>In order to sign up to AWS services, please follow the following steps:</p>
-<ol>
-<li>
-<p>Open the <a href="https://aws.amazon.com/">Amazon Web Services</a> home page.</p>
-</li>
-<li>
-<p>Choose Create an AWS Account.
-Note: If you signed in to AWS recently, choose Sign in to the Console. If Create a new AWS account isn&rsquo;t visible, first choose Sign in to a different account, and then choose Create a new AWS account.</p>
-</li>
-<li>
-<p>Enter your account information, and then choose Continue. Be sure that you enter your account information correctly, especially your email address. If you enter your email address incorrectly, you can&rsquo;t access your account.</p>
-</li>
-<li>
-<p>Choose Personal or Professional.
-Note: Personal accounts and professional accounts have the same features and functions.</p>
-</li>
-<li>
-<p>Enter your company or personal information.
-Important: For professional AWS accounts, it&rsquo;s a best practice to enter the company phone number rather than a personal cell phone. Configuring a root account with an individual email address or a personal phone number can make your account insecure.</p>
-</li>
-<li>
-<p>Read and accept the AWS Customer Agreement.
-Note: Be sure that you read and understand the terms of the AWS Customer Agreement.</p>
-</li>
-<li>
-<p>Choose Create Account and Continue.</p>
-</li>
-</ol>
-<p>You receive an email to confirm that your account is created. You can sign in to your new account using the email address and password you registered with. However, you can&rsquo;t use AWS services until you finish activating your account.</p>
-<h2 id="add-a-payment-method">Add a Payment Method<a class="headerlink" href="#add-a-payment-method" title="Permanent link">&para;</a></h2>
-<p>On the Payment Information page, enter the information about your payment method, and then choose Verify and Add.</p>
-<p><strong>Note:</strong> If you want to use a different billing address for your AWS billing information, choose Use a new address before you choose Verify and Add.</p>
-<p>Important: You cannot proceed with the sign-up process until you add a valid payment method.</p>
-<h2 id="verify-your-phone-number">Verify your phone number<a class="headerlink" href="#verify-your-phone-number" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Choose your country or region code from the list.</li>
-<li>Enter a phone number where you can be reached in the next few minutes.</li>
-<li>Enter the code displayed in the captcha and then submit.</li>
-<li>In a few moments, an automated system contacts you.</li>
-<li>Enter the PIN you receive, and then choose Continue.</li>
-</ol>
-<h2 id="choose-an-aws-support-plan">Choose an AWS Support plan<a class="headerlink" href="#choose-an-aws-support-plan" title="Permanent link">&para;</a></h2>
-<p>On the Select a Support Plan page, choose one of the available Support plans. For a description of the available Support plans and their benefits, see Compare <a href="https://aws.amazon.com/premiumsupport/plans/">AWS Support Plans</a>.</p>
-<h2 id="seting-up-your-budget">Seting up Your Budget<a class="headerlink" href="#seting-up-your-budget" title="Permanent link">&para;</a></h2>
-<p>You need to set up your budget, in order to avoid any extra charges,. Any extra charges will be aletrted to you before going into action.</p>
-<p>Please follow the following steps to fix your budget:</p>
-<ol>
-<li>After you received you registration confirmation, <strong>sign in to the console</strong>.</li>
-<li>After a successed login to the console, naviaget to your account name, and choose <code>My Billing Daschboard</code></li>
-<li>Choose on the left <code>Budgets</code> which is located under Cost Management, Then</li>
-<li>Press <code>Craete Budget</code> and choose the Cost budget, then press <code>Set your budget</code></li>
-<li>Name the budget, period and  budget amount, then press <code>Configure alerts</code></li>
-<li>Choose the alert threshold, for example 50%</li>
-<li>Put your email address to send you alert when your charges become 50% from your budget</li>
-</ol>
-<h2 id="watch-it-here">Watch it here<a class="headerlink" href="#watch-it-here" title="Permanent link">&para;</a></h2>
-<figure class="video_container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LZbj_Dp2-Zw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</figure>
-
-<!-- [![watch it here](https://img.youtube.com/vi/LZbj_Dp2-Zw/hqdefault.jpg)](https://www.youtube.com/embed/LZbj_Dp2-Zw) -->
-
-<h2 id="more-resources">More Resources<a class="headerlink" href="#more-resources" title="Permanent link">&para;</a></h2>
+                
               
             </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../EC2/" class="btn btn-neutral float-right" title="Using EC2 Compute Instances">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
@@ -426,10 +344,6 @@ Note: Be sure that you read and understand the terms of the AWS Customer Agreeme
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../EC2/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

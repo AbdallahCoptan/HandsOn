@@ -96,6 +96,37 @@ New EBS volumes that are created from encrypted snapshots are automatically encr
 
 #### To create an EBS volume from a snapshot using the console
 
+1. Open the Amazon EC2 console at [https://console.aws.amazon.com/ec2/](https://console.aws.amazon.com/ec2/).
+
+2. From the navigation bar, select the Region that your snapshot is located in.
+
+To use the snapshot to create a volume in a different region, copy your snapshot to the new Region and then use it to create a volume in that Region. For more information, see [Copying an Amazon EBS snapshot](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html).
+
+3. In the navigation pane, choose **ELASTIC BLOCK STORE, Volumes**.
+
+4. Choose **Create Volume**.
+
+5. For **Volume Type**, choose a volume type. For more information, see [Amazon EBS volume types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html).
+
+6. For **Snapshot ID**, start typing the ID or description of the snapshot from which you are restoring the volume, and choose it from the list of suggested options.
+
+7. (Optional) Select **Encrypt this volume** to change the encryption state of your volume. This is optional if [encryption by default](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default) is enabled. Select a CMK from Master Key to specify a CMK other than the default CMK for EBS encryption.
+
+8. For **Size (GiB)**, type the size of the volume, or verify that the default size of the snapshot is adequate.
+
+If you specify both a volume size and a snapshot, the size must be equal to or greater than the snapshot size. When you select a volume type and a snapshot, the minimum and maximum sizes for the volume are shown next to Size. For more information, see [Constraints on the size and configuration of an EBS volume](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/volume_constraints.html).
+
+9. With a Provisioned IOPS SSD volume, for **IOPS**, type the maximum number of input/output operations per second (IOPS) that the volume should support.
+
+10. For **Availability Zone**, choose the Availability Zone in which to create the volume. EBS volumes can only be attached to EC2 instances in the same Availability Zone.
+
+11. (Optional) Choose **Create additional tags** to add tags to the volume. For each tag, provide a tag key and a tag value.
+
+12. Choose **Create Volume**.
+
+13. To use your new volume, attach it to an instance and mount it. For more information, see [Attaching an Amazon EBS volume to an instance](#attaching-an-amazon-ebs-volume-to-an-instance).
+
+14. If you created a volume that is larger than the snapshot, you must extend the file system on the volume to take advantage of the extra space. For more information, see [Amazon EBS Elastic Volumes](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modify-volume.html).
 
 
 

@@ -6,10 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  
-  
+  <meta name="author" content="AbdallahCoptan">
+  <link rel="canonical" href="https://abdallahcoptan.github.io/HandsOn/storage/">
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Add Storage for an EC2 Instance - Hydrosat Hands-On</title>
+  <title>Dealing with AWS Storage - Hydrosat Hands-On</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Add Storage for an EC2 Instance";
+    var mkdocs_page_name = "Dealing with AWS Storage";
     var mkdocs_page_input_path = "storage.md";
-    var mkdocs_page_url = null;
+    var mkdocs_page_url = "/HandsOn/storage/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js" defer></script>
@@ -28,6 +28,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/rust.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/Python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
@@ -51,17 +53,235 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="..#commands">Commands</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="..#project-layout">Project layout</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">AWS</span></p>
                 <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../AWS_Account/">Setting Up an AWS Account</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../AWS_Account/#create-your-account">Create your account</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../AWS_Account/#add-a-payment-method">Add a Payment Method</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../AWS_Account/#verify-your-phone-number">Verify your phone number</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../AWS_Account/#choose-an-aws-support-plan">Choose an AWS Support plan</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../AWS_Account/#seting-up-your-budget">Seting up Your Budget</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../AWS_Account/#watch-it-here">Watch it here</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../AWS_Account/#more-resources">More Resources</a>
+    </li>
+    </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../EC2/">Using EC2 Compute Instances</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../EC2/#what-is-amazon-ec2">What is Amazon EC2?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EC2/#how-to-get-started-with-amazon-ec2">How to get started with Amazon EC2</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EC2/#setting-up-with-amazon-ec2">Setting up with Amazon EC2</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#sign-up-for-aws">Sign up for AWS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#create-a-key-pair">Create a key pair</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#watch-it-here">Watch it here</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#create-a-security-group">Create a security group</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#prerequisites">Prerequisites</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EC2/#getting-started-with-amazon-ec2-linux-instances">Getting started with Amazon EC2 Linux instances</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#launch-an-instance">Launch an instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#connect-to-your-instance">Connect to your instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#clean-up-your-instance">Clean up your instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#terminate-your-instance">Terminate your instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#next-steps">Next Steps</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#watch-it-here_1">Watch it here</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EC2/#connecting-to-your-linux-ec2-instances">Connecting to your Linux EC2 Instances</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#connection-options">Connection options</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#connecting-to-your-linux-instance-using-ssh">Connecting to your Linux instance using SSH</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#prerequisites_1">Prerequisites</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#connect-to-your-linux-instance-using-an-ssh-client">Connect to your Linux instance using an SSH client</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#connecting-to-your-linux-instance-from-windows-using-putty-or-mobaxterm">Connecting to your Linux instance from Windows using PuTTY or MobaXterm</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#prerequisites_2">Prerequisites</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#convert-your-private-key-using-puttygen">Convert your private key using PuTTYgen</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#connecting-to-your-linux-instance">Connecting to your Linux instance</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EC2/#transferring-files-to-linux-instances">Transferring files to Linux instances</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#transferring-files-to-linux-instances-from-linux-using-scp">Transferring files to Linux instances from Linux using SCP</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#prerequisites_3">Prerequisites</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#use-scp-to-transfer-a-file">Use SCP to transfer a file</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#transferring-files-to-your-linux-instance-using-the-putty-secure-copy-client">Transferring files to your Linux instance using the PuTTY Secure Copy client</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#transferring-files-to-your-linux-instance-using-winscp">Transferring files to your Linux instance using WinSCP</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#prerequisites_4">Prerequisites</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#configuration">Configuration</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#connect-and-start-transfering-files">Connect and start transfering files</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#watch-it-here_2">Watch it here</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#transferring-files-to-your-linux-instance-using-filezilla">Transferring files to your Linux instance using FileZilla</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#prerequisites_5">Prerequisites</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#configuration_1">Configuration</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#connect-and-start-transfering-files_1">Connect and start transfering files</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#watch-it-here_3">Watch it here</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EC2/#getting-started-with-amazon-ec2-windows-instances">Getting started with Amazon EC2 Windows Instances</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#connecting-to-your-windows-instance">Connecting to your Windows instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#transfer-files-to-windows-instances">Transfer files to Windows instances</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../RunPython/">Running Python on AWS EC2 Instance</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../RunPython/#logging-into-the-aws-console">Logging into the AWS Console</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RunPython/#launching-an-ec2-instance">Launching an EC2 Instance</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RunPython/#connecting-to-the-ec2-instance">Connecting to the EC2 Instance</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RunPython/#transfering-files-to-the-ec2-instance">Transfering files to the EC2 Instance</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RunPython/#running-python-scripts-on-the-ec2-instance">Running Python Scripts on the EC2 Instance</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../RunPython/#prepare-your-virtual-environment-in-python3">Prepare your virtual environment in Python3</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../RunPython/#installing-virtualenv-using-pip3">Installing Virtualenv using pip3</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../RunPython/#create-a-new-virtualenv">Create a new Virtualenv</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../RunPython/#delete-the-virtual-environment">Delete the virtual environment</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RunPython/#watch-it-all-here">Watch it all here</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../RunPython/#run-python-on-linux-instance-connected-from-linux-machine">Run python on Linux instance, connected from Linux machine</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../RunPython/#run-python-on-linux-instance-connected-from-windows-machine">Run python on Linux instance, connected from Windows machine</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Add Storage for an EC2 Instance</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Dealing with AWS Storage</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#aws-storage-options">AWS Storage Options</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#amazon-ebs">Amazon EBS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#amazon-ec2-instance-store">Amazon EC2 instance store</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#amazon-efs-file-system">Amazon EFS file system</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#amazon-s3">Amazon S3</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#adding-storage">Adding Storage</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#storage-pricing">Storage Pricing</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../EBS/">Amazon EBS volumes</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../EBS/#what-to-know-befor-creating-an-ebs-volume">What to know befor creating an EBS volume</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EBS/#creating-an-amazon-ebs-volume">Creating an Amazon EBS volume</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#methods-of-creating-a-volume">Methods of creating a volume</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#creating-an-empty-volume">Creating an empty volume</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EBS/#to-create-a-empty-ebs-volume-using-the-console">To create a empty EBS volume using the console</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EBS/#to-create-an-empty-ebs-volume-using-the-command-line">To create an empty EBS volume using the command line</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#creating-a-volume-from-a-snapshot">Creating a volume from a snapshot</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EBS/#to-create-an-ebs-volume-from-a-snapshot-using-the-console">To create an EBS volume from a snapshot using the console</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EBS/#to-create-an-ebs-volume-from-a-snapshot-using-the-command-line">To create an EBS volume from a snapshot using the command line</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EBS/#attaching-an-amazon-ebs-volume-to-an-instance">Attaching an Amazon EBS volume to an instance</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#more-advanced-attachment">More advanced attachment</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EBS/#making-an-amazon-ebs-volume-available-for-use-on-linux">Making an Amazon EBS volume available for use on Linux</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
       </div>
@@ -89,24 +309,57 @@
         
       
     
-    <li>Add Storage for an EC2 Instance</li>
+    <li>Dealing with AWS Storage</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
   </ul>
+  
+    <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+        <a href="../EBS/" class="btn btn-neutral float-right" title="Amazon EBS volumes">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../RunPython/" class="btn btn-neutral" title="Running Python on AWS EC2 Instance"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
   
   <hr/>
 </div>
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="storage-in-the-aws-web-services">Storage in the AWS Web Services<a class="headerlink" href="#storage-in-the-aws-web-services" title="Permanent link">&para;</a></h1>
+<p>Amazon EC2 provides you with flexible, cost effective, and easy-to-use data storage options for your instances. Each option has a unique combination of performance and durability. These storage options can be used independently or in combination to suit your requirements.</p>
+<h2 id="aws-storage-options">AWS Storage Options<a class="headerlink" href="#aws-storage-options" title="Permanent link">&para;</a></h2>
+<p>These storage options include the following:</p>
+<ul>
+<li><a href="#amazon-ebs">Amazon Elastic Block Store (Amazon EBS)</a></li>
+<li><a href="#amazon-ec2-instance-store">Amazon EC2 instance store</a></li>
+<li><a href="#amazon-efs-file-system">Amazon Elastic File System (Amazon EFS)</a></li>
+<li><a href="#amazon-s3">Amazon Simple Storage Service (Amazon S3)</a></li>
+</ul>
+<p>The following figure shows the relationship between these storage options and your instance.</p>
+<p><img alt="[Storage options for Amazon EC2]" src="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/images/architecture_storage.png" /></p>
+<h3 id="amazon-ebs"><strong>Amazon EBS</strong><a class="headerlink" href="#amazon-ebs" title="Permanent link">&para;</a></h3>
+<p>Amazon EBS provides durable, block-level storage volumes that you can attach to a running instance. You can use Amazon EBS as a primary storage device for data that requires frequent and granular updates. For example, Amazon EBS is the recommended storage option when you run a database on an instance.</p>
+<p>An EBS volume behaves like a raw, unformatted, external block device that you can attach to a single instance. The volume persists independently from the running life of an instance. After an EBS volume is attached to an instance, you can use it like any other physical hard drive. As illustrated in the previous figure, multiple volumes can be attached to an instance. You can also detach an EBS volume from one instance and attach it to another instance. You can dynamically change the configuration of a volume attached to an instance. </p>
+<p>To keep a backup copy of your data, you can create a <em>snapshot</em> of an EBS volume, which is stored in Amazon S3. You can create an EBS volume from a snapshot, and attach it to another instance. For more information, see <a href="../AmazonEBS/">Amazon Elastic Block Store (Amazon EBS)</a>.</p>
+<h3 id="amazon-ec2-instance-store"><strong>Amazon EC2 instance store</strong><a class="headerlink" href="#amazon-ec2-instance-store" title="Permanent link">&para;</a></h3>
+<p>Many instances can access storage from disks that are physically attached to the host computer. This disk storage is referred to as <em>instance store</em>. Instance store provides temporary block-level storage for instances. The data on an instance store volume persists only during the life of the associated instance; if you stop or terminate an instance, any data on instance store volumes is lost. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon EC2 instance store</a>.</p>
+<h3 id="amazon-efs-file-system"><strong>Amazon EFS file system</strong><a class="headerlink" href="#amazon-efs-file-system" title="Permanent link">&para;</a></h3>
+<p>Amazon EFS provides scalable file storage for use with Amazon EC2. You can create an EFS file system and configure your instances to mount the file system. You can use an EFS file system as a common data source for workloads and applications running on multiple instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEFS.html">Amazon Elastic File System (Amazon EFS)</a>.</p>
+<h3 id="amazon-s3"><strong>Amazon S3</strong><a class="headerlink" href="#amazon-s3" title="Permanent link">&para;</a></h3>
+<p>Amazon S3 provides access to reliable and inexpensive data storage infrastructure. It is designed to make web-scale computing easier by enabling you to store and retrieve any amount of data, at any time, from within Amazon EC2 or anywhere on the web. For example, you can use Amazon S3 to store backup copies of your data and applications. Amazon EC2 uses Amazon S3 to store EBS snapshots and instance store-backed AMIs. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonS3.html">Amazon Simple Storage Service (Amazon S3)</a>.</p>
+<h2 id="adding-storage">Adding Storage<a class="headerlink" href="#adding-storage" title="Permanent link">&para;</a></h2>
+<p>Every time you launch an instance from an AMI, a root storage device is created for that instance. The root storage device contains all the information necessary to boot the instance. You can specify storage volumes in addition to the root device volume when you create an AMI or launch an instance using <em>block device mapping</em>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mapping</a>.</p>
+<p>You can also attach EBS volumes to a running instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching an Amazon EBS volume to an instance</a>.</p>
+<h2 id="storage-pricing">Storage Pricing<a class="headerlink" href="#storage-pricing" title="Permanent link">&para;</a></h2>
+<p>For information about storage pricing, open <a href="https://aws.amazon.com/pricing/">AWS Pricing</a>, scroll down to <strong>Services Pricing</strong>, choose <strong>Storage</strong>, and then choose the storage option to open that storage option&rsquo;s pricing page. For information about estimating the cost of storage, see the <a href="https://calculator.aws/#/">AWS Pricing Calculator</a>.</p>
               
             </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../EBS/" class="btn btn-neutral float-right" title="Amazon EBS volumes">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../RunPython/" class="btn btn-neutral" title="Running Python on AWS EC2 Instance"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -137,6 +390,8 @@
       
         <span><a href="../RunPython/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
+      
+        <span style="margin-left: 15px"><a href="../EBS/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
