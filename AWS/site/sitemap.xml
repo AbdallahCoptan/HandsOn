@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/</loc>
-     <lastmod>2020-08-06</lastmod>
+     <lastmod>2020-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/AWS_Account/</loc>
-     <lastmod>2020-08-06</lastmod>
+     <lastmod>2020-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/EC2/</loc>
-     <lastmod>2020-08-06</lastmod>
+     <lastmod>2020-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/RunPython/</loc>
-     <lastmod>2020-08-06</lastmod>
+     <lastmod>2020-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/storage/</loc>
-     <lastmod>2020-08-06</lastmod>
+     <lastmod>2020-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/EBS/</loc>
-     <lastmod>2020-08-06</lastmod>
+     <lastmod>2020-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
