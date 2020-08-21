@@ -489,7 +489,7 @@ You can use one of the following commands. For more information about these comm
 <iframe width="560" height="315" src="https://www.youtube.com/embed/K_t4NCYnwbM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></figure>
 
 
-## More to do
+## References
 
 - [Viewing information about an Amazon EBS volume](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-describing-volumes.html)
 - [Replacing an Amazon EBS volume using a previous snapshot](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html)
