@@ -4,7 +4,7 @@
 
 [![By aibrahim](https://img.shields.io/badge/by-aibrahim-blue.svg)](https://abdallahcoptan.github.io/) [![Licence](https://img.shields.io/badge/license-GPL--3.0-blue.svg)](http://www.gnu.org/licenses/gpl-3.0.html)[![GitHub Project](https://img.shields.io/badge/sources-Github-green.svg)](https://github.com/AbdallahCoptan/Hands-On) [![GitHub issues](https://img.shields.io/github/issues/Falkor/RR-tutorials.svg)](https://github.com/AbdallahCoptan/Hands-On/issues/) [![Documentation Status](https://readthedocs.org/projects/hands-on/badge/?version=latest)](https://hands-on.readthedocs.io/en/latest/?badge=latest)[![GitHub forks](https://img.shields.io/github/forks/Falkor/RR-tutorials.svg?style=social&label=Fork)](https://github.com/AbdallahCoptan/Hands-On)
 
-This website hosts documents, material, Hands-on videos and information related to the tutorial "__AWS for Hydrosat DAP__" given during the [Hydrosat Training from RDI Consultancy](https://readthedocs.org/projects/hands-on/) conference.
+This website hosts documents, slides, material, Hands-on videos and information related to the tutorial "__AWS for Hydrosat DAP__" given during the [Hydrosat Training from RDI Consultancy](https://readthedocs.org/projects/hands-on/) conference.
 
 [![](https://github.com/Falkor/RR-tutorials/raw/master/slides/2016/cloudcom2016/cover_slides.png)](https://github.com/Falkor/RR-tutorials/raw/master/slides/2016/cloudcom2016/tutorial-RR.pdf)
 
