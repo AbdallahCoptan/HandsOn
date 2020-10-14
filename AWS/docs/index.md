@@ -6,15 +6,20 @@
 
 This website hosts documents, slides, material, Hands-on videos and information related to the tutorial "__AWS for Hydrosat DAP__" given during the [Hydrosat Training from RDI Consultancy](https://hands-on.readthedocs.io/en/latest/) conference.
 
-[![](https://github.com/AbdallahCoptan/HandsOn/blob/master/AWS/docs/HydrosatTrainingSlides/slides1.png)](https://github.com/AbdallahCoptan/HandsOn/blob/master/AWS/docs/HydrosatTrainingSlides/Hydrosat_AWS_EC2_Storage_Database.pdf)
+[![](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/slides1.png)](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/Hydrosat_AWS_EC2_Storage_Database.pdf)
 
 
 The **objective** of this tutorial is to offer a set of **practical sessions and tutorials** around AWS, for helping Hydrosat deploying their DAP on a cloud environment in order to have a stable and high perfromance work environment. The tutorial is covering the following areas in AWS: 
 
-	1. [Start working on AWS by creating an account](https://github.com/AbdallahCoptan/HandsOn/blob/master/AWS/docs/AWS_Account.md)
-	2. []()
-	3. []()
-	4. []()
-	5. []()
+1. [Start working on AWS by creating an account](AWS_Account.md)
+2. [AWS Computing](EC2.md)
+3. [Run Python Scripts on EC2](RunPython.md)
+4. [Storage volumes in AWS](EBS.md)
+5. [Relational databases in AWS]()
+6. [Docker Images on AWS]()
+7. [Networking in AWS]()
+8. [Load balancing and Scalling in AWS]()
+9. [AWS Pricing and Support](pricing.md)
+10. [AWS Security and Access Management]()
 
 

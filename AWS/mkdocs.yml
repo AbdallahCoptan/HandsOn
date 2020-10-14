@@ -16,12 +16,27 @@ theme:
       sticky_navigation: True
 nav:
   - Home: index.md
-  - AWS: 
+  - AWS Fundamentals: 
     - Setting Up an AWS Account: AWS_Account.md
+  - AWS Computing:
     - Using EC2 Compute Instances: EC2.md
     - Running Python on AWS EC2 Instance: RunPython.md
+  - AWS Storage:
     - Dealing with AWS Storage: storage.md
     - Amazon EBS volumes: EBS.md
+  - AWS Databases:
+    - RDS: RDS.md
+    - NoSQL DB: nosql.md
+  #- AWS Containers:
+  #- AWS Networking:
+  #- AWS Load Balancing:
+  #  - AWS Scaling:
+  - AWS Pricing and Support:
+    - AWS Pricing: pricing.md
+    - AWS Support: support.md
+  - AWS Security & Access Management:
+    - AWS Security: security.md
+    #- AWS IAM:
 #  - Google:
 #    - starting: AWS_Account (another copy).md
 #  - Azure:
