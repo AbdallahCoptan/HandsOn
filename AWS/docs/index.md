@@ -8,6 +8,7 @@ This website hosts documents, slides, material, Hands-on videos and information 
 
 [![](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/slides1.png)](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/Hydrosat_AWS_EC2_Storage_Database.pdf)
 
+## Covered Topics
 
 The **objective** of this tutorial is to offer a set of **practical sessions and tutorials** around AWS, for helping Hydrosat deploying their DAP on a cloud environment in order to have a stable and high perfromance work environment. The tutorial is covering the following areas in AWS: 
 
@@ -25,8 +26,13 @@ The **objective** of this tutorial is to offer a set of **practical sessions and
 
 
 
-Beside the tutorial provided in these pages, there are some general concepts [slides](slides.md) are provided
+Beside the tutorial provided in these pages, there are some general concepts [slides](slides.md) are provided such as: 
 
+[![](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/slides5.png)](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/understanding-cloud-concepts-slides.pdf)
+
+## Table of Contents
+
+The following table summerizes the AWS Hands on training sessions for Hydrosat: 
 
 
 | Topic                              	|  Concepts  	| Technical  	|   Video   	| Tutorial 	|
@@ -43,3 +49,14 @@ Beside the tutorial provided in these pages, there are some general concepts [sl
 | AWS Pricing and Cost Mangement     	| [slides](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/understanding-cloud-concepts-slides.pdf) 	| [slides](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/Hydrosat_AWS_Pricing_Support.pdf) 	|           	| [link](pricing.md) 	|
 | AWS Support Plans                  	|  [slides](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/understanding-cloud-concepts-slides.pdf)          	| [slides](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/Hydrosat_AWS_Pricing_Support.pdf) 	|           	| [link](pricing.md) 	|
 | AWS Security and Access Management 	|   [slides](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/understanding-cloud-concepts-slides.pdf)         	| [slides](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/Hydrosat_AWS_Security.pdf) 	|           	| [link](security.md) 	|
+
+
+
+## Credits
+
+- See the main contributor in the [contact](contact.md) section 
+
+
+### Licence
+
+This project and the sources proposed within this repository are released under the terms of the [GPL-3.0](http://www.gnu.org/licenses/gpl-3.0.html) licence.
