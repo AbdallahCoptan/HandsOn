@@ -4,7 +4,7 @@
 
 [![By aibrahim](https://img.shields.io/badge/by-aibrahim-blue.svg)](https://abdallahcoptan.github.io/) [![Licence](https://img.shields.io/badge/license-GPL--3.0-blue.svg)](http://www.gnu.org/licenses/gpl-3.0.html)[![GitHub Project](https://img.shields.io/badge/sources-Github-green.svg)](https://github.com/AbdallahCoptan/Hands-On) [![GitHub issues](https://img.shields.io/github/issues/Falkor/RR-tutorials.svg)](https://github.com/AbdallahCoptan/Hands-On/issues/) [![Documentation Status](https://readthedocs.org/projects/hands-on/badge/?version=latest)](https://hands-on.readthedocs.io/en/latest/?badge=latest)[![GitHub forks](https://img.shields.io/github/forks/Falkor/RR-tutorials.svg?style=social&label=Fork)](https://github.com/AbdallahCoptan/Hands-On)
 
-This website hosts documents, slides, material, Hands-on videos and information related to the tutorial "__AWS for Hydrosat DAP__" given during the [Hydrosat Training from RDI Consultancy](https://hands-on.readthedocs.io/en/latest/) conference.
+This website hosts documents, slides, material, Hands-on videos and information related to the tutorial "__AWS for Hydrosat DAP__" given during the [Hydrosat Training from RDI Consultancy](https://hands-on.readthedocs.io/en/latest/).
 
 [![](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/slides1.png)](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/Hydrosat_AWS_EC2_Storage_Database.pdf)
 
@@ -20,6 +20,26 @@ The **objective** of this tutorial is to offer a set of **practical sessions and
 7. [Networking in AWS]()
 8. [Load balancing and Scalling in AWS]()
 9. [AWS Pricing and Support](pricing.md)
-10. [AWS Security and Access Management]()
+10. [AWS Security and Access Management](security.md)
 
 
+
+
+
+
+
+
+| Topic                              	|  Concepts  	| Technical  	|   Video   	| Tutorial 	|
+|------------------------------------	|:----------:	|:----------:	|:---------:	|:--------:	|
+| Understanding Cloud Concepts       	| [slides]() 	| [slides]()    |           	|          	|
+| Introduction to AWS Infrastructure 	| [slides]() 	|            	|           	|          	|
+| Creating an account on AWS         	|            	| [slides]() 	| [watch]() 	| [link]() 	|
+| AWS Computing                      	| [slides]() 	| [slides]() 	| [watch]() 	| [link]() 	|
+| Run python scripts on EC2          	|            	|            	| [watch]() 	| [link]() 	|
+| Storage volumes in AWS             	| [slides]() 	| [slides]() 	| [watch]() 	| [link]() 	|
+| Docker Images on AWS               	|            	|            	|           	|          	|
+| Networking in AWS                  	|            	|            	|           	|          	|
+| Load balancing and Scalling in AWS 	|            	|            	|           	|          	|
+| AWS Pricing and Cost Mangement     	| [slides]() 	| [slides]() 	|           	| [link]() 	|
+| AWS Support Plans                  	|            	| [slides]() 	|           	| [link]() 	|
+| AWS Security and Access Management 	|            	| [slides]() 	|           	| [link]() 	|
