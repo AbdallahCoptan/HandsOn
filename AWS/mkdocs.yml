@@ -41,7 +41,9 @@ nav:
 #    - starting: AWS_Account (another copy).md
 #  - Azure:
 #    - statr: AWS_Account (3rd copy).md
+  - Training Resources: slides.md
   - References: ref.md
+  - Contact: contact.md
   
 markdown_extensions:
     - smarty

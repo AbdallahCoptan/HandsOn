@@ -25,21 +25,21 @@ The **objective** of this tutorial is to offer a set of **practical sessions and
 
 
 
-
+Beside the tutorial provided in these pages, there are some general concepts [slides](slides.md) are provided
 
 
 
 | Topic                              	|  Concepts  	| Technical  	|   Video   	| Tutorial 	|
 |------------------------------------	|:----------:	|:----------:	|:---------:	|:--------:	|
-| Understanding Cloud Concepts       	| [slides]() 	| [slides]()    |           	|          	|
-| Introduction to AWS Infrastructure 	| [slides]() 	|            	|           	|          	|
-| Creating an account on AWS         	|            	| [slides]() 	| [watch]() 	| [link]() 	|
-| AWS Computing                      	| [slides]() 	| [slides]() 	| [watch]() 	| [link]() 	|
-| Run python scripts on EC2          	|            	|            	| [watch]() 	| [link]() 	|
-| Storage volumes in AWS             	| [slides]() 	| [slides]() 	| [watch]() 	| [link]() 	|
-| Docker Images on AWS               	|            	|            	|           	|          	|
-| Networking in AWS                  	|            	|            	|           	|          	|
-| Load balancing and Scalling in AWS 	|            	|            	|           	|          	|
-| AWS Pricing and Cost Mangement     	| [slides]() 	| [slides]() 	|           	| [link]() 	|
-| AWS Support Plans                  	|            	| [slides]() 	|           	| [link]() 	|
-| AWS Security and Access Management 	|            	| [slides]() 	|           	| [link]() 	|
+| Understanding Cloud Concepts       	| [slides](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/understanding-cloud-concepts-slides.pdf) 	| [slides](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/Hydrosat_AWS_EC2_Storage_Database.pdf)    |           	|          	|
+| Introduction to AWS Infrastructure 	| [slides](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/Hydrosat_AWS_EC2_Storage_Database.pdf) 	|            	|           	|          	|
+| Creating an account on AWS         	|            	| [slides](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/Hydrosat_AWS_EC2_Storage_Database.pdf) 	| [watch](https://youtu.be/LZbj_Dp2-Zw) 	| [link](AWS_Account.md) 	|
+| AWS Computing                      	| [slides](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/reviewing-aws-core-services-slides.pdf) 	| [slides](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/Hydrosat_AWS_EC2_Storage_Database.pdf) 	| [watch](https://youtu.be/JCh5amM_ibg) 	| [link](EC2.md) 	|
+| Run python scripts on EC2          	|            	|            	| [watch](https://youtu.be/hgoGoLOaN_0) 	| [link](RunPython.md) 	|
+| Storage volumes in AWS             	| [slides](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/reviewing-aws-core-services-slides.pdf) 	| [slides](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/Hydrosat_AWS_EC2_Storage_Database.pdf) 	| [watch](https://youtu.be/0xc1XXuuoS4) 	| [link](EBS.md) 	|
+| Docker Images on AWS               	| [slides](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/reviewing-aws-core-services-slides.pdf)           	|  [slides](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/Hydrosat_AWS_Neworking_loadBalancing.pdf)           	|           	|  [link]()        	|
+| Networking in AWS                  	|  [slides](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/reviewing-aws-core-services-slides.pdf)          	|   [slides](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/Hydrosat_AWS_Neworking_loadBalancing.pdf)          	|           	| [link]()         	|
+| Load balancing and Scalling in AWS 	|  [slides](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/reviewing-aws-core-services-slides.pdf)          	|   [slides](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/Hydrosat_AWS_Neworking_loadBalancing.pdf)          	|           	| [link]()         	|  
+| AWS Pricing and Cost Mangement     	| [slides](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/understanding-cloud-concepts-slides.pdf) 	| [slides](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/Hydrosat_AWS_Pricing_Support.pdf) 	|           	| [link](pricing.md) 	|
+| AWS Support Plans                  	|  [slides](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/understanding-cloud-concepts-slides.pdf)          	| [slides](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/Hydrosat_AWS_Pricing_Support.pdf) 	|           	| [link](pricing.md) 	|
+| AWS Security and Access Management 	|   [slides](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/understanding-cloud-concepts-slides.pdf)         	| [slides](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/Hydrosat_AWS_Security.pdf) 	|           	| [link](security.md) 	|
