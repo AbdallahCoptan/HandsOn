@@ -60,3 +60,6 @@ The following table summerizes the AWS Hands on training sessions for Hydrosat:
 ### Licence
 
 This project and the sources proposed within this repository are released under the terms of the [GPL-3.0](http://www.gnu.org/licenses/gpl-3.0.html) licence.
+
+
+[![](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/GNU.png)](http://www.gnu.org/licenses/gpl-3.0.html)
