@@ -21,6 +21,9 @@ nav:
   - AWS Computing:
     - Using EC2 Compute Instances: EC2.md
     - Running Python on AWS EC2 Instance: RunPython.md
+    - Demo--Web server on EC2 Linux and Ubuntu Machines: WebserversDemo.md
+    - AWS Lightsail Services: lightsail.md
+    - Other AWS Compute Services: othercomputeservices.md
   - AWS Storage:
     - Dealing with AWS Storage: storage.md
     - Amazon EBS volumes: EBS.md

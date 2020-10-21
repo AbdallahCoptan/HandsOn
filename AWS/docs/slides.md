@@ -39,3 +39,12 @@ The resources in this training is consisting of three sections, the Slides, Tuto
 - [Running Python Script on EC2 Instance, connection established through Linux machine](https://youtu.be/hgoGoLOaN_0)
 - [Create, attach, and mount a new EBS volume](https://youtu.be/0xc1XXuuoS4)
 - [Detach, unmount, and delete an existing EBS volume](https://youtu.be/K_t4NCYnwbM)
+
+
+## Scripts
+
+- [Apache: Webserver installation Linux bash script]()
+- [Apache: Webserver installation Ubuntu bash script]()
+- [Python web flax: Webserver installation Ubuntu bash script]()
+- []()
+- []()
