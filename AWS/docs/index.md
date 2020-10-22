@@ -17,7 +17,7 @@ The **objective** of this tutorial is to offer a set of **practical sessions and
 3. [Run Python Scripts on EC2](RunPython.md)
 4. [Web servers on EC2 instances](WebserversDemo.md)
 5. [AWS Lightsail](lightsail.md)
-6. [Other Computing Services: Serverless and Containers](othercompteservices.md)
+6. [Other Computing Services: Serverless and Containers](othercomputeservices.md)
 7. [Storage volumes in AWS](EBS.md)
 8. [Networking in AWS]()
 9. [Relational databases in AWS](RDS.md)

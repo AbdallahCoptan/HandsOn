@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="AbdallahCoptan">
-  <link rel="canonical" href="https://abdallahcoptan.github.io/HandsOn/nosql/">
+  <link rel="canonical" href="https://abdallahcoptan.github.io/HandsOn/WebserversDemo/">
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>NoSQL DB - Hydrosat Hands-On</title>
+  <title>Demo--Web server on EC2 Linux and Ubuntu Machines - Hydrosat Hands-On</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "NoSQL DB";
-    var mkdocs_page_input_path = "nosql.md";
-    var mkdocs_page_url = "/HandsOn/nosql/";
+    var mkdocs_page_name = "Demo--Web server on EC2 Linux and Ubuntu Machines";
+    var mkdocs_page_input_path = "WebserversDemo.md";
+    var mkdocs_page_url = "/HandsOn/WebserversDemo/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js" defer></script>
@@ -87,7 +87,7 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">AWS Computing</span></p>
-                <ul>
+                <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../EC2/">Using EC2 Compute Instances</a>
     <ul>
     <li class="toctree-l2"><a class="reference internal" href="../EC2/#what-is-amazon-ec2">What is Amazon EC2?</a>
@@ -234,61 +234,61 @@
     </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../WebserversDemo/">Demo--Web server on EC2 Linux and Ubuntu Machines</a>
-    <ul>
-    <li class="toctree-l2"><a class="reference internal" href="../WebserversDemo/#creating-a-web-server-on-ec2-instance-linux-machine">Creating a web server on EC2 instance: Linux Machine</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Demo--Web server on EC2 Linux and Ubuntu Machines</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#creating-a-web-server-on-ec2-instance-linux-machine">Creating a web server on EC2 instance: Linux Machine</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="../WebserversDemo/#1-launching-the-instance-with-the-proper-setting">1. Launching the Instance with the proper setting</a>
+    <li class="toctree-l3"><a class="reference internal" href="#1-launching-the-instance-with-the-proper-setting">1. Launching the Instance with the proper setting</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="../WebserversDemo/#2-installing-the-webserver-or-user-data-and-shell-scripts">2. Installing the webserver [OR User data and shell scripts]</a>
+    <li class="toctree-l3"><a class="reference internal" href="#2-installing-the-webserver-or-user-data-and-shell-scripts">2. Installing the webserver [OR User data and shell scripts]</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="../WebserversDemo/#3-test-the-installed-webserver">3. Test the installed webserver</a>
+    <li class="toctree-l3"><a class="reference internal" href="#3-test-the-installed-webserver">3. Test the installed webserver</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="../WebserversDemo/#creating-a-web-server-on-ec2-instance-ubuntu-machine">Creating a web server on EC2 instance: Ubuntu Machine</a>
+    <li class="toctree-l2"><a class="reference internal" href="#creating-a-web-server-on-ec2-instance-ubuntu-machine">Creating a web server on EC2 instance: Ubuntu Machine</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="../WebserversDemo/#1-launching-the-instance-with-the-proper-setting_1">1. Launching the Instance with the proper setting</a>
+    <li class="toctree-l3"><a class="reference internal" href="#1-launching-the-instance-with-the-proper-setting_1">1. Launching the Instance with the proper setting</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="../WebserversDemo/#2-installing-the-webserver-or-user-data-and-shell-scripts_1">2. Installing the webserver [OR User data and shell scripts]</a>
+    <li class="toctree-l3"><a class="reference internal" href="#2-installing-the-webserver-or-user-data-and-shell-scripts_1">2. Installing the webserver [OR User data and shell scripts]</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="../WebserversDemo/#a-installing-apache-web-server">A. Installing Apache Web Server</a>
+    <li class="toctree-l4"><a class="reference internal" href="#a-installing-apache-web-server">A. Installing Apache Web Server</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="../WebserversDemo/#b-installing-flusk-through-python">B. Installing Flusk through Python</a>
+    <li class="toctree-l4"><a class="reference internal" href="#b-installing-flusk-through-python">B. Installing Flusk through Python</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="../WebserversDemo/#3-test-the-installed-webserver_1">3. Test the installed webserver</a>
+    <li class="toctree-l3"><a class="reference internal" href="#3-test-the-installed-webserver_1">3. Test the installed webserver</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="../WebserversDemo/#a-test-apache-server">A. Test Apache Server</a>
+    <li class="toctree-l4"><a class="reference internal" href="#a-test-apache-server">A. Test Apache Server</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="../WebserversDemo/#b-test-flusk-server">B. Test Flusk Server</a>
-    </li>
-        </ul>
+    <li class="toctree-l4"><a class="reference internal" href="#b-test-flusk-server">B. Test Flusk Server</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="../WebserversDemo/#creating-a-web-server-on-ec2-instance-windows-machine">Creating a web server on EC2 instance: Windows Machine</a>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#creating-a-web-server-on-ec2-instance-windows-machine">Creating a web server on EC2 instance: Windows Machine</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="../WebserversDemo/#1-create-instance-with-a-windwos-ami">1. Create instance with a Windwos AMI</a>
+    <li class="toctree-l3"><a class="reference internal" href="#1-create-instance-with-a-windwos-ami">1. Create instance with a Windwos AMI</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="../WebserversDemo/#2-connect-to-the-windows-instance">2. Connect to the Windows instance</a>
+    <li class="toctree-l3"><a class="reference internal" href="#2-connect-to-the-windows-instance">2. Connect to the Windows instance</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="../WebserversDemo/#3-install-the-web-server-on-windows">3. Install the web server on Windows</a>
+    <li class="toctree-l3"><a class="reference internal" href="#3-install-the-web-server-on-windows">3. Install the web server on Windows</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="../WebserversDemo/#running-commands-on-your-linux-instance-at-launch">Running commands on your Linux instance at launch</a>
+    <li class="toctree-l2"><a class="reference internal" href="#running-commands-on-your-linux-instance-at-launch">Running commands on your Linux instance at launch</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="../WebserversDemo/#specify-instance-user-data-at-launch">Specify instance user data at launch</a>
+    <li class="toctree-l3"><a class="reference internal" href="#specify-instance-user-data-at-launch">Specify instance user data at launch</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="../WebserversDemo/#view-and-update-the-instance-user-data">View and update the instance user data</a>
+    <li class="toctree-l3"><a class="reference internal" href="#view-and-update-the-instance-user-data">View and update the instance user data</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="../WebserversDemo/#running-commands-on-your-windows-instance-at-launch">Running commands on your Windows instance at launch</a>
+    <li class="toctree-l2"><a class="reference internal" href="#running-commands-on-your-windows-instance-at-launch">Running commands on your Windows instance at launch</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="../WebserversDemo/#more-complex-automation-scenarios-during-the-launching-of-instances">More complex automation scenarios during the launching of instances</a>
+    <li class="toctree-l2"><a class="reference internal" href="#more-complex-automation-scenarios-during-the-launching-of-instances">More complex automation scenarios during the launching of instances</a>
     </li>
     </ul>
                     </li>
@@ -441,7 +441,7 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">AWS Databases</span></p>
-                <ul class="current">
+                <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../RDS/">RDS</a>
     <ul>
     <li class="toctree-l2"><a class="reference internal" href="../RDS/#amazon-relational-database-rds">Amazon Relational Database (RDS)</a>
@@ -456,7 +456,7 @@
     </li>
     </ul>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">NoSQL DB</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../nosql/">NoSQL DB</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">AWS Pricing and Support</span></p>
@@ -534,19 +534,19 @@
     
       
         
-          <li>AWS Databases &raquo;</li>
+          <li>AWS Computing &raquo;</li>
         
       
     
-    <li>NoSQL DB</li>
+    <li>Demo--Web server on EC2 Linux and Ubuntu Machines</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
   </ul>
   
     <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-        <a href="../pricing/" class="btn btn-neutral float-right" title="AWS Pricing">Next <span class="icon icon-circle-arrow-right"></span></a>
-        <a href="../RDS/" class="btn btn-neutral" title="RDS"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../lightsail/" class="btn btn-neutral float-right" title="AWS Lightsail Services">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../RunPython/" class="btn btn-neutral" title="Running Python on AWS EC2 Instance"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
   
   <hr/>
@@ -554,7 +554,243 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="demo-web-server-on-aws-ec2-instances">Demo: Web Server on AWS EC2 Instances<a class="headerlink" href="#demo-web-server-on-aws-ec2-instances" title="Permanent link">&para;</a></h1>
+<p>Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides secure and resizable compute capacity in the cloud. It&rsquo;s designed to make web-scale cloud computing easier for developers.</p>
+<p>Amazon EC2 presents a true virtual computing environment, and it allows you to use web service interfaces to launch instances with a variety of operating systems, load them with your custom application environment, manage your network’s access permissions, and run your image by using as many or few systems as you want.</p>
+<p>Details on the features and cost of Amazon EC2 are available at: <a href="https://aws.amazon.com/ec2/">https://aws.amazon.com/ec2/</a></p>
+<p>Amazon EC2 provides a wide selection of instance types that are optimized to fit different use cases. Instance types comprise varying combinations of CPU, memory, storage, and networking capacity. They give you the flexibility to choose the appropriate mix of resources for your applications. Each instance type includes one or more instance sizes, which allows you to scale your resources to the requirements of your target workload. Current details about available instance types are available at: <a href="https://aws.amazon.com/ec2/instance-types/">https://aws.amazon.com/ec2/instance-types/</a></p>
+<p>In this section, you find one of the mostly used servers nowadays (e.g. web server) built on the EC2 comput instances on two different AMI, the first on <a href="#creating-a-web-server-on-ec2-instance:-linux-machine">Linux machine</a>, the second on <a href="#creating-a-web-server-on-ec2-instance:-ubuntu-machine">ubuntu machine</a>, third one on <a href="#creating-a-web-server-on-ec2-instance:-windows-machine">Windows machine</a>.</p>
+<h2 id="creating-a-web-server-on-ec2-instance-linux-machine">Creating a web server on EC2 instance: Linux Machine<a class="headerlink" href="#creating-a-web-server-on-ec2-instance-linux-machine" title="Permanent link">&para;</a></h2>
+<h3 id="1-launching-the-instance-with-the-proper-setting">1. Launching the Instance with the proper setting<a class="headerlink" href="#1-launching-the-instance-with-the-proper-setting" title="Permanent link">&para;</a></h3>
+<p>To create the web server on Amazon linux machine, follow the steps in <a href="../EC2/">Launcing EC2 Instance</a>:</p>
+<ol>
+<li>Choose Linux AMI, and decide on which kind of instance you need</li>
+<li>Configure instance details, up tp now leave it as is</li>
+<li>In case you need more storage, add in the next step more volumes</li>
+<li>Mange your resources by tags</li>
+<li>
+<p>Very important is to manage your security groups, see <a href="https://hands-on.readthedocs.io/en/latest/EC2/#create-a-security-group">Create a security group</a>
+    a. Do not forget to add the <code>HTTP/HTTPs</code> rule in order to access your web server
+    b. Make this rule to be accessed from <strong>anywhere</strong>
+    c. Keep the <code>SSH</code> rule as is, this will allow you to access the machin through <code>SSh</code></p>
+</li>
+<li>
+<p>Review your instance by adding a <code>public key</code> to access it </p>
+</li>
+</ol>
+<h3 id="2-installing-the-webserver-or-user-data-and-shell-scripts">2. Installing the webserver [OR <a href="#running-commands-on-your-linux-instance-at-launch">User data and shell scripts</a>]<a class="headerlink" href="#2-installing-the-webserver-or-user-data-and-shell-scripts" title="Permanent link">&para;</a></h3>
+<p>Once instance is launched and running:</p>
+<ol>
+<li>Connect to it through <code>SSH</code></li>
+<li>Transfer the files you may need to install them, through internet or from your local machin</li>
+<li>Install the <code>web server</code> by using the followin script:<pre><code>$&gt; yum update -y
+$&gt; amazon-linux-extras install -y lamp-mariadb10.2-php7.2 php7.2
+$&gt; yum install -y httpd mariadb-server
+$&gt; systemctl start httpd
+$&gt; systemctl enable httpd
+$&gt; usermod -a -G apache ec2-user
+$&gt; chown -R ec2-user:apache /var/www
+$&gt; chmod 2775 /var/www
+$&gt; find /var/www -type d -exec chmod 2775 {} \;
+$&gt; find /var/www -type f -exec chmod 0664 {} \;
+$&gt; echo "&lt;?php phpinfo(); ?&gt;" &gt; /var/www/html/phpinfo.php
+</code></pre>
+</li>
+</ol>
+<p>You can run the previous commands in the terminal or run it as a bash script, see all <a href="../slides/#scripts">scripts</a>, Check <a href="https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/Codes/script_linux.sh">Apache: Webserver installation Linux bash script (Script_linux.sh)</a>, it is as follow:</p>
+<pre><code>    #!/bin/bash
+    yum update -y
+    amazon-linux-extras install -y lamp-mariadb10.2-php7.2 php7.2
+    yum install -y httpd mariadb-server
+    systemctl start httpd
+    systemctl enable httpd
+    usermod -a -G apache ec2-user
+    chown -R ec2-user:apache /var/www
+    chmod 2775 /var/www
+    find /var/www -type d -exec chmod 2775 {} \;
+    find /var/www -type f -exec chmod 0664 {} \;
+    echo "&lt;?php phpinfo(); ?&gt;" &gt; /var/www/html/phpinfo.php
+</code></pre>
+<p>In order to run this in the terminal directly, do the following:</p>
+<pre><code>    $&gt; wget https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/Codes/script_linux.sh
+    $&gt; ./script_linux.sh
+</code></pre>
+<h3 id="3-test-the-installed-webserver">3. Test the installed webserver<a class="headerlink" href="#3-test-the-installed-webserver" title="Permanent link">&para;</a></h3>
+<p>In order to test your webserver in the instance, in a web browser, enter the URL of the PHP test file the script created. This URL is the <code>public DNS address</code> of your instance followed by a forward slash and the file name.</p>
+<pre><code>    http://my.public.dns.amazonaws.com(or the public IP)/phpinfo.php
+</code></pre>
+<h2 id="creating-a-web-server-on-ec2-instance-ubuntu-machine">Creating a web server on EC2 instance: Ubuntu Machine<a class="headerlink" href="#creating-a-web-server-on-ec2-instance-ubuntu-machine" title="Permanent link">&para;</a></h2>
+<h3 id="1-launching-the-instance-with-the-proper-setting_1">1. Launching the Instance with the proper setting<a class="headerlink" href="#1-launching-the-instance-with-the-proper-setting_1" title="Permanent link">&para;</a></h3>
+<p>To create the web server on Amazon linux machine, follow the steps in <a href="../EC2/">Launcing EC2 Instance</a>:</p>
+<ol>
+<li>Choose Ubuntu server AMI, and decide on which kind of instance you need</li>
+<li>Configure instance details, up tp now leave it as is</li>
+<li>In case you need more storage, add in the next step more volumes</li>
+<li>Mange your resources by tags</li>
+<li>
+<p>Very important is to manage your security groups, see <a href="https://hands-on.readthedocs.io/en/latest/EC2/#create-a-security-group">Create a security group</a>
+    a. Do not forget to add the <code>HTTP/HTTPs</code> rule in order to access your web server
+    b. Make this rule to be accessed from <strong>anywhere</strong>
+    c. Keep the <code>SSH</code> rule as is, this will allow you to access the machin through <code>SSh</code></p>
+</li>
+<li>
+<p>Review your instance by adding a <code>public key</code> to access it </p>
+</li>
+</ol>
+<h3 id="2-installing-the-webserver-or-user-data-and-shell-scripts_1">2. Installing the webserver [OR <a href="#running-commands-on-your-linux-instance-at-launch">User data and shell scripts</a>]<a class="headerlink" href="#2-installing-the-webserver-or-user-data-and-shell-scripts_1" title="Permanent link">&para;</a></h3>
+<h4 id="a-installing-apache-web-server">A. Installing Apache Web Server<a class="headerlink" href="#a-installing-apache-web-server" title="Permanent link">&para;</a></h4>
+<p>Once instance is launched and running:</p>
+<ol>
+<li>Connect to it through <code>SSH</code></li>
+<li>Transfer the files you may need to install them, through internet or from your local machin</li>
+<li>Install the <code>web server</code> by using the followin script:<pre><code>$&gt; sudo apt-get update
+$&gt; sudo add-apt-repository ppa:ondrej/php
+$&gt; sudo apt update
+$&gt; sudo apt install php7.2
+$&gt; sudo groupadd apache
+$&gt; sudo usermod -a -G apache ubuntu
+$&gt; sudo chown -R ubuntu:apache /var/www
+$&gt; sudo chmod 2775 /var/www
+$&gt; find /var/www -type d -exec chmod 2775 {} \;
+$&gt; find /var/www -type f -exec chmod 0664 {} \;
+$&gt; echo "&lt;?php phpinfo(); ?&gt;" &gt; /var/www/html/phpinfo.php
+$&gt; cd /var/www/html/
+$&gt; wget https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/Codes/hydro.html
+</code></pre>
+</li>
+</ol>
+<p>You can run the previous commands in the terminal or run it as a bash script, see all <a href="../slides/#scripts">scripts</a>, Check <a href="https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/Codes/script_ubuntu_1.sh">Apache: Webserver installation Ubuntu bash script (Script_linux_1.sh)</a>, it is as follow:</p>
+<pre><code>    #!/bin/bash
+    echo "Y" | sudo apt-get update
+    echo "" | sudo add-apt-repository ppa:ondrej/php
+    echo "Y" | sudo apt update
+    echo "Y" | sudo apt install php7.2
+    sudo groupadd apache
+    sudo usermod -a -G apache ubuntu
+    sudo chown -R ubuntu:apache /var/www
+    sudo chmod 2775 /var/www
+    find /var/www -type d -exec chmod 2775 {} \;
+    find /var/www -type f -exec chmod 0664 {} \;
+    echo "&lt;?php phpinfo(); ?&gt;" &gt; /var/www/html/phpinfo.php
+    cd /var/www/html/
+    wget https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/Codes/hydro.html
+</code></pre>
+<p>In order to run this in the terminal directly, do the following:</p>
+<pre><code>    $&gt; wget https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/Codes/script_ubuntu_1.sh
+    $&gt; chmod +x script_ubuntu_1.sh
+    $&gt; ./script_ubuntu_1.sh
+</code></pre>
+<h4 id="b-installing-flusk-through-python">B. Installing Flusk through Python<a class="headerlink" href="#b-installing-flusk-through-python" title="Permanent link">&para;</a></h4>
+<p>Once instance is launched and running:</p>
+<ol>
+<li>Connect to it through <code>SSH</code></li>
+<li>Transfer the files you may need to install them, through internet or from your local machin</li>
+<li>Install the <code>web server</code> by using the followin script:<pre><code>$&gt; git clone https://github.com/WillKoehrsen/recurrent-neural-networks.git
+$&gt; sudo apt-get update
+$&gt; sudo apt-get install python3-pip
+$&gt; cd recurrent-neural-networks
+$&gt; pip3 install --user -r requirements.txt
+$&gt; cd deployment
+$&gt; sudo python3 run_keras_server.py
+</code></pre>
+</li>
+</ol>
+<p>You can run the previous commands in the terminal or run it as a bash script, see all <a href="../slides/#scripts">scripts</a>, <a href="https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/Codes/test.sh">Python web flax: Webserver installation Ubuntu bash script (test.sh)</a>, it is as follow:</p>
+<pre><code>    #!/bin/bash
+    git clone https://github.com/WillKoehrsen/recurrent-neural-networks.git
+    echo "Y" | sudo apt-get update
+    echo "Y" | sudo apt-get install python3-pip
+    cd recurrent-neural-networks
+    pip3 install --user -r requirements.txt
+    cd deployment
+    sudo python3 run_keras_server.py
+</code></pre>
+<p>In order to run this in the terminal directly, do the following:</p>
+<pre><code>    $&gt; wget https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/Codes/test.sh
+    $&gt; chmod +x test.sh
+    $&gt; ./test.sh
+</code></pre>
+<h3 id="3-test-the-installed-webserver_1">3. Test the installed webserver<a class="headerlink" href="#3-test-the-installed-webserver_1" title="Permanent link">&para;</a></h3>
+<h4 id="a-test-apache-server">A. Test Apache Server<a class="headerlink" href="#a-test-apache-server" title="Permanent link">&para;</a></h4>
+<p>In order to test your webserver in the instance, in a web browser, enter the URL of the PHP test file the script created. This URL is the <code>public DNS address</code> of your instance followed by a forward slash and the file name.</p>
+<pre><code>    http://my.public.dns.amazonaws.com(or the public IP)/phpinfo.php
+    http://my.public.dns.amazonaws.com(or the public IP)/
+    http://my.public.dns.amazonaws.com(or the public IP)/hydro.html
+</code></pre>
+<h4 id="b-test-flusk-server">B. Test Flusk Server<a class="headerlink" href="#b-test-flusk-server" title="Permanent link">&para;</a></h4>
+<p>In order to test your webserver in the instance, in a web browser, enter the URL of the PHP test file the script created. This URL is the <code>public DNS address</code> of your instance followed by a forward slash and the file name.</p>
+<pre><code>    http://my.public.dns.amazonaws.com(or the public IP)/
+</code></pre>
+<h2 id="creating-a-web-server-on-ec2-instance-windows-machine">Creating a web server on EC2 instance: Windows Machine<a class="headerlink" href="#creating-a-web-server-on-ec2-instance-windows-machine" title="Permanent link">&para;</a></h2>
+<h3 id="1-create-instance-with-a-windwos-ami">1. Create instance with a Windwos AMI<a class="headerlink" href="#1-create-instance-with-a-windwos-ami" title="Permanent link">&para;</a></h3>
+<p>To creat an instance, please check <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/EC2_GetStarted.html">Getting started with Amazon EC2 Windows instances</a>.</p>
+<h3 id="2-connect-to-the-windows-instance">2. Connect to the Windows instance<a class="headerlink" href="#2-connect-to-the-windows-instance" title="Permanent link">&para;</a></h3>
+<p>To connect to a Windows instance, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/connecting_to_windows_instance.html">Connecting to Your Windows Instance</a> in the Amazon EC2 User Guide for Windows Instances. </p>
+<p>To transfer files to and from a Windows instance, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/connecting_to_windows_instance.html#AccessingInstancesWindowsFileTransfer">Transfer files to Windows instances</a> in the Amazon EC2 User Guide for Windows Instances.</p>
+<p>Use <a href="https://remmina.org/">remmina</a> to connect to your instance and transfer files from ubuntu machine. Check <a href="https://yatsushi.com/blog/how-to-create-shared-folder-on-windows-vm-from-ubuntu-with-Remmina/">How to create shared folder on Windows Remote Desktop from Ubuntu via Remmina</a>.</p>
+<h3 id="3-install-the-web-server-on-windows">3. Install the web server on Windows<a class="headerlink" href="#3-install-the-web-server-on-windows" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://www.liquidweb.com/kb/how-to-install-apache-on-a-windows-server/">How to Install Apache on a Windows Server</a></li>
+</ul>
+<h2 id="running-commands-on-your-linux-instance-at-launch">Running commands on your Linux instance at launch<a class="headerlink" href="#running-commands-on-your-linux-instance-at-launch" title="Permanent link">&para;</a></h2>
+<p>When you launch an instance in Amazon EC2, you have the option of passing user data to the instance that can be used to perform common automated configuration tasks and even run scripts after the instance starts. You can pass two types of user data to Amazon EC2: shell scripts and cloud-init directives. You can also pass this data into the launch wizard as plain text, as a file (this is useful for launching instances using the command line tools), or as base64-encoded text (for API calls). </p>
+<h3 id="specify-instance-user-data-at-launch">Specify instance user data at launch<a class="headerlink" href="#specify-instance-user-data-at-launch" title="Permanent link">&para;</a></h3>
+<p>You can specify instance user data when you launch the instance. If the root volume of the instance is an EBS volume, you can also stop the instance and update its user data. </p>
+<p>Follow the procedure for launching an instance at <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-instance.html">Launching an instance using the Launch Instance Wizard</a>, but when you get to <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-instance.html#configure_instance_details_step">Step 3: Configure Instance Details</a> in that procedure, copy your shell script in the User data field, and then complete the launch procedure.</p>
+<p>In the example script below, the script creates and configures our web server.</p>
+<pre><code>    #!/bin/bash
+    yum update -y
+    amazon-linux-extras install -y lamp-mariadb10.2-php7.2 php7.2
+    yum install -y httpd mariadb-server
+    systemctl start httpd
+    systemctl enable httpd
+    usermod -a -G apache ec2-user
+    chown -R ec2-user:apache /var/www
+    chmod 2775 /var/www
+    find /var/www -type d -exec chmod 2775 {} \;
+    find /var/www -type f -exec chmod 0664 {} \;
+    echo "&lt;?php phpinfo(); ?&gt;" &gt; /var/www/html/phpinfo.php
+</code></pre>
+<p>Allow enough time for the instance to launch and execute the commands in your script, and then check to see that your script has completed the tasks that you intended.</p>
+<p>For our example, in a web browser, enter the URL of the PHP test file the script created. This URL is the public DNS address of your instance followed by a forward slash and the file name. </p>
+<pre><code>    http://my.public.dns.amazonaws.com/phpinfo.php
+</code></pre>
+<p>You should see the PHP information page. If you are unable to see the PHP information page, check that the security group you are using contains a rule to allow HTTP (port 80) traffic. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule">Adding rules to a security group</a>.</p>
+<p><code>(Optional)</code> If your script did not accomplish the tasks you were expecting it to, or if you just want to verify that your script completed without errors, examine the cloud-init output log file at <code>/var/log/cloud-init-output.log</code> and look for error messages in the output. </p>
+<h3 id="view-and-update-the-instance-user-data">View and update the instance user data<a class="headerlink" href="#view-and-update-the-instance-user-data" title="Permanent link">&para;</a></h3>
+<p><strong>To modify instance user data</strong></p>
+<ol>
+<li>
+<p>Open the Amazon EC2 console at <a href="https://console.aws.amazon.com/ec2/">https://console.aws.amazon.com/ec2/</a>.</p>
+</li>
+<li>
+<p>In the navigation pane, choose <strong>Instances</strong>.</p>
+</li>
+<li>
+<p>Select the instance and choose <strong>Actions, Instance State, Stop</strong>.</p>
+<pre><code>/!\ Warning
+
+When you stop an instance, the data on any instance store volumes is erased. 
+To keep data from instance store volumes, be sure to back it up to persistent storage.
+</code></pre>
+</li>
+<li>
+<p>When prompted for confirmation, choose <strong>Yes, Stop</strong>. It can take a few minutes for the instance to stop.</p>
+</li>
+<li>
+<p>With the instance still selected, choose <strong>Actions, Instance Settings, View/Change User Data</strong>. You can&rsquo;t change the user data if the instance is running, but you can view it.</p>
+</li>
+<li>
+<p>In the <strong>View/Change User Data</strong> dialog box, update the user data, and then choose Save.</p>
+</li>
+<li>
+<p>Restart the instance. The new user data is visible on your instance after you restart it; however, user data scripts are not executed.</p>
+</li>
+</ol>
+<h2 id="running-commands-on-your-windows-instance-at-launch">Running commands on your Windows instance at launch<a class="headerlink" href="#running-commands-on-your-windows-instance-at-launch" title="Permanent link">&para;</a></h2>
+<p>For information about running commands on your Windows instance at launch, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Running Commands on Your Windows Instance at Launch</a> and <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state.html">Managing Windows Instance Configuration</a> in the Amazon EC2 User Guide for Windows Instances. </p>
+<h2 id="more-complex-automation-scenarios-during-the-launching-of-instances">More complex automation scenarios during the launching of instances<a class="headerlink" href="#more-complex-automation-scenarios-during-the-launching-of-instances" title="Permanent link">&para;</a></h2>
+<p>If you are interested in more complex automation scenarios, consider using AWS CloudFormation and AWS OpsWorks. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html">AWS CloudFormation User Guide</a> and the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/welcome.html">AWS OpsWorks User Guide</a>. </p>
               
             </div>
           </div>
@@ -562,10 +798,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../pricing/" class="btn btn-neutral float-right" title="AWS Pricing">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../lightsail/" class="btn btn-neutral float-right" title="AWS Lightsail Services">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../RDS/" class="btn btn-neutral" title="RDS"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../RunPython/" class="btn btn-neutral" title="Running Python on AWS EC2 Instance"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -591,10 +827,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../RDS/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../RunPython/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../pricing/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../lightsail/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
