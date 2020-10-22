@@ -15,13 +15,15 @@ The **objective** of this tutorial is to offer a set of **practical sessions and
 1. [Start working on AWS by creating an account](AWS_Account.md)
 2. [AWS Computing](EC2.md)
 3. [Run Python Scripts on EC2](RunPython.md)
-4. [Storage volumes in AWS](EBS.md)
-5. [Relational databases in AWS]()
-6. [Docker Images on AWS]()
-7. [Networking in AWS]()
-8. [Load balancing and Scalling in AWS]()
-9. [AWS Pricing and Support](pricing.md)
-10. [AWS Security and Access Management](security.md)
+4. [Web servers on EC2 instances](WebserversDemo.md)
+5. [AWS Lightsail](lightsail.md)
+6. [Other Computing Services: Serverless and Containers](othercompteservices.md)
+7. [Storage volumes in AWS](EBS.md)
+8. [Networking in AWS]()
+9. [Relational databases in AWS](RDS.md)
+10. [Load balancing and Scalling in AWS]()
+11. [AWS Pricing and Support](pricing.md)
+12. [AWS Security and Access Management](security.md)
 
 
 

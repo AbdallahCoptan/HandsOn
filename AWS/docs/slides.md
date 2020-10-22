@@ -43,8 +43,8 @@ The resources in this training is consisting of three sections, the Slides, Tuto
 
 ## Scripts
 
-- [Apache: Webserver installation Linux bash script]()
-- [Apache: Webserver installation Ubuntu bash script]()
-- [Python web flax: Webserver installation Ubuntu bash script]()
-- []()
-- []()
+- [Apache: Webserver installation Linux bash script (Script_linux.sh)](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/Codes/script_linux.sh)
+- [Apache: Webserver installation Ubuntu bash script (Script_ubuntu_1.sh)](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/Codes/script_ubuntu_1.sh)
+- [Python web flax: Webserver installation Ubuntu bash script (test.sh)](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/Codes/test.sh)
+- [User data script for "Python web flax: Webserver installation Ubuntu bash script" (script_ubuntu.sh)](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/Codes/script_ubuntu.sh)
+- [Welcome Hydrosat web page (hydro.html)](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/Codes/hydro.html)
