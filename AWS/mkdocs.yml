@@ -25,8 +25,10 @@ nav:
     - AWS Lightsail Services: lightsail.md
     - Other AWS Compute Services: othercomputeservices.md
   - AWS Storage:
+    - Storage on AWS: awsStore.md
     - Dealing with AWS Storage: storage.md
     - Amazon EBS volumes: EBS.md
+    - Amazon EBS Demo: ebsDemo.md
   - AWS Databases:
     - RDS: RDS.md
     - NoSQL DB: nosql.md
