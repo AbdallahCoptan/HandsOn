@@ -335,6 +335,14 @@
                 </ul>
                 <p class="caption"><span class="caption-text">AWS Storage</span></p>
                 <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../awsStore/">Storage on AWS</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../awsStore/#storage-scenario">Storage Scenario</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../awsStore/#object-vs-block-level-storage">[Object vs. block]-level Storage</a>
+    </li>
+    </ul>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../storage/">Dealing with AWS Storage</a>
     <ul>
     <li class="toctree-l2"><a class="reference internal" href="../storage/#aws-storage-options">AWS Storage Options</a>
@@ -436,6 +444,32 @@
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="../EBS/#references">References</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../ebsDemo/">Amazon EBS Demo</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../ebsDemo/#note-ebs-types-and-services-quotas">Note: EBS types and services quotas</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../ebsDemo/#important-feature-in-amazone-ebs">Important feature in Amazone EBS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../ebsDemo/#difference-between-ebs-and-instance-store">Difference between EBS and Instance Store</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../ebsDemo/#note">Note</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../ebsDemo/#demonestrations-creating-an-amazon-ebs-volume">Demonestrations: Creating an Amazon EBS volume</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../ebsDemo/#demo-ebs-as-a-root-storage-for-ec2-instances">Demo: EBS as a root storage for EC2 instances</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../ebsDemo/#demo-create-an-empty-ebs-volume-and-attach-it-to-a-running-instance">Demo: Create an empty EBS volume and attach it to a running instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../ebsDemo/#demo-create-an-ebs-volume-from-a-previously-created-snapshot-and-attach-it-to-a-running-instance">Demo: Create an EBS volume from a previously created snapshot and attach it to a running instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../ebsDemo/#demo-attach-an-ebs-volume-to-a-windows-ami-instance">Demo: Attach an EBS volume to a Windows AMI instance</a>
+    </li>
+        </ul>
     </li>
     </ul>
                     </li>
@@ -546,7 +580,7 @@
   
     <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
         <a href="../nosql/" class="btn btn-neutral float-right" title="NoSQL DB">Next <span class="icon icon-circle-arrow-right"></span></a>
-        <a href="../EBS/" class="btn btn-neutral" title="Amazon EBS volumes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ebsDemo/" class="btn btn-neutral" title="Amazon EBS Demo"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
   
   <hr/>
@@ -597,7 +631,7 @@ the data that&rsquo;s in there, and she is 100% responsible for that. Whether it
         <a href="../nosql/" class="btn btn-neutral float-right" title="NoSQL DB">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../EBS/" class="btn btn-neutral" title="Amazon EBS volumes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ebsDemo/" class="btn btn-neutral" title="Amazon EBS Demo"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -623,7 +657,7 @@ the data that&rsquo;s in there, and she is 100% responsible for that. Whether it
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../EBS/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../ebsDemo/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../nosql/" style="color: #fcfcfc">Next &raquo;</a></span>

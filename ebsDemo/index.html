@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="AbdallahCoptan">
-  <link rel="canonical" href="https://abdallahcoptan.github.io/HandsOn/othercomputeservices/">
+  <link rel="canonical" href="https://abdallahcoptan.github.io/HandsOn/ebsDemo/">
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Other AWS Compute Services - Hydrosat Hands-On</title>
+  <title>Amazon EBS Demo - Hydrosat Hands-On</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Other AWS Compute Services";
-    var mkdocs_page_input_path = "othercomputeservices.md";
-    var mkdocs_page_url = "/HandsOn/othercomputeservices/";
+    var mkdocs_page_name = "Amazon EBS Demo";
+    var mkdocs_page_input_path = "ebsDemo.md";
+    var mkdocs_page_url = "/HandsOn/ebsDemo/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js" defer></script>
@@ -87,7 +87,7 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">AWS Computing</span></p>
-                <ul class="current">
+                <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../EC2/">Using EC2 Compute Instances</a>
     <ul>
     <li class="toctree-l2"><a class="reference internal" href="../EC2/#what-is-amazon-ec2">What is Amazon EC2?</a>
@@ -312,21 +312,21 @@
     </li>
     </ul>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Other AWS Compute Services</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#aws-lambda">AWS Lambda</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../othercomputeservices/">Other AWS Compute Services</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../othercomputeservices/#aws-lambda">AWS Lambda</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#watch-it-here">Watch it here</a>
+    <li class="toctree-l3"><a class="reference internal" href="../othercomputeservices/#watch-it-here">Watch it here</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#aws-container-services">AWS Container Services</a>
+    <li class="toctree-l2"><a class="reference internal" href="../othercomputeservices/#aws-container-services">AWS Container Services</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#1-aws-ecs">1. AWS ECS</a>
+    <li class="toctree-l3"><a class="reference internal" href="../othercomputeservices/#1-aws-ecs">1. AWS ECS</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#2-amazon-eks">2. Amazon EKS</a>
+    <li class="toctree-l3"><a class="reference internal" href="../othercomputeservices/#2-amazon-eks">2. Amazon EKS</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#3-aws-fargate">3. AWS Fargate</a>
+    <li class="toctree-l3"><a class="reference internal" href="../othercomputeservices/#3-aws-fargate">3. AWS Fargate</a>
     </li>
         </ul>
     </li>
@@ -334,7 +334,7 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">AWS Storage</span></p>
-                <ul>
+                <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../awsStore/">Storage on AWS</a>
     <ul>
     <li class="toctree-l2"><a class="reference internal" href="../awsStore/#storage-scenario">Storage Scenario</a>
@@ -447,27 +447,27 @@
     </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../ebsDemo/">Amazon EBS Demo</a>
-    <ul>
-    <li class="toctree-l2"><a class="reference internal" href="../ebsDemo/#note-ebs-types-and-services-quotas">Note: EBS types and services quotas</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Amazon EBS Demo</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#note-ebs-types-and-services-quotas">Note: EBS types and services quotas</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="../ebsDemo/#important-feature-in-amazone-ebs">Important feature in Amazone EBS</a>
+    <li class="toctree-l2"><a class="reference internal" href="#important-feature-in-amazone-ebs">Important feature in Amazone EBS</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="../ebsDemo/#difference-between-ebs-and-instance-store">Difference between EBS and Instance Store</a>
+    <li class="toctree-l2"><a class="reference internal" href="#difference-between-ebs-and-instance-store">Difference between EBS and Instance Store</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="../ebsDemo/#note">Note</a>
+    <li class="toctree-l3"><a class="reference internal" href="#note">Note</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="../ebsDemo/#demonestrations-creating-an-amazon-ebs-volume">Demonestrations: Creating an Amazon EBS volume</a>
+    <li class="toctree-l2"><a class="reference internal" href="#demonestrations-creating-an-amazon-ebs-volume">Demonestrations: Creating an Amazon EBS volume</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="../ebsDemo/#demo-ebs-as-a-root-storage-for-ec2-instances">Demo: EBS as a root storage for EC2 instances</a>
+    <li class="toctree-l3"><a class="reference internal" href="#demo-ebs-as-a-root-storage-for-ec2-instances">Demo: EBS as a root storage for EC2 instances</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="../ebsDemo/#demo-create-an-empty-ebs-volume-and-attach-it-to-a-running-instance">Demo: Create an empty EBS volume and attach it to a running instance</a>
+    <li class="toctree-l3"><a class="reference internal" href="#demo-create-an-empty-ebs-volume-and-attach-it-to-a-running-instance">Demo: Create an empty EBS volume and attach it to a running instance</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="../ebsDemo/#demo-create-an-ebs-volume-from-a-previously-created-snapshot-and-attach-it-to-a-running-instance">Demo: Create an EBS volume from a previously created snapshot and attach it to a running instance</a>
+    <li class="toctree-l3"><a class="reference internal" href="#demo-create-an-ebs-volume-from-a-previously-created-snapshot-and-attach-it-to-a-running-instance">Demo: Create an EBS volume from a previously created snapshot and attach it to a running instance</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="../ebsDemo/#demo-attach-an-ebs-volume-to-a-windows-ami-instance">Demo: Attach an EBS volume to a Windows AMI instance</a>
+    <li class="toctree-l3"><a class="reference internal" href="#demo-attach-an-ebs-volume-to-a-windows-ami-instance">Demo: Attach an EBS volume to a Windows AMI instance</a>
     </li>
         </ul>
     </li>
@@ -568,19 +568,19 @@
     
       
         
-          <li>AWS Computing &raquo;</li>
+          <li>AWS Storage &raquo;</li>
         
       
     
-    <li>Other AWS Compute Services</li>
+    <li>Amazon EBS Demo</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
   </ul>
   
     <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-        <a href="../awsStore/" class="btn btn-neutral float-right" title="Storage on AWS">Next <span class="icon icon-circle-arrow-right"></span></a>
-        <a href="../lightsail/" class="btn btn-neutral" title="AWS Lightsail Services"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../RDS/" class="btn btn-neutral float-right" title="RDS">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../EBS/" class="btn btn-neutral" title="Amazon EBS volumes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
   
   <hr/>
@@ -588,44 +588,74 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="other-aws-compute-services">Other AWS Compute Services<a class="headerlink" href="#other-aws-compute-services" title="Permanent link">&para;</a></h1>
-<p>Building and running your application starts with compute, whether you are building enterprise, cloud-native, or mobile applications; or running massive clusters to sequence the human genome.</p>
-<p>AWS offers a comprehensive portfolio of compute services that allow you to develop, deploy, run, and scale your applications and workloads in the world’s most powerful, secure, and innovative compute cloud.</p>
-<p><strong>Details about the full range of AWS compute services can be found <a href="https://aws.amazon.com/products/compute/">here</a></strong> .</p>
-<p>Two other styles of computing may Hyddrosat is interested on them :</p>
-<ol>
-<li><a href="#aws-lambda">serverless computing</a></li>
-<li><a href="#aws-container-services">container services</a></li>
-</ol>
-<h2 id="aws-lambda">AWS Lambda<a class="headerlink" href="#aws-lambda" title="Permanent link">&para;</a></h2>
-<p>AWS Lambda lets you run code without provisioning or managing servers. You pay only for the compute time you consume&ndash;there is no charge when your code isn&rsquo;t running. Additional information about Lambda can be found at: <a href="https://aws.amazon.com/lambda">https://aws.amazon.com/lambda</a></p>
-<h3 id="watch-it-here">Watch it here<a class="headerlink" href="#watch-it-here" title="Permanent link">&para;</a></h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/eOBq__h4OJ4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<h2 id="aws-container-services">AWS Container Services<a class="headerlink" href="#aws-container-services" title="Permanent link">&para;</a></h2>
-<p>Please check the <a href="https://aws.amazon.com/containers/">Containers on AWS</a>, The most secure, reliable, and scalable way to run containers </p>
-<h3 id="1-aws-ecs">1. AWS ECS<a class="headerlink" href="#1-aws-ecs" title="Permanent link">&para;</a></h3>
-<p>Amazon Elastic Container Service (Amazon ECS) is a highly scalable, high-performance container orchestration service that supports Docker containers. It allows you to run and scale containerized applications on AWS. You can find more details at: <a href="https://aws.amazon.com/ecs/">https://aws.amazon.com/ecs/</a></p>
-<p>Please check:</p>
-<ol>
-<li><a href="https://aws.amazon.com/getting-started/hands-on/deploy-docker-containers/">Deploy Docker Containers on Amazon Elastic Container Service (Amazon ECS)</a></li>
+                <h1 id="amazon-ebs-demo">Amazon EBS Demo<a class="headerlink" href="#amazon-ebs-demo" title="Permanent link">&para;</a></h1>
+<p>Amazon Elastic Block Store (Amazon EBS) provides <strong>persistent</strong> <strong>block storage</strong> volumes for use with Amazon EC2 instances in the AWS Cloud. Each Amazon EBS volume is <em>automatically replicated inside an Availability Zone</em> to protect you from component failure, which offers high availability and durability. Amazon EBS volumes offer the <strong>consistent and low-latency performance</strong> that you need to run your workloads.</p>
+<p>Amazon EBS provides a range of options that allow you to optimize storage performance and cost for your workload. These options are divided into two major categories:</p>
+<ul>
 <li>
-<p><a href="https://medium.com/appgambit/part-1-running-docker-on-aws-ec2-cbcf0ec7c3f8">Running Docker on AWS EC2</a></p>
+<p>Solid State Drive (SSD)-backed storage for transactional workloads, such as </p>
+<ul>
+<li>databases and </li>
+<li>boot volumes (performance depends primarily on IOPS)</li>
+</ul>
 </li>
 <li>
-<p><a href="https://docs.docker.com/engine/context/ecs-integration/">Deploying Docker containers on ECS</a></p>
+<p>Hard Disk Drive (HDD)-backed storage for throughput-intensive workloads, such as </p>
+<ul>
+<li>MapReduce and </li>
+<li>log processing (performance depends primarily on MB/s).</li>
+</ul>
 </li>
+</ul>
+<h5 id="note-ebs-types-and-services-quotas">Note: EBS types and services quotas<a class="headerlink" href="#note-ebs-types-and-services-quotas" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Before using the Amazon EBS block storage, you need to check the types of the EBS volumes very carfuly, by checking Amazon <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">EBS volume types</a>.</li>
+<li>As your account is limited on the number of EBS volumes that you can use, For more information about these limits, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 Service Quotas</a>.</li>
+<li>How to request an increase in your limits, see <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">Requesting a quota increase</a>.</li>
 </ol>
-<h3 id="2-amazon-eks">2. Amazon EKS<a class="headerlink" href="#2-amazon-eks" title="Permanent link">&para;</a></h3>
-<p>Amazon Elastic Container Service for Kubernetes (Amazon EKS) makes it straightforward to deploy, manage, and scale containerized applications that use Kubernetes on AWS. Details can be found at:<a href="https://aws.amazon.com/eks/">https://aws.amazon.com/eks/</a></p>
+<p>The Elastic Volume feature of Amazon EBS allows you to:</p>
 <ul>
-<li><a href="https://aws.amazon.com/getting-started/hands-on/deploy-kubernetes-app-amazon-eks/">Deploy a Kubernetes Application with Amazon Elastic Container Service for Kubernetes</a></li>
+<li>dynamically increase capacity, </li>
+<li>tune performance, and </li>
+<li>change the type of live volumes with no downtime or performance impact. </li>
 </ul>
-<h3 id="3-aws-fargate">3. AWS Fargate<a class="headerlink" href="#3-aws-fargate" title="Permanent link">&para;</a></h3>
-<p>AWS Fargate is a compute engine for Amazon ECS and Amazon EKS that allows you to run containers without having to manage servers or clusters. You can find more information at: <a href="https://aws.amazon.com/fargate/">https://aws.amazon.com/fargate/</a></p>
-<ul>
-<li><a href="https://itnext.io/run-your-containers-on-aws-fargate-c2d4f6a47fda">Run your containers on AWS Fargate</a></li>
-</ul>
+<p>This allows you to easily right-size your deployment and adapt to performance changes.</p>
+<p>Pricing for Amazon EBS is based on the amount (volume) and type of Amazon EBS volume that you provision. For pricing information, see: <a href="https://aws.amazon.com/ebs/pricing/">https://aws.amazon.com/ebs/pricing/</a>. Confirm that you are looking at cost in the correct Region.</p>
+<p>Full details on Amazon EBS are available here: <a href="https://aws.amazon.com/ebs">https://aws.amazon.com/ebs</a> </p>
+<h2 id="important-feature-in-amazone-ebs">Important feature in Amazone EBS<a class="headerlink" href="#important-feature-in-amazone-ebs" title="Permanent link">&para;</a></h2>
+<p>EBS provides the most common block storage you will use at AWS. When you launch your EC2 instance, you&rsquo;re going to need some kind of block storage to go with it. It&rsquo;s part of the boot volume or maybe it&rsquo;s a separate data volume. AWS has racks of unused storage that you can provision to sizes as large as you need up to many terabytes in size.</p>
+<p>When you launch the EC2 instance, the boot volume can attach directly to your EC2 instance, as well as the data volume. <strong>These volumes live independent of the EC2 instance themselves</strong>. In fact, they may already exist before your EC2 instance launches.
+When it launches, it simply finds the volume and attaches it the same way you might have an old drive from a laptop.</p>
+<p>As in the following image, The EC2 instance, when it connects to the EBS volumes, now has a direct communication to these volumes.
+Nobody else can talk directly to them. It&rsquo;s how AWS maintains secure communications at all times.</p>
+<p><img alt="" src="../EBS%282%29.png" /> </p>
+<p>The EBS volumes have a lifecycle independent of EC2. What does this mean? Let&rsquo;s say that this EC2 instance is part of a developer machine that over the weekend, nobody is using because your developers go home over the weekend. So, during those 48 hours, 72 hours,
+there&rsquo;s no reason to be paying for EC2 because nobody is using it. All you have to do is simply stop the instance. When you stop EC2,
+the EBS volumes survive. They just simply are no longer connected to the EC2 instance. See the following image.</p>
+<p><img alt="" src="../EBS%281%29.png" /></p>
+<p>Then, Monday morning comes around, your developer starts up an EC2 instance, and a brand new instance is created. It reattaches those same EBS volumes the same way you would simply shut down your laptop over the weekend and start it again on Monday. But over the weekend, you didn&rsquo;t have to pay for EC2. But there&rsquo;s more we can take advantage of the idea that EBS lives outside of EC2 because what if I want a more powerful machine? Just like I could take your hard drives out of your existing laptop and put it in a stronger laptop, at AWS, you can simply provision a newer, bigger EC2 instance, stop the old EC2 instance, and then just attach the volumes to your brand new EC2. So, now, I&rsquo;ve got the same boot volume, the same applications, the same data only running newer, bigger, stronger. It&rsquo;s one of the many advantages EBS brings to you as part of AWS</p>
+<p><img alt="" src="../EBS.png" /></p>
+<h2 id="difference-between-ebs-and-instance-store">Difference between EBS and Instance Store<a class="headerlink" href="#difference-between-ebs-and-instance-store" title="Permanent link">&para;</a></h2>
+<p>EC2 instances support two types for block level storage: 
+- EC2 Instances can be launched using either Elastic Block Store (EBS) or 
+- Instance Store volume as root volumes and additional volumes.</p>
+<p><strong>EBS volume</strong> is network attached drive which results in slow performance but data is persistent meaning even if you reboot the instance data will be there.</p>
+<p><strong>Instance store</strong> provides temporary block-level storage for your instance. This storage is located on disks that are physically attached to the host computer.</p>
+<h4 id="note">Note<a class="headerlink" href="#note" title="Permanent link">&para;</a></h4>
+<p>EC2 instances can be launched by choosing between <strong>AMIs</strong> backed by EC2 instance store and AMIs backed by EBS. However, AWS recommends use of EBS backed AMIs, because they launch faster and use persistent storage, please see the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html">AMIs Categories</a>.</p>
+<p><img alt="" src="../instanceStor_VS_EBS.png" /></p>
+<p>For more information, please check <a href="https://medium.com/awesome-cloud/aws-difference-between-ebs-and-instance-store-f030c4407387">AWS — Difference between EBS and Instance Store</a>.</p>
+<h2 id="demonestrations-creating-an-amazon-ebs-volume">Demonestrations: Creating an Amazon EBS volume<a class="headerlink" href="#demonestrations-creating-an-amazon-ebs-volume" title="Permanent link">&para;</a></h2>
+<p>You can create an Amazon EBS volumes, by the following three ways:</p>
+<ol>
+<li>The root storage through launching instance wizard</li>
+<li>Create a new EBS volume and attached it to a new/old instance</li>
+<li>Create from a saved snapshot.</li>
+</ol>
+<h3 id="demo-ebs-as-a-root-storage-for-ec2-instances">Demo: EBS as a root storage for EC2 instances<a class="headerlink" href="#demo-ebs-as-a-root-storage-for-ec2-instances" title="Permanent link">&para;</a></h3>
+<h3 id="demo-create-an-empty-ebs-volume-and-attach-it-to-a-running-instance">Demo: Create an empty EBS volume and attach it to a running instance<a class="headerlink" href="#demo-create-an-empty-ebs-volume-and-attach-it-to-a-running-instance" title="Permanent link">&para;</a></h3>
+<h3 id="demo-create-an-ebs-volume-from-a-previously-created-snapshot-and-attach-it-to-a-running-instance">Demo: Create an EBS volume from a previously created snapshot and attach it to a running instance<a class="headerlink" href="#demo-create-an-ebs-volume-from-a-previously-created-snapshot-and-attach-it-to-a-running-instance" title="Permanent link">&para;</a></h3>
+<h3 id="demo-attach-an-ebs-volume-to-a-windows-ami-instance">Demo: Attach an EBS volume to a Windows AMI instance<a class="headerlink" href="#demo-attach-an-ebs-volume-to-a-windows-ami-instance" title="Permanent link">&para;</a></h3>
               
             </div>
           </div>
@@ -633,10 +663,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../awsStore/" class="btn btn-neutral float-right" title="Storage on AWS">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../RDS/" class="btn btn-neutral float-right" title="RDS">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../lightsail/" class="btn btn-neutral" title="AWS Lightsail Services"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../EBS/" class="btn btn-neutral" title="Amazon EBS volumes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -662,10 +692,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../lightsail/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../EBS/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../awsStore/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../RDS/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
