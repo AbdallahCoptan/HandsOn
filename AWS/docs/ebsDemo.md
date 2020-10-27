@@ -98,7 +98,20 @@ You can create an Amazon EBS volumes, by the following three ways:
 
 ### Demo: EBS as a root storage for EC2 instances
 
+This this demo shows how to use the EBS storage as a root storage while launching your EC2 instance.
 
+Please follow the following steps:
+
+1. Start launching your EC2 instance, by following the [Launch Instance Wizard](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-instance.html)
+2. In [Step 4: Add Storage](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-instance.html#step-4-add-storage), you can change your volume size, encrypte its data, and uncheck the deletion after instance termination.
+3. If you terminate the instance, you will find this voulume exists and avialble for attachment.
+4. To attach this old volume, see [Attaching an Amazon EBS volume to an instance](EBS.md#attaching-an-amazon-ebs-volume-to-an-instance).
+5. To mount this old volume, see [Mount an attached volume](EBS.md#format-and-mount-an-attached-volume).
+		
+		/!\ Note
+		Mounting an attached volume, is not the same for different types of AMIs, so Windows, not the same like Linux.
+
+6. To demount and de-attaching, and deleting the volume, see [Releasing an Amazon EBS volume](EBS.md#releasing-an-amazon-ebs-volume).
 
 
 
@@ -106,13 +119,127 @@ You can create an Amazon EBS volumes, by the following three ways:
 
 ### Demo: Create an empty EBS volume and attach it to a running instance
 
+This this demo shows how to craete an empty volume and attach it to an EC2 instance.
 
+Please follow the following steps:
 
+1. Start launching your EC2 instance, by following the [Launch Instance Wizard](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-instance.html)
+2. In [Step 2: Choose an Instance Type](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-instance.html#choose-an-instance-type-page), choose zour favorite **availability zone**, it is not agood idea to keep it randome choise at this moment. 
+3. Start creating an empty EBS volume, see [create empty EBS volume through the console](EBS.md#to-create-a-empty-ebs-volume-using-the-console).
+		
+		/!\ Note
+		The New empty volume and the EC2 instance have to be in the same availability zone 
+
+4. Attaching this new volume, see [Attaching an Amazon EBS volume to an instance](EBS.md#attaching-an-amazon-ebs-volume-to-an-instance).
+5. Mounting this new volume, see [Mount an attached volume](EBS.md#format-and-mount-an-attached-volume).
+		
+		/!\ Note
+		Mounting an attached volume, is not the same for different types of AMIs, so Windows, not the same like Linux. 
+
+6. To demount and de-attaching, and deleting the volume, see [Releasing an Amazon EBS volume](EBS.md#releasing-an-amazon-ebs-volume).
 
 
 ### Demo: Create an EBS volume from a previously created snapshot and attach it to a running instance
 
+This this demo shows how to create an EBS volume from a **snapshot** and attach it to an EC2 instance, see [Creating Amazon EBS snapshots](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-snapshot.html).
 
+
+#### Creating a snapshot for an EBS volume
+
+To create a snapshot for an EBS volume, you should have already an EC2 instance running with a an EBS root volume or an exist volume, to do so see this [demo](ebsDemo.md#demo-ebs-as-a-root-storage-for-ec2-instances), then follow the folllowing steps:
+
+
+1. Open the Amazon EC2 console at [https://console.aws.amazon.com/ec2/](https://console.aws.amazon.com/ec2/).
+
+2. Choose **Snapshots** under **Elastic Block Store** in the navigation pane.
+
+3. Choose Create Snapshot.
+
+4. For Select **resource type**, choose **Volume**.
+
+5. For **Volume**, select the **volume**.
+
+6. (Optional) Enter a description for the snapshot.
+
+7. (Optional) Choose **Add Tag** to add tags to your snapshot. For each tag, provide a tag key and a tag value.
+
+8. Choose **Create Snapshot**.
+
+
+**To create a snapshot using the command line**
+
+You can use one of the following commands. For more information about these command line interfaces, see [Accessing Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html#access-ec2).
+
+- [create-snapshot](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-snapshot.html)(AWS CLI)
+
+- [New-EC2Snapshot](https://docs.aws.amazon.com/powershell/latest/reference/items/New-EC2Snapshot.html) (AWS Tools for Windows PowerShell)
+
+
+#### Creating a multi-volume snapshot
+
+Use the following procedure to create a snapshot from the volumes of an instance.
+
+To create a snapshot for multi-EBS volumes, you should have already an EC2 instance running with multiple EBS volumes, to do so see this [demo](ebsDemo.md#demo-ebs-as-a-root-storage-for-ec2-instances), To create multi-volume snapshots using the console:
+
+
+1. Open the Amazon EC2 console at [https://console.aws.amazon.com/ec2/](https://console.aws.amazon.com/ec2/).
+
+2. Choose **Snapshots** under **Elastic Block Store** in the navigation pane.
+
+3. Choose Create Snapshot.
+
+4. For Select **resource type**, choose **Instance**.
+
+5. Select the instance ID for which you want to create simultaneous backups for all of the attached EBS volumes. Multi-volume snapshots support up to 40 EBS volumes per instance. 
+
+6. (Optional) Set **Exclude root volume**. 
+
+7. (Optional) Set **Copy tags** from volume flag to automatically copy tags from the source volume to the corresponding snapshots. This sets snapshot metadata—such as access policies, attachment information, and cost allocation—to match the source volume. 
+
+8. (Optional) Choose **Add Tag** to add tags to your snapshot. For each tag, provide a tag key and a tag value.
+
+9. Choose **Create Snapshot**.
+
+    During snapshot creation, the snapshots are managed together. If one of the snapshots in the volume set fails, the other snapshots are moved to error status for the volume set. You can monitor the progress of your snapshots using CloudWatch Events. After the snapshot creation process completes, CloudWatch generates an event that contains the status and all of the relevant snapshots details for the affected instance.
+
+
+
+**To create multi-volume snapshots using the command line**
+
+You can use one of the following commands. For more information about these command line interfaces, see [Accessing Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html#access-ec2).
+
+- [create-snapshot](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-snapshot.html)(AWS CLI)
+
+- [New-EC2SnapshotBatch](https://docs.aws.amazon.com/powershell/latest/reference/items/New-EC2SnapshotBatch.html) (AWS Tools for Windows PowerShell)
+
+
+#### Other operations for the volumes Snapshots
+
+You can copy snapshots, share snapshots, and create volumes from snapshots. For more information, see the following:
+
+- [Copying an Amazon EBS snapshot](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html)
+
+- [Sharing an Amazon EBS snapshot](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html)
+
+- [Creating a volume from a snapshot](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html#ebs-create-volume-from-snapshot)
+
+
+
+
+#### Creating a volume from a snapshot
+
+Please follow the following steps:
+
+1. Start launching your EC2 instance, by following the [Launch Instance Wizard](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-instance.html)
+2. In [Step 2: Choose an Instance Type](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-instance.html#choose-an-instance-type-page), choose zour favorite **availability zone**, it is not agood idea to keep it randome choise at this moment. 
+3. Start creating an EBS volume from a snapshot, see [Create an EBS Volume from a Snapshot](EBS.md#to-create-an-ebs-volume-from-a-snapshot-using-the-console). 
+4. Attaching this new volume, see [Attaching an Amazon EBS volume to an instance](EBS.md#attaching-an-amazon-ebs-volume-to-an-instance).
+5. Mounting this new volume, see [Mount an attached volume](EBS.md#format-and-mount-an-attached-volume).
+		
+		/!\ Note
+		Mounting an attached volume, is not the same for different types of AMIs, so Windows, not the same like Linux. 
+
+6. To demount and de-attaching, and deleting the volume, see [Releasing an Amazon EBS volume](EBS.md#releasing-an-amazon-ebs-volume).
 
 
 
