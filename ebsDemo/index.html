@@ -466,10 +466,106 @@
     <li class="toctree-l3"><a class="reference internal" href="#demo-create-an-empty-ebs-volume-and-attach-it-to-a-running-instance">Demo: Create an empty EBS volume and attach it to a running instance</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#demo-create-an-ebs-volume-from-a-previously-created-snapshot-and-attach-it-to-a-running-instance">Demo: Create an EBS volume from a previously created snapshot and attach it to a running instance</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#creating-a-snapshot-for-an-ebs-volume">Creating a snapshot for an EBS volume</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#creating-a-multi-volume-snapshot">Creating a multi-volume snapshot</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#other-operations-for-the-volumes-snapshots">Other operations for the volumes Snapshots</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#creating-a-volume-from-a-snapshot">Creating a volume from a snapshot</a>
+        <ul>
+    <li class="toctree-l5"><a class="reference internal" href="#best-practice-while-mounting-a-volume-which-has-been-created-through-a-snapshot">Best practice while mounting a volume which has been created through a snapshot</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#demo-attach-an-ebs-volume-to-a-windows-ami-instance">Demo: Attach an EBS volume to a Windows AMI instance</a>
     </li>
         </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../EFS/">Amazon EFS volumes</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../EFS/#amazon-efs-features">Amazon EFS features</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EFS/#fully-managed-feature">Fully Managed feature</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EFS/#efs-modes-and-services">EFS modes and services</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EFS/#amazon-ebs-vs-efs-volumes">Amazon EBS vs. EFS volumes</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EFS/#similarities-and-differences">Similarities and Differences</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EFS/#ebs-and-efs-use-cases">EBS and EFS Use Cases</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EFS/#amazon-ebs">Amazon EBS</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EFS/#amazon-efs">Amazon EFS</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EFS/#getting-started-with-amazon-elastic-file-system-demo">Getting Started with Amazon Elastic File System: Demo</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EFS/#prerequisites">Prerequisites</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EFS/#step-1-create-your-amazon-efs-file-system">Step 1: Create Your Amazon EFS File System</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EFS/#step-2-create-your-ec2-resources-and-launch-your-ec2-instance">Step 2: Create Your EC2 Resources and Launch Your EC2 Instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EFS/#step-3-mount-your-amazon-efs-file-system">Step 3: Mount your  Amazon EFS File System</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EFS/#step-4-clean-up-resources-and-protect-your-aws-account">Step 4: Clean Up Resources and Protect Your AWS Account</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../EFSmount/">Mounting EFS File System in Linux and Ubuntu</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../EFSmount/#recommendations">Recommendations</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EFSmount/#vpc">VPC</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EFSmount/#security-groups">Security groups</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EFSmount/#nfs-client">NFS client</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EFSmount/#linux-ami-instance">Linux AMI Instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EFSmount/#ubuntu-ami-instance">Ubuntu AMI Instance</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EFSmount/#efs-mount-helper">EFS mount helper</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EFSmount/#linux-ami-instance_1">Linux AMI Instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EFSmount/#ubuntu-ami-instance_1">Ubuntu AMI Instance</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../S3/">Amazon S3 Storage</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../S3/#s3-benefits">S3 Benefits</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../S3/#block-storageebs-efs-vs-s3-storage">Block-storage(EBS, EFS) vs. S3 Storage</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../S3/#amazon-s3-use-cases">Amazon S3 Use Cases</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../S3/#amazon-s3-demonstration">Amazon S3 Demonstration</a>
     </li>
     </ul>
                     </li>
@@ -579,7 +675,7 @@
   </ul>
   
     <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-        <a href="../RDS/" class="btn btn-neutral float-right" title="RDS">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../EFS/" class="btn btn-neutral float-right" title="Amazon EFS volumes">Next <span class="icon icon-circle-arrow-right"></span></a>
         <a href="../EBS/" class="btn btn-neutral" title="Amazon EBS volumes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
   
@@ -588,7 +684,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="amazon-ebs-demo">Amazon EBS Demo<a class="headerlink" href="#amazon-ebs-demo" title="Permanent link">&para;</a></h1>
+                <h1 id="amazon-ebs-demonstrations">Amazon EBS Demonstrations<a class="headerlink" href="#amazon-ebs-demonstrations" title="Permanent link">&para;</a></h1>
 <p>Amazon Elastic Block Store (Amazon EBS) provides <strong>persistent</strong> <strong>block storage</strong> volumes for use with Amazon EC2 instances in the AWS Cloud. Each Amazon EBS volume is <em>automatically replicated inside an Availability Zone</em> to protect you from component failure, which offers high availability and durability. Amazon EBS volumes offer the <strong>consistent and low-latency performance</strong> that you need to run your workloads.</p>
 <p>Amazon EBS provides a range of options that allow you to optimize storage performance and cost for your workload. These options are divided into two major categories:</p>
 <ul>
@@ -653,9 +749,195 @@ the EBS volumes survive. They just simply are no longer connected to the EC2 ins
 <li>Create from a saved snapshot.</li>
 </ol>
 <h3 id="demo-ebs-as-a-root-storage-for-ec2-instances">Demo: EBS as a root storage for EC2 instances<a class="headerlink" href="#demo-ebs-as-a-root-storage-for-ec2-instances" title="Permanent link">&para;</a></h3>
+<p>This this demo shows how to use the EBS storage as a root storage while launching your EC2 instance.</p>
+<p>Please follow the following steps:</p>
+<ol>
+<li>Start launching your EC2 instance, by following the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-instance.html">Launch Instance Wizard</a></li>
+<li>In <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-instance.html#step-4-add-storage">Step 4: Add Storage</a>, you can change your volume size, encrypte its data, and uncheck the deletion after instance termination.</li>
+<li>If you terminate the instance, you will find this voulume exists and avialble for attachment.</li>
+<li>To attach this old volume, see <a href="../EBS/#attaching-an-amazon-ebs-volume-to-an-instance">Attaching an Amazon EBS volume to an instance</a>.</li>
+<li>
+<p>To mount this old volume, see <a href="../EBS/#format-and-mount-an-attached-volume">Mount an attached volume</a>.</p>
+<pre><code>/!\ Note
+Mounting an attached volume, is not the same for different types of AMIs, so Windows, not the same like Linux.
+</code></pre>
+</li>
+<li>
+<p>To demount and de-attaching, and deleting the volume, see <a href="../EBS/#releasing-an-amazon-ebs-volume">Releasing an Amazon EBS volume</a>.</p>
+</li>
+</ol>
 <h3 id="demo-create-an-empty-ebs-volume-and-attach-it-to-a-running-instance">Demo: Create an empty EBS volume and attach it to a running instance<a class="headerlink" href="#demo-create-an-empty-ebs-volume-and-attach-it-to-a-running-instance" title="Permanent link">&para;</a></h3>
+<p>This this demo shows how to craete an empty volume and attach it to an EC2 instance.</p>
+<p>Please follow the following steps:</p>
+<ol>
+<li>Start launching your EC2 instance, by following the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-instance.html">Launch Instance Wizard</a></li>
+<li>In <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-instance.html#choose-an-instance-type-page">Step 2: Choose an Instance Type</a>, choose zour favorite <strong>availability zone</strong>, it is not agood idea to keep it randome choise at this moment. </li>
+<li>
+<p>Start creating an empty EBS volume, see <a href="../EBS/#to-create-a-empty-ebs-volume-using-the-console">create empty EBS volume through the console</a>.</p>
+<pre><code>/!\ Note
+The New empty volume and the EC2 instance have to be in the same availability zone
+</code></pre>
+</li>
+<li>
+<p>Attaching this new volume, see <a href="../EBS/#attaching-an-amazon-ebs-volume-to-an-instance">Attaching an Amazon EBS volume to an instance</a>.</p>
+</li>
+<li>
+<p>Mounting this new volume, see <a href="../EBS/#format-and-mount-an-attached-volume">Mount an attached volume</a>.</p>
+<pre><code>/!\ Note
+Mounting an attached volume, is not the same for different types of AMIs, so Windows, not the same like Linux.
+</code></pre>
+</li>
+<li>
+<p>To demount and de-attaching, and deleting the volume, see <a href="../EBS/#releasing-an-amazon-ebs-volume">Releasing an Amazon EBS volume</a>.</p>
+</li>
+</ol>
 <h3 id="demo-create-an-ebs-volume-from-a-previously-created-snapshot-and-attach-it-to-a-running-instance">Demo: Create an EBS volume from a previously created snapshot and attach it to a running instance<a class="headerlink" href="#demo-create-an-ebs-volume-from-a-previously-created-snapshot-and-attach-it-to-a-running-instance" title="Permanent link">&para;</a></h3>
+<p>This this demo shows how to create an EBS volume from a <strong>snapshot</strong> and attach it to an EC2 instance, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-snapshot.html">Creating Amazon EBS snapshots</a>.</p>
+<h4 id="creating-a-snapshot-for-an-ebs-volume">Creating a snapshot for an EBS volume<a class="headerlink" href="#creating-a-snapshot-for-an-ebs-volume" title="Permanent link">&para;</a></h4>
+<p>To create a snapshot for an EBS volume, you should have already an EC2 instance running with a an EBS root volume or an exist volume, to do so see this <a href="./#demo-ebs-as-a-root-storage-for-ec2-instances">demo</a>, then follow the folllowing steps:</p>
+<ol>
+<li>
+<p>Open the Amazon EC2 console at <a href="https://console.aws.amazon.com/ec2/">https://console.aws.amazon.com/ec2/</a>.</p>
+</li>
+<li>
+<p>Choose <strong>Snapshots</strong> under <strong>Elastic Block Store</strong> in the navigation pane.</p>
+</li>
+<li>
+<p>Choose Create Snapshot.</p>
+</li>
+<li>
+<p>For Select <strong>resource type</strong>, choose <strong>Volume</strong>.</p>
+</li>
+<li>
+<p>For <strong>Volume</strong>, select the <strong>volume</strong>.</p>
+</li>
+<li>
+<p>(Optional) Enter a description for the snapshot.</p>
+</li>
+<li>
+<p>(Optional) Choose <strong>Add Tag</strong> to add tags to your snapshot. For each tag, provide a tag key and a tag value.</p>
+</li>
+<li>
+<p>Choose <strong>Create Snapshot</strong>.</p>
+</li>
+</ol>
+<p><strong>To create a snapshot using the command line</strong></p>
+<p>You can use one of the following commands. For more information about these command line interfaces, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html#access-ec2">Accessing Amazon EC2</a>.</p>
+<ul>
+<li>
+<p><a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/create-snapshot.html">create-snapshot</a>(AWS CLI)</p>
+</li>
+<li>
+<p><a href="https://docs.aws.amazon.com/powershell/latest/reference/items/New-EC2Snapshot.html">New-EC2Snapshot</a> (AWS Tools for Windows PowerShell)</p>
+</li>
+</ul>
+<h4 id="creating-a-multi-volume-snapshot">Creating a multi-volume snapshot<a class="headerlink" href="#creating-a-multi-volume-snapshot" title="Permanent link">&para;</a></h4>
+<p>Use the following procedure to create a snapshot from the volumes of an instance.</p>
+<p>To create a snapshot for multi-EBS volumes, you should have already an EC2 instance running with multiple EBS volumes, to do so see this <a href="./#demo-ebs-as-a-root-storage-for-ec2-instances">demo</a>, To create multi-volume snapshots using the console:</p>
+<ol>
+<li>
+<p>Open the Amazon EC2 console at <a href="https://console.aws.amazon.com/ec2/">https://console.aws.amazon.com/ec2/</a>.</p>
+</li>
+<li>
+<p>Choose <strong>Snapshots</strong> under <strong>Elastic Block Store</strong> in the navigation pane.</p>
+</li>
+<li>
+<p>Choose Create Snapshot.</p>
+</li>
+<li>
+<p>For Select <strong>resource type</strong>, choose <strong>Instance</strong>.</p>
+</li>
+<li>
+<p>Select the instance ID for which you want to create simultaneous backups for all of the attached EBS volumes. Multi-volume snapshots support up to 40 EBS volumes per instance. </p>
+</li>
+<li>
+<p>(Optional) Set <strong>Exclude root volume</strong>. </p>
+</li>
+<li>
+<p>(Optional) Set <strong>Copy tags</strong> from volume flag to automatically copy tags from the source volume to the corresponding snapshots. This sets snapshot metadata—such as access policies, attachment information, and cost allocation—to match the source volume. </p>
+</li>
+<li>
+<p>(Optional) Choose <strong>Add Tag</strong> to add tags to your snapshot. For each tag, provide a tag key and a tag value.</p>
+</li>
+<li>
+<p>Choose <strong>Create Snapshot</strong>.</p>
+<p>During snapshot creation, the snapshots are managed together. If one of the snapshots in the volume set fails, the other snapshots are moved to error status for the volume set. You can monitor the progress of your snapshots using CloudWatch Events. After the snapshot creation process completes, CloudWatch generates an event that contains the status and all of the relevant snapshots details for the affected instance.</p>
+</li>
+</ol>
+<p><strong>To create multi-volume snapshots using the command line</strong></p>
+<p>You can use one of the following commands. For more information about these command line interfaces, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html#access-ec2">Accessing Amazon EC2</a>.</p>
+<ul>
+<li>
+<p><a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/create-snapshot.html">create-snapshot</a>(AWS CLI)</p>
+</li>
+<li>
+<p><a href="https://docs.aws.amazon.com/powershell/latest/reference/items/New-EC2SnapshotBatch.html">New-EC2SnapshotBatch</a> (AWS Tools for Windows PowerShell)</p>
+</li>
+</ul>
+<h4 id="other-operations-for-the-volumes-snapshots">Other operations for the volumes Snapshots<a class="headerlink" href="#other-operations-for-the-volumes-snapshots" title="Permanent link">&para;</a></h4>
+<p>You can copy snapshots, share snapshots, and create volumes from snapshots. For more information, see the following:</p>
+<ul>
+<li>
+<p><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying an Amazon EBS snapshot</a></p>
+</li>
+<li>
+<p><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing an Amazon EBS snapshot</a></p>
+</li>
+<li>
+<p><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html#ebs-create-volume-from-snapshot">Creating a volume from a snapshot</a></p>
+</li>
+</ul>
+<h4 id="creating-a-volume-from-a-snapshot">Creating a volume from a snapshot<a class="headerlink" href="#creating-a-volume-from-a-snapshot" title="Permanent link">&para;</a></h4>
+<p>Please follow the following steps:</p>
+<ol>
+<li>Start launching your EC2 instance, by following the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-instance.html">Launch Instance Wizard</a></li>
+<li>In <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-instance.html#choose-an-instance-type-page">Step 2: Choose an Instance Type</a>, choose your favorite <strong>availability zone</strong>, it is not agood idea to keep it randome choise at this moment. </li>
+<li>Start creating an EBS volume from a snapshot, see <a href="../EBS/#to-create-an-ebs-volume-from-a-snapshot-using-the-console">Create an EBS Volume from a Snapshot</a>. </li>
+<li>Attaching this new volume, see <a href="../EBS/#attaching-an-amazon-ebs-volume-to-an-instance">Attaching an Amazon EBS volume to an instance</a>.</li>
+<li>
+<p>Mounting this new volume, see <a href="../EBS/#format-and-mount-an-attached-volume">Mount an attached volume</a>.</p>
+<pre><code>/!\ Note
+Mounting an attached volume, is not the same for different types of AMIs, so Windows, not the same like Linux.
+</code></pre>
+</li>
+<li>
+<p>To demount and de-attaching, and deleting the volume, see <a href="../EBS/#releasing-an-amazon-ebs-volume">Releasing an Amazon EBS volume</a>.</p>
+</li>
+</ol>
+<h5 id="best-practice-while-mounting-a-volume-which-has-been-created-through-a-snapshot">Best practice while mounting a volume which has been created through a snapshot<a class="headerlink" href="#best-practice-while-mounting-a-volume-which-has-been-created-through-a-snapshot" title="Permanent link">&para;</a></h5>
+<p>During the mount of an EBS volume that has been created from a snapshot, you may face a problem called:</p>
+<p><strong>XFS: Filesystem has duplicate UUID – can’t mount</strong> </p>
+<p>To solve this problem, you need to repair the <code>xfs</code> and then generate a new <code>UUID</code>, as follow:</p>
+<pre><code>    $&gt; sudo xfs_repair -L /dev/xvdh
+    $&gt; sudo xfs_admin -U generate /dev/xvdh
+</code></pre>
+<p>Please check the following, <a href="https://computingforgeeks.com/how-to-solve-xfs-filesystem-has-duplicate-uuid-error/">How To Solve “XFS: Filesystem has duplicate UUID – can’t mount”</a>, and <a href="https://linux.die.net/man/8/xfs_repair">xfs_repair(8) - Linux man page</a> for more informtion.</p>
 <h3 id="demo-attach-an-ebs-volume-to-a-windows-ami-instance">Demo: Attach an EBS volume to a Windows AMI instance<a class="headerlink" href="#demo-attach-an-ebs-volume-to-a-windows-ami-instance" title="Permanent link">&para;</a></h3>
+<p>Please follow the following steps:</p>
+<ol>
+<li>Start launching your EC2 instance, by following the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-instance.html">Launch Instance Wizard</a></li>
+<li>
+<p>In <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-instance.html#choose-an-instance-type-page">Step 2: Choose an Instance Type</a>, choose your favorite <strong>availability zone</strong>, it is not agood idea to keep it randome choise at this moment. </p>
+</li>
+<li>
+<p>Start creating an empty EBS volume, see <a href="../EBS/#to-create-a-empty-ebs-volume-using-the-console">create empty EBS volume through the console</a>.</p>
+<pre><code>/!\ Note
+The New empty volume and the EC2 instance have to be in the same availability zone
+</code></pre>
+</li>
+<li>
+<p>Attaching this new volume, see <a href="../EBS/#attaching-an-amazon-ebs-volume-to-an-instance">Attaching an Amazon EBS volume to an instance</a>.</p>
+</li>
+<li>
+<p>Mounting this new volume, see <a href="../EBS/#making-an-amazon-ebs-volume-available-for-use-on-windows">Making an Amazon EBS volume available for use on Windows</a>.</p>
+<pre><code>/!\ Note
+Mounting an attached volume, is not the same for different types of AMIs, so Windows, not the same like Linux.
+</code></pre>
+</li>
+<li>
+<p>To demount and de-attaching, and deleting the volume, see <a href="../EBS/#releasing-an-amazon-ebs-volume">Releasing an Amazon EBS volume</a>.</p>
+</li>
+</ol>
               
             </div>
           </div>
@@ -663,7 +945,7 @@ the EBS volumes survive. They just simply are no longer connected to the EC2 ins
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../RDS/" class="btn btn-neutral float-right" title="RDS">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../EFS/" class="btn btn-neutral float-right" title="Amazon EFS volumes">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../EBS/" class="btn btn-neutral" title="Amazon EBS volumes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -695,7 +977,7 @@ the EBS volumes survive. They just simply are no longer connected to the EC2 ins
         <span><a href="../EBS/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../RDS/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../EFS/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
