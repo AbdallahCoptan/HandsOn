@@ -29,6 +29,9 @@ nav:
     - Dealing with AWS Storage: storage.md
     - Amazon EBS volumes: EBS.md
     - Amazon EBS Demo: ebsDemo.md
+    - Amazon EFS volumes: EFS.md
+    - Mounting EFS File System in Linux and Ubuntu: EFSmount.md
+    - Amazon S3 Storage: S3.md
   - AWS Databases:
     - RDS: RDS.md
     - NoSQL DB: nosql.md

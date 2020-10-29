@@ -1,4 +1,4 @@
-# Amazon EBS Demo
+# Amazon EBS Demonstrations
 
 
 Amazon Elastic Block Store (Amazon EBS) provides **persistent** __block storage__ volumes for use with Amazon EC2 instances in the AWS Cloud. Each Amazon EBS volume is _automatically replicated inside an Availability Zone_ to protect you from component failure, which offers high availability and durability. Amazon EBS volumes offer the **consistent and low-latency performance** that you need to run your workloads.
@@ -231,7 +231,7 @@ You can copy snapshots, share snapshots, and create volumes from snapshots. For 
 Please follow the following steps:
 
 1. Start launching your EC2 instance, by following the [Launch Instance Wizard](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-instance.html)
-2. In [Step 2: Choose an Instance Type](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-instance.html#choose-an-instance-type-page), choose zour favorite **availability zone**, it is not agood idea to keep it randome choise at this moment. 
+2. In [Step 2: Choose an Instance Type](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-instance.html#choose-an-instance-type-page), choose your favorite **availability zone**, it is not agood idea to keep it randome choise at this moment. 
 3. Start creating an EBS volume from a snapshot, see [Create an EBS Volume from a Snapshot](EBS.md#to-create-an-ebs-volume-from-a-snapshot-using-the-console). 
 4. Attaching this new volume, see [Attaching an Amazon EBS volume to an instance](EBS.md#attaching-an-amazon-ebs-volume-to-an-instance).
 5. Mounting this new volume, see [Mount an attached volume](EBS.md#format-and-mount-an-attached-volume).
@@ -241,7 +241,38 @@ Please follow the following steps:
 
 6. To demount and de-attaching, and deleting the volume, see [Releasing an Amazon EBS volume](EBS.md#releasing-an-amazon-ebs-volume).
 
+##### Best practice while mounting a volume which has been created through a snapshot
 
+During the mount of an EBS volume that has been created from a snapshot, you may face a problem called:
+
+**XFS: Filesystem has duplicate UUID – can’t mount** 
+
+To solve this problem, you need to repair the `xfs` and then generate a new `UUID`, as follow:
+
+		$> sudo xfs_repair -L /dev/xvdh
+		$> sudo xfs_admin -U generate /dev/xvdh
+
+Please check the following, [How To Solve “XFS: Filesystem has duplicate UUID – can’t mount”](https://computingforgeeks.com/how-to-solve-xfs-filesystem-has-duplicate-uuid-error/), and [xfs_repair(8) - Linux man page](https://linux.die.net/man/8/xfs_repair) for more informtion.
 
 
 ### Demo: Attach an EBS volume to a Windows AMI instance
+
+
+Please follow the following steps:
+
+1. Start launching your EC2 instance, by following the [Launch Instance Wizard](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-instance.html)
+2. In [Step 2: Choose an Instance Type](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-instance.html#choose-an-instance-type-page), choose your favorite **availability zone**, it is not agood idea to keep it randome choise at this moment. 
+
+3. Start creating an empty EBS volume, see [create empty EBS volume through the console](EBS.md#to-create-a-empty-ebs-volume-using-the-console).
+		
+		/!\ Note
+		The New empty volume and the EC2 instance have to be in the same availability zone 
+
+4. Attaching this new volume, see [Attaching an Amazon EBS volume to an instance](EBS.md#attaching-an-amazon-ebs-volume-to-an-instance).
+
+5. Mounting this new volume, see [Making an Amazon EBS volume available for use on Windows](EBS.md#making-an-amazon-ebs-volume-available-for-use-on-windows).
+		
+		/!\ Note
+		Mounting an attached volume, is not the same for different types of AMIs, so Windows, not the same like Linux. 
+
+6. To demount and de-attaching, and deleting the volume, see [Releasing an Amazon EBS volume](EBS.md#releasing-an-amazon-ebs-volume).
