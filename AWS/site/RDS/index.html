@@ -466,10 +466,106 @@
     <li class="toctree-l3"><a class="reference internal" href="../ebsDemo/#demo-create-an-empty-ebs-volume-and-attach-it-to-a-running-instance">Demo: Create an empty EBS volume and attach it to a running instance</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="../ebsDemo/#demo-create-an-ebs-volume-from-a-previously-created-snapshot-and-attach-it-to-a-running-instance">Demo: Create an EBS volume from a previously created snapshot and attach it to a running instance</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../ebsDemo/#creating-a-snapshot-for-an-ebs-volume">Creating a snapshot for an EBS volume</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../ebsDemo/#creating-a-multi-volume-snapshot">Creating a multi-volume snapshot</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../ebsDemo/#other-operations-for-the-volumes-snapshots">Other operations for the volumes Snapshots</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../ebsDemo/#creating-a-volume-from-a-snapshot">Creating a volume from a snapshot</a>
+        <ul>
+    <li class="toctree-l5"><a class="reference internal" href="../ebsDemo/#best-practice-while-mounting-a-volume-which-has-been-created-through-a-snapshot">Best practice while mounting a volume which has been created through a snapshot</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="../ebsDemo/#demo-attach-an-ebs-volume-to-a-windows-ami-instance">Demo: Attach an EBS volume to a Windows AMI instance</a>
     </li>
         </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../EFS/">Amazon EFS volumes</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../EFS/#amazon-efs-features">Amazon EFS features</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EFS/#fully-managed-feature">Fully Managed feature</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EFS/#efs-modes-and-services">EFS modes and services</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EFS/#amazon-ebs-vs-efs-volumes">Amazon EBS vs. EFS volumes</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EFS/#similarities-and-differences">Similarities and Differences</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EFS/#ebs-and-efs-use-cases">EBS and EFS Use Cases</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EFS/#amazon-ebs">Amazon EBS</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EFS/#amazon-efs">Amazon EFS</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EFS/#getting-started-with-amazon-elastic-file-system-demo">Getting Started with Amazon Elastic File System: Demo</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EFS/#prerequisites">Prerequisites</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EFS/#step-1-create-your-amazon-efs-file-system">Step 1: Create Your Amazon EFS File System</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EFS/#step-2-create-your-ec2-resources-and-launch-your-ec2-instance">Step 2: Create Your EC2 Resources and Launch Your EC2 Instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EFS/#step-3-mount-your-amazon-efs-file-system">Step 3: Mount your  Amazon EFS File System</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EFS/#step-4-clean-up-resources-and-protect-your-aws-account">Step 4: Clean Up Resources and Protect Your AWS Account</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../EFSmount/">Mounting EFS File System in Linux and Ubuntu</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../EFSmount/#recommendations">Recommendations</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EFSmount/#vpc">VPC</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EFSmount/#security-groups">Security groups</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EFSmount/#nfs-client">NFS client</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EFSmount/#linux-ami-instance">Linux AMI Instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EFSmount/#ubuntu-ami-instance">Ubuntu AMI Instance</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EFSmount/#efs-mount-helper">EFS mount helper</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EFSmount/#linux-ami-instance_1">Linux AMI Instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EFSmount/#ubuntu-ami-instance_1">Ubuntu AMI Instance</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../S3/">Amazon S3 Storage</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../S3/#s3-benefits">S3 Benefits</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../S3/#block-storageebs-efs-vs-s3-storage">Block-storage(EBS, EFS) vs. S3 Storage</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../S3/#amazon-s3-use-cases">Amazon S3 Use Cases</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../S3/#amazon-s3-demonstration">Amazon S3 Demonstration</a>
     </li>
     </ul>
                     </li>
@@ -580,7 +676,7 @@
   
     <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
         <a href="../nosql/" class="btn btn-neutral float-right" title="NoSQL DB">Next <span class="icon icon-circle-arrow-right"></span></a>
-        <a href="../ebsDemo/" class="btn btn-neutral" title="Amazon EBS Demo"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../S3/" class="btn btn-neutral" title="Amazon S3 Storage"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
   
   <hr/>
@@ -631,7 +727,7 @@ the data that&rsquo;s in there, and she is 100% responsible for that. Whether it
         <a href="../nosql/" class="btn btn-neutral float-right" title="NoSQL DB">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../ebsDemo/" class="btn btn-neutral" title="Amazon EBS Demo"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../S3/" class="btn btn-neutral" title="Amazon S3 Storage"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -657,7 +753,7 @@ the data that&rsquo;s in there, and she is 100% responsible for that. Whether it
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../ebsDemo/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../S3/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../nosql/" style="color: #fcfcfc">Next &raquo;</a></span>

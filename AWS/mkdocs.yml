@@ -32,11 +32,12 @@ nav:
     - Amazon EFS volumes: EFS.md
     - Mounting EFS File System in Linux and Ubuntu: EFSmount.md
     - Amazon S3 Storage: S3.md
+  - AWS Networking:
+    - Network Addressing: network.md
+    - Networking in AWS: network2.md
   - AWS Databases:
     - RDS: RDS.md
     - NoSQL DB: nosql.md
-  #- AWS Containers:
-  #- AWS Networking:
   #- AWS Load Balancing:
   #  - AWS Scaling:
   - AWS Pricing and Support:

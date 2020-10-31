@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="AbdallahCoptan">
-  <link rel="canonical" href="https://abdallahcoptan.github.io/HandsOn/othercomputeservices/">
+  <link rel="canonical" href="https://abdallahcoptan.github.io/HandsOn/S3/">
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Other AWS Compute Services - Hydrosat Hands-On</title>
+  <title>Amazon S3 Storage - Hydrosat Hands-On</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Other AWS Compute Services";
-    var mkdocs_page_input_path = "othercomputeservices.md";
-    var mkdocs_page_url = "/HandsOn/othercomputeservices/";
+    var mkdocs_page_name = "Amazon S3 Storage";
+    var mkdocs_page_input_path = "S3.md";
+    var mkdocs_page_url = "/HandsOn/S3/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js" defer></script>
@@ -87,7 +87,7 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">AWS Computing</span></p>
-                <ul class="current">
+                <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../EC2/">Using EC2 Compute Instances</a>
     <ul>
     <li class="toctree-l2"><a class="reference internal" href="../EC2/#what-is-amazon-ec2">What is Amazon EC2?</a>
@@ -312,21 +312,21 @@
     </li>
     </ul>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Other AWS Compute Services</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#aws-lambda">AWS Lambda</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../othercomputeservices/">Other AWS Compute Services</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../othercomputeservices/#aws-lambda">AWS Lambda</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#watch-it-here">Watch it here</a>
+    <li class="toctree-l3"><a class="reference internal" href="../othercomputeservices/#watch-it-here">Watch it here</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#aws-container-services">AWS Container Services</a>
+    <li class="toctree-l2"><a class="reference internal" href="../othercomputeservices/#aws-container-services">AWS Container Services</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#1-aws-ecs">1. AWS ECS</a>
+    <li class="toctree-l3"><a class="reference internal" href="../othercomputeservices/#1-aws-ecs">1. AWS ECS</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#2-amazon-eks">2. Amazon EKS</a>
+    <li class="toctree-l3"><a class="reference internal" href="../othercomputeservices/#2-amazon-eks">2. Amazon EKS</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#3-aws-fargate">3. AWS Fargate</a>
+    <li class="toctree-l3"><a class="reference internal" href="../othercomputeservices/#3-aws-fargate">3. AWS Fargate</a>
     </li>
         </ul>
     </li>
@@ -334,7 +334,7 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">AWS Storage</span></p>
-                <ul>
+                <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../awsStore/">Storage on AWS</a>
     <ul>
     <li class="toctree-l2"><a class="reference internal" href="../awsStore/#storage-scenario">Storage Scenario</a>
@@ -555,17 +555,17 @@
     </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../S3/">Amazon S3 Storage</a>
-    <ul>
-    <li class="toctree-l2"><a class="reference internal" href="../S3/#s3-benefits">S3 Benefits</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Amazon S3 Storage</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#s3-benefits">S3 Benefits</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="../S3/#block-storageebs-efs-vs-s3-storage">Block-storage(EBS, EFS) vs. S3 Storage</a>
+    <li class="toctree-l2"><a class="reference internal" href="#block-storageebs-efs-vs-s3-storage">Block-storage(EBS, EFS) vs. S3 Storage</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="../S3/#amazon-s3-use-cases">Amazon S3 Use Cases</a>
+    <li class="toctree-l3"><a class="reference internal" href="#amazon-s3-use-cases">Amazon S3 Use Cases</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="../S3/#amazon-s3-demonstration">Amazon S3 Demonstration</a>
+    <li class="toctree-l2"><a class="reference internal" href="#amazon-s3-demonstration">Amazon S3 Demonstration</a>
     </li>
     </ul>
                     </li>
@@ -664,19 +664,19 @@
     
       
         
-          <li>AWS Computing &raquo;</li>
+          <li>AWS Storage &raquo;</li>
         
       
     
-    <li>Other AWS Compute Services</li>
+    <li>Amazon S3 Storage</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
   </ul>
   
     <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-        <a href="../awsStore/" class="btn btn-neutral float-right" title="Storage on AWS">Next <span class="icon icon-circle-arrow-right"></span></a>
-        <a href="../lightsail/" class="btn btn-neutral" title="AWS Lightsail Services"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../RDS/" class="btn btn-neutral float-right" title="RDS">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../EFSmount/" class="btn btn-neutral" title="Mounting EFS File System in Linux and Ubuntu"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
   
   <hr/>
@@ -684,44 +684,52 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="other-aws-compute-services">Other AWS Compute Services<a class="headerlink" href="#other-aws-compute-services" title="Permanent link">&para;</a></h1>
-<p>Building and running your application starts with compute, whether you are building enterprise, cloud-native, or mobile applications; or running massive clusters to sequence the human genome.</p>
-<p>AWS offers a comprehensive portfolio of compute services that allow you to develop, deploy, run, and scale your applications and workloads in the world’s most powerful, secure, and innovative compute cloud.</p>
-<p><strong>Details about the full range of AWS compute services can be found <a href="https://aws.amazon.com/products/compute/">here</a></strong> .</p>
-<p>Two other styles of computing may Hyddrosat is interested on them :</p>
-<ol>
-<li><a href="#aws-lambda">serverless computing</a></li>
-<li><a href="#aws-container-services">container services</a></li>
-</ol>
-<h2 id="aws-lambda">AWS Lambda<a class="headerlink" href="#aws-lambda" title="Permanent link">&para;</a></h2>
-<p>AWS Lambda lets you run code without provisioning or managing servers. You pay only for the compute time you consume&ndash;there is no charge when your code isn&rsquo;t running. Additional information about Lambda can be found at: <a href="https://aws.amazon.com/lambda">https://aws.amazon.com/lambda</a></p>
-<h3 id="watch-it-here">Watch it here<a class="headerlink" href="#watch-it-here" title="Permanent link">&para;</a></h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/eOBq__h4OJ4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h1 id="amazon-s3-object-storage">Amazon S3 Object Storage<a class="headerlink" href="#amazon-s3-object-storage" title="Permanent link">&para;</a></h1>
+<p>Amazon Simple Storage Service (Amazon S3) stores data as objects within resources that are called buckets. You can store as many objects as you want within a bucket, and you can write, read, and delete objects in your bucket. Objects can be up to 5 TB in size.</p>
+<p>You can control access to both the bucket and the objects (who can create, delete, and retrieve objects in the bucket for example), and view access logs for the bucket and its objects. You can also choose the AWS Region where a bucket is stored to optimize for latency, minimize costs, or address regulatory requirements. </p>
+<p>With Amazon S3, you pay only for what you use. There is no minimum fee. Estimate your monthly bill by using the <a href="https://calculator.s3.amazonaws.com/index.html">AWS Simple Monthly</a> Calculator. We charge less where our costs are less, and prices are based on the location of your Amazon S3 bucket.</p>
+<p>Full details on Amazon S3 can be found here: <a href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_I14_sXHO8U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<h2 id="aws-container-services">AWS Container Services<a class="headerlink" href="#aws-container-services" title="Permanent link">&para;</a></h2>
-<p>Please check the <a href="https://aws.amazon.com/containers/">Containers on AWS</a>, The most secure, reliable, and scalable way to run containers </p>
-<h3 id="1-aws-ecs">1. AWS ECS<a class="headerlink" href="#1-aws-ecs" title="Permanent link">&para;</a></h3>
-<p>Amazon Elastic Container Service (Amazon ECS) is a highly scalable, high-performance container orchestration service that supports Docker containers. It allows you to run and scale containerized applications on AWS. You can find more details at: <a href="https://aws.amazon.com/ecs/">https://aws.amazon.com/ecs/</a></p>
-<p>Please check:</p>
+<h2 id="s3-benefits">S3 Benefits<a class="headerlink" href="#s3-benefits" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Industry-leading performance, scalability, availability, and durability</li>
+<li>Wide range of cost-effective storage classes</li>
+<li>Unmatched security, compliance, and audit capabilities</li>
+<li>Easily manage data and access controls</li>
+<li>Query-in-place services for analytics </li>
+<li>Most supported cloud storage service</li>
+</ul>
+<h2 id="block-storageebs-efs-vs-s3-storage">Block-storage(EBS, EFS) vs. S3 Storage<a class="headerlink" href="#block-storageebs-efs-vs-s3-storage" title="Permanent link">&para;</a></h2>
+<p>Finally, Amazon S3 is an object store good at storing vast numbers of backups or user files. Unlike EBS or EFS, S3 is not limited to EC2. Files stored within an <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html">S3 bucket</a> can be accessed programmatically or directly from services such as AWS CloudFront. This is why many websites use it to hold their content and media files, which may be served efficiently from AWS CloudFront.</p>
+<h3 id="amazon-s3-use-cases">Amazon S3 Use Cases<a class="headerlink" href="#amazon-s3-use-cases" title="Permanent link">&para;</a></h3>
 <ol>
-<li><a href="https://aws.amazon.com/getting-started/hands-on/deploy-docker-containers/">Deploy Docker Containers on Amazon Elastic Container Service (Amazon ECS)</a></li>
+<li>Data lake and big data analytics</li>
+<li>Backup and restoration</li>
+<li>Reliable disaster recovery</li>
+<li>Methodical archiving</li>
+</ol>
+<h2 id="amazon-s3-demonstration">Amazon S3 Demonstration<a class="headerlink" href="#amazon-s3-demonstration" title="Permanent link">&para;</a></h2>
+<p>Let&rsquo;s go ahead and create a bucket, and actually upload an object into that bucket. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html">Working with Amazon S3 Buckets</a>, and do:</p>
+<ol>
+<li>Naviage to the aws console,</li>
+<li>Look for the S3 services,</li>
 <li>
-<p><a href="https://medium.com/appgambit/part-1-running-docker-on-aws-ec2-cbcf0ec7c3f8">Running Docker on AWS EC2</a></p>
+<p>Select <strong>Create Bucket</strong>,</p>
+<p>a. give it a name</p>
+<p>b. select an aws region</p>
+<p>c. leave the rest as default</p>
 </li>
 <li>
-<p><a href="https://docs.docker.com/engine/context/ecs-integration/">Deploying Docker containers on ECS</a></p>
+<p>Add data (files, images, or videos) to the created bucket</p>
+<p>a. Upload an object</p>
+<p>b. Set object properties</p>
+<p>c. Set object permissions</p>
+</li>
+<li>
+<p><strong>Delete</strong> your data, by checking the bucket and click <strong>delete</strong></p>
 </li>
 </ol>
-<h3 id="2-amazon-eks">2. Amazon EKS<a class="headerlink" href="#2-amazon-eks" title="Permanent link">&para;</a></h3>
-<p>Amazon Elastic Container Service for Kubernetes (Amazon EKS) makes it straightforward to deploy, manage, and scale containerized applications that use Kubernetes on AWS. Details can be found at:<a href="https://aws.amazon.com/eks/">https://aws.amazon.com/eks/</a></p>
-<ul>
-<li><a href="https://aws.amazon.com/getting-started/hands-on/deploy-kubernetes-app-amazon-eks/">Deploy a Kubernetes Application with Amazon Elastic Container Service for Kubernetes</a></li>
-</ul>
-<h3 id="3-aws-fargate">3. AWS Fargate<a class="headerlink" href="#3-aws-fargate" title="Permanent link">&para;</a></h3>
-<p>AWS Fargate is a compute engine for Amazon ECS and Amazon EKS that allows you to run containers without having to manage servers or clusters. You can find more information at: <a href="https://aws.amazon.com/fargate/">https://aws.amazon.com/fargate/</a></p>
-<ul>
-<li><a href="https://itnext.io/run-your-containers-on-aws-fargate-c2d4f6a47fda">Run your containers on AWS Fargate</a></li>
-</ul>
               
             </div>
           </div>
@@ -729,10 +737,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../awsStore/" class="btn btn-neutral float-right" title="Storage on AWS">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../RDS/" class="btn btn-neutral float-right" title="RDS">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../lightsail/" class="btn btn-neutral" title="AWS Lightsail Services"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../EFSmount/" class="btn btn-neutral" title="Mounting EFS File System in Linux and Ubuntu"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -758,10 +766,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../lightsail/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../EFSmount/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../awsStore/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../RDS/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
