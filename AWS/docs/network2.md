@@ -330,7 +330,7 @@ For more details, read [AWS Direct Connect features](https://aws.amazon.com/dire
 You can use an AWS Direct Connect gateway to connect your AWS Direct Connect connection over a private virtual interface to one or more VPCs in any account that are located in the same or different Regions. You associate a Direct Connect gateway with the virtual private gateway for the VPC. Then, you create a private virtual interface for your AWS Direct Connect connection to the Direct Connect gateway. You can attach multiple private virtual interfaces to your Direct Connect gateway. 
 
 
-Consider the following while using the [VPG](Virtual private gateway associations):
+Consider the following while using the [VPG](https://docs.aws.amazon.com/directconnect/latest/UserGuide/virtualgateways.html):
 
 - There are limits for creating and using Direct Connect gateways.
 - The VPCs to which you connect through a Direct Connect gateway cannot have overlapping CIDR blocks. If you add an IPv4 CIDR block to a VPC that's associated with a Direct Connect gateway, ensure that the CIDR block does not overlap with an existing CIDR block for any other associated VPC. For more information, see Adding IPv4 CIDR Blocks to a VPC in the Amazon VPC User Guide. 

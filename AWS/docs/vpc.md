@@ -106,8 +106,117 @@ The following describes how to manually [create a public subnet and attach an in
 
 
 
+### Adding other Gateways to your VPC
+
+There are other types of gateways, you may need during the planning of your VPCs in AWS, such as:
+
+- [Virtual private gateways](https://docs.aws.amazon.com/directconnect/latest/UserGuide/virtualgateways.html#create-virtual-private-gateway)
+- [Egress-only internet gateways](https://docs.aws.amazon.com/vpc/latest/userguide/egress-only-internet-gateway.html)
+- [Carrier gateways](https://docs.aws.amazon.com/vpc/latest/userguide/Carrier_Gateway.html)
+
+
+
+
+### Working with route tables
+
+The following tasks show you how to work with route tables.
+
+		/!\ Note
+
+		When you use the VPC wizard in the console to create a VPC with a gateway, the wizard automatically updates the route
+
+		tables to use the gateway. If you are using the command line tools or API to set up your VPC, you must update the route
+
+		tables yourself.
+
+
+
+
+- [Determining which route table a subnet is associated with](https://docs.aws.amazon.com/vpc/latest/userguide/WorkWithRouteTables.html#SubnetRouteTables)
+- [Determining which subnets and or gateways are explicitly associated with a table](https://docs.aws.amazon.com/vpc/latest/userguide/WorkWithRouteTables.html#Route_Which_Associations)
+- [Creating a custom route table](https://docs.aws.amazon.com/vpc/latest/userguide/WorkWithRouteTables.html#CustomRouteTable)
+- [Adding and removing routes from a route table](https://docs.aws.amazon.com/vpc/latest/userguide/WorkWithRouteTables.html#AddRemoveRoutes)
+- [Deleting a route table](https://docs.aws.amazon.com/vpc/latest/userguide/WorkWithRouteTables.html#DeleteRouteTable)
+- [and more ...](https://docs.aws.amazon.com/vpc/latest/userguide/WorkWithRouteTables.html#DeleteRouteTable)
+
+<br>
+
+-----------------------------------------------------------------
+
+
+
+## Working with shared VPCs
+
+VPC sharing allows multiple AWS accounts to create their application resources, such as Amazon EC2 instances, Amazon Relational Database Service (RDS) databases, Amazon Redshift clusters, and AWS Lambda functions, into shared, centrally-managed Amazon Virtual Private Clouds (VPCs). In this model, the account that owns the VPC (owner) shares one or more subnets with other accounts (participants) that belong to the same organization from AWS Organizations. After a subnet is shared, the participants can view, create, modify, and delete their application resources in the subnets shared with them. Participants cannot view, modify, or delete resources that belong to other participants or the VPC owner.
+
+You can share Amazon VPCs to leverage the implicit routing within a VPC for applications that require a high degree of interconnectivity and are within the same trust boundaries. This reduces the number of VPCs that you create and manage, while using separate accounts for billing and access control. You can simplify network topologies by interconnecting shared Amazon VPCs using connectivity features, such as AWS PrivateLink, AWS Transit Gateway, and Amazon VPC peering. For more information about VPC sharing benefits, see [VPC sharing: A new approach to multiple accounts and VPC management](https://aws.amazon.com/blogs/networking-and-content-delivery/vpc-sharing-a-new-approach-to-multiple-accounts-and-vpc-management/).
+
+
+
+### Sharing the VPCs
+
+The following will help you to share your VPC with your other accounts:
+
+
+- [Shared VPCs prerequisites](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html#vpc-share-prerequisites)
+- [Sharing a subnet](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html#vpc-sharing-share-subnet)
+- [Unsharing a shared subnet](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html#vpc-sharing-stop-share-subnet)
+- [Identifying the owner of a shared subnet](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html#vpc-sharing-view-owner)
+- [And more ...](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html)
 
 
 
 
 
+### Example: Sharing public subnets and private subnets
+
+
+Consider this scenario where you want an account to be responsible for the infrastructure, including subnets, route tables, gateways, and CIDR ranges and other accounts that are in the same AWS Organization to use the subnets. A VPC owner (Account A) creates the routing infrastructure, including the VPCs, subnets, route tables, gateways, and network ACLs. Account D wants to create public facing applications. Account B and Account C want to create private applications that do not need to connect to the internet and should reside in private subnets. Account A can use AWS Resource Access Manager to create a Resource Share for the subnets and then share the subnets. Account A shares the public subnet with Account D and the private subnet with Account B, and Account C. Account B, Account C, and Account D can create resources in the subnets. Each account can only see the subnets that are shared with them, for example, Account D can only see the public subnet. Each of the accounts can control their resources, including instances, and security groups.
+
+Account A manages the IP infrastructure, including the route tables for the public subnets, and the private subnets. There is no additional configuration required for shared subnets, so the route tables are the same as unshared subnet route tables. 
+
+
+![](VPC-share-internet-gateway-example.png)
+
+
+
+Account A (Account ID 111111111111) shares the public subnet with Account D (444444444444). Account D sees the following subnet, and the Owner column provides two indicators that the subnet is shared.
+
+- The Account ID is the VPC owner (111111111111) and is different from Account D's ID (444444444444).
+
+- The word "shared" appears beside the owner account ID.
+
+
+![](vpc-share-screen.png)
+
+
+<br>
+
+-----------------------------------------------------------------
+
+
+
+## Security best practices for your VPC
+
+
+The following best practices are general guidelines and don’t represent a complete security solution. Because these best practices might not be appropriate or sufficient for your environment, treat them as helpful considerations rather than prescriptions.
+
+The following are general best practices:
+
+- Use multiple Availability Zone deployments so you have high availability.
+
+- Use security groups and network ACLs. For more information, see [Security groups for your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html) and [Network ACLs](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html).
+
+- Use IAM policies to control access.
+
+- Use Amazon CloudWatch to monitor your VPC components and VPN connections.
+
+- Use flow logs to capture information about IP traffic going to and from network interfaces in your VPC. For more information, see [VPC Flow Logs](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html).
+
+
+
+## Additional resources
+
+- Manage access to AWS resources and APIs using identity federation, IAM users, and IAM roles. Establish credential management policies and procedures for creating, distributing, rotating, and revoking AWS access credentials. For more information, see [IAM best practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html) in the IAM User Guide.
+
+- For answers to frequently asked questions for VPC security, see [Amazon VPC FAQs](https://aws.amazon.com/vpc/faqs/). 
