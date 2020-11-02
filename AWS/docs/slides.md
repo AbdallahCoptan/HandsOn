@@ -11,8 +11,12 @@ The resources in this training is consisting of three sections, the Slides, Tuto
 5. [AWS Pricing and Support](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/Hydrosat_AWS_Pricing_Support.pdf)
 6. [AWS Security and Access Management](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/Hydrosat_AWS_Security.pdf)
 7. [Cloud Pricing](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/Cloud%20Pricing.pdf)
-8. [Understanding AWS Core Services List](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/understanding-aws-core-services-list.pdf)
-9. [AWS Security & Architecture Services List](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/introduction-security-architecture-aws-services-list.pdf)
+
+## Appendix 
+
+1. [Understanding AWS Core Services List](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/understanding-aws-core-services-list.pdf)
+2. [AWS Security & Architecture Services List](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/introduction-security-architecture-aws-services-list.pdf)
+3. [Network Addressing](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/Network%20addressing.pdf)
 
 
 

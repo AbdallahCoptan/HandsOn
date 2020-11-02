@@ -35,21 +35,17 @@ nav:
   - AWS Networking:
     - Network Addressing: network.md
     - Networking in AWS: network2.md
+    - Getting started with VPCs: vpc.md
+    - AWS Elastic Load Balancers (ELB): ELB.md
+    - AWS Networking Demonstrations: Networkdemos.md
   - AWS Databases:
     - RDS: RDS.md
     - NoSQL DB: nosql.md
-  #- AWS Load Balancing:
-  #  - AWS Scaling:
   - AWS Pricing and Support:
     - AWS Pricing: pricing.md
     - AWS Support: support.md
   - AWS Security & Access Management:
     - AWS Security: security.md
-    #- AWS IAM:
-#  - Google:
-#    - starting: AWS_Account (another copy).md
-#  - Azure:
-#    - statr: AWS_Account (3rd copy).md
   - Training Resources: slides.md
   - References: ref.md
   - Contact: contact.md
