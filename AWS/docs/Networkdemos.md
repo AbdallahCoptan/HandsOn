@@ -35,15 +35,84 @@ In this demo, just creating a new VPC with one public subnet and one private sub
 	- One private subnet `10.10.2.0/24`
 
 
+### Step 2: 
 
 
+### Step 3: 
 
 
+### Step 4: 
+
+
+### Step 5: 
+
+
+### Step 6: 
+
+
+### Step 7: 
+
+
+### Step 8:
+
+
+### Watch it here 
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/w3hw2MjLrC4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+<br>
+
+---------------------------------------------------------------
 
 
 ## Demo 2: Creating a new VPC with 4 Subnets in two availability zones with a load balancer
 
 
+In this demo, we continue on the configuration topology of the first demo, by adding two new subnets one public and one private but in a different availability zone and in the same VPC, then we attach an ELB between the two availability zones to balancing the webservers loads. 
+
+
+
+### Network Topology
+
+
+![](VPC_demo2.png)
+
+
+
+
+
+
+
+### Step 1: create the VPC and the two supnets
+
+
+- Follow, [Creating the new VPC with two subnets](vpc.md#working-with-vpcs-and-subnets), to create the VPC, by the following parameters:
+	- The VPC address block `10.10.0.0/16`
+	- One public subnet `10.10.1.0/24`
+	- One private subnet `10.10.2.0/24`
+
+
+### Step 2: 
+
+
+### Step 3: 
+
+
+### Step 4: 
+
+
+### Step 5: 
+
+
+### Step 6: 
+
+
+### Step 7: 
+
+
+### Step 8:
 
 
 
@@ -58,13 +127,27 @@ In this demo, just creating a new VPC with one public subnet and one private sub
 
 
 
+### Watch it here 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/l2XxzCOhlQg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
+<br>
 
-
-
-
-
-
+---------------------------------------------------------------
 
 ## Demo 3: Creating a new VPC with 4 Subnets with a private connection to the On-premises datacenter
+
+
+### Network Topology
+
+
+![](VPC_demo3.png)
+
+
+
+
+
+
+
+### 

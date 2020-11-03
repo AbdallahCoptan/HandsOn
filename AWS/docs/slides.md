@@ -52,3 +52,4 @@ The resources in this training is consisting of three sections, the Slides, Tuto
 - [Python web flax: Webserver installation Ubuntu bash script (test.sh)](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/Codes/test.sh)
 - [User data script for "Python web flax: Webserver installation Ubuntu bash script" (script_ubuntu.sh)](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/Codes/script_ubuntu.sh)
 - [Welcome Hydrosat web page (hydro.html)](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/Codes/hydro.html)
+- [Script for VPC demos](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/Codes/VPCdemo.sh)
