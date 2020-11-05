@@ -762,19 +762,13 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#step-1-create-the-vpc-and-the-two-supnets">Step 1: create the VPC and the two supnets</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#step-2">Step 2:</a>
+    <li class="toctree-l3"><a class="reference internal" href="#step-2-create-the-internet-gateway-for-the-public-access">Step 2: create the Internet Gateway for the public access</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#step-3">Step 3:</a>
+    <li class="toctree-l3"><a class="reference internal" href="#step-3-launch-the-ec2-instance">Step 3: launch the EC2 instance</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#step-4">Step 4:</a>
+    <li class="toctree-l3"><a class="reference internal" href="#step-4-assign-a-public-ip-for-your-ec2-instance">Step 4: assign a public IP for your EC2 instance</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#step-5">Step 5:</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#step-6">Step 6:</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#step-7">Step 7:</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#step-8">Step 8:</a>
+    <li class="toctree-l3"><a class="reference internal" href="#step-5-create-your-private-subnet-in-the-same-vpc">Step 5: create your private subnet in the same VPC</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#watch-it-here">Watch it here</a>
     </li>
@@ -784,21 +778,17 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#network-topology_1">Network Topology</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#step-1-create-the-vpc-and-the-two-supnets_1">Step 1: create the VPC and the two supnets</a>
+    <li class="toctree-l3"><a class="reference internal" href="#step-1-continue-in-the-same-vpc-in-the-previous-demo">Step 1: continue in the same VPC in the previous demo</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#step-2_1">Step 2:</a>
+    <li class="toctree-l3"><a class="reference internal" href="#step-2-use-the-same-internet-gateway-for-the-public-access">Step 2: use the same Internet Gateway for the public access</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#step-3_1">Step 3:</a>
+    <li class="toctree-l3"><a class="reference internal" href="#step-3-launch-the-ec2-instance_1">Step 3: launch the EC2 instance</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#step-4_1">Step 4:</a>
+    <li class="toctree-l3"><a class="reference internal" href="#step-4-assign-a-public-ip-for-your-ec2-instance_1">Step 4: assign a public IP for your EC2 instance</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#step-5_1">Step 5:</a>
+    <li class="toctree-l3"><a class="reference internal" href="#step-5-create-your-private-subnet-in-the-same-vpc_1">Step 5: create your private subnet in the same VPC</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#step-6_1">Step 6:</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#step-7_1">Step 7:</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#step-8_1">Step 8:</a>
+    <li class="toctree-l3"><a class="reference internal" href="#step-6-create-the-elastic-load-balancer-elb">Step 6: create the Elastic Load Balancer (ELB)</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#watch-it-here_1">Watch it here</a>
     </li>
@@ -808,7 +798,17 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#network-topology_2">Network Topology</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_1"></a>
+    <li class="toctree-l3"><a class="reference internal" href="#step-1-continue-in-the-same-vpc-in-the-previous-demo_1">Step 1: continue in the same VPC in the previous demo</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-2-create-the-private-gateway">Step 2: create the private gateway</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-3-create-the-private-route-table">Step 3: create the private route table</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-4-establish-the-private-connection">Step 4: Establish the private connection</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-5-secure-the-private-connection">Step 5: Secure the private connection</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#watch-it-here_2">Watch it here</a>
     </li>
         </ul>
     </li>
@@ -952,13 +952,45 @@
 </ul>
 </li>
 </ul>
-<h3 id="step-2">Step 2:<a class="headerlink" href="#step-2" title="Permanent link">&para;</a></h3>
-<h3 id="step-3">Step 3:<a class="headerlink" href="#step-3" title="Permanent link">&para;</a></h3>
-<h3 id="step-4">Step 4:<a class="headerlink" href="#step-4" title="Permanent link">&para;</a></h3>
-<h3 id="step-5">Step 5:<a class="headerlink" href="#step-5" title="Permanent link">&para;</a></h3>
-<h3 id="step-6">Step 6:<a class="headerlink" href="#step-6" title="Permanent link">&para;</a></h3>
-<h3 id="step-7">Step 7:<a class="headerlink" href="#step-7" title="Permanent link">&para;</a></h3>
-<h3 id="step-8">Step 8:<a class="headerlink" href="#step-8" title="Permanent link">&para;</a></h3>
+<h3 id="step-2-create-the-internet-gateway-for-the-public-access">Step 2: create the Internet Gateway for the public access<a class="headerlink" href="#step-2-create-the-internet-gateway-for-the-public-access" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Follow, <a href="../vpc/#adding-an-internet-gateway-to-your-vpc">create and configure an interent gateway</a>, to craete the IGW, and do the following:<ul>
+<li>Attach the IGW to the VPC</li>
+<li>Create your route table, see <a href="../vpc/#working-with-route-tables">how to work with route tables</a><ul>
+<li>Add the <code>0.0.0.0/0</code> the default route to allow public access to your VPC</li>
+<li>Do the subnets association to this public route table </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="step-3-launch-the-ec2-instance">Step 3: launch the EC2 instance<a class="headerlink" href="#step-3-launch-the-ec2-instance" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Follow, <a href="https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#VPC_Launch_Instance">creating an EC2 inside a subnet</a><ul>
+<li>Change the default VPC and default subnet (Availability zone)</li>
+<li>keep the security group or <strong>configure yours</strong> by adding the <code>HTTP</code> rule</li>
+</ul>
+</li>
+</ul>
+<h3 id="step-4-assign-a-public-ip-for-your-ec2-instance">Step 4: assign a public IP for your EC2 instance<a class="headerlink" href="#step-4-assign-a-public-ip-for-your-ec2-instance" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Use the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#allocate-eip">Elastic IP addresses</a> to create a new public IP and assighn it to your EC2 instance, see:<ul>
+<li><a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#allocate-eip">Allocating an Elastic IP address</a></li>
+<li><a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#associate-eip">Associating an Elastic IP address</a></li>
+<li>Test your new public IP for the instance by:<pre><code>http://your_instance_public_ip/
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="step-5-create-your-private-subnet-in-the-same-vpc">Step 5: create your private subnet in the same VPC<a class="headerlink" href="#step-5-create-your-private-subnet-in-the-same-vpc" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Follow, <a href="https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#AddaSubnet">Creating a subnet in your VPC</a> and try to keep it:<ul>
+<li>Private by not associate it to the public route table</li>
+<li>Create your database inside this subnet</li>
+</ul>
+</li>
+</ul>
 <h3 id="watch-it-here">Watch it here<a class="headerlink" href="#watch-it-here" title="Permanent link">&para;</a></h3>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/w3hw2MjLrC4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -968,31 +1000,132 @@
 <p>In this demo, we continue on the configuration topology of the first demo, by adding two new subnets one public and one private but in a different availability zone and in the same VPC, then we attach an ELB between the two availability zones to balancing the webservers loads. </p>
 <h3 id="network-topology_1">Network Topology<a class="headerlink" href="#network-topology_1" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../VPC_demo2.png" /></p>
-<h3 id="step-1-create-the-vpc-and-the-two-supnets_1">Step 1: create the VPC and the two supnets<a class="headerlink" href="#step-1-create-the-vpc-and-the-two-supnets_1" title="Permanent link">&para;</a></h3>
+<h3 id="step-1-continue-in-the-same-vpc-in-the-previous-demo">Step 1: continue in the same VPC in the previous demo<a class="headerlink" href="#step-1-continue-in-the-same-vpc-in-the-previous-demo" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Follow, <a href="../vpc/#working-with-vpcs-and-subnets">Creating the new VPC with two subnets</a>, to create the VPC, by the following parameters:<ul>
-<li>The VPC address block <code>10.10.0.0/16</code></li>
-<li>One public subnet <code>10.10.1.0/24</code></li>
-<li>One private subnet <code>10.10.2.0/24</code></li>
+<li>Follow, <a href="https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#AddaSubnet">Creating a subnet in your VPC</a>, to create two new subnets, by the following parameters:<ul>
+<li>One public subnet <code>10.10.3.0/24</code></li>
+<li>One private subnet <code>10.10.4.0/24</code></li>
 </ul>
 </li>
 </ul>
-<h3 id="step-2_1">Step 2:<a class="headerlink" href="#step-2_1" title="Permanent link">&para;</a></h3>
-<h3 id="step-3_1">Step 3:<a class="headerlink" href="#step-3_1" title="Permanent link">&para;</a></h3>
-<h3 id="step-4_1">Step 4:<a class="headerlink" href="#step-4_1" title="Permanent link">&para;</a></h3>
-<h3 id="step-5_1">Step 5:<a class="headerlink" href="#step-5_1" title="Permanent link">&para;</a></h3>
-<h3 id="step-6_1">Step 6:<a class="headerlink" href="#step-6_1" title="Permanent link">&para;</a></h3>
-<h3 id="step-7_1">Step 7:<a class="headerlink" href="#step-7_1" title="Permanent link">&para;</a></h3>
-<h3 id="step-8_1">Step 8:<a class="headerlink" href="#step-8_1" title="Permanent link">&para;</a></h3>
+<h3 id="step-2-use-the-same-internet-gateway-for-the-public-access">Step 2: use the same Internet Gateway for the public access<a class="headerlink" href="#step-2-use-the-same-internet-gateway-for-the-public-access" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Associate the public subnet to the route table<ul>
+<li>keep the private subnet away from this route table</li>
+</ul>
+</li>
+</ul>
+<h3 id="step-3-launch-the-ec2-instance_1">Step 3: launch the EC2 instance<a class="headerlink" href="#step-3-launch-the-ec2-instance_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Follow, <a href="https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#VPC_Launch_Instance">creating an EC2 inside a subnet</a><ul>
+<li>Change the default VPC and default subnet (Availability zone)</li>
+<li>keep the security group or <strong>configure yours</strong> by adding the <code>HTTP</code> rule</li>
+</ul>
+</li>
+</ul>
+<h3 id="step-4-assign-a-public-ip-for-your-ec2-instance_1">Step 4: assign a public IP for your EC2 instance<a class="headerlink" href="#step-4-assign-a-public-ip-for-your-ec2-instance_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Use the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#allocate-eip">Elastic IP addresses</a> to create a new public IP and assighn it to your EC2 instance, see:</p>
+<ul>
+<li><a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#allocate-eip">Allocating an Elastic IP address</a></li>
+<li><a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#associate-eip">Associating an Elastic IP address</a></li>
+<li>Test your new public IP for the instance by:<pre><code>http://your_instance_public_ip/
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>you can ignore this step by allowing the <code>Auto-assign Public IP</code> in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/launching-instance.html#configure_instance_details_step">Step 3: Configure Instance Details</a> while you are launching the EC2 instance</p>
+</li>
+</ul>
+<h3 id="step-5-create-your-private-subnet-in-the-same-vpc_1">Step 5: create your private subnet in the same VPC<a class="headerlink" href="#step-5-create-your-private-subnet-in-the-same-vpc_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Follow, <a href="https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#AddaSubnet">Creating a subnet in your VPC</a> and try to keep it:<ul>
+<li>Private by not associate it to the public route table</li>
+<li>Create your database inside this subnet</li>
+</ul>
+</li>
+</ul>
+<h3 id="step-6-create-the-elastic-load-balancer-elb">Step 6: create the Elastic Load Balancer (ELB)<a class="headerlink" href="#step-6-create-the-elastic-load-balancer-elb" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Follow, <a href="../ELB/#create-an-application-load-balancer">Create an Application Load Balancer</a>, then:</p>
+<ul>
+<li>Associate the ELB with the 2 EC2 instances</li>
+<li>Choose your configured VPC<ul>
+<li>Select two availability zones</li>
+<li>Select the two public subnets</li>
+</ul>
+</li>
+<li>Keep the default security configuration</li>
+<li>Choose a security groupe </li>
+<li>In routing targets<ul>
+<li>register the targets,</li>
+<li>the two instances</li>
+</ul>
+</li>
+<li>Review and create, then give it some time </li>
+</ul>
+</li>
+<li>
+<p>Check your ELB after getting <code>provisioned</code>,</p>
+<ul>
+<li>use the public DNS name of the ELB to access your servers</li>
+</ul>
+</li>
+</ul>
 <h3 id="watch-it-here_1">Watch it here<a class="headerlink" href="#watch-it-here_1" title="Permanent link">&para;</a></h3>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/l2XxzCOhlQg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <p><br></p>
 <hr />
 <h2 id="demo-3-creating-a-new-vpc-with-4-subnets-with-a-private-connection-to-the-on-premises-datacenter">Demo 3: Creating a new VPC with 4 Subnets with a private connection to the On-premises datacenter<a class="headerlink" href="#demo-3-creating-a-new-vpc-with-4-subnets-with-a-private-connection-to-the-on-premises-datacenter" title="Permanent link">&para;</a></h2>
+<p>The aim in this demo to connect our private subnets to your on-premises data center through a private gateway. To complete this you need to use the direct connect and VPN AWS services.</p>
 <h3 id="network-topology_2">Network Topology<a class="headerlink" href="#network-topology_2" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../VPC_demo3.png" /></p>
-<h3 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h3 id="step-1-continue-in-the-same-vpc-in-the-previous-demo_1">Step 1: continue in the same VPC in the previous demo<a class="headerlink" href="#step-1-continue-in-the-same-vpc-in-the-previous-demo_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>keep the previous configuration <ul>
+<li>one VPC<ul>
+<li>2 public subnets</li>
+<li>2 private subnets</li>
+</ul>
+</li>
+<li>one ELB<ul>
+<li>Listner: two public subnets</li>
+<li>Traget: the two instances</li>
+</ul>
+</li>
+<li>The Multi-AZ databases are hosted in the two private subnets  </li>
+</ul>
+</li>
+</ul>
+<h3 id="step-2-create-the-private-gateway">Step 2: create the private gateway<a class="headerlink" href="#step-2-create-the-private-gateway" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Follow, <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/virtualgateways.html#create-virtual-private-gateway">Creating a virtual private gateway</a>, then:<ul>
+<li>Attach it your VPC</li>
+</ul>
+</li>
+</ul>
+<h3 id="step-3-create-the-private-route-table">Step 3: create the private route table<a class="headerlink" href="#step-3-create-the-private-route-table" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Create your route table, see <a href="../vpc/#working-with-route-tables">how to work with route tables</a><ul>
+<li>Add the <code>172.16.0.0/16</code> the route to your on-premises datacenter</li>
+<li>Do the private subnets association to this private route table </li>
+</ul>
+</li>
+</ul>
+<h3 id="step-4-establish-the-private-connection">Step 4: Establish the private connection<a class="headerlink" href="#step-4-establish-the-private-connection" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Use <a href="../network2/#aws-direct-connect">Direct Connect</a> to launch the private connection to your on-premises datacenter</li>
+</ul>
+<h3 id="step-5-secure-the-private-connection">Step 5: Secure the private connection<a class="headerlink" href="#step-5-secure-the-private-connection" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Use <a href="../network2/#aws-vpn">AWS VPN</a> to secure the private connection to your on-premises datacenter</li>
+</ul>
+<h3 id="watch-it-here_2">Watch it here<a class="headerlink" href="#watch-it-here_2" title="Permanent link">&para;</a></h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/X2K3Oig5taA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               
             </div>
           </div>
