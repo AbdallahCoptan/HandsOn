@@ -38,6 +38,7 @@ In this demo, just creating a new VPC with one public subnet and one private sub
 ### Step 2: create the Internet Gateway for the public access 
 
 - Follow, [create and configure an interent gateway](vpc.md#adding-an-internet-gateway-to-your-vpc), to craete the IGW, and do the following:
+	- Do not forget to deattach the default IGW.
 	- Attach the IGW to the VPC
 	- Create your route table, see [how to work with route tables](vpc.md#working-with-route-tables)
 		- Add the `0.0.0.0/0` the default route to allow public access to your VPC
