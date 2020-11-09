@@ -7,7 +7,7 @@ your application, may be a better solution than a traditional SQL-based database
 
 ## Amazon Relational Database (RDS)
 
-Amazon Relational Database Service (Amazon RDS) makes it straightforward to set up, operate, and scale a relational database in the cloud. It provides cost-efficient and resizable capacity while automating time-consuming administration tasks such as provisioning hardware, setting up the database, patching, and making backups.
+[Amazon Relational Database Service (Amazon RDS)](https://aws.amazon.com/rds/) makes it straightforward to set up, operate, and scale a relational database in the cloud. It provides cost-efficient and resizable capacity while automating time-consuming administration tasks such as provisioning hardware, setting up the database, patching, and making backups.
 
 
 Amazon RDS currently supports six database engines:
@@ -18,6 +18,26 @@ Amazon RDS currently supports six database engines:
 - MariaDB: [https://aws.amazon.com/rds/mariadb/](https://aws.amazon.com/rds/mariadb/)
 - Oracle: [https://aws.amazon.com/rds/oracle/](https://aws.amazon.com/rds/oracle/)
 - Microsoft SQL Server: [https://aws.amazon.com/rds/sqlserver/](https://aws.amazon.com/rds/sqlserver/)
+
+
+## Overview of Amazon RDS
+
+Why do you want a managed relational database service? Because Amazon RDS takes over many of the difficult or tedious management tasks of a relational database:
+
+- When you buy a server, you get CPU, memory, storage, and IOPS, all bundled together. With Amazon RDS, these are split apart so that you can scale them independently. If you need more CPU, less IOPS, or more storage, you can easily allocate them.
+
+- Amazon RDS manages backups, software patching, automatic failure detection, and recovery.
+
+- To deliver a managed service experience, Amazon RDS doesn't provide shell access to DB instances. It also restricts access to certain system procedures and tables that require advanced privileges.
+
+- You can have automated backups performed when you need them, or manually create your own backup snapshot. You can use these backups to restore a database. The Amazon RDS restore process works reliably and efficiently.
+
+- You can use the database products you are already familiar with: MySQL, MariaDB, PostgreSQL, Oracle, Microsoft SQL Server.
+
+- You can get high availability with a primary instance and a synchronous secondary instance that you can fail over to when problems occur. You can also use MariaDB, Microsoft SQL Server, MySQL, Oracle, and PostgreSQL read replicas to increase read scaling.
+
+- In addition to the security in your database package, you can help control who can access your RDS databases by using AWS Identity and Access Management (IAM) to define users and permissions. You can also help protect your databases by putting them in a virtual private cloud.
+
 
 
 ## Bring your own database (BYODB) vs Amazon RDS
@@ -50,8 +70,6 @@ the data that's in there, and she is 100% responsible for that. Whether it's enc
 
 
 You certainly may be in a case where you're using a legacy database. Say you're still running a Sybase shop, you'll still run that on EC2. But as you look for ways to eliminate tasks from your team and let them focus on what they really prepare to do, RDS can certainly get rid of large portions that they don't have to worry about anymore. 
-
-
 
 
 
@@ -135,6 +153,32 @@ Check the pricing and billing (per hour) of the RDS in AWS:
 - [Amazon RDS for PostgreSQL Pricing](https://aws.amazon.com/rds/postgresql/pricing/)
 
 
+
+
+## Amazon RDS Read Replicas
+
+[Amazon RDS Read Replicas](https://aws.amazon.com/rds/features/read-replicas/) provide enhanced performance and durability for RDS database (DB) instances. They make it easy to elastically scale out beyond the capacity constraints of a single DB instance for read-heavy database workloads. You can create one or more replicas of a given source DB Instance and serve high-volume application read traffic from multiple copies of your data, thereby increasing aggregate read throughput. Read replicas can also be promoted when needed to become standalone DB instances. Read replicas are available in Amazon RDS for MySQL, MariaDB, PostgreSQL, Oracle, and SQL Server as well as Amazon Aurora.
+
+
+For the MySQL, MariaDB, PostgreSQL, Oracle, and SQL Server database engines, Amazon RDS creates a second DB instance using a snapshot of the source DB instance. It then uses the engines' native asynchronous replication to update the read replica whenever there is a change to the source DB instance. The read replica operates as a DB instance that allows only read-only connections; applications can connect to a read replica just as they would to any DB instance. Amazon RDS replicates all databases in the source DB instance.
+
+[Amazon Aurora](https://aws.amazon.com/rds/aurora/?aurora-whats-new.sort-by=item.additionalFields.postDateTime&aurora-whats-new.sort-order=desc) futher extends the benefits of read replicas by employing an SSD-backed virtualized storage layer purpose-built for database workloads. Amazon Aurora replicas share the same underlying storage as the source instance, lowering costs and avoiding the need to copy data to the replica nodes. For more information about replication with Amazon Aurora, see the [online documentation](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Replication.html).
+
+![](read-replicas.png)
+
+
+### Benefits
+
+- Enhanced performance
+- Increased availability
+- Designed for security
+
+
+### Setup
+
+Using the AWS Management Console, you can easily add read replicas to existing DB Instances. Use the "Create Read Replica" option corresponding to your DB Instance in the AWS Management Console. Amazon RDS for MySQL, MariaDB, PostgreSQL, Oracle, and SQL Server allow you to add up to 5 read replicas to each DB Instance.
+
+Amazon RDS for MySQL, MariaDB, PostgreSQL, and Oracle offer you two SSD-based choices for database storage: General Purpose and Provisioned IOPS. Read replicas for these engines need not use the same type of storage as their master DB Instances. You may be able to optimize your performance or your spending by selecting an alternate storage type for read replicas. For more information see read replicas documentation for Amazon RDS for MySQL, MariaDB, PostgreSQL, Oracle, and SQL Server as well as Amazon Aurora.
 
 
 

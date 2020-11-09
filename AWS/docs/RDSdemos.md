@@ -123,11 +123,21 @@ Creating a DB instance and connecting to a database on a DB instance is slightly
 - [Creating a MariaDB DB instance and connecting to a database on a MariaDB DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.MariaDB.html)
 - [Creating a Microsoft SQL Server DB instance and connecting to a DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.SQLServer.html)
 - [Creating a MySQL DB instance and connecting to a database on a MySQL DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.MySQL.html)
+	- [Create and Connect to a MySQL Database](https://aws.amazon.com/getting-started/hands-on/create-mysql-db/)
+	- [How to Install MySQL on Ubuntu 18.04](https://linuxize.com/post/how-to-install-mysql-on-ubuntu-18-04/)
+	- [How to Manage & Create MySQL Users, Databases & Tables](https://www.a2hosting.com/kb/developer-corner/mysql/managing-mysql-databases-and-users-from-the-command-line)
 - [Creating an Oracle DB instance and connecting to a database on an Oracle DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.Oracle.html)
 - [Creating a PostgreSQL DB instance and connecting to a database on a PostgreSQL DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.PostgreSQL.html)
+	- [Create and Connect to a PostgreSQL Database](https://aws.amazon.com/getting-started/tutorials/create-connect-postgresql-db/)
+	- [How To Install and Use PostgreSQL on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04)
+	- [The PostgreSQL Describe Table Statement](https://kb.objectrocket.com/postgresql/the-postgresql-describe-table-statement-853)
+	- [How to fix “ERROR: column c.relhasoids does not exist” in Postgres?](https://stackoverflow.com/questions/58461178/how-to-fix-error-column-c-relhasoids-does-not-exist-in-postgres)
 - [Tutorial: Create a web server and an Amazon RDS DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/TUT_WebAppWithRDS.html)
 
 
+#### Troubleshooting for Amazon RDS 
+
+- [Troubleshooting for Amazon RDS](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Troubleshooting.html#CHAP_Troubleshooting.Connecting)
 
 ### Tutorials
 
@@ -165,3 +175,20 @@ Learn best practices for working with Amazon RDS. As new best practices are iden
 - [Best practices for working with SQL Server](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_BestPractices.html#CHAP_BestPractices.SQLServer)
 - [Working with DB parameter groups](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_BestPractices.html#CHAP_BestPractices.DBParameterGroup)
 - [Amazon RDS new features and best practices presentation video](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_BestPractices.html#CHAP_BestPractices.Presentation)
+
+
+
+
+
+
+## Demo: Create a web server and an Amazon RDS DB instance
+
+Us the following topology and start playing with EC2 instances and RDS databases:
+
+![](VPC_demo.png)
+
+
+Then follow, 
+
+- [Create a DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Tutorials.WebServerDB.CreateDBInstance.html)
+- [Create an EC2 instance and install a web server](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Tutorials.WebServerDB.CreateWebServer.html)

@@ -823,11 +823,47 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="../RDS/#bring-your-own-database-byodb-vs-amazon-rds">Bring your own database (BYODB) vs Amazon RDS</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="../RDS/#mysql-in-amazon-rds">MySQL in Amazon RDS</a>
+    <li class="toctree-l2"><a class="reference internal" href="../RDS/#amazon-rds-db-instances">Amazon RDS DB instances</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../RDS/#db-instance-classes">DB instance classes</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="../RDS/#postgresql-in-amazon-rds">Postgresql in Amazon RDS</a>
+    <li class="toctree-l3"><a class="reference internal" href="../RDS/#db-instance-storage">DB instance storage</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RDS/#high-availability-multi-az-for-amazon-rds">High availability (Multi-AZ) for Amazon RDS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RDS/#databases-engines-in-aws-rds">Databases engines in AWS RDS</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="../RDS/#migrate-your-database-to-aws-database">Migrate your Database to AWS Database</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../RDSdemos/">Dtabase Engines in AWS</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../RDSdemos/#setting-up-for-amazon-rds">Setting up for Amazon RDS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RDSdemos/#managing-databases-in-aws">Managing Databases in AWS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../RDSdemos/#configuring-an-amazon-rds-db-instance">Configuring an Amazon RDS DB instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../RDSdemos/#managing-an-amazon-rds-db-instance">Managing an Amazon RDS DB instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../RDSdemos/#backing-up-and-restoring-an-amazon-rds-db-instance">Backing up and restoring an Amazon RDS DB instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../RDSdemos/#monitoring-an-amazon-rds-db-instance">Monitoring an Amazon RDS DB instance</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RDSdemos/#start-working-with-aws-rds-and-db-engines">Start Working with AWS RDS and DB engines</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../RDSdemos/#demos">Demos</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../RDSdemos/#tutorials">Tutorials</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../RDSdemos/#best-practices-for-amazon-rds">Best practices for Amazon RDS</a>
+    </li>
+        </ul>
     </li>
     </ul>
                     </li>
@@ -955,6 +991,7 @@
 <h3 id="step-2-create-the-internet-gateway-for-the-public-access">Step 2: create the Internet Gateway for the public access<a class="headerlink" href="#step-2-create-the-internet-gateway-for-the-public-access" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Follow, <a href="../vpc/#adding-an-internet-gateway-to-your-vpc">create and configure an interent gateway</a>, to craete the IGW, and do the following:<ul>
+<li>Do not forget to deattach the default IGW.</li>
 <li>Attach the IGW to the VPC</li>
 <li>Create your route table, see <a href="../vpc/#working-with-route-tables">how to work with route tables</a><ul>
 <li>Add the <code>0.0.0.0/0</code> the default route to allow public access to your VPC</li>

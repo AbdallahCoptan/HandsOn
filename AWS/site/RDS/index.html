@@ -823,11 +823,47 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#bring-your-own-database-byodb-vs-amazon-rds">Bring your own database (BYODB) vs Amazon RDS</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#mysql-in-amazon-rds">MySQL in Amazon RDS</a>
+    <li class="toctree-l2"><a class="reference internal" href="#amazon-rds-db-instances">Amazon RDS DB instances</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#db-instance-classes">DB instance classes</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#postgresql-in-amazon-rds">Postgresql in Amazon RDS</a>
+    <li class="toctree-l3"><a class="reference internal" href="#db-instance-storage">DB instance storage</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#high-availability-multi-az-for-amazon-rds">High availability (Multi-AZ) for Amazon RDS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#databases-engines-in-aws-rds">Databases engines in AWS RDS</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#migrate-your-database-to-aws-database">Migrate your Database to AWS Database</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../RDSdemos/">Dtabase Engines in AWS</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../RDSdemos/#setting-up-for-amazon-rds">Setting up for Amazon RDS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RDSdemos/#managing-databases-in-aws">Managing Databases in AWS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../RDSdemos/#configuring-an-amazon-rds-db-instance">Configuring an Amazon RDS DB instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../RDSdemos/#managing-an-amazon-rds-db-instance">Managing an Amazon RDS DB instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../RDSdemos/#backing-up-and-restoring-an-amazon-rds-db-instance">Backing up and restoring an Amazon RDS DB instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../RDSdemos/#monitoring-an-amazon-rds-db-instance">Monitoring an Amazon RDS DB instance</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RDSdemos/#start-working-with-aws-rds-and-db-engines">Start Working with AWS RDS and DB engines</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../RDSdemos/#demos">Demos</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../RDSdemos/#tutorials">Tutorials</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../RDSdemos/#best-practices-for-amazon-rds">Best practices for Amazon RDS</a>
+    </li>
+        </ul>
     </li>
     </ul>
                     </li>
@@ -922,7 +958,7 @@
   </ul>
   
     <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-        <a href="../nosql/" class="btn btn-neutral float-right" title="NoSQL DB">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../RDSdemos/" class="btn btn-neutral float-right" title="Dtabase Engines in AWS">Next <span class="icon icon-circle-arrow-right"></span></a>
         <a href="../Networkdemos/" class="btn btn-neutral" title="AWS Networking Demonstrations"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
   
@@ -960,8 +996,67 @@ the data that&rsquo;s in there, and she is 100% responsible for that. Whether it
 <p><img alt="" src="../DB2.png" /></p>
 <p><strong>Is RDS the perfect solution for everyone?</strong></p>
 <p>You certainly may be in a case where you&rsquo;re using a legacy database. Say you&rsquo;re still running a Sybase shop, you&rsquo;ll still run that on EC2. But as you look for ways to eliminate tasks from your team and let them focus on what they really prepare to do, RDS can certainly get rid of large portions that they don&rsquo;t have to worry about anymore. </p>
-<h2 id="mysql-in-amazon-rds">MySQL in Amazon RDS<a class="headerlink" href="#mysql-in-amazon-rds" title="Permanent link">&para;</a></h2>
-<h2 id="postgresql-in-amazon-rds">Postgresql in Amazon RDS<a class="headerlink" href="#postgresql-in-amazon-rds" title="Permanent link">&para;</a></h2>
+<h2 id="amazon-rds-db-instances">Amazon RDS DB instances<a class="headerlink" href="#amazon-rds-db-instances" title="Permanent link">&para;</a></h2>
+<p>A DB instance is an isolated database environment running in the cloud. It is the basic building block of Amazon RDS. A DB instance can contain multiple user-created databases, and can be accessed using the same client tools and applications you might use to access a standalone database instance. DB instances are simple to create and modify with the Amazon AWS command line tools, Amazon RDS API operations, or the AWS Management Console. </p>
+<pre><code>    /!\ Note
+
+    - Amazon RDS supports access to databases using any standard SQL client application. 
+    - Amazon RDS does not allow direct host access.
+</code></pre>
+<p>You can have up to 40 Amazon RDS DB instances, with the following limitations:</p>
+<ul>
+<li>
+<p>10 for each SQL Server edition (Enterprise, Standard, Web, and Express) under the &ldquo;license-included&rdquo; model</p>
+</li>
+<li>
+<p>10 for Oracle under the &ldquo;license-included&rdquo; model</p>
+</li>
+<li>
+<p>40 for MySQL, MariaDB, or PostgreSQL</p>
+</li>
+<li>
+<p>40 for Oracle under the &ldquo;bring-your-own-license&rdquo; (BYOL) licensing model</p>
+</li>
+</ul>
+<p>Read more about DB instances, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.html">RDS DB instances</a>.</p>
+<h3 id="db-instance-classes">DB instance classes<a class="headerlink" href="#db-instance-classes" title="Permanent link">&para;</a></h3>
+<p>The DB instance class determines the computation and memory capacity of an Amazon RDS DB instance. The DB instance class you need depends on your processing power and memory requirements. </p>
+<p>Check the following:</p>
+<ul>
+<li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#Concepts.DBInstanceClass.Types">DB instance class types</a></li>
+<li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#Concepts.DBInstanceClass.Support">Supported DB engines for DB instance classes</a></li>
+<li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#Concepts.DBInstanceClass.Support">Changing your DB instance class</a></li>
+<li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor">Configuring the processor for a DB instance class</a></li>
+<li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#Concepts.DBInstanceClass.Summary">Hardware specifications for DB instance classes</a></li>
+</ul>
+<h3 id="db-instance-storage">DB instance storage<a class="headerlink" href="#db-instance-storage" title="Permanent link">&para;</a></h3>
+<p>DB instances for Amazon RDS for MySQL, MariaDB, PostgreSQL, Oracle, and Microsoft SQL Server use Amazon Elastic Block Store (Amazon EBS) volumes for database and log storage. Depending on the amount of storage requested, Amazon RDS automatically stripes across multiple Amazon EBS volumes to enhance performance. </p>
+<p><strong>Amazon RDS storage types</strong></p>
+<p>Amazon RDS provides three storage types: 
+- General Purpose SSD (also known as gp2), 
+- Provisioned IOPS SSD (also known as io1), and 
+- magnetic (also known as standard). </p>
+<p>They differ in performance characteristics and price, which means that you can tailor your storage performance and cost to the needs of your database workload. You can create MySQL, MariaDB, Oracle, and PostgreSQL RDS DB instances with up to 64 tebibytes (TiB) of storage. You can create SQL Server RDS DB instances with up to 16 TiB of storage. For this amount of storage, use the Provisioned IOPS SSD and General Purpose SSD storage types. </p>
+<h2 id="high-availability-multi-az-for-amazon-rds">High availability (Multi-AZ) for Amazon RDS<a class="headerlink" href="#high-availability-multi-az-for-amazon-rds" title="Permanent link">&para;</a></h2>
+<p>Amazon RDS provides high availability and failover support for DB instances using Multi-AZ deployments. Amazon RDS uses several different technologies to provide failover support. Multi-AZ deployments for MariaDB, MySQL, Oracle, and PostgreSQL DB instances use Amazon&rsquo;s failover technology. SQL Server DB instances use SQL Server Database Mirroring (DBM) or Always On Availability Groups (AGs).</p>
+<p>In a Multi-AZ deployment, Amazon RDS <strong>automatically</strong> <em>provisions</em> and <em>maintains</em> a synchronous standby <strong>replica</strong> in a different Availability Zone. The primary DB instance is synchronously replicated across Availability Zones to a standby replica to provide data redundancy, eliminate I/O freezes, and minimize latency spikes during system backups. Running a DB instance with high availability can enhance availability during planned system maintenance, and help protect your databases against DB instance failure and Availability Zone disruption. For more information on Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions, Availability Zones, and Local Zones</a> . </p>
+<p><img alt="" src="../con-multi-AZ.png" /></p>
+<p>Using the RDS console, you can create a Multi-AZ deployment by simply specifying Multi-AZ when creating a DB instance. You can use the console to convert existing DB instances to Multi-AZ deployments by modifying the DB instance and specifying the Multi-AZ option.</p>
+<p>Check the pricing and billing (per hour) of the RDS in AWS:</p>
+<ul>
+<li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/User_DBInstanceBilling.html">DB instance billing for Amazon RDS</a></li>
+<li><a href="https://aws.amazon.com/rds/mysql/pricing/?nc=sn&amp;loc=4">Amazon RDS for MySQL Pricing</a></li>
+<li><a href="https://aws.amazon.com/rds/postgresql/pricing/">Amazon RDS for PostgreSQL Pricing</a></li>
+</ul>
+<h2 id="databases-engines-in-aws-rds">Databases engines in AWS RDS<a class="headerlink" href="#databases-engines-in-aws-rds" title="Permanent link">&para;</a></h2>
+<p>In this section, you can review information specific, details, features, and configurations for each of the particular DB engines that is supported in AWS RDS, see the following links:</p>
+<ul>
+<li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html">MariaDB on Amazon RDS</a></li>
+<li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html">Microsoft SQL Server on Amazon RDS</a></li>
+<li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html">MySQL on Amazon RDS</a></li>
+<li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Oracle.html">Oracle on Amazon RDS</a></li>
+<li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html">PostgreSQL on Amazon RDS</a></li>
+</ul>
 <h2 id="migrate-your-database-to-aws-database">Migrate your Database to AWS Database<a class="headerlink" href="#migrate-your-database-to-aws-database" title="Permanent link">&para;</a></h2>
 <p>You can use the AWS Database Migration Service (AWS DMS) (<a href="https://aws.amazon.com/dms">https://aws.amazon.com/dms</a>) to quickly and securely migrate your databases to AWS.</p>
               
@@ -971,7 +1066,7 @@ the data that&rsquo;s in there, and she is 100% responsible for that. Whether it
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../nosql/" class="btn btn-neutral float-right" title="NoSQL DB">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../RDSdemos/" class="btn btn-neutral float-right" title="Dtabase Engines in AWS">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../Networkdemos/" class="btn btn-neutral" title="AWS Networking Demonstrations"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -1003,7 +1098,7 @@ the data that&rsquo;s in there, and she is 100% responsible for that. Whether it
         <span><a href="../Networkdemos/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../nosql/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../RDSdemos/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

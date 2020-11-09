@@ -40,7 +40,8 @@ nav:
     - AWS Networking Demonstrations: Networkdemos.md
   - AWS Databases:
     - RDS: RDS.md
-    - Dtabase Engines in AWS: RDSdemos.md
+    - Database Engines in AWS: RDSdemos.md
+    - Amazon Aurora: aroura.md
     - NoSQL DB: nosql.md
   - AWS Pricing and Support:
     - AWS Pricing: pricing.md
