@@ -2,9 +2,10 @@
 echo "Y" | sudo apt-get update
 echo "" | sudo add-apt-repository ppa:ondrej/php
 echo "Y" | sudo apt update
-echo "Y" | sudo apt install php7.2
-echo "Y" | sudo apt install mysql-server
+#echo "Y" | sudo apt install php7.2
 echo "Y" | sudo apt install php7.2-mysql
+sudo wget 
+cat mysql.txt | sudo apt install mysql-server
 sudo /etc/init.d/apache2 restart
 sudo groupadd www
 sudo usermod -a -G www ubuntu
