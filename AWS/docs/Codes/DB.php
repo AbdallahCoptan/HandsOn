@@ -3,6 +3,7 @@
 <html>
 <body>
 <h1>Sample page</h1>
+<h2>Insert into EMPLOYEES table</h2>
 <?php
 
   /* Connect to MySQL and select the database. */
