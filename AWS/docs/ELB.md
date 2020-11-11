@@ -134,7 +134,7 @@ For demos of common load balancer configurations, see [Elastic Load Balancing de
 
 #### AWS Management Console
 
-To create an Application Load Balancer using the AWS Management Console, see [Getting started with Application Load Balancers]() in the User Guide for Application Load Balancers. You need to do the following:
+To create an Application Load Balancer using the AWS Management Console, see [Getting started with Application Load Balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancer-getting-started.html) in the User Guide for Application Load Balancers. You need to do the following:
 
 
 ##### Before you begin

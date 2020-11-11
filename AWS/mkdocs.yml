@@ -43,6 +43,9 @@ nav:
     - Database Engines in AWS: RDSdemos.md
     - Amazon Aurora: aroura.md
     - NoSQL DB: nosql.md
+    - Amazon DynamoDB: DynamoDB.md
+    - Amazon Elasticache: Elasticache.md
+    - Amazon Redshift: Redshift.md
   - AWS Pricing and Support:
     - AWS Pricing: pricing.md
     - AWS Support: support.md
