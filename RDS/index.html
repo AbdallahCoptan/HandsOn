@@ -821,6 +821,8 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#amazon-relational-database-rds">Amazon Relational Database (RDS)</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#overview-of-amazon-rds">Overview of Amazon RDS</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#bring-your-own-database-byodb-vs-amazon-rds">Bring your own database (BYODB) vs Amazon RDS</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#amazon-rds-db-instances">Amazon RDS DB instances</a>
@@ -833,13 +835,21 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#high-availability-multi-az-for-amazon-rds">High availability (Multi-AZ) for Amazon RDS</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#amazon-rds-read-replicas">Amazon RDS Read Replicas</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#benefits">Benefits</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#setup">Setup</a>
+    </li>
+        </ul>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#databases-engines-in-aws-rds">Databases engines in AWS RDS</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#migrate-your-database-to-aws-database">Migrate your Database to AWS Database</a>
     </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../RDSdemos/">Dtabase Engines in AWS</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../RDSdemos/">Database Engines in AWS</a>
     <ul>
     <li class="toctree-l2"><a class="reference internal" href="../RDSdemos/#setting-up-for-amazon-rds">Setting up for Amazon RDS</a>
     </li>
@@ -858,6 +868,10 @@
     <li class="toctree-l2"><a class="reference internal" href="../RDSdemos/#start-working-with-aws-rds-and-db-engines">Start Working with AWS RDS and DB engines</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="../RDSdemos/#demos">Demos</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../RDSdemos/#troubleshooting-for-amazon-rds">Troubleshooting for Amazon RDS</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="../RDSdemos/#tutorials">Tutorials</a>
     </li>
@@ -867,7 +881,168 @@
     </li>
     </ul>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../mysqldemo/">MySQL RDS DB Instance Demo</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#network-topology">Network Topology</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#step-1-create-the-vpc">Step 1: Create the VPC</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#step-2-configure-the-vpc-security-group">Step 2: Configure the VPC security group</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#step-3-create-the-database-instance">Step 3: Create the Database Instance</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#step-4-create-the-ec2-instances-and-install-the-web-servers">Step 4: Create the EC2 instances and install the web servers</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#step-5-create-the-application-elastic-load-balancer-elb">Step 5: Create the application Elastic Load Balancer (ELB</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#watch-it-here">Watch it here</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#references-and-help">References and Help</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../aroura/">Amazon Aurora</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../aroura/#overview">Overview</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../aroura/#benefits">Benefits</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../aroura/#use-cases">Use cases</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../aroura/#migrating-your-databases-to-amazon-aurora">Migrating Your Databases to Amazon Aurora</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../aroura/#if-youre-currently-using-amazon-rds-for-mysql-or-amazon-rds-for-postgresql">If you're currently using Amazon RDS for MySQL or Amazon RDS for PostgreSQL...</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../aroura/#if-youre-currently-using-oracle-or-microsoft-sql-server">If you're currently using Oracle or Microsoft SQL Server...</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../aroura/#getting-started-with-amazon-aurora">Getting started with Amazon Aurora</a>
+    </li>
+    </ul>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../nosql/">NoSQL DB</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../nosql/#nosql-databases">NoSQL Databases</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../nosql/#what-are-nosql-databases">What are NoSQL databases?</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../nosql/#how-does-a-nosql-nonrelational-database-work">How Does a NoSQL (nonrelational) Database Work?</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../nosql/#why-should-you-use-a-nosql-database">Why should you use a NoSQL database?</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../nosql/#types-of-nosql-databases">Types of NoSQL Databases</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../nosql/#sql-relational-vs-nosql-nonrelational-databases">SQL (relational) vs. NoSQL (nonrelational) databases</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../nosql/#sql-vs-nosql-terminology">SQL vs. NoSQL Terminology</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../nosql/#nosql-database-engines-in-aws">NoSQL Database Engines in AWS</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../DynamoDB/">Amazon DynamoDB</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../DynamoDB/#the-key-value-database-defined">The key-value database defined</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../DynamoDB/#dynamodb">DynamoDB</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#benefits-applications">Benefits &amp; Applications</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#use-cases">Use Cases</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../DynamoDB/#creating-a-table-from-sql-to-nosql">Creating a Table  from SQL to NoSQL</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#sql">SQL</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#nosql-dynamodb">NoSQL: DynamoDB</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../DynamoDB/#setting-up-dynamodb-on-aws">Setting Up DynamoDB on AWS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#getting-an-aws-access-key">Getting an AWS Access Key</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#configuring-your-credentials">Configuring Your Credentials</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../DynamoDB/#getting-started-with-amazon-dynamodb">Getting Started with Amazon DynamoDB</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#demo-create-and-query-a-nosql-table">Demo: Create and Query a NoSQL Table</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#more-advanced-tutorials-and-demos">More advanced tutorials and demos</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Elasticache/">Amazon Elasticache</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../Elasticache/#the-in-memory-database-defined">The in-memory database defined</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../Elasticache/#in-memory-databases-on-aws">In-memory databases on AWS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../Elasticache/#amazon-elasticache-for-redis">Amazon Elasticache for Redis</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../Elasticache/#get-started-with-amazon-elasticache-for-redis">Get started with Amazon ElastiCache for Redis.</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Elasticache/#amazon-elasticache-for-memcached">Amazon ElastiCache for Memcached</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../Elasticache/#get-started-with-amazon-elasticache-for-memcached">Get started with Amazon ElastiCache for Memcached.</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Elasticache/#use-cases">Use cases</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Redshift/">Amazon Redshift</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../Redshift/#redshift-use-cases">Redshift Use Cases</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../Redshift/#cluster-management">Cluster management</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Redshift/#creating-and-managing-clusters">Creating and managing clusters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../Redshift/#getting-started-with-amazon-redshift">Getting started with Amazon Redshift</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../Redshift/#check-amazon-redshift-documentation-for-all-the-details">Check, Amazon Redshift Documentation for all the details.</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Monitoring and Scaling</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../monitor/">Monitoring Services on AWS</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../LoadBalanc/">Load Balancing on AWS</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../LoadBalanc/#load-balancers-in-aws">Load Balancers in AWS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../LoadBalanc/#load-balancing-manage-your-application-workload-by-elb">Load Balancing: Manage your application workload by ELB</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../AutoScale/">Auto Scaling in AWS</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">AWS Pricing and Support</span></p>
@@ -958,7 +1133,7 @@
   </ul>
   
     <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-        <a href="../RDSdemos/" class="btn btn-neutral float-right" title="Dtabase Engines in AWS">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../RDSdemos/" class="btn btn-neutral float-right" title="Database Engines in AWS">Next <span class="icon icon-circle-arrow-right"></span></a>
         <a href="../Networkdemos/" class="btn btn-neutral" title="AWS Networking Demonstrations"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
   
@@ -971,7 +1146,7 @@
 <p>Now, in this section,we&rsquo;re going to discuss how to run relational and NoSQL databases on AWS. We will first look at simply running your own database on top of EC2, much like you would on-premise. Then, we will introduce you to the Amazon Relational Database Service, or RDS. RDS is a managed database service where you can pick amongst popular database engines and let AWS manage your database for you. Next, we will demonstrate Amazon DynamoDB. DynamoDB is a managed NoSQL database that, depending upon
 your application, may be a better solution than a traditional SQL-based database. </p>
 <h2 id="amazon-relational-database-rds">Amazon Relational Database (RDS)<a class="headerlink" href="#amazon-relational-database-rds" title="Permanent link">&para;</a></h2>
-<p>Amazon Relational Database Service (Amazon RDS) makes it straightforward to set up, operate, and scale a relational database in the cloud. It provides cost-efficient and resizable capacity while automating time-consuming administration tasks such as provisioning hardware, setting up the database, patching, and making backups.</p>
+<p><a href="https://aws.amazon.com/rds/">Amazon Relational Database Service (Amazon RDS)</a> makes it straightforward to set up, operate, and scale a relational database in the cloud. It provides cost-efficient and resizable capacity while automating time-consuming administration tasks such as provisioning hardware, setting up the database, patching, and making backups.</p>
 <p>Amazon RDS currently supports six database engines:</p>
 <ul>
 <li>Amazon Aurora: <a href="https://aws.amazon.com/rds/aurora/">https://aws.amazon.com/rds/aurora/</a></li>
@@ -980,6 +1155,31 @@ your application, may be a better solution than a traditional SQL-based database
 <li>MariaDB: <a href="https://aws.amazon.com/rds/mariadb/">https://aws.amazon.com/rds/mariadb/</a></li>
 <li>Oracle: <a href="https://aws.amazon.com/rds/oracle/">https://aws.amazon.com/rds/oracle/</a></li>
 <li>Microsoft SQL Server: <a href="https://aws.amazon.com/rds/sqlserver/">https://aws.amazon.com/rds/sqlserver/</a></li>
+</ul>
+<h2 id="overview-of-amazon-rds">Overview of Amazon RDS<a class="headerlink" href="#overview-of-amazon-rds" title="Permanent link">&para;</a></h2>
+<p>Why do you want a managed relational database service? Because Amazon RDS takes over many of the difficult or tedious management tasks of a relational database:</p>
+<ul>
+<li>
+<p>When you buy a server, you get CPU, memory, storage, and IOPS, all bundled together. With Amazon RDS, these are split apart so that you can scale them independently. If you need more CPU, less IOPS, or more storage, you can easily allocate them.</p>
+</li>
+<li>
+<p>Amazon RDS manages backups, software patching, automatic failure detection, and recovery.</p>
+</li>
+<li>
+<p>To deliver a managed service experience, Amazon RDS doesn&rsquo;t provide shell access to DB instances. It also restricts access to certain system procedures and tables that require advanced privileges.</p>
+</li>
+<li>
+<p>You can have automated backups performed when you need them, or manually create your own backup snapshot. You can use these backups to restore a database. The Amazon RDS restore process works reliably and efficiently.</p>
+</li>
+<li>
+<p>You can use the database products you are already familiar with: MySQL, MariaDB, PostgreSQL, Oracle, Microsoft SQL Server.</p>
+</li>
+<li>
+<p>You can get high availability with a primary instance and a synchronous secondary instance that you can fail over to when problems occur. You can also use MariaDB, Microsoft SQL Server, MySQL, Oracle, and PostgreSQL read replicas to increase read scaling.</p>
+</li>
+<li>
+<p>In addition to the security in your database package, you can help control who can access your RDS databases by using AWS Identity and Access Management (IAM) to define users and permissions. You can also help protect your databases by putting them in a virtual private cloud.</p>
+</li>
 </ul>
 <h2 id="bring-your-own-database-byodb-vs-amazon-rds">Bring your own database (BYODB) vs Amazon RDS<a class="headerlink" href="#bring-your-own-database-byodb-vs-amazon-rds" title="Permanent link">&para;</a></h2>
 <p><strong>Why you should migrate your relational database to Amazon?</strong></p>
@@ -1048,6 +1248,20 @@ the data that&rsquo;s in there, and she is 100% responsible for that. Whether it
 <li><a href="https://aws.amazon.com/rds/mysql/pricing/?nc=sn&amp;loc=4">Amazon RDS for MySQL Pricing</a></li>
 <li><a href="https://aws.amazon.com/rds/postgresql/pricing/">Amazon RDS for PostgreSQL Pricing</a></li>
 </ul>
+<h2 id="amazon-rds-read-replicas">Amazon RDS Read Replicas<a class="headerlink" href="#amazon-rds-read-replicas" title="Permanent link">&para;</a></h2>
+<p><a href="https://aws.amazon.com/rds/features/read-replicas/">Amazon RDS Read Replicas</a> provide enhanced performance and durability for RDS database (DB) instances. They make it easy to elastically scale out beyond the capacity constraints of a single DB instance for read-heavy database workloads. You can create one or more replicas of a given source DB Instance and serve high-volume application read traffic from multiple copies of your data, thereby increasing aggregate read throughput. Read replicas can also be promoted when needed to become standalone DB instances. Read replicas are available in Amazon RDS for MySQL, MariaDB, PostgreSQL, Oracle, and SQL Server as well as Amazon Aurora.</p>
+<p>For the MySQL, MariaDB, PostgreSQL, Oracle, and SQL Server database engines, Amazon RDS creates a second DB instance using a snapshot of the source DB instance. It then uses the engines&rsquo; native asynchronous replication to update the read replica whenever there is a change to the source DB instance. The read replica operates as a DB instance that allows only read-only connections; applications can connect to a read replica just as they would to any DB instance. Amazon RDS replicates all databases in the source DB instance.</p>
+<p><a href="https://aws.amazon.com/rds/aurora/?aurora-whats-new.sort-by=item.additionalFields.postDateTime&amp;aurora-whats-new.sort-order=desc">Amazon Aurora</a> futher extends the benefits of read replicas by employing an SSD-backed virtualized storage layer purpose-built for database workloads. Amazon Aurora replicas share the same underlying storage as the source instance, lowering costs and avoiding the need to copy data to the replica nodes. For more information about replication with Amazon Aurora, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Replication.html">online documentation</a>.</p>
+<p><img alt="" src="../read-replicas.png" /></p>
+<h3 id="benefits">Benefits<a class="headerlink" href="#benefits" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Enhanced performance</li>
+<li>Increased availability</li>
+<li>Designed for security</li>
+</ul>
+<h3 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h3>
+<p>Using the AWS Management Console, you can easily add read replicas to existing DB Instances. Use the &ldquo;Create Read Replica&rdquo; option corresponding to your DB Instance in the AWS Management Console. Amazon RDS for MySQL, MariaDB, PostgreSQL, Oracle, and SQL Server allow you to add up to 5 read replicas to each DB Instance.</p>
+<p>Amazon RDS for MySQL, MariaDB, PostgreSQL, and Oracle offer you two SSD-based choices for database storage: General Purpose and Provisioned IOPS. Read replicas for these engines need not use the same type of storage as their master DB Instances. You may be able to optimize your performance or your spending by selecting an alternate storage type for read replicas. For more information see read replicas documentation for Amazon RDS for MySQL, MariaDB, PostgreSQL, Oracle, and SQL Server as well as Amazon Aurora.</p>
 <h2 id="databases-engines-in-aws-rds">Databases engines in AWS RDS<a class="headerlink" href="#databases-engines-in-aws-rds" title="Permanent link">&para;</a></h2>
 <p>In this section, you can review information specific, details, features, and configurations for each of the particular DB engines that is supported in AWS RDS, see the following links:</p>
 <ul>
@@ -1066,7 +1280,7 @@ the data that&rsquo;s in there, and she is 100% responsible for that. Whether it
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../RDSdemos/" class="btn btn-neutral float-right" title="Dtabase Engines in AWS">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../RDSdemos/" class="btn btn-neutral float-right" title="Database Engines in AWS">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../Networkdemos/" class="btn btn-neutral" title="AWS Networking Demonstrations"><span class="icon icon-circle-arrow-left"></span> Previous</a>

@@ -9,7 +9,7 @@
   <meta name="author" content="AbdallahCoptan">
   <link rel="canonical" href="https://abdallahcoptan.github.io/HandsOn/RDSdemos/">
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Dtabase Engines in AWS - Hydrosat Hands-On</title>
+  <title>Database Engines in AWS - Hydrosat Hands-On</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,7 +18,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Dtabase Engines in AWS";
+    var mkdocs_page_name = "Database Engines in AWS";
     var mkdocs_page_input_path = "RDSdemos.md";
     var mkdocs_page_url = "/HandsOn/RDSdemos/";
   </script>
@@ -821,6 +821,8 @@
     <ul>
     <li class="toctree-l2"><a class="reference internal" href="../RDS/#amazon-relational-database-rds">Amazon Relational Database (RDS)</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RDS/#overview-of-amazon-rds">Overview of Amazon RDS</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="../RDS/#bring-your-own-database-byodb-vs-amazon-rds">Bring your own database (BYODB) vs Amazon RDS</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="../RDS/#amazon-rds-db-instances">Amazon RDS DB instances</a>
@@ -833,13 +835,21 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="../RDS/#high-availability-multi-az-for-amazon-rds">High availability (Multi-AZ) for Amazon RDS</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RDS/#amazon-rds-read-replicas">Amazon RDS Read Replicas</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../RDS/#benefits">Benefits</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../RDS/#setup">Setup</a>
+    </li>
+        </ul>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="../RDS/#databases-engines-in-aws-rds">Databases engines in AWS RDS</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="../RDS/#migrate-your-database-to-aws-database">Migrate your Database to AWS Database</a>
     </li>
     </ul>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Dtabase Engines in AWS</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Database Engines in AWS</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#setting-up-for-amazon-rds">Setting up for Amazon RDS</a>
     </li>
@@ -858,6 +868,10 @@
     <li class="toctree-l2"><a class="reference internal" href="#start-working-with-aws-rds-and-db-engines">Start Working with AWS RDS and DB engines</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#demos">Demos</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#troubleshooting-for-amazon-rds">Troubleshooting for Amazon RDS</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#tutorials">Tutorials</a>
     </li>
@@ -867,7 +881,168 @@
     </li>
     </ul>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../mysqldemo/">MySQL RDS DB Instance Demo</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#network-topology">Network Topology</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#step-1-create-the-vpc">Step 1: Create the VPC</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#step-2-configure-the-vpc-security-group">Step 2: Configure the VPC security group</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#step-3-create-the-database-instance">Step 3: Create the Database Instance</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#step-4-create-the-ec2-instances-and-install-the-web-servers">Step 4: Create the EC2 instances and install the web servers</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#step-5-create-the-application-elastic-load-balancer-elb">Step 5: Create the application Elastic Load Balancer (ELB</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#watch-it-here">Watch it here</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#references-and-help">References and Help</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../aroura/">Amazon Aurora</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../aroura/#overview">Overview</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../aroura/#benefits">Benefits</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../aroura/#use-cases">Use cases</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../aroura/#migrating-your-databases-to-amazon-aurora">Migrating Your Databases to Amazon Aurora</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../aroura/#if-youre-currently-using-amazon-rds-for-mysql-or-amazon-rds-for-postgresql">If you're currently using Amazon RDS for MySQL or Amazon RDS for PostgreSQL...</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../aroura/#if-youre-currently-using-oracle-or-microsoft-sql-server">If you're currently using Oracle or Microsoft SQL Server...</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../aroura/#getting-started-with-amazon-aurora">Getting started with Amazon Aurora</a>
+    </li>
+    </ul>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../nosql/">NoSQL DB</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../nosql/#nosql-databases">NoSQL Databases</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../nosql/#what-are-nosql-databases">What are NoSQL databases?</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../nosql/#how-does-a-nosql-nonrelational-database-work">How Does a NoSQL (nonrelational) Database Work?</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../nosql/#why-should-you-use-a-nosql-database">Why should you use a NoSQL database?</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../nosql/#types-of-nosql-databases">Types of NoSQL Databases</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../nosql/#sql-relational-vs-nosql-nonrelational-databases">SQL (relational) vs. NoSQL (nonrelational) databases</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../nosql/#sql-vs-nosql-terminology">SQL vs. NoSQL Terminology</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../nosql/#nosql-database-engines-in-aws">NoSQL Database Engines in AWS</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../DynamoDB/">Amazon DynamoDB</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../DynamoDB/#the-key-value-database-defined">The key-value database defined</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../DynamoDB/#dynamodb">DynamoDB</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#benefits-applications">Benefits &amp; Applications</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#use-cases">Use Cases</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../DynamoDB/#creating-a-table-from-sql-to-nosql">Creating a Table  from SQL to NoSQL</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#sql">SQL</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#nosql-dynamodb">NoSQL: DynamoDB</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../DynamoDB/#setting-up-dynamodb-on-aws">Setting Up DynamoDB on AWS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#getting-an-aws-access-key">Getting an AWS Access Key</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#configuring-your-credentials">Configuring Your Credentials</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../DynamoDB/#getting-started-with-amazon-dynamodb">Getting Started with Amazon DynamoDB</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#demo-create-and-query-a-nosql-table">Demo: Create and Query a NoSQL Table</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#more-advanced-tutorials-and-demos">More advanced tutorials and demos</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Elasticache/">Amazon Elasticache</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../Elasticache/#the-in-memory-database-defined">The in-memory database defined</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../Elasticache/#in-memory-databases-on-aws">In-memory databases on AWS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../Elasticache/#amazon-elasticache-for-redis">Amazon Elasticache for Redis</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../Elasticache/#get-started-with-amazon-elasticache-for-redis">Get started with Amazon ElastiCache for Redis.</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Elasticache/#amazon-elasticache-for-memcached">Amazon ElastiCache for Memcached</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../Elasticache/#get-started-with-amazon-elasticache-for-memcached">Get started with Amazon ElastiCache for Memcached.</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Elasticache/#use-cases">Use cases</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Redshift/">Amazon Redshift</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../Redshift/#redshift-use-cases">Redshift Use Cases</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../Redshift/#cluster-management">Cluster management</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Redshift/#creating-and-managing-clusters">Creating and managing clusters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../Redshift/#getting-started-with-amazon-redshift">Getting started with Amazon Redshift</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../Redshift/#check-amazon-redshift-documentation-for-all-the-details">Check, Amazon Redshift Documentation for all the details.</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Monitoring and Scaling</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../monitor/">Monitoring Services on AWS</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../LoadBalanc/">Load Balancing on AWS</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../LoadBalanc/#load-balancers-in-aws">Load Balancers in AWS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../LoadBalanc/#load-balancing-manage-your-application-workload-by-elb">Load Balancing: Manage your application workload by ELB</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../AutoScale/">Auto Scaling in AWS</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">AWS Pricing and Support</span></p>
@@ -951,14 +1126,14 @@
         
       
     
-    <li>Dtabase Engines in AWS</li>
+    <li>Database Engines in AWS</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
   </ul>
   
     <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-        <a href="../nosql/" class="btn btn-neutral float-right" title="NoSQL DB">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../mysqldemo/" class="btn btn-neutral float-right" title="MySQL RDS DB Instance Demo">Next <span class="icon icon-circle-arrow-right"></span></a>
         <a href="../RDS/" class="btn btn-neutral" title="RDS"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
   
@@ -1002,7 +1177,7 @@
 <li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html">Maintaining a DB instance</a></li>
 <li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html">Upgrading a DB instance engine version</a></li>
 <li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RenameInstance.html">Renaming a DB instance</a></li>
-<li>[Rebooting a DB instance]https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RebootInstance.html)</li>
+<li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RebootInstance.html">Rebooting a DB instance</a></li>
 <li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working with read replicas</a></li>
 <li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS resources</a></li>
 <li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html">Working with Amazon Resource Names (ARNs) in Amazon RDS</a></li>
@@ -1050,10 +1225,25 @@
 <ul>
 <li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.MariaDB.html">Creating a MariaDB DB instance and connecting to a database on a MariaDB DB instance</a></li>
 <li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.SQLServer.html">Creating a Microsoft SQL Server DB instance and connecting to a DB instance</a></li>
-<li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.MySQL.html">Creating a MySQL DB instance and connecting to a database on a MySQL DB instance</a></li>
+<li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.MySQL.html">Creating a MySQL DB instance and connecting to a database on a MySQL DB instance</a><ul>
+<li><a href="https://aws.amazon.com/getting-started/hands-on/create-mysql-db/">Create and Connect to a MySQL Database</a></li>
+<li><a href="https://linuxize.com/post/how-to-install-mysql-on-ubuntu-18-04/">How to Install MySQL on Ubuntu 18.04</a></li>
+<li><a href="https://www.a2hosting.com/kb/developer-corner/mysql/managing-mysql-databases-and-users-from-the-command-line">How to Manage &amp; Create MySQL Users, Databases &amp; Tables</a></li>
+</ul>
+</li>
 <li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.Oracle.html">Creating an Oracle DB instance and connecting to a database on an Oracle DB instance</a></li>
-<li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.PostgreSQL.html">Creating a PostgreSQL DB instance and connecting to a database on a PostgreSQL DB instance</a></li>
+<li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.PostgreSQL.html">Creating a PostgreSQL DB instance and connecting to a database on a PostgreSQL DB instance</a><ul>
+<li><a href="https://aws.amazon.com/getting-started/tutorials/create-connect-postgresql-db/">Create and Connect to a PostgreSQL Database</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04">How To Install and Use PostgreSQL on Ubuntu 18.04</a></li>
+<li><a href="https://kb.objectrocket.com/postgresql/the-postgresql-describe-table-statement-853">The PostgreSQL Describe Table Statement</a></li>
+<li><a href="https://stackoverflow.com/questions/58461178/how-to-fix-error-column-c-relhasoids-does-not-exist-in-postgres">How to fix “ERROR: column c.relhasoids does not exist” in Postgres?</a></li>
+</ul>
+</li>
 <li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/TUT_WebAppWithRDS.html">Tutorial: Create a web server and an Amazon RDS DB instance</a></li>
+</ul>
+<h4 id="troubleshooting-for-amazon-rds">Troubleshooting for Amazon RDS<a class="headerlink" href="#troubleshooting-for-amazon-rds" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Troubleshooting.html#CHAP_Troubleshooting.Connecting">Troubleshooting for Amazon RDS</a></li>
 </ul>
 <h3 id="tutorials">Tutorials<a class="headerlink" href="#tutorials" title="Permanent link">&para;</a></h3>
 <p>The following tutorials show you how to perform common tasks that use Amazon RDS: </p>
@@ -1083,6 +1273,8 @@
 <li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_BestPractices.html#CHAP_BestPractices.DBParameterGroup">Working with DB parameter groups</a></li>
 <li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_BestPractices.html#CHAP_BestPractices.Presentation">Amazon RDS new features and best practices presentation video</a></li>
 </ul>
+<p><br></p>
+<hr />
               
             </div>
           </div>
@@ -1090,7 +1282,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../nosql/" class="btn btn-neutral float-right" title="NoSQL DB">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../mysqldemo/" class="btn btn-neutral float-right" title="MySQL RDS DB Instance Demo">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../RDS/" class="btn btn-neutral" title="RDS"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -1122,7 +1314,7 @@
         <span><a href="../RDS/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../nosql/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../mysqldemo/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

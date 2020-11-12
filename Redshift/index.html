@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="AbdallahCoptan">
-  <link rel="canonical" href="https://abdallahcoptan.github.io/HandsOn/EBS/">
+  <link rel="canonical" href="https://abdallahcoptan.github.io/HandsOn/Redshift/">
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Amazon EBS volumes - Hydrosat Hands-On</title>
+  <title>Amazon Redshift - Hydrosat Hands-On</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Amazon EBS volumes";
-    var mkdocs_page_input_path = "EBS.md";
-    var mkdocs_page_url = "/HandsOn/EBS/";
+    var mkdocs_page_name = "Amazon Redshift";
+    var mkdocs_page_input_path = "Redshift.md";
+    var mkdocs_page_url = "/HandsOn/Redshift/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js" defer></script>
@@ -334,7 +334,7 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">AWS Storage</span></p>
-                <ul class="current">
+                <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../awsStore/">Storage on AWS</a>
     <ul>
     <li class="toctree-l2"><a class="reference internal" href="../awsStore/#storage-scenario">Storage Scenario</a>
@@ -363,87 +363,87 @@
     </li>
     </ul>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Amazon EBS volumes</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#what-to-know-befor-creating-an-ebs-volume">What to know befor creating an EBS volume</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../EBS/">Amazon EBS volumes</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../EBS/#what-to-know-befor-creating-an-ebs-volume">What to know befor creating an EBS volume</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#creating-an-amazon-ebs-volume">Creating an Amazon EBS volume</a>
+    <li class="toctree-l2"><a class="reference internal" href="../EBS/#creating-an-amazon-ebs-volume">Creating an Amazon EBS volume</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#methods-of-creating-a-volume">Methods of creating a volume</a>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#methods-of-creating-a-volume">Methods of creating a volume</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#creating-an-empty-volume">Creating an empty volume</a>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#creating-an-empty-volume">Creating an empty volume</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#to-create-a-empty-ebs-volume-using-the-console">To create a empty EBS volume using the console</a>
+    <li class="toctree-l4"><a class="reference internal" href="../EBS/#to-create-a-empty-ebs-volume-using-the-console">To create a empty EBS volume using the console</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#to-create-an-empty-ebs-volume-using-the-command-line">To create an empty EBS volume using the command line</a>
+    <li class="toctree-l4"><a class="reference internal" href="../EBS/#to-create-an-empty-ebs-volume-using-the-command-line">To create an empty EBS volume using the command line</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#creating-a-volume-from-a-snapshot">Creating a volume from a snapshot</a>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#creating-a-volume-from-a-snapshot">Creating a volume from a snapshot</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#to-create-an-ebs-volume-from-a-snapshot-using-the-console">To create an EBS volume from a snapshot using the console</a>
+    <li class="toctree-l4"><a class="reference internal" href="../EBS/#to-create-an-ebs-volume-from-a-snapshot-using-the-console">To create an EBS volume from a snapshot using the console</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#to-create-an-ebs-volume-from-a-snapshot-using-the-command-line">To create an EBS volume from a snapshot using the command line</a>
-    </li>
-        </ul>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#attaching-an-amazon-ebs-volume-to-an-instance">Attaching an Amazon EBS volume to an instance</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#to-attach-an-ebs-volume-to-an-instance-using-the-console">To attach an EBS volume to an instance using the console</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#to-attach-an-ebs-volume-to-an-instance-using-the-command-line">To attach an EBS volume to an instance using the command line</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#more-advanced-attachment">More advanced attachment</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#making-an-amazon-ebs-volume-available-for-use-on-linux">Making an Amazon EBS volume available for use on Linux</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#format-and-mount-an-attached-volume">Format and mount an attached volume</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#check-your-instances-volume-size">Check your instance's volume size</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#making-an-amazon-ebs-volume-available-for-use-on-windows">Making an Amazon EBS volume available for use on Windows</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#releasing-an-amazon-ebs-volume">Releasing an Amazon EBS volume</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#detaching-an-amazon-ebs-volume-from-a-linux-instance">Detaching an Amazon EBS volume from a Linux instance</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#to-detach-an-ebs-volume-using-the-console">To detach an EBS volume using the console</a>
-        <ul>
-    <li class="toctree-l5"><a class="reference internal" href="#example">Example:</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#to-detach-an-ebs-volume-using-the-command-line">To detach an EBS volume using the command line</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#deleting-an-amazon-ebs-volume">Deleting an Amazon EBS volume</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#to-delete-an-ebs-volume-using-the-console">To delete an EBS volume using the console</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#to-delete-an-ebs-volume-using-the-command-line">To delete an EBS volume using the command line</a>
+    <li class="toctree-l4"><a class="reference internal" href="../EBS/#to-create-an-ebs-volume-from-a-snapshot-using-the-command-line">To create an EBS volume from a snapshot using the command line</a>
     </li>
         </ul>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#watch-it-here">Watch it here</a>
+    <li class="toctree-l2"><a class="reference internal" href="../EBS/#attaching-an-amazon-ebs-volume-to-an-instance">Attaching an Amazon EBS volume to an instance</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#create-attach-and-mount-a-new-ebs-volume">Create, attach, and mount a new EBS volume</a>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#prerequisites">Prerequisites</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#detach-unmount-and-delet-an-existing-ebs-volume">Detach, unmount, and delet an existing EBS volume</a>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#to-attach-an-ebs-volume-to-an-instance-using-the-console">To attach an EBS volume to an instance using the console</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#to-attach-an-ebs-volume-to-an-instance-using-the-command-line">To attach an EBS volume to an instance using the command line</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#more-advanced-attachment">More advanced attachment</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#references">References</a>
+    <li class="toctree-l2"><a class="reference internal" href="../EBS/#making-an-amazon-ebs-volume-available-for-use-on-linux">Making an Amazon EBS volume available for use on Linux</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#format-and-mount-an-attached-volume">Format and mount an attached volume</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#check-your-instances-volume-size">Check your instance's volume size</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EBS/#making-an-amazon-ebs-volume-available-for-use-on-windows">Making an Amazon EBS volume available for use on Windows</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EBS/#releasing-an-amazon-ebs-volume">Releasing an Amazon EBS volume</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#detaching-an-amazon-ebs-volume-from-a-linux-instance">Detaching an Amazon EBS volume from a Linux instance</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EBS/#to-detach-an-ebs-volume-using-the-console">To detach an EBS volume using the console</a>
+        <ul>
+    <li class="toctree-l5"><a class="reference internal" href="../EBS/#example">Example:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EBS/#to-detach-an-ebs-volume-using-the-command-line">To detach an EBS volume using the command line</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#deleting-an-amazon-ebs-volume">Deleting an Amazon EBS volume</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EBS/#to-delete-an-ebs-volume-using-the-console">To delete an EBS volume using the console</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EBS/#to-delete-an-ebs-volume-using-the-command-line">To delete an EBS volume using the command line</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EBS/#watch-it-here">Watch it here</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#create-attach-and-mount-a-new-ebs-volume">Create, attach, and mount a new EBS volume</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#detach-unmount-and-delet-an-existing-ebs-volume">Detach, unmount, and delet an existing EBS volume</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EBS/#references">References</a>
     </li>
     </ul>
                     </li>
@@ -816,7 +816,7 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">AWS Databases</span></p>
-                <ul>
+                <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../RDS/">RDS</a>
     <ul>
     <li class="toctree-l2"><a class="reference internal" href="../RDS/#amazon-relational-database-rds">Amazon Relational Database (RDS)</a>
@@ -1011,19 +1011,19 @@
     </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Redshift/">Amazon Redshift</a>
-    <ul>
-    <li class="toctree-l2"><a class="reference internal" href="../Redshift/#redshift-use-cases">Redshift Use Cases</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Amazon Redshift</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#redshift-use-cases">Redshift Use Cases</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="../Redshift/#cluster-management">Cluster management</a>
+    <li class="toctree-l3"><a class="reference internal" href="#cluster-management">Cluster management</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="../Redshift/#creating-and-managing-clusters">Creating and managing clusters</a>
+    <li class="toctree-l3"><a class="reference internal" href="#creating-and-managing-clusters">Creating and managing clusters</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="../Redshift/#getting-started-with-amazon-redshift">Getting started with Amazon Redshift</a>
+    <li class="toctree-l2"><a class="reference internal" href="#getting-started-with-amazon-redshift">Getting started with Amazon Redshift</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="../Redshift/#check-amazon-redshift-documentation-for-all-the-details">Check, Amazon Redshift Documentation for all the details.</a>
+    <li class="toctree-l3"><a class="reference internal" href="#check-amazon-redshift-documentation-for-all-the-details">Check, Amazon Redshift Documentation for all the details.</a>
     </li>
         </ul>
     </li>
@@ -1122,19 +1122,19 @@
     
       
         
-          <li>AWS Storage &raquo;</li>
+          <li>AWS Databases &raquo;</li>
         
       
     
-    <li>Amazon EBS volumes</li>
+    <li>Amazon Redshift</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
   </ul>
   
     <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-        <a href="../ebsDemo/" class="btn btn-neutral float-right" title="Amazon EBS Demo">Next <span class="icon icon-circle-arrow-right"></span></a>
-        <a href="../storage/" class="btn btn-neutral" title="Dealing with AWS Storage"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../monitor/" class="btn btn-neutral float-right" title="Monitoring Services on AWS">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../Elasticache/" class="btn btn-neutral" title="Amazon Elasticache"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
   
   <hr/>
@@ -1142,489 +1142,48 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="amazon-ebs-volumes">Amazon EBS volumes<a class="headerlink" href="#amazon-ebs-volumes" title="Permanent link">&para;</a></h1>
-<p>An Amazon EBS volume is a durable, block-level storage device that you can attach to your instances. After you attach a volume to an instance, you can use it as you would use a physical hard drive. EBS volumes are flexible. For current-generation volumes attached to current-generation instance types, you can dynamically increase size, modify the provisioned IOPS capacity, and change volume type on live production volumes.</p>
-<p>You can use EBS volumes as primary storage for data that requires frequent updates, such as the system drive for an instance or storage for a database application. You can also use them for throughput-intensive applications that perform continuous disk scans. EBS volumes persist independently from the running life of an EC2 instance.</p>
-<p>You can attach multiple EBS volumes to a single instance. The volume and instance must be in the same Availability Zone. Depending on the volume and instance types, you can use <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html">Multi-Attach</a> to mount a volume to multiple instances at the same time.</p>
-<p>Amazon EBS provides the following volume types: General Purpose SSD (<code>gp2</code>), Provisioned IOPS SSD (<code>io1</code>), Throughput Optimized HDD (<code>st1</code>), Cold HDD (<code>sc1</code>), and Magnetic (<code>standard</code>, a previous-generation type). They differ in performance characteristics and price, allowing you to tailor your storage performance and cost to the needs of your applications. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">Amazon EBS volume types</a>.</p>
-<p>Your account has a limit on the number of EBS volumes that you can use, and the total storage available to you. For more information about these limits, and how to request an increase in your limits, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 Service Quotas</a>.</p>
-<h2 id="what-to-know-befor-creating-an-ebs-volume">What to know befor creating an EBS volume<a class="headerlink" href="#what-to-know-befor-creating-an-ebs-volume" title="Permanent link">&para;</a></h2>
+                <h1 id="the-most-popular-and-fastest-cloud-data-warehouse-amazon-redshift">The most popular and fastest cloud data warehouse: Amazon Redshift<a class="headerlink" href="#the-most-popular-and-fastest-cloud-data-warehouse-amazon-redshift" title="Permanent link">&para;</a></h1>
+<p><a href="https://docs.aws.amazon.com/redshift/latest/mgmt/welcome.html">Amazon Redshift</a> is a fully managed, petabyte-scale data warehouse service in the cloud. You can start with just a few hundred gigabytes of data and scale to a petabyte or more. This enables you to use your data to acquire new insights for your business and customers. </p>
+<p>Check, <a href="https://aws.amazon.com/redshift/pricing/">Amazon Redshift pricing</a> before starting the warehouse development on AWS Redshift.</p>
+<h2 id="redshift-use-cases">Redshift Use Cases<a class="headerlink" href="#redshift-use-cases" title="Permanent link">&para;</a></h2>
 <ol>
-<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes.html#EBSFeatures">Benefits of using EBS volumes</a></li>
-<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">Amazon EBS volume types</a></li>
-<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/volume_constraints.html">Constraints on the size and configuration of an EBS volume</a></li>
+<li>Business intelligence</li>
 </ol>
-<h2 id="creating-an-amazon-ebs-volume">Creating an Amazon EBS volume<a class="headerlink" href="#creating-an-amazon-ebs-volume" title="Permanent link">&para;</a></h2>
-<p>You can create an Amazon EBS volume and then attach to any EC2 instance in the same Availability Zone. If you create an encrypted EBS volume, you can only attach it to supported instance types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported instance types</a>. </p>
-<p>If you are creating a volume for a high-performance storage scenario, you should make sure to use a Provisioned IOPS SSD (io1) volume and attach it to an instance with enough bandwidth to support your application, such as an EBS-optimized instance or an instance with 10-Gigabit network connectivity. The same advice holds for Throughput Optimized HDD (st1) and Cold HDD (sc1) volumes. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon EBS–optimized instances</a>. </p>
-<p>Empty EBS volumes receive their maximum performance the moment that they are available and do not require initialization (formerly known as pre-warming). However, storage blocks on volumes that were created from snapshots must be initialized (pulled down from Amazon S3 and written to the volume) before you can access the block. This preliminary action takes time and can cause a significant increase in the latency of an I/O operation the first time each block is accessed. Volume performance is achieved after all blocks have been downloaded and written to the volume. For most applications, amortizing this cost over the lifetime of the volume is acceptable. To avoid this initial performance hit in a production environment, you can force immediate initialization of the entire volume or enable fast snapshot restore. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-initialize.html">Initializing Amazon EBS volumes</a>.</p>
-<h3 id="methods-of-creating-a-volume">Methods of creating a volume<a class="headerlink" href="#methods-of-creating-a-volume" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p>Create and attach EBS volumes when you launch instances by specifying a block device mapping. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-instance.html">Launching an instance using the Launch Instance Wizard</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mapping</a>.</p>
-</li>
-<li>
-<p>Create an empty EBS volume and attach it to a running instance. For more information, see <a href="#creating-an-empty-volume">Creating an empty volume</a> below.</p>
-</li>
-<li>
-<p>Create an EBS volume from a previously created snapshot and attach it to a running instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html#ebs-create-volume-from-snapshot">Creating a volume from a snapshot</a> below.</p>
-</li>
-</ul>
-<h3 id="creating-an-empty-volume">Creating an empty volume<a class="headerlink" href="#creating-an-empty-volume" title="Permanent link">&para;</a></h3>
-<p>Empty volumes receive their maximum performance the moment that they are available and <strong>do not require initialization</strong>. </p>
-<h4 id="to-create-a-empty-ebs-volume-using-the-console">To create a empty EBS volume using the console<a class="headerlink" href="#to-create-a-empty-ebs-volume-using-the-console" title="Permanent link">&para;</a></h4>
-<ol>
-<li>
-<p>Open the Amazon EC2 console at <a href="https://console.aws.amazon.com/ec2/">https://console.aws.amazon.com/ec2/</a>.</p>
-</li>
-<li>
-<p>From the navigation bar, select the Region in which you would like to create your volume. This choice is important because some Amazon EC2 resources can be shared between Regions, while others can&rsquo;t. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resources.html">Resource locations</a>.</p>
-</li>
-<li>
-<p>In the navigation pane, choose <strong>ELASTIC BLOCK STORE, Volumes</strong>.</p>
-</li>
-<li>
-<p>Choose <strong>Create Volume</strong>.</p>
-</li>
-<li>
-<p>For <strong>Volume Type</strong>, choose a volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">Amazon EBS volume types</a>.</p>
-</li>
-<li>
-<p>For <strong>Size (GiB)</strong>, type the size of the volume. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/volume_constraints.html">Constraints on the size and configuration of an EBS volume</a>.</p>
-</li>
-<li>
-<p>With a Provisioned IOPS SSD volume, for <strong>IOPS</strong>, type the maximum number of input/output operations per second (IOPS) that the volume should support.</p>
-</li>
-<li>
-<p>For <strong>Availability Zone</strong>, choose the Availability Zone in which to create the volume. EBS volumes can only be attached to EC2 instances within the same Availability Zone.</p>
-</li>
-<li>
-<p>(Optional) If the instance type supports EBS encryption and you want to encrypt the volume, select <strong>Encrypt this volume</strong> and choose a <strong>CMK</strong>. If encryption by default is enabled in this Region, EBS encryption is enabled and the default CMK for EBS encryption is chosen. You can choose a different CMK from <strong>Master Key</strong> or paste the full ARN of any key that you can access. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a>.</p>
-</li>
-<li>
-<p>(Optional) Choose <strong>Create additional tags</strong> to add tags to the volume. For each tag, provide a tag key and a tag value. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a>.</p>
-</li>
-<li>
-<p>Choose <strong>Create Volume</strong>. The volume is ready for use when the volume status is <strong>Available</strong>.</p>
-</li>
+<p>Redshift makes it simple and cost effective to run high performance queries on petabytes of structured data so that you can build powerful reports and dashboards using your existing business intelligence tools.</p>
+<ol start="2">
+<li>Operational analytics on business events</li>
 </ol>
-<p>To use your new volume, attach it to an instance, format it, and mount it. For more information, see <a href="#attaching-an-amazon-ebs-volume-to-an-instance">Attaching an Amazon EBS volume to an instance</a>.</p>
-<h4 id="to-create-an-empty-ebs-volume-using-the-command-line">To create an empty EBS volume using the command line<a class="headerlink" href="#to-create-an-empty-ebs-volume-using-the-command-line" title="Permanent link">&para;</a></h4>
-<p>You can use one of the following commands. For more information about these command line interfaces, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html#access-ec2">Accessing Amazon EC2</a>.</p>
+<p>Bring together structured data from your data warehouse and semi-structured data such as application logs from your S3 data lake to get real-time operational insights on your applications and systems.</p>
+<h3 id="cluster-management">Cluster management<a class="headerlink" href="#cluster-management" title="Permanent link">&para;</a></h3>
+<p>An Amazon Redshift cluster is a set of nodes, which consists of a leader node and one or more compute nodes. The type and number of compute nodes that you need depends on the size of your data, the number of queries you will execute, and the query execution performance that you need.</p>
+<h3 id="creating-and-managing-clusters">Creating and managing clusters<a class="headerlink" href="#creating-and-managing-clusters" title="Permanent link">&para;</a></h3>
+<p>Depending on your data warehousing needs, you can start with a small, single-node cluster and easily scale up to a larger, multi-node cluster as your requirements change. You can add or remove compute nodes to the cluster without any interruption to the service. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift clusters</a>. </p>
+<h2 id="getting-started-with-amazon-redshift">Getting started with Amazon Redshift<a class="headerlink" href="#getting-started-with-amazon-redshift" title="Permanent link">&para;</a></h2>
+<p>This is a tutorial designed to walk you through the process of creating a sample Amazon Redshift cluster. You can use this sample cluster to evaluate the Amazon Redshift service. In this tutorial, you perform the following steps: </p>
 <ul>
 <li>
-<p><a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/create-volume.html">create-volume</a> (AWS CLI)</p>
+<p>Step 1: <a href="https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-prereq.html">Set up prerequisites</a></p>
 </li>
 <li>
-<p><a href="https://docs.aws.amazon.com/powershell/latest/reference/items/New-EC2Volume.html">New-EC2Volume</a> (AWS Tools for Windows PowerShell)</p>
+<p>Step 2: <a href="https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-create-an-iam-role.html">Create an IAM role</a></p>
+</li>
+<li>
+<p>Step 3: <a href="https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-launch-sample-cluster.html">Create a sample Amazon Redshift cluster</a></p>
+</li>
+<li>
+<p>Step 4: <a href="https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-authorize-cluster-access.html">Authorize access to the cluster</a></p>
+</li>
+<li>
+<p>Step 5: <a href="https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-connect-to-cluster.html">Connect to the sample cluster and run queries</a></p>
+</li>
+<li>
+<p>Step 6: <a href="https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-create-sample-db.html">Load sample data from Amazon S3</a></p>
+</li>
+<li>
+<p>Step 7: <a href="https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-clean-up-tasks.html">Find additional resources and reset your environment</a></p>
 </li>
 </ul>
-<h3 id="creating-a-volume-from-a-snapshot">Creating a volume from a snapshot<a class="headerlink" href="#creating-a-volume-from-a-snapshot" title="Permanent link">&para;</a></h3>
-<p>Volumes created from snapshots load lazily in the background. This means that there is no need to wait for all of the data to transfer from Amazon S3 to your EBS volume before the instance can start accessing an attached volume and all its data. If your instance accesses data that hasn&rsquo;t yet been loaded, the volume immediately downloads the requested data from Amazon S3, and then continues loading the rest of the volume data in the background. Volume performance is achieved after all blocks are downloaded and written to the volume. To avoid the initial performance hit in a production environment, see  <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-initialize.html">Initializing Amazon EBS volumes</a>.</p>
-<p>New EBS volumes that are created from encrypted snapshots are automatically encrypted. You can also encrypt a volume on-the-fly while restoring it from an unencrypted snapshot. Encrypted volumes can only be attached to instance types that support EBS encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported instance types</a>.</p>
-<h4 id="to-create-an-ebs-volume-from-a-snapshot-using-the-console">To create an EBS volume from a snapshot using the console<a class="headerlink" href="#to-create-an-ebs-volume-from-a-snapshot-using-the-console" title="Permanent link">&para;</a></h4>
-<ol>
-<li>
-<p>Open the Amazon EC2 console at <a href="https://console.aws.amazon.com/ec2/">https://console.aws.amazon.com/ec2/</a>.</p>
-</li>
-<li>
-<p>From the navigation bar, select the Region that your snapshot is located in.</p>
-<p>To use the snapshot to create a volume in a different region, copy your snapshot to the new Region and then use it to create a volume in that Region. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying an Amazon EBS snapshot</a>.</p>
-</li>
-<li>
-<p>In the navigation pane, choose <strong>ELASTIC BLOCK STORE, Volumes</strong>.</p>
-</li>
-<li>
-<p>Choose <strong>Create Volume</strong>.</p>
-</li>
-<li>
-<p>For <strong>Volume Type</strong>, choose a volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">Amazon EBS volume types</a>.</p>
-</li>
-<li>
-<p>For <strong>Snapshot ID</strong>, start typing the ID or description of the snapshot from which you are restoring the volume, and choose it from the list of suggested options.</p>
-</li>
-<li>
-<p>(Optional) Select <strong>Encrypt this volume</strong> to change the encryption state of your volume. This is optional if <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">encryption by default</a> is enabled. Select a CMK from Master Key to specify a CMK other than the default CMK for EBS encryption.</p>
-</li>
-<li>
-<p>For <strong>Size (GiB)</strong>, type the size of the volume, or verify that the default size of the snapshot is adequate.</p>
-<p>If you specify both a volume size and a snapshot, the size must be equal to or greater than the snapshot size. When you select a volume type and a snapshot, the minimum and maximum sizes for the volume are shown next to Size. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/volume_constraints.html">Constraints on the size and configuration of an EBS volume</a>.</p>
-</li>
-<li>
-<p>With a Provisioned IOPS SSD volume, for <strong>IOPS</strong>, type the maximum number of input/output operations per second (IOPS) that the volume should support.</p>
-</li>
-<li>
-<p>For <strong>Availability Zone</strong>, choose the Availability Zone in which to create the volume. EBS volumes can only be attached to EC2 instances in the same Availability Zone.</p>
-</li>
-<li>
-<p>(Optional) Choose <strong>Create additional tags</strong> to add tags to the volume. For each tag, provide a tag key and a tag value.</p>
-</li>
-<li>
-<p>Choose <strong>Create Volume</strong>.</p>
-</li>
-<li>
-<p>To use your new volume, attach it to an instance and mount it. For more information, see <a href="#attaching-an-amazon-ebs-volume-to-an-instance">Attaching an Amazon EBS volume to an instance</a>.</p>
-</li>
-<li>
-<p>If you created a volume that is larger than the snapshot, you must extend the file system on the volume to take advantage of the extra space. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modify-volume.html">Amazon EBS Elastic Volumes</a>.</p>
-</li>
-</ol>
-<h4 id="to-create-an-ebs-volume-from-a-snapshot-using-the-command-line">To create an EBS volume from a snapshot using the command line<a class="headerlink" href="#to-create-an-ebs-volume-from-a-snapshot-using-the-command-line" title="Permanent link">&para;</a></h4>
-<p>You can use one of the following commands. For more information about these command line interfaces, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html#access-ec2">Accessing Amazon EC2</a>.</p>
-<ul>
-<li>
-<p><a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/create-volume.html">create-volume</a> (AWS CLI)</p>
-</li>
-<li>
-<p><a href="https://docs.aws.amazon.com/powershell/latest/reference/items/New-EC2Volume.html">New-EC2Volume</a> (AWS Tools for Windows PowerShell)</p>
-</li>
-</ul>
-<h2 id="attaching-an-amazon-ebs-volume-to-an-instance">Attaching an Amazon EBS volume to an instance<a class="headerlink" href="#attaching-an-amazon-ebs-volume-to-an-instance" title="Permanent link">&para;</a></h2>
-<p>You can attach an available EBS volume to one or more of your instances that is in the same Availability Zone as the volume. </p>
-<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p>Determine how many volumes you can attach to your instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/volume_limits.html">Instance volume limits</a>.</p>
-</li>
-<li>
-<p>Determine whether you can attach your volume to multiple instances and enable Multi-Attach. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html">Attaching a volume to multiple instances with Amazon EBS Multi-Attach</a>.</p>
-</li>
-<li>
-<p>If a volume is encrypted, it can only be attached to an instance that supports Amazon EBS encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported instance types</a>.</p>
-</li>
-<li>
-<p>If a volume has an AWS Marketplace product code:</p>
-<ul>
-<li>
-<p>The volume can only be attached to a stopped instance.</p>
-</li>
-<li>
-<p>You must be subscribed to the AWS Marketplace code that is on the volume.</p>
-</li>
-<li>
-<p>The configuration (instance type, operating system) of the instance must support that specific AWS Marketplace code. For example, you cannot take a volume from a Windows instance and attach it to a Linux instance.</p>
-</li>
-<li>
-<p>AWS Marketplace product codes are copied from the volume to the instance.</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="to-attach-an-ebs-volume-to-an-instance-using-the-console">To attach an EBS volume to an instance using the console<a class="headerlink" href="#to-attach-an-ebs-volume-to-an-instance-using-the-console" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p>Open the Amazon EC2 console at <a href="https://console.aws.amazon.com/ec2/">https://console.aws.amazon.com/ec2/</a>.</p>
-</li>
-<li>
-<p>In the navigation pane, choose <strong>Elastic Block Store, Volumes</strong>.</p>
-</li>
-<li>
-<p>Select an available volume and choose <strong>Actions, Attach Volume</strong>.</p>
-</li>
-<li>
-<p>For <strong>Instance</strong>, start typing the name or ID of the instance. Select the instance from the list of options (only instances that are in the same Availability Zone as the volume are displayed).</p>
-</li>
-<li>
-<p>For <strong>Device</strong>, you can keep the suggested device name, or type a different supported device name. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device naming on Linux instances</a>.</p>
-</li>
-<li>
-<p>Choose <strong>Attach</strong>.</p>
-</li>
-<li>
-<p>Connect to your instance and mount the volume. For more information, see <a href="#making-an-amazon-ebs-volume-available-for-use-on-linux">Making an Amazon EBS volume available for use on Linux</a>.</p>
-</li>
-</ol>
-<h3 id="to-attach-an-ebs-volume-to-an-instance-using-the-command-line">To attach an EBS volume to an instance using the command line<a class="headerlink" href="#to-attach-an-ebs-volume-to-an-instance-using-the-command-line" title="Permanent link">&para;</a></h3>
-<p>You can use one of the following commands. For more information about these command line interfaces, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html#access-ec2">Accessing Amazon EC2</a>.</p>
-<ul>
-<li>
-<p><a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/attach-volume.html">attach-volume</a> (AWS CLI)</p>
-</li>
-<li>
-<p><a href="https://docs.aws.amazon.com/powershell/latest/reference/items/Add-EC2Volume.html">Add-EC2Volume</a> (AWS Tools for Windows PowerShell)</p>
-</li>
-</ul>
-<h3 id="more-advanced-attachment">More advanced attachment<a class="headerlink" href="#more-advanced-attachment" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html">Attaching a volume to multiple instances with Amazon EBS Multi-Attach </a></li>
-</ul>
-<h2 id="making-an-amazon-ebs-volume-available-for-use-on-linux">Making an Amazon EBS volume available for use on Linux<a class="headerlink" href="#making-an-amazon-ebs-volume-available-for-use-on-linux" title="Permanent link">&para;</a></h2>
-<p>After you attach an Amazon EBS volume to your instance, it is exposed as a block device. You can format the volume with any file system and then mount it. After you make the EBS volume available for use, you can access it in the same ways that you access any other volume. Any data written to this file system is written to the EBS volume and is transparent to applications using the device. </p>
-<p>You can take snapshots of your EBS volume for backup purposes or to use as a baseline when you create another volume. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon EBS snapshots</a>. </p>
-<h3 id="format-and-mount-an-attached-volume">Format and mount an attached volume<a class="headerlink" href="#format-and-mount-an-attached-volume" title="Permanent link">&para;</a></h3>
-<p>Suppose that you have an EC2 instance with an EBS volume for the root device, <code>/dev/xvda</code>, and that you have just attached an empty EBS volume to the instance using <code>/dev/sdf</code>. Use the following procedure to make the newly attached volume available for use. </p>
-<p><strong>To format and mount an EBS volume on Linux</strong></p>
-<ol>
-<li>
-<p>Connect to your instance using SSH. For more information, see <a href="#connecting-to-your-linux-ec2-instances">Connect to your Linux instance</a>.</p>
-</li>
-<li>
-<p>The device could be attached to the instance with a different device name than you specified in the block device mapping. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device naming on Linux instances</a>. Use the <strong><code>lsblk</code></strong> command to view your available disk devices and their mount points (if applicable) to help you determine the correct device name to use. The output of <strong><code>lsblk</code></strong> removes the <code>/dev/</code> prefix from full device paths. </p>
-<p>The following is example output for a T2 instance. The root device is <code>/dev/xvda</code>. The attached volume is not attached yet (it will be <code>/dev/xvdf</code>),</p>
-<pre><code>ubuntu@ip-172-31-38-59:~$ lsblk
-NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
-xvda    202:0    0    8G  0 disk 
-└─xvda1 202:1    0    8G  0 part /
-loop1     7:1    0   18M  1 loop /snap/amazon-ssm-agent/1566
-loop2     7:2    0   97M  1 loop /snap/core/9665
-loop3     7:3    0 28.1M  1 loop /snap/amazon-ssm-agent/2012
-loop4     7:4    0 96.6M  1 loop /snap/core/9804
-</code></pre>
-<p>The following is example output for a T2 instance. The root device is <code>/dev/xvda</code>. The attached volume (<strong>5G</strong>) is <code>/dev/xvdf</code>, which is not yet mounted. </p>
-<pre><code>ubuntu@ip-172-31-38-59:~$ lsblk
-NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
-xvda    202:0    0    8G  0 disk 
-└─xvda1 202:1    0    8G  0 part /
-xvdf    202:80   0    5G  0 disk
-loop1     7:1    0   18M  1 loop /snap/amazon-ssm-agent/1566
-loop2     7:2    0   97M  1 loop /snap/core/9665
-loop3     7:3    0 28.1M  1 loop /snap/amazon-ssm-agent/2012
-loop4     7:4    0 96.6M  1 loop /snap/core/9804
-</code></pre>
-</li>
-<li>
-<p>Determine whether there is a file system on the volume. New volumes are raw block devices, and you must create a file system on them before you can mount and use them. Volumes that were created from snapshots likely have a file system on them already; if you create a new file system on top of an existing file system, the operation overwrites your data. </p>
-<p>Use the <strong><code>file -s</code></strong> command to get information about a device, such as its file system type. If the output shows simply <strong><code>data</code></strong>, as in the following example output, there is no file system on the device and you must create one.</p>
-<pre><code>ubuntu@ip-172-31-38-59:~$ sudo file -s /dev/xvdf
-/dev/xvdf: data
-</code></pre>
-<p>If the device has a file system, the command shows information about the file system type. For example, the following output shows a root device with the XFS file system. </p>
-<pre><code>ubuntu@ip-172-31-38-59:~$ sudo file -s /dev/xvda1
-/dev/xvda1: Linux rev 1.0 ext4 filesystem data, UUID=aff0a17d-b917-4350-93b2-3a2eab2067bc, volume name "cloudimg-rootfs" (needs journal recovery) (extents) (large files) (huge files)
-</code></pre>
-</li>
-<li>
-<p>(Conditional) If you discovered that there is a file system on the device in the previous step, skip this step. If you have an empty volume, use the <strong><code>mkfs -t</code></strong> command to create a file system on the volume.</p>
-</li>
-</ol>
-<pre><code>/!\ Important Warning
-Do not use this command if you're mounting a volume that already has data on it (for example, a volume that was created from a snapshot). Otherwise, you'll format the volume and delete the existing data.
-</code></pre>
-
-<pre><code>    ubuntu@ip-172-31-38-59:~$ sudo mkfs -t xfs /dev/xvdf
-    meta-data=/dev/xvdf              isize=512    agcount=4, agsize=327680 blks
-             =                       sectsz=512   attr=2, projid32bit=1
-             =                       crc=1        finobt=1, sparse=0
-    data     =                       bsize=4096   blocks=1310720, imaxpct=25
-             =                       sunit=0      swidth=0 blks
-    naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
-    log      =internal log           bsize=4096   blocks=2560, version=2
-             =                       sectsz=512   sunit=0 blks, lazy-count=1
-    realtime =none                   extsz=4096   blocks=0, rtextents=0
-</code></pre>
-<p>If you get an error that <code>mkfs.xfs</code> is not found, use the following command to install the XFS tools and then repeat the previous command: </p>
-<pre><code>    ubuntu@ip-172-31-38-59:~$ sudo yum install xfsprogs
-</code></pre>
-<ol start="5">
-<li>
-<p>Use the <code>mkdir</code> command to create a mount point directory for the volume. The mount point is where the volume is located in the file system tree and where you read and write files to after you mount the volume. The following example creates a directory named <code>/data</code>. </p>
-<pre><code>ubuntu@ip-172-31-38-59:~$ sudo mkdir /data
-</code></pre>
-</li>
-<li>
-<p>Use the following command to mount the volume at the directory you created in the previous step. </p>
-<pre><code>ubuntu@ip-172-31-38-59:~$  sudo mount /dev/xvdf /data
-</code></pre>
-</li>
-<li>
-<p>Review the file permissions of your new volume mount to make sure that your users and applications can write to the volume. For more information about file permissions, see <a href="http://tldp.org/LDP/intro-linux/html/sect_03_04.html">File security</a> at The Linux Documentation Project.</p>
-</li>
-<li>
-<p>The mount point is not automatically preserved after rebooting your instance. To automatically mount this EBS volume after reboot, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html#ebs-mount-after-reboot">Automatically mount an attached volume after reboot</a>. </p>
-</li>
-</ol>
-<h3 id="check-your-instances-volume-size">Check your instance&rsquo;s volume size<a class="headerlink" href="#check-your-instances-volume-size" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p>First of all, you can check again your volume, if it is mounted or not , by </p>
-<pre><code>ubuntu@ip-172-31-38-59:~$ lsblk
-NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
-xvda    202:0    0    8G  0 disk 
-└─xvda1 202:1    0    8G  0 part /
-xvdf    202:80   0    5G  0 disk /data
-loop1     7:1    0   18M  1 loop /snap/amazon-ssm-agent/1566
-loop2     7:2    0   97M  1 loop /snap/core/9665
-loop3     7:3    0 28.1M  1 loop /snap/amazon-ssm-agent/2012
-loop4     7:4    0 96.6M  1 loop /snap/core/9804
-</code></pre>
-<p>you can see, the <code>xvdf</code> volume is mounted to the <code>/data/</code>, that is meant that the mounting has been successed.</p>
-</li>
-<li>
-<p>Use <code>df</code> command to check the volumes sizes:</p>
-<pre><code>ubuntu@ip-172-31-38-59:~$ df
-Filesystem     1K-blocks    Used Available Use% Mounted on
-udev              499320       0    499320   0% /dev
-tmpfs             101444   10956     90488  11% /run
-/dev/xvda1       8065444 2087224   5961836  26% /
-tmpfs             507208       0    507208   0% /dev/shm
-tmpfs               5120       0      5120   0% /run/lock
-tmpfs             507208       0    507208   0% /sys/fs/cgroup
-/dev/loop1         18432   18432         0 100% /snap/amazon-ssm-agent/1566
-/dev/loop2         99328   99328         0 100% /snap/core/9665
-/dev/loop3         28800   28800         0 100% /snap/amazon-ssm-agent/2012
-/dev/loop4         98944   98944         0 100% /snap/core/9804
-tmpfs             101444       0    101444   0% /run/user/1000
-/dev/xvdf        5232640   32960   5199680   1% /data
-</code></pre>
-<p>you can see the last volume <code>/dev/xvdf</code> detailes and it is mounted to the <code>/data</code>, if you want to see specific volume by:</p>
-<pre><code>ubuntu@ip-172-31-38-59:~$ df /data/
-Filesystem     1K-blocks  Used Available Use% Mounted on
-/dev/xvdf        5232640 32964   5199676   1% /data
-</code></pre>
-</li>
-<li>
-<p>Use your new volume, by navigating to <code>/data</code> and start add files:</p>
-<pre><code>ubuntu@ip-172-31-38-59:~$ cd /data/
-ubuntu@ip-172-31-38-59:/data$ ls
-hydrosat  test.py
-</code></pre>
-</li>
-</ul>
-<h2 id="making-an-amazon-ebs-volume-available-for-use-on-windows">Making an Amazon EBS volume available for use on Windows<a class="headerlink" href="#making-an-amazon-ebs-volume-available-for-use-on-windows" title="Permanent link">&para;</a></h2>
-<p>You can get directions for volumes on a Windows instance from <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-using-volumes.html">Making a Volume Available for Use on Windows</a> in the Amazon EC2 User Guide for Windows Instances. </p>
-<p>You can get directions for volumes on a Windows instance from <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-detaching-volume.html">Detaching a volume from a Windows instance</a> in the Amazon EC2 User Guide for Windows Instances. </p>
-<h2 id="releasing-an-amazon-ebs-volume">Releasing an Amazon EBS volume<a class="headerlink" href="#releasing-an-amazon-ebs-volume" title="Permanent link">&para;</a></h2>
-<p>In order to releasing an EBS volume, you need to:</p>
-<ol>
-<li>Detaching the EBS volume</li>
-<li>Deleting the EBS Volume</li>
-</ol>
-<h3 id="detaching-an-amazon-ebs-volume-from-a-linux-instance">Detaching an Amazon EBS volume from a Linux instance<a class="headerlink" href="#detaching-an-amazon-ebs-volume-from-a-linux-instance" title="Permanent link">&para;</a></h3>
-<p>You can detach an Amazon EBS volume from an instance explicitly or by terminating the instance. However, if the instance is running, you must first unmount the volume from the instance.</p>
-<p>If an EBS volume is the root device of an instance, you must stop the instance before you can detach the volume.</p>
-<p>When a volume with an AWS Marketplace product code is detached from an instance, the product code is no longer associated with the instance. </p>
-<p><strong><code>/!\ Important</code></strong></p>
-<p>After you detach a volume, you are still charged for volume storage as long as the storage amount exceeds the limit of the AWS Free Tier. You must delete a volume to avoid incurring further charges. For more information, see <a href="#deleting-an-amazon-ebs-volume">Deleting an Amazon EBS volume</a>. </p>
-<p>This example unmounts the volume and then explicitly detaches it from the instance. This is useful when you want to terminate an instance or attach a volume to a different instance. To verify that the volume is no longer attached to the instance, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-describing-volumes.html">Viewing information about an Amazon EBS volume</a>.</p>
-<p>You can reattach a volume that you detached (without unmounting it), but it might not get the same mount point. If there were writes to the volume in progress when it was detached, the data on the volume might be out of sync. </p>
-<h4 id="to-detach-an-ebs-volume-using-the-console">To detach an EBS volume using the console<a class="headerlink" href="#to-detach-an-ebs-volume-using-the-console" title="Permanent link">&para;</a></h4>
-<ol>
-<li>
-<p>From your Linux instance, use the following command to unmount the <code>/dev/sdh</code> device.</p>
-<pre><code>ubuntu@ip-172-31-38-59:~$ umount -d /dev/sdh
-</code></pre>
-</li>
-<li>
-<p>Open the Amazon EC2 console at <a href="https://console.aws.amazon.com/ec2/">https://console.aws.amazon.com/ec2/</a>.</p>
-</li>
-<li>
-<p>In the navigation pane, choose <strong>Volumes</strong>.</p>
-</li>
-<li>
-<p>Select a volume and choose <strong>Actions, Detach Volume</strong>.</p>
-</li>
-<li>
-<p>In the confirmation dialog box, choose <strong>Yes, Detach</strong>.</p>
-</li>
-</ol>
-<h5 id="example">Example:<a class="headerlink" href="#example" title="Permanent link">&para;</a></h5>
-<ul>
-<li>
-<p>Before <code>umount</code></p>
-<pre><code>ubuntu@ip-172-31-38-59:~$ lsblk
-NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
-xvda    202:0    0    8G  0 disk 
-└─xvda1 202:1    0    8G  0 part /
-xvdf    202:80   0    5G  0 disk /data
-loop1     7:1    0   18M  1 loop /snap/amazon-ssm-agent/1566
-loop2     7:2    0   97M  1 loop /snap/core/9665
-loop3     7:3    0 28.1M  1 loop /snap/amazon-ssm-agent/2012
-loop4     7:4    0 96.6M  1 loop /snap/core/9804
-</code></pre>
-</li>
-<li>
-<p>After <code>umount</code></p>
-<pre><code>ubuntu@ip-172-31-38-59:~$ sudo umount -d /data 
-ubuntu@ip-172-31-38-59:~$ lsblk
-NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
-xvda    202:0    0    8G  0 disk 
-└─xvda1 202:1    0    8G  0 part /
-xvdf    202:80   0    5G  0 disk 
-loop1     7:1    0   18M  1 loop /snap/amazon-ssm-agent/1566
-loop2     7:2    0   97M  1 loop /snap/core/9665
-loop3     7:3    0 28.1M  1 loop /snap/amazon-ssm-agent/2012
-loop4     7:4    0 96.6M  1 loop /snap/core/9804
-</code></pre>
-</li>
-<li>
-<p>After Detached</p>
-<pre><code>ubuntu@ip-172-31-38-59:~$ lsblk
-NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
-xvda    202:0    0    8G  0 disk 
-└─xvda1 202:1    0    8G  0 part /
-loop1     7:1    0   18M  1 loop /snap/amazon-ssm-agent/1566
-loop2     7:2    0   97M  1 loop /snap/core/9665
-loop3     7:3    0 28.1M  1 loop /snap/amazon-ssm-agent/2012
-loop4     7:4    0 96.6M  1 loop /snap/core/9804
-</code></pre>
-</li>
-</ul>
-<h4 id="to-detach-an-ebs-volume-using-the-command-line">To detach an EBS volume using the command line<a class="headerlink" href="#to-detach-an-ebs-volume-using-the-command-line" title="Permanent link">&para;</a></h4>
-<p>After unmounting the volume, you can use one of the following commands to detach it. For more information about these command line interfaces, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html#access-ec2">Accessing Amazon EC2</a>.</p>
-<ul>
-<li>
-<p><a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/detach-volume.html">detach-volume</a> (AWS CLI)</p>
-</li>
-<li>
-<p><a href="https://docs.aws.amazon.com/powershell/latest/reference/items/Dismount-EC2Volume.html">Dismount-EC2Volume</a> (AWS Tools for Windows PowerShell)</p>
-</li>
-</ul>
-<h3 id="deleting-an-amazon-ebs-volume">Deleting an Amazon EBS volume<a class="headerlink" href="#deleting-an-amazon-ebs-volume" title="Permanent link">&para;</a></h3>
-<p>After you no longer need an Amazon EBS volume, you can delete it. After deletion, its data is gone and the volume can&rsquo;t be attached to any instance. However, before deletion, you can store a snapshot of the volume, which you can use to re-create the volume later. </p>
-<p><strong><code>/!\ Important</code></strong></p>
-<p>You can&rsquo;t delete a volume if it&rsquo;s attached to an instance. To delete a volume, you must first detach it. For more information, see <a href="#detaching-an-amazon-ebs-volume-from-a-linux-instance">Detaching an Amazon EBS volume from a Linux instance</a>.</p>
-<p>You can check if a volume is attached to an instance. In the console, on the <strong>Volumes page</strong>, you can view the state of your volumes.</p>
-<ul>
-<li>
-<p>If a volume is attached to an instance, it’s in the <code>in-use</code> state.</p>
-</li>
-<li>
-<p>If a volume is detached from an instance, it’s in the <code>available</code> state. You can delete this volume.</p>
-</li>
-</ul>
-<h4 id="to-delete-an-ebs-volume-using-the-console">To delete an EBS volume using the console<a class="headerlink" href="#to-delete-an-ebs-volume-using-the-console" title="Permanent link">&para;</a></h4>
-<ol>
-<li>
-<p>Open the Amazon EC2 console at <a href="https://console.aws.amazon.com/ec2/">https://console.aws.amazon.com/ec2/</a>.</p>
-</li>
-<li>
-<p>In the navigation pane, choose <strong>Volumes</strong>.</p>
-</li>
-<li>
-<p>Select a volume and choose <strong>Actions, Delete Volume</strong>. If <strong>Delete Volume</strong> is greyed out, the volume is attached to the instance.</p>
-</li>
-<li>
-<p>In the confirmation dialog box, choose <strong>Yes, Delete</strong>.</p>
-</li>
-</ol>
-<h4 id="to-delete-an-ebs-volume-using-the-command-line">To delete an EBS volume using the command line<a class="headerlink" href="#to-delete-an-ebs-volume-using-the-command-line" title="Permanent link">&para;</a></h4>
-<p>You can use one of the following commands. For more information about these command line interfaces, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html#access-ec2">Accessing Amazon EC2</a>.</p>
-<ul>
-<li>
-<p><a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/delete-volume.html">delete-volume</a> (AWS CLI)</p>
-</li>
-<li>
-<p><a href="https://docs.aws.amazon.com/powershell/latest/reference/items/Remove-EC2Volume.html">Remove-EC2Volume</a> (AWS Tools for Windows PowerShell)</p>
-</li>
-</ul>
-<h2 id="watch-it-here">Watch it here<a class="headerlink" href="#watch-it-here" title="Permanent link">&para;</a></h2>
-<h3 id="create-attach-and-mount-a-new-ebs-volume">Create, attach, and mount a new EBS volume<a class="headerlink" href="#create-attach-and-mount-a-new-ebs-volume" title="Permanent link">&para;</a></h3>
-<figure class="video_container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0xc1XXuuoS4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</figure>
-
-<h3 id="detach-unmount-and-delet-an-existing-ebs-volume">Detach, unmount, and delet an existing EBS volume<a class="headerlink" href="#detach-unmount-and-delet-an-existing-ebs-volume" title="Permanent link">&para;</a></h3>
-<figure class="video_container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/K_t4NCYnwbM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></figure>
-
-<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-describing-volumes.html">Viewing information about an Amazon EBS volume</a></li>
-<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html">Replacing an Amazon EBS volume using a previous snapshot</a></li>
-<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring the status of your volumes</a></li>
-<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">Detaching an Amazon EBS volume from a Linux instance</a></li>
-<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Deleting an Amazon EBS volume</a></li>
-</ul>
+<h5 id="check-amazon-redshift-documentation-for-all-the-details">Check, <a href="https://docs.aws.amazon.com/redshift/index.html">Amazon Redshift Documentation</a> for all the details.<a class="headerlink" href="#check-amazon-redshift-documentation-for-all-the-details" title="Permanent link">&para;</a></h5>
               
             </div>
           </div>
@@ -1632,10 +1191,10 @@ loop4     7:4    0 96.6M  1 loop /snap/core/9804
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../ebsDemo/" class="btn btn-neutral float-right" title="Amazon EBS Demo">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../monitor/" class="btn btn-neutral float-right" title="Monitoring Services on AWS">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../storage/" class="btn btn-neutral" title="Dealing with AWS Storage"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Elasticache/" class="btn btn-neutral" title="Amazon Elasticache"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -1661,10 +1220,10 @@ loop4     7:4    0 96.6M  1 loop /snap/core/9804
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../storage/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../Elasticache/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../ebsDemo/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../monitor/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
