@@ -1,115 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/</loc>
-     <lastmod>2020-11-08</lastmod>
+     <lastmod>2020-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/AWS_Account/</loc>
-     <lastmod>2020-11-08</lastmod>
+     <lastmod>2020-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/EC2/</loc>
-     <lastmod>2020-11-08</lastmod>
+     <lastmod>2020-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/RunPython/</loc>
-     <lastmod>2020-11-08</lastmod>
+     <lastmod>2020-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/WebserversDemo/</loc>
-     <lastmod>2020-11-08</lastmod>
+     <lastmod>2020-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/lightsail/</loc>
-     <lastmod>2020-11-08</lastmod>
+     <lastmod>2020-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/othercomputeservices/</loc>
-     <lastmod>2020-11-08</lastmod>
+     <lastmod>2020-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/awsStore/</loc>
-     <lastmod>2020-11-08</lastmod>
+     <lastmod>2020-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/storage/</loc>
-     <lastmod>2020-11-08</lastmod>
+     <lastmod>2020-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/EBS/</loc>
-     <lastmod>2020-11-08</lastmod>
+     <lastmod>2020-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/ebsDemo/</loc>
-     <lastmod>2020-11-08</lastmod>
+     <lastmod>2020-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/EFS/</loc>
-     <lastmod>2020-11-08</lastmod>
+     <lastmod>2020-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/EFSmount/</loc>
-     <lastmod>2020-11-08</lastmod>
+     <lastmod>2020-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/S3/</loc>
-     <lastmod>2020-11-08</lastmod>
+     <lastmod>2020-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/network/</loc>
-     <lastmod>2020-11-08</lastmod>
+     <lastmod>2020-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/network2/</loc>
-     <lastmod>2020-11-08</lastmod>
+     <lastmod>2020-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/vpc/</loc>
-     <lastmod>2020-11-08</lastmod>
+     <lastmod>2020-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/ELB/</loc>
-     <lastmod>2020-11-08</lastmod>
+     <lastmod>2020-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/Networkdemos/</loc>
-     <lastmod>2020-11-08</lastmod>
+     <lastmod>2020-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/RDS/</loc>
-     <lastmod>2020-11-08</lastmod>
+     <lastmod>2020-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/RDSdemos/</loc>
-     <lastmod>2020-11-08</lastmod>
+     <lastmod>2020-11-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://abdallahcoptan.github.io/HandsOn/mysqldemo/</loc>
+     <lastmod>2020-11-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://abdallahcoptan.github.io/HandsOn/aroura/</loc>
+     <lastmod>2020-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/nosql/</loc>
-     <lastmod>2020-11-08</lastmod>
+     <lastmod>2020-11-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://abdallahcoptan.github.io/HandsOn/DynamoDB/</loc>
+     <lastmod>2020-11-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://abdallahcoptan.github.io/HandsOn/Elasticache/</loc>
+     <lastmod>2020-11-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://abdallahcoptan.github.io/HandsOn/Redshift/</loc>
+     <lastmod>2020-11-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://abdallahcoptan.github.io/HandsOn/monitor/</loc>
+     <lastmod>2020-11-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://abdallahcoptan.github.io/HandsOn/LoadBalanc/</loc>
+     <lastmod>2020-11-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://abdallahcoptan.github.io/HandsOn/AutoScale/</loc>
+     <lastmod>2020-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/pricing/</loc>
-     <lastmod>2020-11-08</lastmod>
+     <lastmod>2020-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/support/</loc>
-     <lastmod>2020-11-08</lastmod>
+     <lastmod>2020-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/security/</loc>
-     <lastmod>2020-11-08</lastmod>
+     <lastmod>2020-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/slides/</loc>
-     <lastmod>2020-11-08</lastmod>
+     <lastmod>2020-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/ref/</loc>
-     <lastmod>2020-11-08</lastmod>
+     <lastmod>2020-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://abdallahcoptan.github.io/HandsOn/contact/</loc>
-     <lastmod>2020-11-08</lastmod>
+     <lastmod>2020-11-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

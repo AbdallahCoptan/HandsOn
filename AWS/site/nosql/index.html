@@ -821,6 +821,8 @@
     <ul>
     <li class="toctree-l2"><a class="reference internal" href="../RDS/#amazon-relational-database-rds">Amazon Relational Database (RDS)</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RDS/#overview-of-amazon-rds">Overview of Amazon RDS</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="../RDS/#bring-your-own-database-byodb-vs-amazon-rds">Bring your own database (BYODB) vs Amazon RDS</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="../RDS/#amazon-rds-db-instances">Amazon RDS DB instances</a>
@@ -833,13 +835,21 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="../RDS/#high-availability-multi-az-for-amazon-rds">High availability (Multi-AZ) for Amazon RDS</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RDS/#amazon-rds-read-replicas">Amazon RDS Read Replicas</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../RDS/#benefits">Benefits</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../RDS/#setup">Setup</a>
+    </li>
+        </ul>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="../RDS/#databases-engines-in-aws-rds">Databases engines in AWS RDS</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="../RDS/#migrate-your-database-to-aws-database">Migrate your Database to AWS Database</a>
     </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../RDSdemos/">Dtabase Engines in AWS</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../RDSdemos/">Database Engines in AWS</a>
     <ul>
     <li class="toctree-l2"><a class="reference internal" href="../RDSdemos/#setting-up-for-amazon-rds">Setting up for Amazon RDS</a>
     </li>
@@ -858,6 +868,10 @@
     <li class="toctree-l2"><a class="reference internal" href="../RDSdemos/#start-working-with-aws-rds-and-db-engines">Start Working with AWS RDS and DB engines</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="../RDSdemos/#demos">Demos</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../RDSdemos/#troubleshooting-for-amazon-rds">Troubleshooting for Amazon RDS</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="../RDSdemos/#tutorials">Tutorials</a>
     </li>
@@ -867,7 +881,168 @@
     </li>
     </ul>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../mysqldemo/">MySQL RDS DB Instance Demo</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#network-topology">Network Topology</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#step-1-create-the-vpc">Step 1: Create the VPC</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#step-2-configure-the-vpc-security-group">Step 2: Configure the VPC security group</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#step-3-create-the-database-instance">Step 3: Create the Database Instance</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#step-4-create-the-ec2-instances-and-install-the-web-servers">Step 4: Create the EC2 instances and install the web servers</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#step-5-create-the-application-elastic-load-balancer-elb">Step 5: Create the application Elastic Load Balancer (ELB</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#watch-it-here">Watch it here</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#references-and-help">References and Help</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../aroura/">Amazon Aurora</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../aroura/#overview">Overview</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../aroura/#benefits">Benefits</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../aroura/#use-cases">Use cases</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../aroura/#migrating-your-databases-to-amazon-aurora">Migrating Your Databases to Amazon Aurora</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../aroura/#if-youre-currently-using-amazon-rds-for-mysql-or-amazon-rds-for-postgresql">If you're currently using Amazon RDS for MySQL or Amazon RDS for PostgreSQL...</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../aroura/#if-youre-currently-using-oracle-or-microsoft-sql-server">If you're currently using Oracle or Microsoft SQL Server...</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../aroura/#getting-started-with-amazon-aurora">Getting started with Amazon Aurora</a>
+    </li>
+    </ul>
+                    </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">NoSQL DB</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#nosql-databases">NoSQL Databases</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#what-are-nosql-databases">What are NoSQL databases?</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#how-does-a-nosql-nonrelational-database-work">How Does a NoSQL (nonrelational) Database Work?</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#why-should-you-use-a-nosql-database">Why should you use a NoSQL database?</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#types-of-nosql-databases">Types of NoSQL Databases</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sql-relational-vs-nosql-nonrelational-databases">SQL (relational) vs. NoSQL (nonrelational) databases</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#sql-vs-nosql-terminology">SQL vs. NoSQL Terminology</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#nosql-database-engines-in-aws">NoSQL Database Engines in AWS</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../DynamoDB/">Amazon DynamoDB</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../DynamoDB/#the-key-value-database-defined">The key-value database defined</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../DynamoDB/#dynamodb">DynamoDB</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#benefits-applications">Benefits &amp; Applications</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#use-cases">Use Cases</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../DynamoDB/#creating-a-table-from-sql-to-nosql">Creating a Table  from SQL to NoSQL</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#sql">SQL</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#nosql-dynamodb">NoSQL: DynamoDB</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../DynamoDB/#setting-up-dynamodb-on-aws">Setting Up DynamoDB on AWS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#getting-an-aws-access-key">Getting an AWS Access Key</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#configuring-your-credentials">Configuring Your Credentials</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../DynamoDB/#getting-started-with-amazon-dynamodb">Getting Started with Amazon DynamoDB</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#demo-create-and-query-a-nosql-table">Demo: Create and Query a NoSQL Table</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#more-advanced-tutorials-and-demos">More advanced tutorials and demos</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Elasticache/">Amazon Elasticache</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../Elasticache/#the-in-memory-database-defined">The in-memory database defined</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../Elasticache/#in-memory-databases-on-aws">In-memory databases on AWS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../Elasticache/#amazon-elasticache-for-redis">Amazon Elasticache for Redis</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../Elasticache/#get-started-with-amazon-elasticache-for-redis">Get started with Amazon ElastiCache for Redis.</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Elasticache/#amazon-elasticache-for-memcached">Amazon ElastiCache for Memcached</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../Elasticache/#get-started-with-amazon-elasticache-for-memcached">Get started with Amazon ElastiCache for Memcached.</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Elasticache/#use-cases">Use cases</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Redshift/">Amazon Redshift</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../Redshift/#redshift-use-cases">Redshift Use Cases</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../Redshift/#cluster-management">Cluster management</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Redshift/#creating-and-managing-clusters">Creating and managing clusters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../Redshift/#getting-started-with-amazon-redshift">Getting started with Amazon Redshift</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../Redshift/#check-amazon-redshift-documentation-for-all-the-details">Check, Amazon Redshift Documentation for all the details.</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Monitoring and Scaling</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../monitor/">Monitoring Services on AWS</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../LoadBalanc/">Load Balancing on AWS</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../LoadBalanc/#load-balancers-in-aws">Load Balancers in AWS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../LoadBalanc/#load-balancing-manage-your-application-workload-by-elb">Load Balancing: Manage your application workload by ELB</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../AutoScale/">Auto Scaling in AWS</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">AWS Pricing and Support</span></p>
@@ -958,8 +1133,8 @@
   </ul>
   
     <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-        <a href="../pricing/" class="btn btn-neutral float-right" title="AWS Pricing">Next <span class="icon icon-circle-arrow-right"></span></a>
-        <a href="../RDSdemos/" class="btn btn-neutral" title="Dtabase Engines in AWS"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../DynamoDB/" class="btn btn-neutral float-right" title="Amazon DynamoDB">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../aroura/" class="btn btn-neutral" title="Amazon Aurora"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
   
   <hr/>
@@ -967,7 +1142,227 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="nosql-databases-in-amazon-web-services">NoSQL Databases in Amazon Web Services<a class="headerlink" href="#nosql-databases-in-amazon-web-services" title="Permanent link">&para;</a></h1>
+<h2 id="nosql-databases">NoSQL Databases<a class="headerlink" href="#nosql-databases" title="Permanent link">&para;</a></h2>
+<p><strong>High-performance, nonrelational databases with flexible data models</strong></p>
+<h3 id="what-are-nosql-databases">What are NoSQL databases?<a class="headerlink" href="#what-are-nosql-databases" title="Permanent link">&para;</a></h3>
+<p><a href="https://aws.amazon.com/nosql/">NoSQL databases</a> are purpose built for specific data models and have flexible schemas for building modern applications. NoSQL databases are widely recognized for their ease of development, functionality, and performance at scale.</p>
+<h4 id="how-does-a-nosql-nonrelational-database-work">How Does a NoSQL (nonrelational) Database Work?<a class="headerlink" href="#how-does-a-nosql-nonrelational-database-work" title="Permanent link">&para;</a></h4>
+<p>NoSQL databases use a variety of data models for accessing and managing data. These types of databases are:</p>
+<ul>
+<li>optimized specifically for applications that require large data volume, </li>
+<li>low latency, and </li>
+<li>flexible data models, </li>
+</ul>
+<p>which are achieved by relaxing some of the data consistency restrictions of other databases.</p>
+<p>Consider the example of modeling the schema for a simple book database:</p>
+<ul>
+<li>
+<p>In a relational database, a book record is often dissembled (or “normalized”) and stored in separate tables, and relationships are defined by primary and foreign key constraints. In this example, the <strong>Books</strong> table has columns for <strong>ISBN, Book Title</strong>, and <strong>Edition Number</strong>, the <strong>Authors</strong> table has columns for <strong>AuthorID</strong> and <strong>Author Name</strong>, and finally the <strong>Author-ISBN</strong> table has columns for <strong>AuthorID</strong> and <strong>ISBN</strong>. The relational model is designed to enable the database to enforce referential integrity between tables in the database, normalized to reduce the redundancy, and generally optimized for storage.</p>
+</li>
+<li>
+<p>In a NoSQL database, a book record is usually stored as a <a href="https://www.json.org/json-en.html">JSON</a> document. For each book, the item, <strong>ISBN, Book Title, Edition Number, Author Name,</strong> and <strong>AuthorID</strong> are stored as attributes in a single document. In this model, data is optimized for intuitive development and horizontal scalability.</p>
+</li>
+</ul>
+<h4 id="why-should-you-use-a-nosql-database">Why should you use a NoSQL database?<a class="headerlink" href="#why-should-you-use-a-nosql-database" title="Permanent link">&para;</a></h4>
+<p>NoSQL databases are a great fit for many modern applications such as:</p>
+<ul>
+<li>mobile, </li>
+<li>web, and</li>
+<li>gaming </li>
+</ul>
+<p>that require:</p>
+<ul>
+<li>flexible, </li>
+<li>scalable, </li>
+<li>high-performance, and </li>
+<li>highly functional databases to provide great user experiences.</li>
+</ul>
+<p>NoSQL databases have the following features:</p>
+<ul>
+<li>
+<p><strong>Flexibility</strong>: NoSQL databases generally provide flexible schemas that enable faster and more iterative development. The flexible data model makes NoSQL databases ideal for semi-structured and unstructured data.</p>
+</li>
+<li>
+<p><strong>Scalability</strong>: NoSQL databases are generally designed to scale out by using distributed clusters of hardware instead of scaling up by adding expensive and robust servers. Some cloud providers handle these operations behind-the-scenes as a fully managed service.</p>
+</li>
+<li>
+<p><strong>High-performance</strong>: NoSQL database are optimized for specific data models and access patterns that enable higher performance than trying to accomplish similar functionality with relational databases.</p>
+</li>
+<li>
+<p><strong>Highly functional</strong>: NoSQL databases provide highly functional APIs and data types that are purpose built for each of their respective data models.</p>
+</li>
+</ul>
+<h3 id="types-of-nosql-databases">Types of NoSQL Databases<a class="headerlink" href="#types-of-nosql-databases" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Key-value</strong>: Key-value databases are highly partitionable and allow horizontal scaling at scales that other types of databases cannot achieve. Use cases such as gaming, ad tech, and IoT lend themselves particularly well to the key-value data model. <a href="https://aws.amazon.com/dynamodb/">Amazon DynamoDB</a> is designed to provide consistent single-digit millisecond latency for any scale of workloads. This consistent performance is a big part of why the <a href="https://www.youtube.com/watch?v=WUleQzu9l_8">Snapchat Stories feature</a>, which includes Snapchat&rsquo;s largest storage write workload, moved to DynamoDB.</li>
+</ul>
+<p><br></p>
+<ul>
+<li><strong>Document</strong>: In application code, data is represented often as an object or JSON-like document because it is an efficient and intuitive data model for developers. Document databases make it easier for developers to store and query data in a database by using the same document model format that they use in their application code. The flexible, semistructured, and hierarchical nature of documents and document databases allows them to evolve with applications’ needs. The document model works well with catalogs, user profiles, and content management systems where each document is unique and evolves over time. <a href="https://aws.amazon.com/documentdb/">Amazon DocumentDB (with MongoDB compatibility)</a> and MongoDB are popular document databases that provide powerful and intuitive APIs for flexible and iterative development.</li>
+</ul>
+<p><br></p>
+<ul>
+<li><strong>Graph</strong>: A graph database’s purpose is to make it easy to build and run applications that work with highly connected datasets. Typical use cases for a graph database include social networking, recommendation engines, fraud detection, and knowledge graphs. Amazon Neptune is a fully-managed graph database service. <a href="https://aws.amazon.com/neptune/">Neptune</a> supports both the Property Graph model and the Resource Description Framework (RDF), providing the choice of two graph APIs: TinkerPop and RDF/SPARQL. Popular graph databases include Neo4j and Giraph.</li>
+</ul>
+<p><br></p>
+<ul>
+<li><strong>In-memory</strong>: Gaming and ad-tech applications have use cases such as leaderboards, session stores, and real-time analytics that require microsecond response times and can have large spikes in traffic coming at any time. Amazon <a href="https://aws.amazon.com/elasticache/">ElastiCache</a> offers Memcached and Redis, to serve low-latency, high-throughput workloads, such as <a href="https://aws.amazon.com/solutions/case-studies/mcdonalds/">McDonald’s</a>, that cannot be served with disk-based data stores. <a href="https://aws.amazon.com/dynamodb/dax/">Amazon DynamoDB Accelerator (DAX)</a> is another example of a purpose-built data store. DAX makes DynamoDB reads an order of magnitude faster.</li>
+</ul>
+<p><br></p>
+<ul>
+<li><strong>Search</strong>: Many applications output logs to help developers troubleshoot issues. <a href="https://aws.amazon.com/elasticsearch-service/">Amazon Elasticsearch Service (Amazon ES)</a> is purpose built for providing near-real-time visualizations and analytics of machine-generated data by indexing, aggregating, and searching semistructured logs and metrics. Amazon ES also is a powerful, high-performance search engine for full-text search use cases. <a href="https://www.youtube.com/watch?v=oJUpUQ_yNVw&amp;ab_channel=AmazonWebServices">Expedia</a> is using more than 150 Amazon ES domains, 30 TB of data, and 30 billion documents for a variety of mission-critical use cases, ranging from operational monitoring and troubleshooting to distributed application stack tracing and pricing optimization.</li>
+</ul>
+<p><br></p>
+<hr />
+<h2 id="sql-relational-vs-nosql-nonrelational-databases">SQL (relational) vs. NoSQL (nonrelational) databases<a class="headerlink" href="#sql-relational-vs-nosql-nonrelational-databases" title="Permanent link">&para;</a></h2>
+<p>For decades, the predominant data model that was used for application development was the relational data model used by relational databases such as Oracle, DB2, SQL Server, MySQL, and PostgreSQL. It wasn’t until the mid to late 2000s that other data models began to gain significant adoption and usage. To differentiate and categorize these new classes of databases and data models, the term “NoSQL” was coined. Often the term “NoSQL” is used interchangeably with “nonrelational.”</p>
+<p>Though there are many types of NoSQL databases with varying features, the following table shows some of the differences between SQL and NoSQL databases.</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th>Relational databases</th>
+<th>NoSQL databases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Optimal <br>workloads</td>
+<td>Relational databases are designed for transactional and strongly <br>consistent online transaction processing (OLTP) applications and are <br>good for online analytical processing (OLAP).</td>
+<td>NoSQL databases are designed for a number of data access patterns that <br>include low-latency applications. NoSQL search databases are designed <br>for analytics over semi-structured data.</td>
+</tr>
+<tr>
+<td align="center">Data model</td>
+<td>The relational model normalizes data into tables that are composed of <br><strong>rows and columns</strong>. A schema strictly defines the tables, rows, columns, <br>indexes, relationships between tables, and other database elements. The database enforces the referential integrity in relationships between <br>tables.</td>
+<td>NoSQL databases provide a variety of data models such as <strong>key-value</strong>, <br><strong>document</strong>, and <strong>graph</strong>, which are optimized for performance and scale.</td>
+</tr>
+<tr>
+<td align="center">Performance</td>
+<td>Performance is generally dependent on the disk subsystem. The optimization of queries, indexes, and table structure is often required to achieve peak performance.</td>
+<td>Performance is generally a function of the underlying hardware cluster size, <br>network latency, and the calling application.</td>
+</tr>
+<tr>
+<td align="center">Scale</td>
+<td>Relational databases typically scale up by increasing the compute <br>capabilities of the hardware or scale-out by adding replicas for read-only workloads.</td>
+<td>NoSQL databases typically are partitionable because access patterns are able to scale out by using distributed architecture to increase throughput that <br>provides consistent performance at near boundless scale.</td>
+</tr>
+<tr>
+<td align="center">APIs</td>
+<td>Requests to store and retrieve data are communicated using queries that <br>conform to a structured query language (SQL). These queries are parsed <br>and executed by the relational database.</td>
+<td>Object-based APIs allow app developers to easily store and retrieve data<br> structures. Partition keys let apps look up key-value pairs, column <br>sets, or semistructured documents that contain serialized app objects <br>and attributes.</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<hr />
+<h3 id="sql-vs-nosql-terminology">SQL vs. NoSQL Terminology<a class="headerlink" href="#sql-vs-nosql-terminology" title="Permanent link">&para;</a></h3>
+<p>The following table compares terminology used by select NoSQL databases with terminology used by SQL databases.</p>
+<table>
+<thead>
+<tr>
+<th align="center">SQL</th>
+<th align="center">MongoDB</th>
+<th align="center">DynamoDB</th>
+<th align="center">Cassandra</th>
+<th align="center">Couchbase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Table</td>
+<td align="center">Collection</td>
+<td align="center">Table</td>
+<td align="center">Table</td>
+<td align="center">Data bucket</td>
+</tr>
+<tr>
+<td align="center">Row</td>
+<td align="center">Document</td>
+<td align="center">Item</td>
+<td align="center">Row</td>
+<td align="center">Document</td>
+</tr>
+<tr>
+<td align="center">Column</td>
+<td align="center">Field</td>
+<td align="center">Attribute</td>
+<td align="center">Column</td>
+<td align="center">Field</td>
+</tr>
+<tr>
+<td align="center">Primary key</td>
+<td align="center">ObjectId</td>
+<td align="center">Primary key</td>
+<td align="center">Primary key</td>
+<td align="center">Document ID</td>
+</tr>
+<tr>
+<td align="center">Index</td>
+<td align="center">Index</td>
+<td align="center">Secondary index</td>
+<td align="center">Index</td>
+<td align="center">Index</td>
+</tr>
+<tr>
+<td align="center">View</td>
+<td align="center">View</td>
+<td align="center">Global secondary index</td>
+<td align="center">Materialized view</td>
+<td align="center">View</td>
+</tr>
+<tr>
+<td align="center">Nested table or object</td>
+<td align="center">Embedded document</td>
+<td align="center">Map</td>
+<td align="center">Map</td>
+<td align="center">Map</td>
+</tr>
+<tr>
+<td align="center">Array</td>
+<td align="center">Array</td>
+<td align="center">List</td>
+<td align="center">List</td>
+<td align="center">List</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<hr />
+<h3 id="nosql-database-engines-in-aws">NoSQL Database Engines in AWS<a class="headerlink" href="#nosql-database-engines-in-aws" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>NoSQL<br> BD</th>
+<th>AWS <br>DB Engine</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://aws.amazon.com/nosql/key-value/">Key-value</a></td>
+<td><a href="https://aws.amazon.com/dynamodb/">DynamoDB</a></td>
+</tr>
+<tr>
+<td><a href="https://aws.amazon.com/nosql/document/">Document</a></td>
+<td><a href="https://aws.amazon.com/documentdb/">DocumentDB</a><br>&ndash; MongoDB</td>
+</tr>
+<tr>
+<td><a href="https://aws.amazon.com/nosql/graph/">Graph</a></td>
+<td><a href="https://aws.amazon.com/neptune/">Neptune</a></td>
+</tr>
+<tr>
+<td><a href="https://aws.amazon.com/nosql/in-memory/">In-memory</a></td>
+<td><a href="https://aws.amazon.com/elasticache/">ElastiCache</a><br>&ndash; Redis DB <br>&ndash; Memcached</td>
+</tr>
+<tr>
+<td><a href="https://aws.amazon.com/nosql/search/">Search</a></td>
+<td><a href="https://aws.amazon.com/elasticsearch-service/">ElastiSearch</a></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<hr />
+<p><br></p>
               
             </div>
           </div>
@@ -975,10 +1370,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../pricing/" class="btn btn-neutral float-right" title="AWS Pricing">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../DynamoDB/" class="btn btn-neutral float-right" title="Amazon DynamoDB">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../RDSdemos/" class="btn btn-neutral" title="Dtabase Engines in AWS"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../aroura/" class="btn btn-neutral" title="Amazon Aurora"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -1004,10 +1399,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../RDSdemos/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../aroura/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../pricing/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../DynamoDB/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
