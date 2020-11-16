@@ -11,5 +11,5 @@ sudo chmod 2775 /var/www
 find /var/www -type d -exec chmod 2775 {} \;
 find /var/www -type f -exec chmod 0664 {} \;
 cd /var/www/html/
-wget 
+wget https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/Codes/Load.php
 

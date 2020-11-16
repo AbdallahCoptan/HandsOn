@@ -51,6 +51,8 @@ nav:
     - Monitoring Services on AWS: monitor.md
     - Load Balancing on AWS: LoadBalanc.md
     - Auto Scaling in AWS: AutoScale.md
+    - Amazon Simple Notification Service: SNS.md
+    - CloudWatch and Auto-scaling Demo: demoAutoScaling.md
   - AWS Pricing and Support:
     - AWS Pricing: pricing.md
     - AWS Support: support.md

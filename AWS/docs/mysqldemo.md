@@ -130,7 +130,7 @@ Check, [Create a DB instance ](https://docs.aws.amazon.com/AmazonRDS/latest/User
 Check, [Create an EC2 instance: webserver](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Tutorials.WebServerDB.CreateWebServer.html) for more details.
 
 
-## Step 5: Create the application Elastic Load Balancer (ELB
+## Step 5: Create the application Elastic Load Balancer (ELB)
 
 
 1. Associate the ELB with the 3 EC2 instances

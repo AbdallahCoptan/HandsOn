@@ -11,13 +11,13 @@ if ($_Get['clear']) {
   ob_end_clean();
 }
 if ($_Get['tiny']) {
-  shell_exec("sudo stress --cpu 8 -v --timeout 60s");
+  shell_exec("sudo stress --cpu 8 --io 4 --vm 2 --vm-bytes 128M --timeout 60s");
 }
 if ($_Get['small']) {
-  shell_exec("sudo stress --cpu 8 -v --timeout 300s");
+  shell_exec("sudo stress --cpu 8 --io 4 --vm 2 --vm-bytes 128M --timeout 300s");
 }
 if ($_Get['big']) {
-  shell_exec("sudo stress --cpu 8 -v --timeout 600s");
+  shell_exec("sudo stress --cpu 8 --io 4 --vm 2 --vm-bytes 128M --timeout 600s");
 }
 ?>
 
