@@ -893,7 +893,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#step-4-create-the-ec2-instances-and-install-the-web-servers">Step 4: Create the EC2 instances and install the web servers</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#step-5-create-the-application-elastic-load-balancer-elb">Step 5: Create the application Elastic Load Balancer (ELB</a>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#step-5-create-the-application-elastic-load-balancer-elb">Step 5: Create the application Elastic Load Balancer (ELB)</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#watch-it-here">Watch it here</a>
     </li>
@@ -1033,6 +1033,62 @@
                 <p class="caption"><span class="caption-text">Monitoring and Scaling</span></p>
                 <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../monitor/">Monitoring Services on AWS</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../monitor/#amazon-cloudwatch-components">Amazon CloudWatch Components</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#amazon-cloudwatch-events">Amazon CloudWatch Events</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#amazon-cloudwatch-logs-metrics">Amazon CloudWatch Logs Metrics</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#amazon-cloudwatch-alarms">Amazon CloudWatch Alarms</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../monitor/#amazon-cloudwatch-foundation-observability-of-your-aws-resources-and-applications-on-aws-and-on-premises">Amazon CloudWatch Foundation:  Observability of your AWS resources and applications on AWS and on-premises</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#cloudwatch-benefits">CloudWatch Benefits</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#cloudwatch-use-cases">CloudWatch Use cases</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#how-cloudwatch-works">How CloudWatch works?</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../monitor/#amazon-cloudwatch-features">Amazon CloudWatch Features</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#feature-1-collect">Feature 1. Collect</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#feature-2-monitor">Feature 2. Monitor</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#feature-3-act">Feature 3. Act</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#feature-4-analyze">Feature 4. Analyze</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#compliance-and-security">Compliance and Security</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#amazon-cloudwatch-pricing">Amazon CloudWatch pricing</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../monitor/#free-tier">Free tier</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../monitor/#paid-tier">Paid tier</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../monitor/#getting-started-with-amazon-cloudwatch">Getting started with Amazon CloudWatch</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#chech-how-to-get-started">Chech how to get started</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#check-how-to-use-cloudwach-components">Check how to use CloudWach Components</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#check-tutorials">Check Tutorials</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#check-the-services-monitoring">Check the services Monitoring</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../LoadBalanc/">Load Balancing on AWS</a>
     <ul>
@@ -1043,6 +1099,70 @@
     </ul>
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Auto Scaling in AWS</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#auto-scaling-add-or-remove-compute-capacity-to-meet-changes-in-demand">Auto Scaling: Add or remove compute capacity to meet changes in demand</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#benefits">Benefits</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#how-it-works">How it works</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#fleet-management">Fleet Management</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#scheduled-scaling">Scheduled Scaling</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#dynamic-scaling">Dynamic Scaling</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#predictive-scaling">Predictive Scaling</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#amazon-ec2-auto-scaling-features">Amazon EC2 Auto Scaling Features</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#amazon-ec2-auto-scaling-getting-started">Amazon EC2 Auto Scaling Getting Started</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#step-1-sign-into-the-aws-management-console">Step 1: Sign into the AWS Management Console</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-2-create-a-launch-template">Step 2: Create a launch template</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-3-create-an-auto-scaling-group">Step 3: Create an Auto Scaling group</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-4-add-elastic-load-balancers-optional">Step 4: Add Elastic Load Balancers (Optional)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-5-configure-scaling-policies-optional">Step 5: Configure Scaling Policies (Optional)</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../SNS/">Amazon Simple Notification Service</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../SNS/#features-and-capabilities">Features and capabilities</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../SNS/#getting-started-with-amazon-sns">Getting started with Amazon SNS</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../demoAutoScaling/">CloudWatch and Auto-scaling Demo</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../demoAutoScaling/#network-topology">Network Topology</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../demoAutoScaling/#step-1-create-the-vpc">Step 1: Create the VPC</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../demoAutoScaling/#step-2-create-the-ec2-instances-and-install-the-web-servers">Step 2: Create the EC2 instances and install the web servers</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../demoAutoScaling/#step-3-create-the-application-elastic-load-balancer-elb">Step 3: Create the application Elastic Load Balancer (ELB)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../demoAutoScaling/#step-4-create-and-configure-the-auto-scaling">Step 4: Create and configure the Auto-Scaling</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../demoAutoScaling/#step-5-stress-the-web-servers-and-application">Step 5: Stress the web servers and application</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../demoAutoScaling/#step-6-use-cloudwatch-to-monitor-the-instance-adjustment">Step 6: Use CloudWatch to monitor the instance Adjustment</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../demoAutoScaling/#watch-it-here">Watch it here</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">AWS Pricing and Support</span></p>
@@ -1133,7 +1253,7 @@
   </ul>
   
     <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-        <a href="../pricing/" class="btn btn-neutral float-right" title="AWS Pricing">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../SNS/" class="btn btn-neutral float-right" title="Amazon Simple Notification Service">Next <span class="icon icon-circle-arrow-right"></span></a>
         <a href="../LoadBalanc/" class="btn btn-neutral" title="Load Balancing on AWS"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
   
@@ -1142,7 +1262,64 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="amazon-ec2-auto-scaling">Amazon EC2 Auto Scaling<a class="headerlink" href="#amazon-ec2-auto-scaling" title="Permanent link">&para;</a></h1>
+<p><a href="https://aws.amazon.com/ec2/autoscaling/">Amazon EC2 Auto Scaling</a> helps you maintain application availability, and it allows you to dynamically scale your Amazon EC2 capacity up or down automatically according to conditions that you define. You can use Amazon EC2 Auto Scaling for fleet management of Amazon EC2 instances, which can help maintain the health and availability of your fleet, and ensure that you are running your desired number of Amazon EC2 instances. You can also use Amazon EC2 Auto Scaling to dynamically scale Amazon EC2 instances. Dynamic scaling automatically increases the number of Amazon EC2 instances during demand spikes to maintain performance and decrease capacity during lulls, which can help reduce costs. Amazon EC2 Auto Scaling is well-suited to applications that have stable demand patterns, or applications that experience hourly, daily, or weekly variability in usage.</p>
+<h2 id="auto-scaling-add-or-remove-compute-capacity-to-meet-changes-in-demand">Auto Scaling: Add or remove compute capacity to meet changes in demand<a class="headerlink" href="#auto-scaling-add-or-remove-compute-capacity-to-meet-changes-in-demand" title="Permanent link">&para;</a></h2>
+<p>Amazon EC2 Auto Scaling helps you maintain application availability and allows you to automatically add or remove EC2 instances according to conditions you define. You can use the fleet management features of EC2 Auto Scaling to maintain the health and availability of your fleet. You can also use the dynamic and predictive scaling features of EC2 Auto Scaling to add or remove EC2 instances. Dynamic scaling responds to changing demand and predictive scaling automatically schedules the right number of EC2 instances based on predicted demand. Dynamic scaling and predictive scaling can be used together to scale faster. </p>
+<h3 id="benefits">Benefits<a class="headerlink" href="#benefits" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Improve Fault Tolerance</li>
+<li>Increase Application Availability</li>
+<li>Lower Costs</li>
+</ul>
+<h3 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h3>
+<h4 id="fleet-management">Fleet Management<a class="headerlink" href="#fleet-management" title="Permanent link">&para;</a></h4>
+<p>Whether you are running one Amazon EC2 instance or thousands, you can use Amazon EC2 Auto Scaling to detect impaired Amazon EC2 instances and unhealthy applications, and replace the instances without your intervention. This ensures that your application is getting the compute capacity that you expect. Amazon EC2 Auto Scaling will perform three main functions to automate fleet management for EC2 instances:</p>
+<ul>
+<li>Monitor the health of running instances
+Amazon EC2 Auto Scaling ensures that your application is able to receive traffic and that EC2 instances are working properly. Amazon EC2 Auto Scaling periodically performs health checks to identify any instances that are unhealthy.</li>
+<li>Replace impaired instances automatically
+When an impaired instance fails a health check, Amazon EC2 Auto Scaling automatically terminates it and replaces it with a new one. That means that you don’t need to respond manually when an instance needs replacing.</li>
+<li>Balance capacity across Availability Zones
+Amazon EC2 Auto Scaling can automatically balance instances across zones, and always launches new instances so that they are balanced between zones as evenly as possible across your entire fleet.</li>
+</ul>
+<p>Learn more about Fleet Management, see this <a href="https://aws.amazon.com/blogs/compute/fleet-management-made-easy-with-auto-scaling/">blog</a></p>
+<h4 id="scheduled-scaling">Scheduled Scaling<a class="headerlink" href="#scheduled-scaling" title="Permanent link">&para;</a></h4>
+<p>Scaling based on a schedule allows you to scale your application ahead of known load changes. For example, every week the traffic to your web application starts to increase on Wednesday, remains high on Thursday, and starts to decrease on Friday. You can plan your scaling activities based on the known traffic patterns of your web application.</p>
+<h4 id="dynamic-scaling">Dynamic Scaling<a class="headerlink" href="#dynamic-scaling" title="Permanent link">&para;</a></h4>
+<p>Amazon EC2 Auto Scaling enables you to follow the demand curve for your applications closely, reducing the need to manually provision Amazon EC2 capacity in advance. For example, you can use target tracking scaling policies to select a load metric for your application, such as CPU utilization. Or, you could set a target value using the new “Request Count Per Target” metric from Application Load Balancer, a load balancing option for the Elastic Load Balancing service. Amazon EC2 Auto Scaling will then automatically adjust the number of EC2 instances as needed to maintain your target.
+Auto Scaling Prime Time: Target Tracking Hits the Bullseye at Netflix</p>
+<h4 id="predictive-scaling">Predictive Scaling<a class="headerlink" href="#predictive-scaling" title="Permanent link">&para;</a></h4>
+<p>Predictive Scaling, a feature of AWS Auto Scaling uses machine learning to schedule the right number of EC2 instances in anticipation of approaching traffic changes. Predictive Scaling predicts future traffic, including regularly-occurring spikes, and provisions the right number of EC2 instances in advance. Predictive Scaling’s machine learning algorithms detect changes in daily and weekly patterns, automatically adjusting their forecasts. This removes the need for manual adjustment of Auto Scaling parameters as cyclicality changes over time, making Auto Scaling simpler to configure. Auto Scaling enhanced with Predictive Scaling delivers faster, simpler, and more accurate capacity provisioning resulting in lower cost and more responsive applications.</p>
+<h3 id="amazon-ec2-auto-scaling-features">Amazon EC2 Auto Scaling Features<a class="headerlink" href="#amazon-ec2-auto-scaling-features" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Automatically scale in and out</li>
+<li>Choose when and how to scale</li>
+<li>Fleet management</li>
+<li>Predictive Scaling</li>
+<li>Support for multiple purchase models, instance types, and AZs</li>
+<li>Included with Amazon EC2</li>
+</ul>
+<h2 id="amazon-ec2-auto-scaling-getting-started">Amazon EC2 Auto Scaling Getting Started<a class="headerlink" href="#amazon-ec2-auto-scaling-getting-started" title="Permanent link">&para;</a></h2>
+<p>There are several ways to get started with Amazon EC2 Auto Scaling.</p>
+<p>Check, the <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/GettingStartedTutorial.html">Getting started with Amazon EC2 Auto Scaling</a> and do the following:</p>
+<h4 id="step-1-sign-into-the-aws-management-console">Step 1: Sign into the AWS Management Console<a class="headerlink" href="#step-1-sign-into-the-aws-management-console" title="Permanent link">&para;</a></h4>
+<p>Create an account and sign into the console. With Amazon EC2, you pay only for what you use. If you are a new AWS customer, you can get started with Amazon EC2 for free. For more information, see AWS Free Tier.</p>
+<h4 id="step-2-create-a-launch-template">Step 2: Create a launch template<a class="headerlink" href="#step-2-create-a-launch-template" title="Permanent link">&para;</a></h4>
+<p>In the Amazon EC2 Dashboard, choose &ldquo;Launch Templates&rdquo; to create a launch template, specifying a name, AMI, instance type, and other details. Below are some guidelines on setting up your first launch template.</p>
+<ul>
+<li>Choose an Amazon Machine Image (AMI): We recommend the Amazon Linux 2 AMI (free-tier eligible). </li>
+<li>Choose an instance type: We recommend the t2.micro (free-tier eligible).</li>
+<li>Security group: You have the option to configure your virtual firewall.</li>
+</ul>
+<h4 id="step-3-create-an-auto-scaling-group">Step 3: Create an Auto Scaling group<a class="headerlink" href="#step-3-create-an-auto-scaling-group" title="Permanent link">&para;</a></h4>
+<p>Using the Auto Scaling wizard, create an Auto Scaling group specifying a name, size, and network for your Auto Scaling group.</p>
+<h4 id="step-4-add-elastic-load-balancers-optional">Step 4: Add Elastic Load Balancers (Optional)<a class="headerlink" href="#step-4-add-elastic-load-balancers-optional" title="Permanent link">&para;</a></h4>
+<p>When you set up Auto Scaling with Elastic Load Balancing, you can automatically distribute incoming application traffic across Amazon EC2 instances within your Auto Scaling groups to build highly available, fault-tolerant applications.</p>
+<p>Associate your load balancer with your Auto Scaling group to distribute traffic for your application across a fleet of EC2 instances that can scale with demand.</p>
+<p>You must first create a load balancer.</p>
+<h4 id="step-5-configure-scaling-policies-optional">Step 5: Configure Scaling Policies (Optional)<a class="headerlink" href="#step-5-configure-scaling-policies-optional" title="Permanent link">&para;</a></h4>
+<p>Configure scaling policies for your Amazon EC2 Auto Scaling group.</p>
               
             </div>
           </div>
@@ -1150,7 +1327,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../pricing/" class="btn btn-neutral float-right" title="AWS Pricing">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../SNS/" class="btn btn-neutral float-right" title="Amazon Simple Notification Service">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../LoadBalanc/" class="btn btn-neutral" title="Load Balancing on AWS"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -1182,7 +1359,7 @@
         <span><a href="../LoadBalanc/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../pricing/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../SNS/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
