@@ -893,7 +893,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#step-4-create-the-ec2-instances-and-install-the-web-servers">Step 4: Create the EC2 instances and install the web servers</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#step-5-create-the-application-elastic-load-balancer-elb">Step 5: Create the application Elastic Load Balancer (ELB</a>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#step-5-create-the-application-elastic-load-balancer-elb">Step 5: Create the application Elastic Load Balancer (ELB)</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#watch-it-here">Watch it here</a>
     </li>
@@ -1033,6 +1033,62 @@
                 <p class="caption"><span class="caption-text">Monitoring and Scaling</span></p>
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Monitoring Services on AWS</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#amazon-cloudwatch-components">Amazon CloudWatch Components</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#amazon-cloudwatch-events">Amazon CloudWatch Events</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#amazon-cloudwatch-logs-metrics">Amazon CloudWatch Logs Metrics</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#amazon-cloudwatch-alarms">Amazon CloudWatch Alarms</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#amazon-cloudwatch-foundation-observability-of-your-aws-resources-and-applications-on-aws-and-on-premises">Amazon CloudWatch Foundation:  Observability of your AWS resources and applications on AWS and on-premises</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#cloudwatch-benefits">CloudWatch Benefits</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cloudwatch-use-cases">CloudWatch Use cases</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#how-cloudwatch-works">How CloudWatch works?</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#amazon-cloudwatch-features">Amazon CloudWatch Features</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#feature-1-collect">Feature 1. Collect</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#feature-2-monitor">Feature 2. Monitor</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#feature-3-act">Feature 3. Act</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#feature-4-analyze">Feature 4. Analyze</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#compliance-and-security">Compliance and Security</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#amazon-cloudwatch-pricing">Amazon CloudWatch pricing</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#free-tier">Free tier</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#paid-tier">Paid tier</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#getting-started-with-amazon-cloudwatch">Getting started with Amazon CloudWatch</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#chech-how-to-get-started">Chech how to get started</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#check-how-to-use-cloudwach-components">Check how to use CloudWach Components</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#check-tutorials">Check Tutorials</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#check-the-services-monitoring">Check the services Monitoring</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../LoadBalanc/">Load Balancing on AWS</a>
     <ul>
@@ -1043,6 +1099,70 @@
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../AutoScale/">Auto Scaling in AWS</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../AutoScale/#auto-scaling-add-or-remove-compute-capacity-to-meet-changes-in-demand">Auto Scaling: Add or remove compute capacity to meet changes in demand</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../AutoScale/#benefits">Benefits</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../AutoScale/#how-it-works">How it works</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../AutoScale/#fleet-management">Fleet Management</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../AutoScale/#scheduled-scaling">Scheduled Scaling</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../AutoScale/#dynamic-scaling">Dynamic Scaling</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../AutoScale/#predictive-scaling">Predictive Scaling</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../AutoScale/#amazon-ec2-auto-scaling-features">Amazon EC2 Auto Scaling Features</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../AutoScale/#amazon-ec2-auto-scaling-getting-started">Amazon EC2 Auto Scaling Getting Started</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../AutoScale/#step-1-sign-into-the-aws-management-console">Step 1: Sign into the AWS Management Console</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../AutoScale/#step-2-create-a-launch-template">Step 2: Create a launch template</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../AutoScale/#step-3-create-an-auto-scaling-group">Step 3: Create an Auto Scaling group</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../AutoScale/#step-4-add-elastic-load-balancers-optional">Step 4: Add Elastic Load Balancers (Optional)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../AutoScale/#step-5-configure-scaling-policies-optional">Step 5: Configure Scaling Policies (Optional)</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../SNS/">Amazon Simple Notification Service</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../SNS/#features-and-capabilities">Features and capabilities</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../SNS/#getting-started-with-amazon-sns">Getting started with Amazon SNS</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../demoAutoScaling/">CloudWatch and Auto-scaling Demo</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../demoAutoScaling/#network-topology">Network Topology</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../demoAutoScaling/#step-1-create-the-vpc">Step 1: Create the VPC</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../demoAutoScaling/#step-2-create-the-ec2-instances-and-install-the-web-servers">Step 2: Create the EC2 instances and install the web servers</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../demoAutoScaling/#step-3-create-the-application-elastic-load-balancer-elb">Step 3: Create the application Elastic Load Balancer (ELB)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../demoAutoScaling/#step-4-create-and-configure-the-auto-scaling">Step 4: Create and configure the Auto-Scaling</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../demoAutoScaling/#step-5-stress-the-web-servers-and-application">Step 5: Stress the web servers and application</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../demoAutoScaling/#step-6-use-cloudwatch-to-monitor-the-instance-adjustment">Step 6: Use CloudWatch to monitor the instance Adjustment</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../demoAutoScaling/#watch-it-here">Watch it here</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">AWS Pricing and Support</span></p>
@@ -1142,7 +1262,245 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="monitoring-aws-services">Monitoring AWS services<a class="headerlink" href="#monitoring-aws-services" title="Permanent link">&para;</a></h1>
+<p>Modern applications are distributed in nature, and are often following a service-oriented or microservices architecture. Components of this system will generate data in the form of <strong>metrics, logs, and more</strong>, but all of these data sources are distributed throughout your environment. With any system, to support operations, you have to have <strong>insight</strong> into the current state of the infrastructure and applications.</p>
+<ul>
+<li>You need a way to <strong>collect</strong> these data points and <strong>analyze</strong> them to help <strong><em>operate</em></strong> daily, and <strong><em>improve</em></strong> your operations over time.<ul>
+<li>Your network will generate data, like flow logs. </li>
+<li>The servers will be generating data, such as how much CPU is currently being used, and </li>
+<li>your database layer will generate data, such as number of simultaneous connections.</li>
+</ul>
+</li>
+</ul>
+<p><strong>How can you collect this data in one centralized location, so you can actively monitor and operate your system?</strong></p>
+<p>With <strong><a href="https://aws.amazon.com/cloudwatch/">Amazon CloudWatch</a></strong>, you can <strong>monitor</strong> your cloud infrastructure intelligently. </p>
+<ul>
+<li>CloudWatch will collect data from your cloud-based infrastructure in one centralized location.</li>
+<li>With this data, you can create statistics, which drive operational procedures using features such as: <ul>
+<li>CloudWatch Alarms</li>
+<li>CloudWatch Events</li>
+<li>CloudWatch Logs Metrics</li>
+</ul>
+</li>
+</ul>
+<p>&ndash; Let&rsquo;s consider this situation. You get reports from your user base that they&rsquo;re noticing a latency in your services.
+Since you now have been made aware of an issue, you can start looking at your system to figure out what the cause of the issue is.
+Upon investigation, you realize that the CPU load is around 95 percent across all of your server instances.</p>
+<p>&ndash; On-premises, to fix this, you would page an admin, who then launches another server to help bring the load down across the servers. The problem with this approach, manually responding to a problem, is that your users experience interruption before you can mitigate the disruption to your services. <strong>Wouldn&rsquo;t it be nice if we could instead anticipate and mitigate the disruption well before any of our customers are impacted?</strong></p>
+<p>With Amazon CloudWatch, you can configure <strong>metrics</strong> and <strong>alarms</strong> to do just that. 
+- CloudWatch collects data points over time and provides you with statistics about your infrastructure. So, you can then create alarms and trigger automated events based on those statistics.</p>
+<p>&ndash; Consider our previous example, instead of waiting until hearing about latency from users, instead, you can create an <strong>alarm</strong> that says, if a group of EC2 instances has CPU over 60 percent for more than 5 minutes, trigger an auto scaling policy, automatically launch a new server into the pool, and alert an admin.</p>
+<p>&ndash; The visibility into the CPU across EC2 instances, is what allows you to anticipate that your users will soon be experiencing latency if you don&rsquo;t act.</p>
+<p>CloudWatch alarms can be configured for more than just CPU utilization. You can choose from hundreds of different metrics, or create your own custom metrics for alarms that matter to you.</p>
+<p>In addition to alarms, CloudWatch also allows you to visualize the statistics about your environment through dashboards. 
+- You can use out-of-the-box dashboards to view built-in or custom metrics, and 
+- you can build your own custom dashboards or partner with a wide range of consultants through the Amazon Partner Network.</p>
+<p>&ndash; When building custom metrics, consider the data being generated in your log files. Systems generate different types of log files that have a wealth of information about system performance and error rates.</p>
+<p>CloudWatch Logs is a place where; </p>
+<ul>
+<li>you can send your log files for viewing in the console, and </li>
+<li>to stream to other services, like Lambda or Amazon Elasticsearch for analytics.</li>
+</ul>
+<p>CloudWatch is integrated with over 70 AWS services. You can use CloudWatch to :</p>
+<ul>
+<li>set alarms,</li>
+<li>visualize logs and metrics side-by-side,</li>
+<li>take automated actions, </li>
+<li>troubleshoot operational issues,</li>
+<li>and discover insights to optimize your applications.</li>
+</ul>
+<p>Getting started with CloudWatch is easy and there&rsquo;s no up-front commitment or minimum fee.</p>
+<p>For more information, visit <a href="https://aws.amazon.com/cloudwatch/">aws.amazon.com/cloudwatch</a>. </p>
+<h2 id="amazon-cloudwatch-components">Amazon CloudWatch Components<a class="headerlink" href="#amazon-cloudwatch-components" title="Permanent link">&para;</a></h2>
+<p><a href="https://aws.amazon.com/cloudwatch/">Amazon CloudWatch</a> is a monitoring service for AWS Cloud resources and the applications that you run on AWS. You can use Amazon CloudWatch to collect and track metrics, collect and monitor log files, set alarms, and automatically react to changes in your AWS resources.</p>
+<h3 id="amazon-cloudwatch-events">Amazon CloudWatch Events<a class="headerlink" href="#amazon-cloudwatch-events" title="Permanent link">&para;</a></h3>
+<p><a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html">Amazon CloudWatch Events</a> delivers a near real-time stream of system events that describe changes in AWS resources. Using simple rules that you can quickly set up, you can match events and route them to one or more target functions or streams. CloudWatch Events becomes aware of operational changes as they occur.</p>
+<h3 id="amazon-cloudwatch-logs-metrics">Amazon CloudWatch Logs Metrics<a class="headerlink" href="#amazon-cloudwatch-logs-metrics" title="Permanent link">&para;</a></h3>
+<p>You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">Amazon CloudWatch Logs</a> to monitor, store, and access your log files from Amazon EC2 instances, AWS CloudTrail, Amazon Route 53, and other sources. You can then retrieve the associated log data from CloudWatch Logs.</p>
+<p>You can collect <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">metrics</a> from servers by installing the CloudWatch agent on the server. You can install the agent on both Amazon EC2 instances and on-premises servers, and on servers that run either Linux or Windows Server.</p>
+<h3 id="amazon-cloudwatch-alarms">Amazon CloudWatch Alarms<a class="headerlink" href="#amazon-cloudwatch-alarms" title="Permanent link">&para;</a></h3>
+<p>You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html">Amazon CloudWatch Alarms</a> to create alarms which monitor your servcies and track the events when happen to triger the alarms.</p>
+<p>There are two alarms in CloudWatch:</p>
+<ul>
+<li>metric alarms, and </li>
+<li>composite alarms</li>
+</ul>
+<ol>
+<li>
+<p>A <strong>etric alarm</strong> watches a single CloudWatch metric or the result of a math expression based on CloudWatch metrics. The alarm performs one or more actions based on the value of the metric or expression relative to a threshold over a number of time periods. The action can be sending a notification to an Amazon SNS topic, performing an Amazon EC2 action or an Auto Scaling action, or creating a Systems Manager OpsItem.</p>
+</li>
+<li>
+<p>A <strong>composite alarm</strong> includes a rule expression that takes into account the alarm states of other alarms that you have created. The composite alarm goes into ALARM state only if all conditions of the rule are met. The alarms specified in a composite alarm&rsquo;s rule expression can include metric alarms and other composite alarms.</p>
+</li>
+</ol>
+<p>Using composite alarms can reduce alarm noise. You can create multiple metric alarms, and also create a composite alarm and set up alerts only for the composite alarm. For example, a composite might go into ALARM state only when all of the underlying metric alarms are in ALARM state.</p>
+<p>Composite alarms can send Amazon SNS notifications when they change state, and can create Systems Manager OpsItems when they go into ALARM state, but can&rsquo;t perform EC2 actions or Auto Scaling actions.</p>
+<p>&ndash; You can add alarms to CloudWatch dashboards and monitor them visually. When an alarm is on a dashboard, it turns red when it is in the ALARM state, making it easier for you to monitor its status proactively.</p>
+<p>&ndash; An alarm invokes actions only when the alarm changes state. The exception is for alarms with Auto Scaling actions. For Auto Scaling actions, the alarm continues to invoke the action once per minute that the alarm remains in the new state. </p>
+<pre><code>    /!\ Note
+
+    CloudWatch doesn't test or validate the actions that you specify, nor does it detect any Amazon EC2 Auto Scaling 
+    or Amazon SNS errors resulting from an attempt to invoke nonexistent actions. Make sure that your alarm actions exist.
+</code></pre>
+<h2 id="amazon-cloudwatch-foundation-observability-of-your-aws-resources-and-applications-on-aws-and-on-premises">Amazon CloudWatch Foundation:  Observability of your AWS resources and applications on AWS and on-premises<a class="headerlink" href="#amazon-cloudwatch-foundation-observability-of-your-aws-resources-and-applications-on-aws-and-on-premises" title="Permanent link">&para;</a></h2>
+<p>Amazon CloudWatch is a monitoring and observability service built for DevOps engineers, developers, site reliability engineers (SREs), and IT managers. CloudWatch provides you with data and actionable insights to monitor your applications, respond to system-wide performance changes, optimize resource utilization, and get a unified view of operational health. CloudWatch collects monitoring and operational data in the form of logs, metrics, and events, providing you with a unified view of AWS resources, applications, and services that run on AWS and on-premises servers. You can use CloudWatch to detect anomalous behavior in your environments, set alarms, visualize logs and metrics side by side, take automated actions, troubleshoot issues, and discover insights to keep your applications
+running smoothly.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/a4dhoTQCyRA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p><br></p>
+<hr />
+<h3 id="cloudwatch-benefits">CloudWatch Benefits<a class="headerlink" href="#cloudwatch-benefits" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Observability on a single platform across applications and infrastructure</li>
+<li>Easiest way to collect metrics in AWS and on-premises</li>
+<li>Improve operational performance and resource optimization</li>
+<li>Get operational visibility and insight</li>
+<li>Derive actionable insights from logs</li>
+</ol>
+<h3 id="cloudwatch-use-cases">CloudWatch Use cases<a class="headerlink" href="#cloudwatch-use-cases" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Infrastructure monitoring and troubleshooting</li>
+<li>Mean-time-to-resolution improvement</li>
+<li>Proactive resource optimization</li>
+<li>Application monitoring</li>
+<li>Log analytics</li>
+</ol>
+<h3 id="how-cloudwatch-works">How CloudWatch works?<a class="headerlink" href="#how-cloudwatch-works" title="Permanent link">&para;</a></h3>
+<p>CloudWatch collects monitoring and operational data in the form of logs, metrics, and events, and visualizes it using automated dashboards so you can get a unified view of your AWS resources, applications, and services that run in AWS and on-premises. You can correlate your metrics and logs to better understand the health and performance of your resources. You can also create alarms based on metric value thresholds you specify, or that can watch for anomalous metric behavior based on machine learning algorithms. To take action quickly, you can set up automated actions to notify you if an alarm is triggered and automatically start auto scaling, for example, to help reduce mean-time-to-resolution. You can also dive deep and analyze your metrics, logs, and traces, to better understand how to improve application performance.</p>
+<p><img alt="" src="../cloudwatch.png" /></p>
+<h2 id="amazon-cloudwatch-features">Amazon CloudWatch Features<a class="headerlink" href="#amazon-cloudwatch-features" title="Permanent link">&para;</a></h2>
+<p>Amazon CloudWatch is a monitoring and management service that provides data and actionable insights for AWS, hybrid, and on-premises applications and infrastructure resources. With CloudWatch, you can collect and access all your performance and operational data in form of logs and metrics from a single platform. This allows you to overcome the challenge of monitoring individual systems and applications in silos (server, network, database, etc.). CloudWatch enables you to monitor your complete stack (applications, infrastructure, and services) and leverage alarms, logs, and events data to take automated actions and reduce Mean Time to Resolution (MTTR). This frees up important resources and allows you to focus on building applications and business value.</p>
+<p>CloudWatch gives you actionable insights that help you optimize application performance, manage resource utilization, and understand system-wide operational health. CloudWatch provides up to 1-second visibility of metrics and logs data, 15 months of data retention (metrics), and the ability to perform calculations on metrics. This allows you to perform historical analysis for cost optimization and derive real-time insights into optimizing applications and infrastructure resources.</p>
+<p>You can use CloudWatch Container Insights to monitor, troubleshoot, and alarm on your containerized applications and microservices. CloudWatch collects, aggregates, and summarizes compute utilization information like CPU, memory, disk, and network data, as well as diagnostic information like container restart failures, to help DevOps engineers isolate issues and resolve them quickly. Container Insights gives you insights from container management services such as Amazon ECS for Kubernetes (EKS), Amazon’s Elastic Container Service (ECS), AWS Fargate, and standalone Kubernetes (k8s).</p>
+<h3 id="feature-1-collect">Feature 1. Collect<a class="headerlink" href="#feature-1-collect" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Easily collect and store logs</li>
+<li>Built-in metrics</li>
+<li>Custom Metrics</li>
+<li>Collect and aggregate container metrics and logs</li>
+<li>Collect and aggregate Lambda metrics and logs</li>
+</ol>
+<h3 id="feature-2-monitor">Feature 2. Monitor<a class="headerlink" href="#feature-2-monitor" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Unified operational view with dashboards</li>
+<li>High resolution alarms</li>
+<li>Logs and metrics correlation</li>
+<li>Application Insights for .NET and SQL Server applications</li>
+<li>Container monitoring insights</li>
+<li>Lambda monitoring insights</li>
+<li>Anomaly Detection</li>
+<li>ServiceLens</li>
+<li>Synthetics</li>
+</ol>
+<h3 id="feature-3-act">Feature 3. Act<a class="headerlink" href="#feature-3-act" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Auto Scaling</li>
+<li>Automate response to operational changes with CloudWatch Events</li>
+<li>Alarm and automate actions on EKS, ECS, and k8s clusters</li>
+</ol>
+<h3 id="feature-4-analyze">Feature 4. Analyze<a class="headerlink" href="#feature-4-analyze" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Granular data and extended retention</li>
+<li>Custom operations on metrics</li>
+<li>Log analytics</li>
+<li>Analyze container metrics, logs, and traces</li>
+<li>Analyze Lambda metrics, logs, and traces</li>
+<li>Contributor Insights</li>
+</ol>
+<h3 id="compliance-and-security">Compliance and Security<a class="headerlink" href="#compliance-and-security" title="Permanent link">&para;</a></h3>
+<p>Amazon CloudWatch is integrated with <a href="https://aws.amazon.com/iam/">AWS Identity and Access Management (IAM)</a> so that you can control which users and resources have permission to access your data and how they can access it.</p>
+<p>Amazon CloudWatch Logs is also PCI and FedRamp compliant. Data is encrypted at rest and during transfer. You can also use AWS KMS encryption to encrypt your log groups for added compliance and security.</p>
+<h3 id="amazon-cloudwatch-pricing">Amazon <a href="https://aws.amazon.com/cloudwatch/pricing/">CloudWatch pricing</a><a class="headerlink" href="#amazon-cloudwatch-pricing" title="Permanent link">&para;</a></h3>
+<p>With Amazon CloudWatch, there is no up-front commitment or minimum fee; you simply pay for what you use. You will be charged at the end of the month for your usage.</p>
+<h4 id="free-tier">Free tier<a class="headerlink" href="#free-tier" title="Permanent link">&para;</a></h4>
+<p>You can get started with Amazon CloudWatch for free. Most AWS Services (EC2, S3, Kinesis, etc.) vend metrics automatically for free to CloudWatch. Many applications should be able to operate within these free tier limits. You can learn more about AWS Free Tier <a href="https://aws.amazon.com/free/">here</a>.</p>
+<table>
+<thead>
+<tr>
+<th align="center">CloudWatch</th>
+<th align="center">AWS Free Tier</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Metrics</td>
+<td align="center">Basic Monitoring Metrics (at 5-minute frequency)<br> <br>10 Detailed Monitoring Metrics (at 1-minute frequency)<br> <br> 1 Million API requests (not applicable to GetMetricData and GetMetricWidgetImage)</td>
+</tr>
+<tr>
+<td align="center">Dashboard</td>
+<td align="center"><br>3 Dashboards for up to 50 metrics per month</td>
+</tr>
+<tr>
+<td align="center">Alarms</td>
+<td align="center"><br>10 Alarm metrics (not applicable to high-resolution alarms)</td>
+</tr>
+<tr>
+<td align="center">Logs</td>
+<td align="center"><br>5GB Data (ingestion, archive storage, and data scanned by Logs Insights queries)</td>
+</tr>
+<tr>
+<td align="center">Events</td>
+<td align="center"><br>All events except custom events are included</td>
+</tr>
+<tr>
+<td align="center">Contributor <br>Insights</td>
+<td align="center"><br>1 Contributor Insights rule per month<br> <br>The first one million log events that match the rule per month</td>
+</tr>
+<tr>
+<td align="center">Synthetics</td>
+<td align="center"><br>100 canary runs per month</td>
+</tr>
+</tbody>
+</table>
+<h4 id="paid-tier">Paid tier<a class="headerlink" href="#paid-tier" title="Permanent link">&para;</a></h4>
+<p>There is no up-front commitment or minimum fee. You simply pay for what you use and will be charged at the end of the month for your usage.</p>
+<p>Check the AWS CloudWatch prices from <a href="https://aws.amazon.com/cloudwatch/pricing/">here</a>.</p>
+<p><br></p>
+<hr />
+<h2 id="getting-started-with-amazon-cloudwatch">Getting started with Amazon CloudWatch<a class="headerlink" href="#getting-started-with-amazon-cloudwatch" title="Permanent link">&para;</a></h2>
+<p>Open the CloudWatch console at <a href="https://console.aws.amazon.com/cloudwatch/">https://console.aws.amazon.com/cloudwatch/</a>.</p>
+<p>The CloudWatch overview home page appears.</p>
+<p><img alt="" src="../monitoring-overviewpage-console.PNG" /></p>
+<p>See, <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/GettingStarted.html">Getting Started with Amazon CloudWatch</a></p>
+<h3 id="chech-how-to-get-started">Chech how to get started<a class="headerlink" href="#chech-how-to-get-started" title="Permanent link">&para;</a></h3>
+<ol>
+<li><a href="https://aws.amazon.com/cloudwatch/getting-started/">Getting started with Amazon CloudWatch</a></li>
+<li><a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CWE_GettingStarted.html">Getting Started with Amazon CloudWatch Events</a></li>
+<li><a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_GettingStarted.html">Getting Started with CloudWatch Logs</a></li>
+</ol>
+<h3 id="check-how-to-use-cloudwach-components">Check how to use CloudWach Components<a class="headerlink" href="#check-how-to-use-cloudwach-components" title="Permanent link">&para;</a></h3>
+<ol>
+<li><a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Dashboards.html">Using Amazon CloudWatch Dashboards</a></li>
+<li><a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/working_with_metrics.html">Using Amazon CloudWatch Metrics</a></li>
+<li><a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html">Using Amazon CloudWatch Alarms</a></li>
+<li><a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries.html">Using synthetic monitoring</a></li>
+</ol>
+<h3 id="check-tutorials">Check Tutorials<a class="headerlink" href="#check-tutorials" title="Permanent link">&para;</a></h3>
+<ol>
+<li><a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatch-Events-Tutorials.html">CloudWatch Events Tutorials</a></li>
+<li><a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html">Analyzing Log Data with CloudWatch Logs Insights</a></li>
+<li>
+<p>CloudWatch Tutorials:</p>
+<ul>
+<li>
+<p><a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/gs_monitor_estimated_charges_with_cloudwatch.html">Scenario: Monitor Your Estimated Charges Using CloudWatch</a></p>
+</li>
+<li>
+<p><a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/PublishMetrics.htmls">Scenario: Publish Metrics to CloudWatch</a></p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="check-the-services-monitoring">Check the services Monitoring<a class="headerlink" href="#check-the-services-monitoring" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring_ec2.html">Monitoring Amazon EC2</a></li>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSPerformance.html">Amazon EBS volume performance on Linux instances</a></li>
+<li><a href="https://docs.aws.amazon.com/efs/latest/ug/monitoring_overview.html">Monitoring Amazon EFS</a></li>
+<li><a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/monitoring-overview.html">Monitoring Amazon S3</a></li>
+<li><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Monitoring.html">Monitoring an Amazon RDS DB instance</a></li>
+<li><a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContainerInsights.html">Using Container Insights</a></li>
+<li><a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Lambda-Insights-Getting-Started.html">Getting started with Lambda Insights</a></li>
+</ul>
               
             </div>
           </div>

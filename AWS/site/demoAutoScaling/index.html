@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="AbdallahCoptan">
+  <link rel="canonical" href="https://abdallahcoptan.github.io/HandsOn/demoAutoScaling/">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>CloudWatch and Auto-scaling Demo - Hydrosat Hands-On</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "CloudWatch and Auto-scaling Demo";
+    var mkdocs_page_input_path = "demoAutoScaling.md";
+    var mkdocs_page_url = "/HandsOn/demoAutoScaling/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/rust.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/Python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Hydrosat Hands-On</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="..#covered-topics">Covered Topics</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="..#table-of-contents">Table of Contents</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="..#credits">Credits</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="..#licence">Licence</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">AWS Fundamentals</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../AWS_Account/">Setting Up an AWS Account</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../AWS_Account/#create-your-account">Create your account</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../AWS_Account/#add-a-payment-method">Add a Payment Method</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../AWS_Account/#verify-your-phone-number">Verify your phone number</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../AWS_Account/#choose-an-aws-support-plan">Choose an AWS Support plan</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../AWS_Account/#seting-up-your-budget">Seting up Your Budget</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../AWS_Account/#watch-it-here">Watch it here</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">AWS Computing</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../EC2/">Using EC2 Compute Instances</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../EC2/#what-is-amazon-ec2">What is Amazon EC2?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EC2/#how-to-get-started-with-amazon-ec2">How to get started with Amazon EC2</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EC2/#setting-up-with-amazon-ec2">Setting up with Amazon EC2</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#sign-up-for-aws">Sign up for AWS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#create-a-key-pair">Create a key pair</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#watch-it-here">Watch it here</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#create-a-security-group">Create a security group</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#prerequisites">Prerequisites</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EC2/#getting-started-with-amazon-ec2-linux-instances">Getting started with Amazon EC2 Linux instances</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#launch-an-instance">Launch an instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#connect-to-your-instance">Connect to your instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#clean-up-your-instance">Clean up your instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#terminate-your-instance">Terminate your instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#next-steps">Next Steps</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#watch-it-here_1">Watch it here</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EC2/#connecting-to-your-linux-ec2-instances">Connecting to your Linux EC2 Instances</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#connection-options">Connection options</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#connecting-to-your-linux-instance-using-ssh">Connecting to your Linux instance using SSH</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#prerequisites_1">Prerequisites</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#connect-to-your-linux-instance-using-an-ssh-client">Connect to your Linux instance using an SSH client</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#connecting-to-your-linux-instance-from-windows-using-putty-or-mobaxterm">Connecting to your Linux instance from Windows using PuTTY or MobaXterm</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#prerequisites_2">Prerequisites</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#convert-your-private-key-using-puttygen">Convert your private key using PuTTYgen</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#connecting-to-your-linux-instance">Connecting to your Linux instance</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EC2/#transferring-files-to-linux-instances">Transferring files to Linux instances</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#transferring-files-to-linux-instances-from-linux-using-scp">Transferring files to Linux instances from Linux using SCP</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#prerequisites_3">Prerequisites</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#use-scp-to-transfer-a-file">Use SCP to transfer a file</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#transferring-files-to-your-linux-instance-using-the-putty-secure-copy-client">Transferring files to your Linux instance using the PuTTY Secure Copy client</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#transferring-files-to-your-linux-instance-using-winscp">Transferring files to your Linux instance using WinSCP</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#prerequisites_4">Prerequisites</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#configuration">Configuration</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#connect-and-start-transfering-files">Connect and start transfering files</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#watch-it-here_2">Watch it here</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#transferring-files-to-your-linux-instance-using-filezilla">Transferring files to your Linux instance using FileZilla</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#prerequisites_5">Prerequisites</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#configuration_1">Configuration</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#connect-and-start-transfering-files_1">Connect and start transfering files</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EC2/#watch-it-here_3">Watch it here</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EC2/#getting-started-with-amazon-ec2-windows-instances">Getting started with Amazon EC2 Windows Instances</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#connecting-to-your-windows-instance">Connecting to your Windows instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EC2/#transfer-files-to-windows-instances">Transfer files to Windows instances</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../RunPython/">Running Python on AWS EC2 Instance</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../RunPython/#logging-into-the-aws-console">Logging into the AWS Console</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RunPython/#launching-an-ec2-instance">Launching an EC2 Instance</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RunPython/#connecting-to-the-ec2-instance">Connecting to the EC2 Instance</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RunPython/#transfering-files-to-the-ec2-instance">Transfering files to the EC2 Instance</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RunPython/#running-python-scripts-on-the-ec2-instance">Running Python Scripts on the EC2 Instance</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../RunPython/#prepare-your-virtual-environment-in-python3">Prepare your virtual environment in Python3</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../RunPython/#installing-virtualenv-using-pip3">Installing Virtualenv using pip3</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../RunPython/#create-a-new-virtualenv">Create a new Virtualenv</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../RunPython/#delete-the-virtual-environment">Delete the virtual environment</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RunPython/#watch-it-all-here">Watch it all here</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../RunPython/#run-python-on-linux-instance-connected-from-linux-machine">Run python on Linux instance, connected from Linux machine</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../RunPython/#run-python-on-linux-instance-connected-from-windows-machine">Run python on Linux instance, connected from Windows machine</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../WebserversDemo/">Demo--Web server on EC2 Linux and Ubuntu Machines</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../WebserversDemo/#creating-a-web-server-on-ec2-instance-linux-machine">Creating a web server on EC2 instance: Linux Machine</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../WebserversDemo/#1-launching-the-instance-with-the-proper-setting">1. Launching the Instance with the proper setting</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../WebserversDemo/#2-installing-the-webserver-or-user-data-and-shell-scripts">2. Installing the webserver [OR User data and shell scripts]</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../WebserversDemo/#3-test-the-installed-webserver">3. Test the installed webserver</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../WebserversDemo/#creating-a-web-server-on-ec2-instance-ubuntu-machine">Creating a web server on EC2 instance: Ubuntu Machine</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../WebserversDemo/#1-launching-the-instance-with-the-proper-setting_1">1. Launching the Instance with the proper setting</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../WebserversDemo/#2-installing-the-webserver-or-user-data-and-shell-scripts_1">2. Installing the webserver [OR User data and shell scripts]</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../WebserversDemo/#a-installing-apache-web-server">A. Installing Apache Web Server</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../WebserversDemo/#b-installing-flusk-through-python">B. Installing Flusk through Python</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../WebserversDemo/#3-test-the-installed-webserver_1">3. Test the installed webserver</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../WebserversDemo/#a-test-apache-server">A. Test Apache Server</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../WebserversDemo/#b-test-flusk-server">B. Test Flusk Server</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../WebserversDemo/#creating-a-web-server-on-ec2-instance-windows-machine">Creating a web server on EC2 instance: Windows Machine</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../WebserversDemo/#1-create-instance-with-a-windwos-ami">1. Create instance with a Windwos AMI</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../WebserversDemo/#2-connect-to-the-windows-instance">2. Connect to the Windows instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../WebserversDemo/#3-install-the-web-server-on-windows">3. Install the web server on Windows</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../WebserversDemo/#running-commands-on-your-linux-instance-at-launch">Running commands on your Linux instance at launch</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../WebserversDemo/#specify-instance-user-data-at-launch">Specify instance user data at launch</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../WebserversDemo/#view-and-update-the-instance-user-data">View and update the instance user data</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../WebserversDemo/#running-commands-on-your-windows-instance-at-launch">Running commands on your Windows instance at launch</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../WebserversDemo/#more-complex-automation-scenarios-during-the-launching-of-instances">More complex automation scenarios during the launching of instances</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../lightsail/">AWS Lightsail Services</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../lightsail/#lightsail-overview">Lightsail Overview</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../lightsail/#lightsail-operating-system-application-templates">Lightsail Operating system &amp; application templates</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../lightsail/#operating-systems">Operating systems</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../lightsail/#applications">Applications</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../lightsail/#stacks">Stacks</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../lightsail/#lightsail-demonistration">Lightsail Demonistration</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../lightsail/#watch-more-detailed-information-about-lightsail-here">Watch more detailed information about Lightsail here</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../othercomputeservices/">Other AWS Compute Services</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../othercomputeservices/#aws-lambda">AWS Lambda</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../othercomputeservices/#watch-it-here">Watch it here</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../othercomputeservices/#aws-container-services">AWS Container Services</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../othercomputeservices/#1-aws-ecs">1. AWS ECS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../othercomputeservices/#2-amazon-eks">2. Amazon EKS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../othercomputeservices/#3-aws-fargate">3. AWS Fargate</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">AWS Storage</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../awsStore/">Storage on AWS</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../awsStore/#storage-scenario">Storage Scenario</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../awsStore/#object-vs-block-level-storage">[Object vs. block]-level Storage</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../storage/">Dealing with AWS Storage</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../storage/#aws-storage-options">AWS Storage Options</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../storage/#amazon-ebs">Amazon EBS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../storage/#amazon-ec2-instance-store">Amazon EC2 instance store</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../storage/#amazon-efs-file-system">Amazon EFS file system</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../storage/#amazon-s3">Amazon S3</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../storage/#adding-storage">Adding Storage</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../storage/#storage-pricing">Storage Pricing</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../EBS/">Amazon EBS volumes</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../EBS/#what-to-know-befor-creating-an-ebs-volume">What to know befor creating an EBS volume</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EBS/#creating-an-amazon-ebs-volume">Creating an Amazon EBS volume</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#methods-of-creating-a-volume">Methods of creating a volume</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#creating-an-empty-volume">Creating an empty volume</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EBS/#to-create-a-empty-ebs-volume-using-the-console">To create a empty EBS volume using the console</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EBS/#to-create-an-empty-ebs-volume-using-the-command-line">To create an empty EBS volume using the command line</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#creating-a-volume-from-a-snapshot">Creating a volume from a snapshot</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EBS/#to-create-an-ebs-volume-from-a-snapshot-using-the-console">To create an EBS volume from a snapshot using the console</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EBS/#to-create-an-ebs-volume-from-a-snapshot-using-the-command-line">To create an EBS volume from a snapshot using the command line</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EBS/#attaching-an-amazon-ebs-volume-to-an-instance">Attaching an Amazon EBS volume to an instance</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#prerequisites">Prerequisites</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#to-attach-an-ebs-volume-to-an-instance-using-the-console">To attach an EBS volume to an instance using the console</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#to-attach-an-ebs-volume-to-an-instance-using-the-command-line">To attach an EBS volume to an instance using the command line</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#more-advanced-attachment">More advanced attachment</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EBS/#making-an-amazon-ebs-volume-available-for-use-on-linux">Making an Amazon EBS volume available for use on Linux</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#format-and-mount-an-attached-volume">Format and mount an attached volume</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#check-your-instances-volume-size">Check your instance's volume size</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EBS/#making-an-amazon-ebs-volume-available-for-use-on-windows">Making an Amazon EBS volume available for use on Windows</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EBS/#releasing-an-amazon-ebs-volume">Releasing an Amazon EBS volume</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#detaching-an-amazon-ebs-volume-from-a-linux-instance">Detaching an Amazon EBS volume from a Linux instance</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EBS/#to-detach-an-ebs-volume-using-the-console">To detach an EBS volume using the console</a>
+        <ul>
+    <li class="toctree-l5"><a class="reference internal" href="../EBS/#example">Example:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EBS/#to-detach-an-ebs-volume-using-the-command-line">To detach an EBS volume using the command line</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#deleting-an-amazon-ebs-volume">Deleting an Amazon EBS volume</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EBS/#to-delete-an-ebs-volume-using-the-console">To delete an EBS volume using the console</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EBS/#to-delete-an-ebs-volume-using-the-command-line">To delete an EBS volume using the command line</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EBS/#watch-it-here">Watch it here</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#create-attach-and-mount-a-new-ebs-volume">Create, attach, and mount a new EBS volume</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EBS/#detach-unmount-and-delet-an-existing-ebs-volume">Detach, unmount, and delet an existing EBS volume</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EBS/#references">References</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../ebsDemo/">Amazon EBS Demo</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../ebsDemo/#note-ebs-types-and-services-quotas">Note: EBS types and services quotas</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../ebsDemo/#important-feature-in-amazone-ebs">Important feature in Amazone EBS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../ebsDemo/#difference-between-ebs-and-instance-store">Difference between EBS and Instance Store</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../ebsDemo/#note">Note</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../ebsDemo/#demonestrations-creating-an-amazon-ebs-volume">Demonestrations: Creating an Amazon EBS volume</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../ebsDemo/#demo-ebs-as-a-root-storage-for-ec2-instances">Demo: EBS as a root storage for EC2 instances</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../ebsDemo/#demo-create-an-empty-ebs-volume-and-attach-it-to-a-running-instance">Demo: Create an empty EBS volume and attach it to a running instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../ebsDemo/#demo-create-an-ebs-volume-from-a-previously-created-snapshot-and-attach-it-to-a-running-instance">Demo: Create an EBS volume from a previously created snapshot and attach it to a running instance</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../ebsDemo/#creating-a-snapshot-for-an-ebs-volume">Creating a snapshot for an EBS volume</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../ebsDemo/#creating-a-multi-volume-snapshot">Creating a multi-volume snapshot</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../ebsDemo/#other-operations-for-the-volumes-snapshots">Other operations for the volumes Snapshots</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../ebsDemo/#creating-a-volume-from-a-snapshot">Creating a volume from a snapshot</a>
+        <ul>
+    <li class="toctree-l5"><a class="reference internal" href="../ebsDemo/#best-practice-while-mounting-a-volume-which-has-been-created-through-a-snapshot">Best practice while mounting a volume which has been created through a snapshot</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../ebsDemo/#demo-attach-an-ebs-volume-to-a-windows-ami-instance">Demo: Attach an EBS volume to a Windows AMI instance</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../EFS/">Amazon EFS volumes</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../EFS/#amazon-efs-features">Amazon EFS features</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EFS/#fully-managed-feature">Fully Managed feature</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EFS/#efs-modes-and-services">EFS modes and services</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EFS/#amazon-ebs-vs-efs-volumes">Amazon EBS vs. EFS volumes</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EFS/#similarities-and-differences">Similarities and Differences</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EFS/#ebs-and-efs-use-cases">EBS and EFS Use Cases</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../EFS/#amazon-ebs">Amazon EBS</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../EFS/#amazon-efs">Amazon EFS</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EFS/#getting-started-with-amazon-elastic-file-system-demo">Getting Started with Amazon Elastic File System: Demo</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EFS/#prerequisites">Prerequisites</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EFS/#step-1-create-your-amazon-efs-file-system">Step 1: Create Your Amazon EFS File System</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EFS/#step-2-create-your-ec2-resources-and-launch-your-ec2-instance">Step 2: Create Your EC2 Resources and Launch Your EC2 Instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EFS/#step-3-mount-your-amazon-efs-file-system">Step 3: Mount your  Amazon EFS File System</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EFS/#step-4-clean-up-resources-and-protect-your-aws-account">Step 4: Clean Up Resources and Protect Your AWS Account</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../EFSmount/">Mounting EFS File System in Linux and Ubuntu</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../EFSmount/#recommendations">Recommendations</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EFSmount/#vpc">VPC</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EFSmount/#security-groups">Security groups</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EFSmount/#nfs-client">NFS client</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EFSmount/#linux-ami-instance">Linux AMI Instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EFSmount/#ubuntu-ami-instance">Ubuntu AMI Instance</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../EFSmount/#efs-mount-helper">EFS mount helper</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../EFSmount/#linux-ami-instance_1">Linux AMI Instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../EFSmount/#ubuntu-ami-instance_1">Ubuntu AMI Instance</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../S3/">Amazon S3 Storage</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../S3/#s3-benefits">S3 Benefits</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../S3/#block-storageebs-efs-vs-s3-storage">Block-storage(EBS, EFS) vs. S3 Storage</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../S3/#amazon-s3-use-cases">Amazon S3 Use Cases</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../S3/#amazon-s3-demonstration">Amazon S3 Demonstration</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">AWS Networking</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../network/">Network Addressing</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../network/#cisco-addressing-of-a-network">Cisco: Addressing of a Network</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../network/#cidr-notation">CIDR Notation</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../network2/">Networking in AWS</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../network2/#aws-network-properities-and-features">AWS Network Properities and Features</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../network2/#aws-networking-and-content-delivery-services">AWS Networking and Content Delivery services</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../network2/#amazon-virtual-private-cloud-vpc">Amazon Virtual Private Cloud (VPC)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../network2/#vpc-benefits-and-use-cases">VPC Benefits and Use Cases</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../network2/#amazon-vpc-concepts">Amazon VPC concepts</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../network2/#accessing-amazon-vpc">Accessing Amazon VPC</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../network2/#vpcs-and-subnets">VPCs and subnets</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../network2/#vpc-subnets">VPC Subnets</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../network2/#internet-gateway">Internet Gateway</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../network2/#default-vpc">Default VPC</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../network2/#default-subnets">Default subnets</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../network2/#route-tables">Route tables</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../network2/#route-table-concepts">Route table concepts</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../network2/#how-route-tables-work">How route tables work</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../network2/#routes">Routes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../network2/#main-route-table">Main route table</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../network2/#custom-route-tables">Custom route tables</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../network2/#route-priority">Route priority</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../network2/#aws-direct-connect">AWS Direct Connect</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../network2/#amazon-direct-connect-use-cases-and-benefits">Amazon Direct Connect Use Cases and Benefits</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../network2/#virtual-private-gateway">Virtual private gateway</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../network2/#aws-vpn">AWS VPN</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../network2/#aws-client-vpn">AWS Client VPN</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../network2/#aws-site-to-site-vpn">AWS Site-to-Site VPN</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../network2/#vpn-cloudhub">VPN CloudHub</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../vpc/">Getting started with VPCs</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../vpc/#different-vpc-topology-configurations">Different VPC Topology Configurations</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../vpc/#accessing-the-internet">Accessing the internet</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../vpc/#accessing-a-corporate-or-home-network">Accessing a corporate or home network</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../vpc/#amazon-vpc-console-wizard-configurations">Amazon VPC console wizard configurations</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../vpc/#working-with-vpcs-and-subnets">Working with VPCs and subnets</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../vpc/#adding-an-internet-gateway-to-your-vpc">Adding an internet gateway to your VPC</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../vpc/#adding-other-gateways-to-your-vpc">Adding other Gateways to your VPC</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../vpc/#working-with-route-tables">Working with route tables</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../vpc/#working-with-shared-vpcs">Working with shared VPCs</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../vpc/#sharing-the-vpcs">Sharing the VPCs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../vpc/#example-sharing-public-subnets-and-private-subnets">Example: Sharing public subnets and private subnets</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../vpc/#security-best-practices-for-your-vpc">Security best practices for your VPC</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../vpc/#additional-resources">Additional resources</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../ELB/">AWS Elastic Load Balancers (ELB)</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../ELB/#elb-benefits-and-use-cases">ELB: Benefits and Use Cases</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../ELB/#how-elastic-load-balancing-works">How Elastic Load Balancing works</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../ELB/#availability-zones-and-load-balancer-nodes">Availability Zones and load balancer nodes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../ELB/#cross-zone-load-balancing">Cross-zone load balancing</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../ELB/#getting-started-with-elastic-load-balancing">Getting started with Elastic Load Balancing</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../ELB/#create-an-application-load-balancer">Create an Application Load Balancer</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../ELB/#aws-management-console">AWS Management Console</a>
+        <ul>
+    <li class="toctree-l5"><a class="reference internal" href="../ELB/#before-you-begin">Before you begin</a>
+    </li>
+    <li class="toctree-l5"><a class="reference internal" href="../ELB/#step-1-select-a-load-balancer-type">Step 1: Select a load balancer type</a>
+    </li>
+    <li class="toctree-l5"><a class="reference internal" href="../ELB/#step-2-configure-your-load-balancer-and-listener">Step 2: Configure your load balancer and listener</a>
+    </li>
+    <li class="toctree-l5"><a class="reference internal" href="../ELB/#step-3-configure-a-security-group-for-your-load-balancer">Step 3: Configure a security group for your load balancer</a>
+    </li>
+    <li class="toctree-l5"><a class="reference internal" href="../ELB/#step-4-configure-your-target-group">Step 4: Configure your target group</a>
+    </li>
+    <li class="toctree-l5"><a class="reference internal" href="../ELB/#step-5-register-targets-with-your-target-group">Step 5: Register targets with your target group</a>
+    </li>
+    <li class="toctree-l5"><a class="reference internal" href="../ELB/#step-6-create-and-test-your-load-balancer">Step 6: Create and test your load balancer</a>
+    </li>
+    <li class="toctree-l5"><a class="reference internal" href="../ELB/#step-7-delete-your-load-balancer-optional">Step 7: Delete your load balancer (optional)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../ELB/#aws-cli">AWS CLI</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../ELB/#create-a-network-load-balancer">Create a Network Load Balancer</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../ELB/#aws-management-console_1">AWS Management Console</a>
+        <ul>
+    <li class="toctree-l5"><a class="reference internal" href="../ELB/#before-you-begin_1">Before you begin</a>
+    </li>
+    <li class="toctree-l5"><a class="reference internal" href="../ELB/#step-1-choose-a-load-balancer-type">Step 1: Choose a load balancer type</a>
+    </li>
+    <li class="toctree-l5"><a class="reference internal" href="../ELB/#step-2-configure-your-load-balancer-and-listener_1">Step 2: Configure your load balancer and listener</a>
+    </li>
+    <li class="toctree-l5"><a class="reference internal" href="../ELB/#step-3-configure-your-target-group">Step 3: Configure your target group</a>
+    </li>
+    <li class="toctree-l5"><a class="reference internal" href="../ELB/#step-4-register-targets-with-your-target-group">Step 4: Register targets with your target group</a>
+    </li>
+    <li class="toctree-l5"><a class="reference internal" href="../ELB/#step-5-create-and-test-your-load-balancer">Step 5: Create and test your load balancer</a>
+    </li>
+    <li class="toctree-l5"><a class="reference internal" href="../ELB/#step-6-delete-your-load-balancer-optional">Step 6: Delete your load balancer (optional)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../ELB/#aws-cli_1">AWS CLI</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../ELB/#create-a-classic-load-balancer">Create a Classic Load Balancer</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../ELB/#more-resources">More resources</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Networkdemos/">AWS Networking Demonstrations</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../Networkdemos/#demo-1-creating-a-new-vpc-with-2-subnets-in-one-availability-zone">Demo 1: Creating a new VPC with 2 Subnets in one availability zone</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../Networkdemos/#network-topology">Network Topology</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Networkdemos/#step-1-create-the-vpc-and-the-two-supnets">Step 1: create the VPC and the two supnets</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Networkdemos/#step-2-create-the-internet-gateway-for-the-public-access">Step 2: create the Internet Gateway for the public access</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Networkdemos/#step-3-launch-the-ec2-instance">Step 3: launch the EC2 instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Networkdemos/#step-4-assign-a-public-ip-for-your-ec2-instance">Step 4: assign a public IP for your EC2 instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Networkdemos/#step-5-create-your-private-subnet-in-the-same-vpc">Step 5: create your private subnet in the same VPC</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Networkdemos/#watch-it-here">Watch it here</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../Networkdemos/#demo-2-creating-a-new-vpc-with-4-subnets-in-two-availability-zones-with-a-load-balancer">Demo 2: Creating a new VPC with 4 Subnets in two availability zones with a load balancer</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../Networkdemos/#network-topology_1">Network Topology</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Networkdemos/#step-1-continue-in-the-same-vpc-in-the-previous-demo">Step 1: continue in the same VPC in the previous demo</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Networkdemos/#step-2-use-the-same-internet-gateway-for-the-public-access">Step 2: use the same Internet Gateway for the public access</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Networkdemos/#step-3-launch-the-ec2-instance_1">Step 3: launch the EC2 instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Networkdemos/#step-4-assign-a-public-ip-for-your-ec2-instance_1">Step 4: assign a public IP for your EC2 instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Networkdemos/#step-5-create-your-private-subnet-in-the-same-vpc_1">Step 5: create your private subnet in the same VPC</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Networkdemos/#step-6-create-the-elastic-load-balancer-elb">Step 6: create the Elastic Load Balancer (ELB)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Networkdemos/#watch-it-here_1">Watch it here</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../Networkdemos/#demo-3-creating-a-new-vpc-with-4-subnets-with-a-private-connection-to-the-on-premises-datacenter">Demo 3: Creating a new VPC with 4 Subnets with a private connection to the On-premises datacenter</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../Networkdemos/#network-topology_2">Network Topology</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Networkdemos/#step-1-continue-in-the-same-vpc-in-the-previous-demo_1">Step 1: continue in the same VPC in the previous demo</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Networkdemos/#step-2-create-the-private-gateway">Step 2: create the private gateway</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Networkdemos/#step-3-create-the-private-route-table">Step 3: create the private route table</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Networkdemos/#step-4-establish-the-private-connection">Step 4: Establish the private connection</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Networkdemos/#step-5-secure-the-private-connection">Step 5: Secure the private connection</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Networkdemos/#watch-it-here_2">Watch it here</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">AWS Databases</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../RDS/">RDS</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../RDS/#amazon-relational-database-rds">Amazon Relational Database (RDS)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RDS/#overview-of-amazon-rds">Overview of Amazon RDS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RDS/#bring-your-own-database-byodb-vs-amazon-rds">Bring your own database (BYODB) vs Amazon RDS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RDS/#amazon-rds-db-instances">Amazon RDS DB instances</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../RDS/#db-instance-classes">DB instance classes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../RDS/#db-instance-storage">DB instance storage</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RDS/#high-availability-multi-az-for-amazon-rds">High availability (Multi-AZ) for Amazon RDS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RDS/#amazon-rds-read-replicas">Amazon RDS Read Replicas</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../RDS/#benefits">Benefits</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../RDS/#setup">Setup</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RDS/#databases-engines-in-aws-rds">Databases engines in AWS RDS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RDS/#migrate-your-database-to-aws-database">Migrate your Database to AWS Database</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../RDSdemos/">Database Engines in AWS</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../RDSdemos/#setting-up-for-amazon-rds">Setting up for Amazon RDS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RDSdemos/#managing-databases-in-aws">Managing Databases in AWS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../RDSdemos/#configuring-an-amazon-rds-db-instance">Configuring an Amazon RDS DB instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../RDSdemos/#managing-an-amazon-rds-db-instance">Managing an Amazon RDS DB instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../RDSdemos/#backing-up-and-restoring-an-amazon-rds-db-instance">Backing up and restoring an Amazon RDS DB instance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../RDSdemos/#monitoring-an-amazon-rds-db-instance">Monitoring an Amazon RDS DB instance</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../RDSdemos/#start-working-with-aws-rds-and-db-engines">Start Working with AWS RDS and DB engines</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../RDSdemos/#demos">Demos</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../RDSdemos/#troubleshooting-for-amazon-rds">Troubleshooting for Amazon RDS</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../RDSdemos/#tutorials">Tutorials</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../RDSdemos/#best-practices-for-amazon-rds">Best practices for Amazon RDS</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../mysqldemo/">MySQL RDS DB Instance Demo</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#network-topology">Network Topology</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#step-1-create-the-vpc">Step 1: Create the VPC</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#step-2-configure-the-vpc-security-group">Step 2: Configure the VPC security group</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#step-3-create-the-database-instance">Step 3: Create the Database Instance</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#step-4-create-the-ec2-instances-and-install-the-web-servers">Step 4: Create the EC2 instances and install the web servers</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#step-5-create-the-application-elastic-load-balancer-elb">Step 5: Create the application Elastic Load Balancer (ELB)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#watch-it-here">Watch it here</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../mysqldemo/#references-and-help">References and Help</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../aroura/">Amazon Aurora</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../aroura/#overview">Overview</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../aroura/#benefits">Benefits</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../aroura/#use-cases">Use cases</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../aroura/#migrating-your-databases-to-amazon-aurora">Migrating Your Databases to Amazon Aurora</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../aroura/#if-youre-currently-using-amazon-rds-for-mysql-or-amazon-rds-for-postgresql">If you're currently using Amazon RDS for MySQL or Amazon RDS for PostgreSQL...</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../aroura/#if-youre-currently-using-oracle-or-microsoft-sql-server">If you're currently using Oracle or Microsoft SQL Server...</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../aroura/#getting-started-with-amazon-aurora">Getting started with Amazon Aurora</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../nosql/">NoSQL DB</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../nosql/#nosql-databases">NoSQL Databases</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../nosql/#what-are-nosql-databases">What are NoSQL databases?</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../nosql/#how-does-a-nosql-nonrelational-database-work">How Does a NoSQL (nonrelational) Database Work?</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../nosql/#why-should-you-use-a-nosql-database">Why should you use a NoSQL database?</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../nosql/#types-of-nosql-databases">Types of NoSQL Databases</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../nosql/#sql-relational-vs-nosql-nonrelational-databases">SQL (relational) vs. NoSQL (nonrelational) databases</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../nosql/#sql-vs-nosql-terminology">SQL vs. NoSQL Terminology</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../nosql/#nosql-database-engines-in-aws">NoSQL Database Engines in AWS</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../DynamoDB/">Amazon DynamoDB</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../DynamoDB/#the-key-value-database-defined">The key-value database defined</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../DynamoDB/#dynamodb">DynamoDB</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#benefits-applications">Benefits &amp; Applications</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#use-cases">Use Cases</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../DynamoDB/#creating-a-table-from-sql-to-nosql">Creating a Table  from SQL to NoSQL</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#sql">SQL</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#nosql-dynamodb">NoSQL: DynamoDB</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../DynamoDB/#setting-up-dynamodb-on-aws">Setting Up DynamoDB on AWS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#getting-an-aws-access-key">Getting an AWS Access Key</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#configuring-your-credentials">Configuring Your Credentials</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../DynamoDB/#getting-started-with-amazon-dynamodb">Getting Started with Amazon DynamoDB</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#demo-create-and-query-a-nosql-table">Demo: Create and Query a NoSQL Table</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../DynamoDB/#more-advanced-tutorials-and-demos">More advanced tutorials and demos</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Elasticache/">Amazon Elasticache</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../Elasticache/#the-in-memory-database-defined">The in-memory database defined</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../Elasticache/#in-memory-databases-on-aws">In-memory databases on AWS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../Elasticache/#amazon-elasticache-for-redis">Amazon Elasticache for Redis</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../Elasticache/#get-started-with-amazon-elasticache-for-redis">Get started with Amazon ElastiCache for Redis.</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Elasticache/#amazon-elasticache-for-memcached">Amazon ElastiCache for Memcached</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../Elasticache/#get-started-with-amazon-elasticache-for-memcached">Get started with Amazon ElastiCache for Memcached.</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Elasticache/#use-cases">Use cases</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Redshift/">Amazon Redshift</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../Redshift/#redshift-use-cases">Redshift Use Cases</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../Redshift/#cluster-management">Cluster management</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Redshift/#creating-and-managing-clusters">Creating and managing clusters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../Redshift/#getting-started-with-amazon-redshift">Getting started with Amazon Redshift</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../Redshift/#check-amazon-redshift-documentation-for-all-the-details">Check, Amazon Redshift Documentation for all the details.</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Monitoring and Scaling</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../monitor/">Monitoring Services on AWS</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../monitor/#amazon-cloudwatch-components">Amazon CloudWatch Components</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#amazon-cloudwatch-events">Amazon CloudWatch Events</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#amazon-cloudwatch-logs-metrics">Amazon CloudWatch Logs Metrics</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#amazon-cloudwatch-alarms">Amazon CloudWatch Alarms</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../monitor/#amazon-cloudwatch-foundation-observability-of-your-aws-resources-and-applications-on-aws-and-on-premises">Amazon CloudWatch Foundation:  Observability of your AWS resources and applications on AWS and on-premises</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#cloudwatch-benefits">CloudWatch Benefits</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#cloudwatch-use-cases">CloudWatch Use cases</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#how-cloudwatch-works">How CloudWatch works?</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../monitor/#amazon-cloudwatch-features">Amazon CloudWatch Features</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#feature-1-collect">Feature 1. Collect</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#feature-2-monitor">Feature 2. Monitor</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#feature-3-act">Feature 3. Act</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#feature-4-analyze">Feature 4. Analyze</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#compliance-and-security">Compliance and Security</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#amazon-cloudwatch-pricing">Amazon CloudWatch pricing</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../monitor/#free-tier">Free tier</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../monitor/#paid-tier">Paid tier</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../monitor/#getting-started-with-amazon-cloudwatch">Getting started with Amazon CloudWatch</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#chech-how-to-get-started">Chech how to get started</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#check-how-to-use-cloudwach-components">Check how to use CloudWach Components</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#check-tutorials">Check Tutorials</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../monitor/#check-the-services-monitoring">Check the services Monitoring</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../LoadBalanc/">Load Balancing on AWS</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../LoadBalanc/#load-balancers-in-aws">Load Balancers in AWS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../LoadBalanc/#load-balancing-manage-your-application-workload-by-elb">Load Balancing: Manage your application workload by ELB</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../AutoScale/">Auto Scaling in AWS</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../AutoScale/#auto-scaling-add-or-remove-compute-capacity-to-meet-changes-in-demand">Auto Scaling: Add or remove compute capacity to meet changes in demand</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../AutoScale/#benefits">Benefits</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../AutoScale/#how-it-works">How it works</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../AutoScale/#fleet-management">Fleet Management</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../AutoScale/#scheduled-scaling">Scheduled Scaling</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../AutoScale/#dynamic-scaling">Dynamic Scaling</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../AutoScale/#predictive-scaling">Predictive Scaling</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../AutoScale/#amazon-ec2-auto-scaling-features">Amazon EC2 Auto Scaling Features</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../AutoScale/#amazon-ec2-auto-scaling-getting-started">Amazon EC2 Auto Scaling Getting Started</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../AutoScale/#step-1-sign-into-the-aws-management-console">Step 1: Sign into the AWS Management Console</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../AutoScale/#step-2-create-a-launch-template">Step 2: Create a launch template</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../AutoScale/#step-3-create-an-auto-scaling-group">Step 3: Create an Auto Scaling group</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../AutoScale/#step-4-add-elastic-load-balancers-optional">Step 4: Add Elastic Load Balancers (Optional)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../AutoScale/#step-5-configure-scaling-policies-optional">Step 5: Configure Scaling Policies (Optional)</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../SNS/">Amazon Simple Notification Service</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../SNS/#features-and-capabilities">Features and capabilities</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../SNS/#getting-started-with-amazon-sns">Getting started with Amazon SNS</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">CloudWatch and Auto-scaling Demo</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#network-topology">Network Topology</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-1-create-the-vpc">Step 1: Create the VPC</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-2-create-the-ec2-instances-and-install-the-web-servers">Step 2: Create the EC2 instances and install the web servers</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-3-create-the-application-elastic-load-balancer-elb">Step 3: Create the application Elastic Load Balancer (ELB)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-4-create-and-configure-the-auto-scaling">Step 4: Create and configure the Auto-Scaling</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-5-stress-the-web-servers-and-application">Step 5: Stress the web servers and application</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-6-use-cloudwatch-to-monitor-the-instance-adjustment">Step 6: Use CloudWatch to monitor the instance Adjustment</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#watch-it-here">Watch it here</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">AWS Pricing and Support</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../pricing/">AWS Pricing</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../pricing/#aws-cost-explorer">AWS Cost Explorer</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../pricing/#aws-trusted-advisor">AWS Trusted Advisor</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../pricing/#aws-pricing-calculator">AWS Pricing Calculator</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../pricing/#aws-budgets">AWS Budgets</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../pricing/#refrences">Refrences</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../support/">AWS Support</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../support/#four-support-plans-in-aws">Four support plans in AWS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../support/#basic-support">Basic Support</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">AWS Security & Access Management</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../security/">AWS Security</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../slides/">Training Resources</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../slides/#slides">Slides</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../slides/#appendix">Appendix</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../slides/#tutorials">Tutorials</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../slides/#videos">Videos</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../slides/#scripts">Scripts</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ref/">References</a>
+    <ul>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contact/">Contact</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Hydrosat Hands-On</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Monitoring and Scaling &raquo;</li>
+        
+      
+    
+    <li>CloudWatch and Auto-scaling Demo</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+    <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+        <a href="../pricing/" class="btn btn-neutral float-right" title="AWS Pricing">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../SNS/" class="btn btn-neutral" title="Amazon Simple Notification Service"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="demo-auto-scaling-load-balancing-and-cloudwatch-alarms">Demo: Auto-scaling, Load-Balancing, and CloudWatch Alarms<a class="headerlink" href="#demo-auto-scaling-load-balancing-and-cloudwatch-alarms" title="Permanent link">&para;</a></h1>
+<p>This demo shows how to deal with auto-scaling, balancing your application load, and how to work with the CloadWatch. In CloudWatch, the demo will show how to monitor your instances and make alerts and alarms.</p>
+<h2 id="network-topology">Network Topology<a class="headerlink" href="#network-topology" title="Permanent link">&para;</a></h2>
+<p>Use the following topology and start playing with Auto-scaling EC2 instances and CloudWatch monitoring:</p>
+<p><img alt="" src="../Autoscal.png" /></p>
+<h2 id="step-1-create-the-vpc">Step 1: Create the VPC<a class="headerlink" href="#step-1-create-the-vpc" title="Permanent link">&para;</a></h2>
+<ol>
+<li>By using the VPC wizard, create a VPC,<ul>
+<li>by one public subnets</li>
+<li>use the <code>10.10.0.0/16</code> block of addresses</li>
+</ul>
+</li>
+<li>Create one more subnets:<ul>
+<li>1 public</li>
+<li>give each a different ip address with <code>/24</code> prefix</li>
+</ul>
+</li>
+<li>
+<p>Configure the Internet gateway</p>
+<ul>
+<li>associate the public subnets</li>
+</ul>
+</li>
+<li>
+<p>Create a VPC security group for a public web server</p>
+<ul>
+<li>attach it to the created VPC</li>
+<li>add inbound rules to the security group<ul>
+<li>Type: <code>SSH</code></li>
+<li>Port: <code>20</code></li>
+<li>Source: &lsquo;custom&rsquo; or <code>everywhere</code>. </li>
+</ul>
+</li>
+<li>add inbound rules to the security group<ul>
+<li>Type: <code>HTTP</code></li>
+<li>Port: <code>80</code></li>
+<li>Source: <code>everywhere</code>. </li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="step-2-create-the-ec2-instances-and-install-the-web-servers">Step 2: Create the EC2 instances and install the web servers<a class="headerlink" href="#step-2-create-the-ec2-instances-and-install-the-web-servers" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Launch two EC2 instances</p>
+<ul>
+<li>AMI: Ubuntu 16 </li>
+<li>Add the VPC</li>
+<li>put each instnace in one of the public subnet</li>
+<li>Enable the auto assigning of IPs</li>
+<li>Configure Security Group<ul>
+<li>Use the <code>public security groupe</code> for each of the instance</li>
+</ul>
+</li>
+<li>Review and launch<ul>
+<li>use your favorit key</li>
+</ul>
+</li>
+<li>Wait until <strong>Instance Status</strong> for your instance reads as <strong>Running</strong> before continuing. </li>
+</ul>
+</li>
+<li>
+<p>Install an <code>Apache</code> web server with <code>PHP</code></p>
+<ul>
+<li>Use this <a href="https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/Codes/AutoscalScript.sh">script</a> to install the web server.</li>
+</ul>
+</li>
+</ol>
+<h2 id="step-3-create-the-application-elastic-load-balancer-elb">Step 3: Create the application Elastic Load Balancer (ELB)<a class="headerlink" href="#step-3-create-the-application-elastic-load-balancer-elb" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Associate the ELB with the 2 EC2 instances</p>
+<ul>
+<li>Choose your configured VPC<ul>
+<li>Select the two availability zones</li>
+<li>Select the two public subnets</li>
+</ul>
+</li>
+<li>Keep the default security configuration</li>
+<li>Choose the public security groupe </li>
+<li>In routing targets<ul>
+<li>register the targets,</li>
+<li>the three instances</li>
+</ul>
+</li>
+<li>Review and create, then give it some time </li>
+</ul>
+</li>
+<li>
+<p>Check your ELB after getting <code>provisioned</code>,</p>
+<ul>
+<li>use the public DNS name of the ELB to access your servers</li>
+</ul>
+</li>
+</ol>
+<h2 id="step-4-create-and-configure-the-auto-scaling">Step 4: Create and configure the Auto-Scaling<a class="headerlink" href="#step-4-create-and-configure-the-auto-scaling" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Create the Auto-scaling group</p>
+<ul>
+<li>Create launch configuration <ul>
+<li>AMI: <code>ami-0c6d456c3548469dc</code></li>
+<li>Instance Type: <code>t2.micro</code></li>
+<li>Choose your Security Group</li>
+</ul>
+</li>
+<li>Choose your created <code>launch configuration</code></li>
+</ul>
+</li>
+<li>
+<p>Configure the Auto-Scaling Groupe</p>
+<ul>
+<li>Group Size : <code>2</code></li>
+<li>Change VPC and Subnets</li>
+<li>Select Load balancing</li>
+<li>Select Traget groups</li>
+</ul>
+</li>
+<li>
+<p>Configure Scaling Policies</p>
+<ul>
+<li>Min and Max number of instances (Instances adjustment)</li>
+<li>Average CPU Metric</li>
+<li>Target value: <code>60%</code></li>
+<li>Instances Need : <code>300</code> seconds to warm up after scaling</li>
+</ul>
+</li>
+</ol>
+<h2 id="step-5-stress-the-web-servers-and-application">Step 5: Stress the web servers and application<a class="headerlink" href="#step-5-stress-the-web-servers-and-application" title="Permanent link">&para;</a></h2>
+<p>To check the scaling we need to stress the application by:</p>
+<pre><code>    $&gt; stress --cpu 8 --io 4 --vm 2 --vm-bytes 128M --timeout 600s
+</code></pre>
+<p>This should be issued in one of the instances or through the <a href="https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/Codes/Load.php">Load.php</a> script.</p>
+<h2 id="step-6-use-cloudwatch-to-monitor-the-instance-adjustment">Step 6: Use CloudWatch to monitor the instance Adjustment<a class="headerlink" href="#step-6-use-cloudwatch-to-monitor-the-instance-adjustment" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Go to CloudWatch, and create a board for your instances CPU utilization</p>
+<ul>
+<li>Monitor their average</li>
+<li>Once Utilization cross the <code>60%</code> <ul>
+<li>the new two instances will be launched automaticaly</li>
+</ul>
+</li>
+<li>Once load minimzed <ul>
+<li>The new instances will be idel</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Create more alarms for other metrics and instancces</p>
+</li>
+<li>
+<p>Check your target group in the load balancing</p>
+</li>
+</ol>
+<h2 id="watch-it-here">Watch it here<a class="headerlink" href="#watch-it-here" title="Permanent link">&para;</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eV6uLzwS6H0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../pricing/" class="btn btn-neutral float-right" title="AWS Pricing">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../SNS/" class="btn btn-neutral" title="Amazon Simple Notification Service"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../SNS/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../pricing/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
