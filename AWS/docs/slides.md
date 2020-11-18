@@ -17,6 +17,9 @@ The resources in this training is consisting of three sections, the Slides, Tuto
 1. [Understanding AWS Core Services List](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/understanding-aws-core-services-list.pdf)
 2. [AWS Security & Architecture Services List](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/introduction-security-architecture-aws-services-list.pdf)
 3. [Network Addressing](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/Network%20addressing.pdf)
+4. [Being an AWS Cloud Practitioner](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/BeingAnAWS_Practitioner.pdf)
+5. [Scenarios-based Review](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/Senarios-based_Review_AWS.pdf)
+6. [Security and  Architecture on AWS](https://raw.githubusercontent.com/AbdallahCoptan/HandsOn/master/AWS/docs/HydrosatTrainingSlides/Security%26SafteyInAWS.pdf)
 
 
 

@@ -58,6 +58,7 @@ nav:
     - AWS Support: support.md
   - AWS Security & Access Management:
     - AWS Security: security.md
+  - Scenarios-based Review: Scenarios.md
   - Training Resources: slides.md
   - References: ref.md
   - Contact: contact.md
